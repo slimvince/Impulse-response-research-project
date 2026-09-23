@@ -1,0 +1,18 @@
+{
+  "recordings": [
+    {
+      "recording_id": "slb-development-001",
+      "domain": "slb_di",
+      "split": "development",
+      "path": "corpus/slb-development-001.wav",
+      "metadata": {"player": "anonymous", "instrument": "SLB-200", "articulation": "pizzicato", "dynamic": "mf"}
+    },
+    {
+      "recording_id": "acoustic-development-001",
+      "domain": "acoustic_mic",
+      "split": "development",
+      "path": "corpus/acoustic-development-001.wav",
+      "metadata": {"player": "anonymous", "instrument": "double_bass", "microphone": "document-in-lab-notes", "articulation": "pizzicato", "dynamic": "mf"}
+    }
+  ]
+}
