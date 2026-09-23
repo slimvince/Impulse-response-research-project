@@ -13,6 +13,7 @@ class AudioData:
     samples: np.ndarray
     sample_rate: int
     channels: int
+    sample_width_bytes: int
     source_path: str
     sha256: str
 
@@ -39,7 +40,7 @@ def read_wav(path: str | Path) -> AudioData:
     samples = samples.reshape(-1, channels)
     if channels > 1:
         samples = samples.mean(axis=1, keepdims=True)
-    return AudioData(samples[:, 0], sample_rate, channels, str(path), digest)
+    return AudioData(samples[:, 0], sample_rate, channels, sample_width, str(path), digest)
 
 
 def frame_signal(samples: np.ndarray, frame_size: int, hop_size: int) -> np.ndarray:

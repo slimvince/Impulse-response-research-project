@@ -40,6 +40,14 @@
 - **Interpretation:** The implementation is validated as a synthetic and real-audio extraction tool, not as evidence that any feature is an intrinsic bass characteristic or a useful IR target.
 - **Immediate next action:** Implement recording/source-group aggregation, quality diagnostics, and distribution-level repeatability summaries for the bass A and bass B candidate groups; then add more recordings and freeze an approved E001 manifest.
 
+## 2026-09-23 - Recording-level summaries and quality diagnostics
+
+- **Question:** Can the pipeline report useful evidence without treating correlated frames as independent recordings?
+- **Implemented:** Added per-recording feature summaries with mean, standard deviation, median, q10, q90, and missing counts; source-group summaries based on manifest metadata; event/frame counts as diagnostics; silence, clipping, DC offset, peak, RMS, duration, and sample-width metadata; manifest and configuration hashes in provenance.
+- **Evidence:** The improved pipeline processed the four external recordings into two source groups, with `47,055` frames and `105` events. No clipping was detected. Silence fractions were approximately 0.00018-0.00236; DC offsets were approximately `0.00030` for Bass A and `-0.00334` to `-0.00340` for Bass B.
+- **Interpretation:** The outputs now support recording/source-group inspection and quality review without claiming that frame rows are independent evidence. The Bass B DC offsets are a quality diagnostic requiring review, not an instrument finding.
+- **Limitation:** The current source-group summary is descriptive and does not remove unknown level, unmatched content, or unknown setup/processing confounds. Robust repeatability distances and local-level trajectories remain future work.
+
 ## 2026-09-23 - Feature selection strategy
 
 - **Question:** Should the initial feature list represent prior beliefs about relevance?

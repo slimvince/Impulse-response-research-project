@@ -24,8 +24,8 @@ manifest.json
 - `audio.py`: PCM WAV decoding, channel reduction, frame extraction, and source hashing.
 - `features.py`: frame-level numerical measurements and reference f0 estimation.
 - `events.py`: threshold-based active-region detection and event descriptors.
-- `corpus.py`: manifest loading, unified recording traversal, aggregation, and descriptive comparisons.
-- `report.py`: provenance and machine/human-readable output.
+- `corpus.py`: manifest loading, unified recording traversal, recording/source-group aggregation, quality diagnostics, and descriptive comparisons.
+- `report.py`: provenance and machine/human-readable output, including recording summaries and manifest/configuration hashes.
 - `cli.py`: command-line entry point.
 
 ## Ownership boundaries

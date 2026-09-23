@@ -30,10 +30,10 @@
 2. Add tests for silence, multichannel input, 24-bit PCM, invalid f0, and deterministic repeated runs.
 3. Continue the broad feature bank only where a concrete, testable descriptor remains justified; the current spectral-shape, band-ratio, crest-factor, f0-relative harmonic, peak/bandwidth, envelope, f0-confidence, harmonic-to-residual, and inharmonicity descriptors are implemented.
 4. Add feature definitions and validity metadata to a versioned feature configuration.
-5. Add paired-recording metadata and a distribution-level repeatability baseline for recordings expected to match without requiring matched musical content; use the current bass A/bass B candidates first and support later takes and source groups without changing prior experiment identities.
+5. Add paired-recording metadata and a distribution-level repeatability baseline for recordings expected to match without requiring matched musical content; recording/source-group summaries and missing counts are now implemented, with the current bass A/bass B candidates as the first input.
 6. Add recording/event-level aggregation before any inferential statistics.
 7. Add pitch/register and observed-local-level summaries without assuming absolute level calibration.
-8. Add explicit confound tables and missing-metadata warnings.
+8. Add explicit confound tables and missing-metadata warnings; file quality diagnostics and per-feature missing counts are now implemented.
 9. Compare selected reference algorithms with SciPy/librosa backends without changing the canonical schema silently.
 10. Analyze a pilot corpus and update hypotheses based on measured results.
 

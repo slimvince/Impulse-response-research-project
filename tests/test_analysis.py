@@ -70,11 +70,21 @@ def test_manifest_pipeline_and_json_outputs(tmp_path):
     wav_path = tmp_path / "tone.wav"
     _write_wav(wav_path, samples, sample_rate)
     manifest = tmp_path / "manifest.json"
-    manifest.write_text(json.dumps({"recordings": [{"recording_id": "tone", "domain": "slb_di", "split": "development", "path": str(wav_path)}]}), encoding="utf-8")
+    manifest.write_text(json.dumps({"recordings": [{"recording_id": "tone", "domain": "slb_di", "split": "development", "path": str(wav_path), "metadata": {"source_group": "test_group"}}]}), encoding="utf-8")
     result = analyze_manifest(manifest, frame_size=1024, hop_size=512)
     assert result["metadata"][0]["sha256"]
+    assert result["metadata"][0]["sample_width_bytes"] == 2
+    assert result["metadata"][0]["quality"]["silence_fraction"] < 1
     assert result["frames"]
     output = tmp_path / "results"
-    write_outputs(result, summarize(result), output)
+    summary = summarize(result)
+    assert "tone" in summary["by_recording"]
+    assert summary["by_recording"]["tone"]["source_group"] == "test_group"
+    assert summary["by_recording"]["tone"]["features"]["f0_hz"]["missing"] == 0
+    assert "test_group" in summary["by_source_group"]
+    write_outputs(result, summary, output)
+    metadata_output = json.loads((output / "metadata.json").read_text(encoding="utf-8"))
+    assert metadata_output["provenance"]["manifest_sha256"]
+    assert metadata_output["provenance"]["configuration_sha256"]
     json.loads((output / "frames.json").read_text(encoding="utf-8"))
     assert (output / "report.md").exists()
