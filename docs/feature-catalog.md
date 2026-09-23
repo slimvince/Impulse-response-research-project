@@ -15,12 +15,19 @@ This catalog distinguishes **implemented exploratory measurements** from planned
 |---|---|---|---|---|---|---|
 | LVL-RMS | frame | Root-mean-square amplitude | dB | implemented | level/control | gain and calibration |
 | LVL-PEAK | frame | Maximum absolute sample amplitude | dB | implemented | level/control | transient sensitivity |
+| LVL-CREST | frame | Peak-to-RMS crest factor | dB | implemented | dynamics descriptor | transient and level sensitivity |
 | PIT-F0-AUTOCORR | frame | Autocorrelation lag estimate | Hz | implemented | pitch/register control | octave errors, noisy frames |
 | SPEC-CENTROID | frame | Power-weighted frequency mean | Hz | implemented | candidate descriptor | level/noise/window sensitivity |
+| SPEC-SPREAD | frame | Power-weighted frequency spread | Hz | implemented | candidate descriptor | window and bandwidth sensitivity |
+| SPEC-SKEW/KURT | frame | Spectral skewness and kurtosis | relative | implemented | candidate descriptor | sparse-spectrum sensitivity |
+| SPEC-SLOPE | frame | Linear slope of power in dB versus frequency | dB/Hz | implemented | candidate descriptor | frequency range and noise sensitivity |
+| SPEC-FLATNESS | frame | Geometric-to-arithmetic spectral power ratio | dB | implemented | candidate descriptor | noise floor and zero bins |
 | SPEC-ROLLOFF85 | frame | Frequency below 85% cumulative power | Hz | implemented | candidate descriptor | threshold/window sensitivity |
 | SPEC-FLUX | frame | Frame-to-frame magnitude change | relative | implemented | attack/evolution descriptor | normalization and hop dependence |
 | HARM-PROXY | frame | Largest non-DC bin relative to total power | dB | implemented | exploratory proxy | not a true harmonicity measure |
+| HARM-AMPLITUDES | frame | Magnitude near first five f0 harmonics | dB | implemented | exploratory descriptor | f0 errors and bin resolution |
 | BAND-* | frame | Broad frequency-band power | dB | implemented | exploratory descriptor | band definitions and sample rate |
+| BAND-RATIOS | frame | Ratios between broad band energies | dB | implemented | exploratory descriptor | low-energy denominator and level interpretation |
 | EVT-START/END | event | Threshold active-region boundaries | s | implemented | segmentation | threshold and noise floor |
 | EVT-DURATION | event | Event end minus start | s | implemented | temporal descriptor | segmentation |
 | EVT-PEAK | event | Peak time and level | s/dB | implemented | temporal descriptor | transient and threshold behavior |

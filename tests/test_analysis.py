@@ -36,6 +36,13 @@ def test_f0_and_spectral_features_are_consistent_for_synthetic_tone():
     rows = analyze_frames(samples, sample_rate, frame_size=4096, hop_size=2048)
     assert rows[1]["spectral_centroid_hz"] > 80
     assert rows[1]["band_80_200_db"] > rows[1]["band_500_2000_db"]
+    assert rows[1]["spectral_spread_hz"] > 0
+    assert np.isfinite(rows[1]["spectral_skewness"])
+    assert np.isfinite(rows[1]["spectral_kurtosis"])
+    assert np.isfinite(rows[1]["spectral_slope_db_per_hz"])
+    assert np.isfinite(rows[1]["band_200_500_to_80_200_db"])
+    assert np.isfinite(rows[1]["crest_factor_db"])
+    assert np.isfinite(rows[1]["harmonic_1_db"])
 
 
 def test_event_detection_finds_active_region():

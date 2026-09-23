@@ -26,6 +26,15 @@
 - **Boundary:** A descriptor’s availability does not establish scientific relevance. Candidates must remain labeled exploratory and be evaluated for definition, validity, parameter sensitivity, redundancy, confounding, and recording-level repeatability before transformation use.
 - **Next action:** Expand the feature bank in versioned, testable increments and record the library, version, license, algorithm, and limitations for each candidate.
 
+## 2026-09-23 - Initial broad feature-bank increment
+
+- **Question:** Which additional characteristics can be added immediately from the existing FFT frame representation?
+- **Implemented:** Added spectral spread, skewness, kurtosis, slope, flatness, crest factor, broad-band ratios, and magnitudes near the first five f0-relative harmonics. Feature schema version advanced to `0.2`.
+- **Evidence:** Synthetic analysis tests pass with finite values for the new descriptors.
+- **Interpretation:** The pipeline now exposes a broader exploratory bank without changing the manifest, audio, event, or reporting interfaces.
+- **Limitation:** These descriptors are exploratory; no relevance, repeatability, or transformation value has been established. Envelope trajectories, harmonic-to-noise estimators, inharmonicity, and richer temporal features remain future increments.
+- **Next action:** Run the expanded bank on the four acoustic files, inspect missing values and parameter sensitivity, then add further candidates in tested increments.
+
 ## 2026-09-23 - Dependency strategy
 
 - **Question:** Should one or many open-source audio libraries be used?
