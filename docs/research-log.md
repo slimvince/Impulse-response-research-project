@@ -5,10 +5,10 @@
 - **Question:** What should be built before attempting IR optimization?
 - **Decision:** Establish a unified corpus-characterization pipeline first.
 - **Implemented:** Python package for WAV metadata, framing, initial features, event detection, manifest analysis, summaries, and reports.
-- **Evidence:** Source diagnostics were clean. Synthetic pytest tests were written but not successfully executed because the local terminal approval gate and Python interpreter configuration were unavailable.
-- **Interpretation:** The code is a scaffold, not a validated analysis result.
-- **Confidence:** High for the architectural direction; low for the scientific usefulness of any current descriptor.
-- **Next action:** Configure Python, run tests, then add real licensed pilot recordings.
+- **Evidence:** Source diagnostics were clean. Runtime validation was completed later: the full suite passed with 4 tests, and a synthetic WAV passed through the CLI.
+- **Interpretation:** The code is a validated reference scaffold, not a validated scientific result.
+- **Confidence:** High for the architectural direction and basic execution path; low for the scientific usefulness of any current descriptor.
+- **Next action:** Add real licensed pilot recordings and run E001.
 
 ## 2026-09-23 - Feature selection strategy
 
@@ -49,3 +49,19 @@
 - **Implementation:** Added `docs/corpus-protocol.md` and `experiments/_template/` with README, manifest, and configuration files.
 - **Rationale:** This makes provenance, licensing, split policy, parameters, and interpretation requirements explicit before evidence accumulates.
 - **Next action:** Use the template for the first licensed pilot-corpus experiment.
+
+## 2026-09-23 - Initial runtime validation
+
+- **Question:** Does the reference package execute its tested analysis path and CLI output path?
+- **Evidence:** `python -m pytest -q` passed with `4 passed`. A disposable synthetic 80 Hz mono WAV was analyzed through the manifest-driven CLI and produced `metadata.json`, `frames.json`, `events.json`, `summary.json`, and `report.md`. Temporary files were removed.
+- **Interpretation:** The Phase 1 reference pipeline is executable for the synthetic coverage currently tested.
+- **Limitations:** This validates implementation behavior on synthetic material only. It does not establish that any feature discriminates SLB DI from acoustic microphone recordings.
+- **Next action:** Run E001 with a small licensed pilot corpus and record its manifest, configuration, provenance, results, and interpretation.
+
+## 2026-09-23 - Documentation handoff audit
+
+- **Question:** Is the repository sufficient to preserve project knowledge across LLM sessions?
+- **Audit result:** The core architecture was complete, but the handoff needed an explicit new-session protocol, a distinction between the last clean validated commit and later uncommitted edits, immutable manifest/configuration hashes for experiments, and removal of stale completed work from the implementation plan.
+- **Correction:** Added those requirements and template fields. Corrected an inconsistent aubio licensing description in `decisions.md`.
+- **Remaining limitation:** The current repository records synthetic validation and design knowledge, but no real corpus findings exist yet.
+- **Next action:** Commit these documentation corrections, then begin E001 only after licensed pilot recordings are registered.

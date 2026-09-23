@@ -10,9 +10,11 @@ Every experiment directory must contain:
 - `manifest.json`: exact recordings and development/held-out split;
 - `config.json`: analysis parameters and feature-bank version;
 - `results/`: generated machine-readable outputs and reports when appropriate;
-- provenance linking the Git commit, software versions, corpus hashes, and random seed.
+- provenance linking the Git commit, manifest hash, configuration hash, source/corpus hashes, software versions, and random seed.
 
 Do not overwrite an experiment directory. A changed question, manifest, configuration, or implementation creates a new experiment ID.
+
+The manifest and configuration must be frozen before execution. If either changes, create a new experiment ID rather than silently replacing the evidence.
 
 ## Status vocabulary
 
@@ -26,7 +28,7 @@ Do not overwrite an experiment directory. A changed question, manifest, configur
 
 | ID | Status | Question | Evidence | Related findings |
 |---|---|---|---|---|
-| E001 | planned | Validate the initial unified feature pipeline on a licensed pilot corpus. | No corpus available yet. | None |
+| E001 | planned | Validate the initial unified feature pipeline on a licensed pilot corpus. | Synthetic pipeline validation is complete; no real corpus is registered yet. | None |
 
 ## Interpretation rule
 

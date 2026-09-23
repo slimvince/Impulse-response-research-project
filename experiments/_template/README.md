@@ -6,6 +6,8 @@
 - Git commit:
 - Corpus catalogue/version:
 - Manifest:
+- Manifest SHA-256:
+- Configuration SHA-256:
 - Analysis/version:
 - Related requirements:
 - Related hypotheses:

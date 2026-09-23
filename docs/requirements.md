@@ -50,6 +50,14 @@ Numerical and audio-analysis components must have synthetic tests for known sign
 
 The repository must preserve requirements, architecture, feature definitions, decisions, hypotheses, chronological progress, findings, experiment evidence, external research, corpus state, and confounds separately enough that a new session can reconstruct the project without relying on chat history.
 
+### RQ-012: Session handoff verification
+
+The project context must tell a new session what to read, what state to report, what it may claim as validated, and how to behave when terminal access or source data is unavailable.
+
+### RQ-013: Immutable experiment identity
+
+Each experiment must identify the exact Git commit, manifest hash, configuration hash, source hashes, software versions, and random seed where applicable. Changing experimental inputs or parameters creates a new experiment identity.
+
 ## Research requirements
 
 ### RR-001: No premature optimizer

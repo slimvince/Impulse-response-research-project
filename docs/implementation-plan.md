@@ -12,26 +12,27 @@
 - JSON and Markdown outputs
 - Synthetic test definitions
 - Research documentation and licensing boundary
+- Full test suite: 4 passing tests
+- Synthetic WAV CLI smoke test with all five expected output files
+- Git initialization, commits, push, and clean synchronized worktree
 
 ### Immediate blockers
 
-- Configure a Python interpreter and install package dependencies.
-- Run pytest and the CLI against synthetic WAV files.
-- Initialize Git and create the first meaningful commit.
 - Obtain or record a small licensed pilot corpus.
+- Register the pilot recordings and freeze the first `E001` manifest.
+- Commit and push the current documentation handoff updates before starting a new session.
 
 ### Next implementation steps
 
 1. Make the Python environment reproducible with a locked or recorded dependency set.
-2. Execute and repair the existing synthetic tests.
-3. Add tests for silence, multichannel input, 24-bit PCM, invalid f0, and deterministic repeated runs.
-4. Expand the feature bank with spectral slope, envelope summaries, harmonic amplitudes, H1/H2, and phase labels.
-5. Add feature definitions and validity metadata to a versioned feature configuration.
-6. Add recording/event-level aggregation before any inferential statistics.
-7. Add pitch/register and loudness-conditioned summaries.
-8. Add explicit confound tables and missing-metadata warnings.
-9. Compare selected reference algorithms with SciPy/librosa backends without changing the canonical schema silently.
-10. Analyze a pilot corpus and update hypotheses based on measured results.
+2. Add tests for silence, multichannel input, 24-bit PCM, invalid f0, and deterministic repeated runs.
+3. Expand the feature bank with spectral slope, envelope summaries, harmonic amplitudes, H1/H2, and phase labels.
+4. Add feature definitions and validity metadata to a versioned feature configuration.
+5. Add recording/event-level aggregation before any inferential statistics.
+6. Add pitch/register and loudness-conditioned summaries.
+7. Add explicit confound tables and missing-metadata warnings.
+8. Compare selected reference algorithms with SciPy/librosa backends without changing the canonical schema silently.
+9. Analyze a pilot corpus and update hypotheses based on measured results.
 
 ### Later research stages
 
