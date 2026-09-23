@@ -29,7 +29,7 @@
 
 1. Make the Python environment reproducible with a locked or recorded dependency set.
 2. Add tests for silence, multichannel input, 24-bit PCM, invalid f0, and deterministic repeated runs.
-3. Expand the feature bank with spectral slope, envelope summaries, harmonic amplitudes, H1/H2, and phase labels.
+3. Expand the feature bank broadly with readily extractable spectral, envelope, harmonic, periodicity, temporal, and dynamics descriptors.
 4. Add feature definitions and validity metadata to a versioned feature configuration.
 5. Add paired-recording metadata and a distribution-level repeatability baseline for recordings expected to match without requiring matched musical content; use the current bass A/bass B candidates first and support later takes and source groups without changing prior experiment identities.
 6. Add recording/event-level aggregation before any inferential statistics.

@@ -20,6 +20,18 @@ Use `accepted`, `rejected`, `deferred`, or `superseded`. Rejected and superseded
 
 **Rationale:** It is mature, widely deployed, testable, and avoids implementing FFT/STFT primitives. The initial project does not need a large audio framework.
 
+## 2026-09-23: Broad open-source candidate feature bank
+
+**Status:** accepted for Phase 1.
+
+**Decision:** Extract as many readily available characteristics as practical through open-source libraries and small tested reference implementations, then use corpus evidence to determine which characteristics matter for the use case.
+
+**Rationale:** Phase 1 is characterization and discovery. Restricting extraction to an early theory of relevance could omit useful signals. A broad candidate bank allows later evaluation of repeatability, redundancy, confound sensitivity, and relationship to the eventual transformation objective.
+
+**Boundary:** Extraction is not endorsement. Every descriptor remains exploratory until its definition, units, valid range, missing-value behavior, parameter sensitivity, synthetic behavior, and recording-level repeatability are documented. No feature enters an IR objective merely because an open-source library provides it.
+
+**Implementation direction:** Prefer mature open-source primitives, isolate optional backends, record exact versions and licenses, preserve the canonical schema, and compare candidate features against the uncertainty model before selecting targets.
+
 ## 2026-09-23: Standard-library PCM WAV reader initially
 
 **Decision:** Use Python's `wave` module for PCM WAV input in the reference tool.

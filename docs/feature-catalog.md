@@ -30,7 +30,7 @@ This catalog distinguishes **implemented exploratory measurements** from planned
 
 ## Candidate expansion
 
-These should be added because they address explicit research questions and are reasonably testable, not merely because a library exposes them.
+These should be added when they are readily available through an open-source library or modest reference implementation and can be defined and tested reproducibly. Availability makes a descriptor eligible for the exploratory bank; it does not establish relevance or justify using it as an optimization target.
 
 ### Spectrum and envelope
 

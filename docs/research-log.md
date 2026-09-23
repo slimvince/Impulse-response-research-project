@@ -18,6 +18,14 @@
 - **Risks:** Multiple comparisons, redundant features, pitch and level confounds, and recording-chain effects.
 - **Next action:** Maintain feature IDs and evaluate repeatability, conditional differences, redundancy, and confound sensitivity.
 
+## 2026-09-23 - Broad open-source characteristic extraction
+
+- **Question:** Should the project extract only characteristics already believed to matter?
+- **Decision:** Extract as many characteristics as are practical through open-source libraries and tested reference code, then evaluate which ones matter for the use case.
+- **Rationale:** The current phase is exploratory corpus characterization. Broad measurement reduces the risk of prematurely excluding useful descriptors.
+- **Boundary:** A descriptor’s availability does not establish scientific relevance. Candidates must remain labeled exploratory and be evaluated for definition, validity, parameter sensitivity, redundancy, confounding, and recording-level repeatability before transformation use.
+- **Next action:** Expand the feature bank in versioned, testable increments and record the library, version, license, algorithm, and limitations for each candidate.
+
 ## 2026-09-23 - Dependency strategy
 
 - **Question:** Should one or many open-source audio libraries be used?
