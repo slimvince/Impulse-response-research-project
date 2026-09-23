@@ -30,7 +30,7 @@
 2. Add tests for silence, multichannel input, 24-bit PCM, invalid f0, and deterministic repeated runs.
 3. Expand the feature bank with spectral slope, envelope summaries, harmonic amplitudes, H1/H2, and phase labels.
 4. Add feature definitions and validity metadata to a versioned feature configuration.
-5. Add paired-recording metadata and a repeatability baseline for recordings expected to match; use the current bass A/bass B candidates as the first input when metadata is complete.
+5. Add paired-recording metadata and a distribution-level repeatability baseline for recordings expected to match without requiring matched musical content; use the current bass A/bass B candidates as the first input when metadata is complete.
 6. Add recording/event-level aggregation before any inferential statistics.
 7. Add pitch/register and loudness-conditioned summaries.
 8. Add explicit confound tables and missing-metadata warnings.

@@ -42,7 +42,7 @@ Use `accepted`, `rejected`, `deferred`, or `superseded`. Rejected and superseded
 
 **Boundary:** A residual is a noise floor or uncertainty estimate until it is replicated and its source is understood. It is not evidence of an instrument characteristic and must not be fit directly as an IR.
 
-**Implementation direction:** Record comparison-group and setup metadata, align corresponding frames or events, report feature-level repeatability distributions, and use held-out takes to test whether candidate differences generalize.
+**Implementation direction:** Record comparison-group and setup metadata, compare distributions and recording-level summaries across unmatched material, condition or weight by pitch/register and loudness where metadata allows, and use held-out takes to test whether candidate differences generalize. Exact event matching is not required for the primary workflow.
 
 ## Ecosystem recommendation
 
