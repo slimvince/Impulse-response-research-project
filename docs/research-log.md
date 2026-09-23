@@ -74,6 +74,16 @@
 - **Decision:** Preserve original-level outputs, add observed local-level summaries, and label any normalized analysis as derived sensitivity analysis rather than level matching.
 - **Limitation:** No calibration reference or reliable absolute level trajectory is currently available for the four acoustic files.
 
+## 2026-09-23 - Planned acoustic corpus expansion
+
+- **Question:** How should later recordings change the repeatability analysis?
+- **Observation:** More recordings of bass A and bass B will become available, and other acoustic basses may be added later.
+- **Finding:** The current four files are an initial candidate sample, not enough to represent the final within-source or across-source variation.
+- **Interpretation:** Additional takes improve uncertainty estimates within bass/player groups. New basses should be separate source groups so between-instrument variation is not mistaken for within-source noise.
+- **Hypothesis:** Features that remain stable across multiple takes within several source groups are stronger candidates for general acoustic characteristics than features stable only within one pair.
+- **Decision:** Keep source-group identity immutable, append later takes as new recordings, and evaluate within-group repeatability separately from between-group differences.
+- **Limitation:** The future recordings and their capture metadata are not yet available.
+
 ## 2026-09-23 - Durable research-memory layers
 
 - **Question:** What must persist beyond chronological chat and implementation history?

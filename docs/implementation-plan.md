@@ -20,6 +20,7 @@
 
 - Obtain or record a small licensed pilot corpus.
 - Confirm permission and complete capture metadata for the four external acoustic candidate recordings.
+- Add later bass A and bass B recordings to their existing source groups, and register other acoustic basses as separate source groups.
 - Implement within-group repeatability summaries for the bass A and bass B pairs before freezing the first `E001` manifest.
 - Register approved pilot recordings and freeze the first `E001` manifest.
 - Commit and push the current documentation handoff updates before starting a new session.
@@ -30,7 +31,7 @@
 2. Add tests for silence, multichannel input, 24-bit PCM, invalid f0, and deterministic repeated runs.
 3. Expand the feature bank with spectral slope, envelope summaries, harmonic amplitudes, H1/H2, and phase labels.
 4. Add feature definitions and validity metadata to a versioned feature configuration.
-5. Add paired-recording metadata and a distribution-level repeatability baseline for recordings expected to match without requiring matched musical content; use the current bass A/bass B candidates as the first input when metadata is complete.
+5. Add paired-recording metadata and a distribution-level repeatability baseline for recordings expected to match without requiring matched musical content; use the current bass A/bass B candidates first and support later takes and source groups without changing prior experiment identities.
 6. Add recording/event-level aggregation before any inferential statistics.
 7. Add pitch/register and observed-local-level summaries without assuming absolute level calibration.
 8. Add explicit confound tables and missing-metadata warnings.

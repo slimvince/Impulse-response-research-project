@@ -54,6 +54,16 @@ Use `accepted`, `rejected`, `deferred`, or `superseded`. Rejected and superseded
 
 **Implementation direction:** Capture frame-level level trajectories, use explicitly labeled local-relative or derived normalized views only for sensitivity analysis, and report whether conclusions survive reasonable level handling choices.
 
+## 2026-09-23: Expand repeatability across takes and acoustic sources
+
+**Status:** accepted for Phase 1.
+
+**Decision:** Treat future recordings of bass A and bass B as additional takes within their existing source groups, and treat other acoustic basses as new source groups.
+
+**Rationale:** More takes improve estimates of within-source variation. Additional basses and players are needed to test whether a characteristic generalizes beyond the initial sources. Pooling all acoustic recordings into one group would confound within-source repeatability with between-instrument variation.
+
+**Implementation direction:** Preserve stable source-group identifiers, record each file as a new immutable recording entry, and analyze within-group repeatability separately from between-group variation.
+
 ## Ecosystem recommendation
 
 Use NumPy now; evaluate SciPy for filters, signal processing, and statistical distributions when those needs arise. Consider Essentia for a broad C++/Python feature catalog if the project later needs its specialized descriptors, but its AGPL-3.0 license is a material constraint for proprietary distribution. aubio is a focused onset/pitch option, but its GPL licensing is a material constraint for proprietary distribution and it should be introduced only if its pitch/onset behavior demonstrably improves the corpus. libsndfile/libsndfile-derived bindings are candidates when WAV/AIFF/CAF and broader PCM/float coverage is needed. Timbre Toolbox is valuable as research literature/software context, but its MATLAB-oriented workflow and distribution/dependency model make it unsuitable as the core production dependency here.

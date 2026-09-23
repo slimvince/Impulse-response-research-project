@@ -31,6 +31,10 @@ Permission basis: user-confirmed free-to-use audio, recorded in the external man
 
 The `C:\IR audio\slb200` directory is currently empty; no SLB-200 recordings are registered.
 
+### Planned corpus expansion
+
+Additional recordings of bass A and bass B are expected and should be added as new takes under their existing source groups. Additional acoustic basses should receive new stable source-group identifiers rather than being merged into bass A or bass B. More takes improve within-source uncertainty estimates; new basses test whether observed characteristics generalize beyond the initial instruments and players.
+
 ## Planned domains
 
 ### SLB-200 DI
