@@ -44,6 +44,8 @@ Use `accepted`, `rejected`, `deferred`, or `superseded`. Rejected and superseded
 
 **Implementation direction:** Record comparison-group and setup metadata, compare distributions and recording-level summaries across unmatched material, retain original-level results, and condition or weight by pitch/register and observed local level only where the data supports it. Any normalized view must be explicitly derived and must not be treated as recovery of unknown or drifting absolute level. Use held-out takes to test whether candidate differences generalize. Exact event matching is not required for the primary workflow.
 
+Event counts are retained for segmentation diagnostics only. They are not assumed to correlate between files and are not used as evidence that files or sources are similar or dissimilar.
+
 ## 2026-09-23: Preserve unknown and time-varying recording level
 
 **Status:** accepted for Phase 1.

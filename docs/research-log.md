@@ -64,6 +64,12 @@
 - **Decision:** Do not use these raw whole-file differences as IR targets. Implement grouped distributional and recording-level repeatability summaries without requiring matched events, with conditioning or weighting by loudness and pitch when available.
 - **Limitations:** The current run pooled all frames by domain and did not condition on loudness or pitch; unmatched content is an intentional design constraint rather than a missing prerequisite. Event counts were unequal (9, 20, 49, and 27), and no SLB-200 comparison is possible until SLB recordings exist.
 
+## 2026-09-23 - Event counts are file-specific diagnostics
+
+- **Observation:** Threshold segmentation produced different event counts for different recordings, and those counts are not expected to correlate across files because musical content and active-region structure vary by file.
+- **Finding:** Event count is not a cross-file similarity measure and is not suitable as part of the repeatability noise floor.
+- **Decision:** Retain event counts to diagnose segmentation and describe within-file event-derived measurements, but base cross-file comparisons on frame distributions and recording-level summaries.
+
 ## 2026-09-23 - Unknown and time-varying recording level
 
 - **Question:** Can file-level gain normalization solve the recording-level confound?

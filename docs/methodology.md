@@ -10,7 +10,7 @@ Frame-level output currently includes RMS and peak level in dB, autocorrelation-
 
 ## Systematic-difference analysis
 
-The current report computes descriptive per-domain means, standard deviations, and standardized differences. It labels these as descriptive only. Future analysis should aggregate at recording/event level, stratify or model pitch/register and dynamics, and evaluate source-domain interactions with temporal phase and articulation. Held-out splits must be fixed in manifests before any optimization work.
+The current report computes descriptive per-domain means, standard deviations, and standardized differences. It labels these as descriptive only. Future analysis should aggregate at recording level and use event-derived measurements as within-file descriptors; detected event counts are file-specific segmentation diagnostics and are not expected to correlate across recordings or serve as similarity measures. Comparisons should stratify or model pitch/register and dynamics where supported, and evaluate source-domain interactions with temporal phase and articulation. Held-out splits must be fixed in manifests before any optimization work.
 
 Potential confounds must be recorded rather than inferred away: unknown and time-varying recording level, microphone and placement, room, player, instrument, chain, and segmentation quality. A difference is strong only when it repeats across recordings and remains after conditioning that is actually supported by metadata. Global gain normalization cannot reconstruct an unknown or drifting recording level. Small or unbalanced corpora should produce an unresolved result, not a significance claim.
 
