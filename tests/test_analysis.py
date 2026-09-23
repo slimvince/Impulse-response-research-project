@@ -44,7 +44,8 @@ def test_event_detection_finds_active_region():
     samples[1000:4000] = 0.5 * np.sin(2 * np.pi * 80 * np.arange(3000) / sample_rate)
     events = detect_events(samples, sample_rate, frame_size=256, hop_size=128, threshold_db=-35)
     assert len(events) == 1
-    assert 0.1 < events[0]["start_s"] < 0.2
+    # Frame-based detection can begin up to one frame before the first active sample.
+    assert 0.08 < events[0]["start_s"] < 0.2
     assert events[0]["duration_s"] > 0.3
 
 
