@@ -32,6 +32,18 @@ Use `accepted`, `rejected`, `deferred`, or `superseded`. Rejected and superseded
 
 **Rationale:** Frame-level observations are correlated and an initial corpus may be small. Hierarchical or mixed-effects models should follow only when recording-level replication and confound metadata exist.
 
+## 2026-09-23: Establish a repeatability baseline before IR targeting
+
+**Status:** accepted for Phase 1.
+
+**Decision:** Add paired or grouped recordings expected to match as a repeatability analysis before selecting domain differences as IR targets.
+
+**Rationale:** Residual differences between nominally equivalent recordings quantify player, take, setup, recording-chain, and analysis variation. A domain difference should be considered a candidate target only when it is larger than relevant within-condition variation and remains stable across recordings.
+
+**Boundary:** A residual is a noise floor or uncertainty estimate until it is replicated and its source is understood. It is not evidence of an instrument characteristic and must not be fit directly as an IR.
+
+**Implementation direction:** Record comparison-group and setup metadata, align corresponding frames or events, report feature-level repeatability distributions, and use held-out takes to test whether candidate differences generalize.
+
 ## Ecosystem recommendation
 
 Use NumPy now; evaluate SciPy for filters, signal processing, and statistical distributions when those needs arise. Consider Essentia for a broad C++/Python feature catalog if the project later needs its specialized descriptors, but its AGPL-3.0 license is a material constraint for proprietary distribution. aubio is a focused onset/pitch option, but its GPL licensing is a material constraint for proprietary distribution and it should be introduced only if its pitch/onset behavior demonstrably improves the corpus. libsndfile/libsndfile-derived bindings are candidates when WAV/AIFF/CAF and broader PCM/float coverage is needed. Timbre Toolbox is valuable as research literature/software context, but its MATLAB-oriented workflow and distribution/dependency model make it unsuitable as the core production dependency here.

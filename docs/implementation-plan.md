@@ -28,11 +28,12 @@
 2. Add tests for silence, multichannel input, 24-bit PCM, invalid f0, and deterministic repeated runs.
 3. Expand the feature bank with spectral slope, envelope summaries, harmonic amplitudes, H1/H2, and phase labels.
 4. Add feature definitions and validity metadata to a versioned feature configuration.
-5. Add recording/event-level aggregation before any inferential statistics.
-6. Add pitch/register and loudness-conditioned summaries.
-7. Add explicit confound tables and missing-metadata warnings.
-8. Compare selected reference algorithms with SciPy/librosa backends without changing the canonical schema silently.
-9. Analyze a pilot corpus and update hypotheses based on measured results.
+5. Add paired-recording metadata and a repeatability baseline for recordings expected to match.
+6. Add recording/event-level aggregation before any inferential statistics.
+7. Add pitch/register and loudness-conditioned summaries.
+8. Add explicit confound tables and missing-metadata warnings.
+9. Compare selected reference algorithms with SciPy/librosa backends without changing the canonical schema silently.
+10. Analyze a pilot corpus and update hypotheses based on measured results.
 
 ### Later research stages
 
@@ -51,6 +52,7 @@ Phase 1 is not complete when a large CSV exists. It is complete when:
 - candidate features have synthetic tests and documented limitations;
 - events and temporal phases can be inspected;
 - comparisons are recording-level and conditionable;
+- repeatability variation is quantified before domain differences are selected as transformation targets;
 - reports distinguish observation from interpretation and confound;
 - held-out evaluation can be performed without corpus leakage;
 - the corpus is large enough to support qualified conclusions.

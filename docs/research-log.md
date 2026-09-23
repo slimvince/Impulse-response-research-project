@@ -33,6 +33,16 @@
 - Which features remain stable under gain normalization and reasonable parameter changes?
 - Is a static linear transform adequate? This remains unresolved.
 
+## 2026-09-23 - Repeatability baseline for transformation targets
+
+- **Question:** Can differences between recordings that should theoretically match improve later IR evaluation?
+- **Observation:** Nominally equivalent recordings can still differ because of take variation, player technique, gain, setup, room, recording chain, event alignment, and feature sensitivity.
+- **Finding:** No empirical finding has been established yet; the immediate value is methodological. These residuals can define a within-condition repeatability floor against which SLB-to-acoustic differences are judged.
+- **Interpretation:** A feature difference is a plausible transformation target only when it exceeds relevant repeatability variation, is stable across recordings, and is consistent with an approximately linear and time-invariant effect.
+- **Hypothesis:** Features with large between-domain variation relative to within-condition variation will be more useful and generalizable IR targets than features with large raw differences but poor repeatability.
+- **Decision:** Add paired-recording metadata, event/frame alignment, recording-level repeatability summaries, and held-out repeatability checks before IR target selection.
+- **Limitation:** This workflow has been documented but not implemented or tested on real recordings. Residual differences must not be treated as causal instrument characteristics.
+
 ## 2026-09-23 - Durable research-memory layers
 
 - **Question:** What must persist beyond chronological chat and implementation history?
