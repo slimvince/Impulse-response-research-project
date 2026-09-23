@@ -1,6 +1,6 @@
 # Audio Analysis Ecosystem Review
 
-This is an initial engineering review, not a substitute for checking exact versions before release.
+This is the concise current dependency recommendation. Source-by-source notes belong in [external-research.md](external-research.md); project choices belong in [decisions.md](decisions.md). This is an initial engineering review, not a substitute for checking exact versions before release.
 
 ## NumPy and SciPy
 

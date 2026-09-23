@@ -38,6 +38,16 @@ There are no real corpus recordings in the repository. The current feature bank 
 
 Treat measurements, interpretations, hypotheses, and implementation assumptions as different things. Preserve uncertainty. Do not optimize an IR against one recording or introduce a feature merely because a library provides it.
 
+## Reasoning chain
+
+Keep this chain explicit when turning discussion into project knowledge:
+
+```text
+Observation -> Finding -> Interpretation -> Hypothesis -> Decision
+```
+
+An observation is measured or directly documented. A finding is a replicated or qualified evidence statement. An interpretation explains a finding without pretending to be proven causation. A hypothesis is a proposed explanation or next research claim. A decision records what the project will do in response.
+
 ## Reading order for a new session
 
 1. This file: current state and constraints.
@@ -45,9 +55,14 @@ Treat measurements, interpretations, hypotheses, and implementation assumptions 
 3. `docs/architecture.md`: ownership boundaries and data flow.
 4. `docs/feature-catalog.md`: feature definitions and status.
 5. `docs/implementation-plan.md`: next work and blockers.
-6. `docs/decisions.md`, `docs/methodology.md`, and `docs/hypotheses.md`: rationale and research method.
-7. `docs/research-log.md`: dated progress and unresolved questions.
-8. `README.md`: setup and command reference.
+6. `docs/research-findings.md`: accumulated evidence and current knowledge.
+7. `docs/experiments.md`: experiment registry and evidence locations.
+8. `docs/corpus-protocol.md` and `docs/corpus.md`: how data must be captured and what data exists.
+9. `docs/confounds.md`: threats to interpretation.
+10. `docs/external-research.md` and `docs/ecosystem.md`: source ledger and current dependency summary.
+11. `docs/decisions.md`, `docs/methodology.md`, and `docs/hypotheses.md`: rationale and research method.
+12. `docs/research-log.md`: dated progress and unresolved questions.
+13. `README.md`: setup and command reference.
 
 ## Session continuation rule
 

@@ -1,10 +1,18 @@
 # Architectural Decisions
 
+## Decision status vocabulary
+
+Use `accepted`, `rejected`, `deferred`, or `superseded`. Rejected and superseded approaches remain documented so the project does not repeatedly rediscover them.
+
 ## 2026-09-23: Python reference pipeline first
+
+- Status: accepted for Phase 1; not a commitment to the eventual runtime language.
 
 **Decision:** Build a small Python reference implementation before a native C++ application.
 
 **Rationale:** The first milestone is research iteration and reproducibility, not real-time deployment. Python makes manifests, numerical experiments, synthetic tests, and report generation inexpensive. The analysis interfaces are kept modular so a later C++ implementation can replace individual components without changing the corpus contract.
+
+**Boundary:** The eventual studio, plugin, embedded, or real-time implementation may use C++, Rust, or another suitable language. Phase 1 Python code is the research/reference implementation.
 
 ## 2026-09-23: NumPy for numerical primitives
 

@@ -46,6 +46,10 @@ The architecture must support applying the same analysis to candidate-transforme
 
 Numerical and audio-analysis components must have synthetic tests for known signals and edge cases. The pipeline must have manifest and output-format tests.
 
+### RQ-011: Durable research memory
+
+The repository must preserve requirements, architecture, feature definitions, decisions, hypotheses, chronological progress, findings, experiment evidence, external research, corpus state, and confounds separately enough that a new session can reconstruct the project without relying on chat history.
+
 ## Research requirements
 
 ### RR-001: No premature optimizer

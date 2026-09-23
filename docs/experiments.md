@@ -1,0 +1,33 @@
+# Experiment Registry
+
+This file indexes experiments. The evidence itself belongs in versioned `experiments/E###/` directories. Start new experiments by copying `experiments/_template/`.
+
+## Experiment identity
+
+Every experiment directory must contain:
+
+- `README.md`: question, interpretation, limitations, and status;
+- `manifest.json`: exact recordings and development/held-out split;
+- `config.json`: analysis parameters and feature-bank version;
+- `results/`: generated machine-readable outputs and reports when appropriate;
+- provenance linking the Git commit, software versions, corpus hashes, and random seed.
+
+Do not overwrite an experiment directory. A changed question, manifest, configuration, or implementation creates a new experiment ID.
+
+## Status vocabulary
+
+- `planned`: definition exists, not run;
+- `running`: execution in progress;
+- `complete`: outputs and interpretation are recorded;
+- `blocked`: dependency or data blocker;
+- `superseded`: replaced by a later experiment while retained for history.
+
+## Experiment index
+
+| ID | Status | Question | Evidence | Related findings |
+|---|---|---|---|---|
+| E001 | planned | Validate the initial unified feature pipeline on a licensed pilot corpus. | No corpus available yet. | None |
+
+## Interpretation rule
+
+An experiment produces evidence. It does not by itself establish a general finding. Results should be summarized in `research-findings.md` only after considering recording-level replication, conditioning variables, and confounds.

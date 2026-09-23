@@ -32,3 +32,20 @@
 - What event segmentation accuracy is required for temporal conclusions?
 - Which features remain stable under gain normalization and reasonable parameter changes?
 - Is a static linear transform adequate? This remains unresolved.
+
+## 2026-09-23 - Durable research-memory layers
+
+- **Question:** What must persist beyond chronological chat and implementation history?
+- **Decision:** Separate accumulated findings, experiment evidence, external research, corpus state, and confounds from the existing requirements, architecture, decisions, hypotheses, and research log.
+- **Rationale:** A chronological log records activity, but it is not an efficient knowledge base for evidence that accumulates across experiments. A new session must be able to reconstruct both what happened and what is currently believed.
+- **Additional principle:** Preserve the chain `Observation -> Finding -> Interpretation -> Hypothesis -> Decision`.
+- **Implementation boundary:** Python remains the Phase 1 research/reference implementation, not a commitment to the eventual runtime language.
+- **Next action:** Commit the documentation layer, then create the first experiment directory when the pilot corpus is available.
+
+## 2026-09-23 - Corpus protocol and experiment template
+
+- **Question:** What structure is needed before real recordings and experiments arrive?
+- **Decision:** Keep the actual corpus catalogue separate from the capture/ingestion protocol, and require every experiment to start from a versioned template.
+- **Implementation:** Added `docs/corpus-protocol.md` and `experiments/_template/` with README, manifest, and configuration files.
+- **Rationale:** This makes provenance, licensing, split policy, parameters, and interpretation requirements explicit before evidence accumulates.
+- **Next action:** Use the template for the first licensed pilot-corpus experiment.

@@ -1,0 +1,10 @@
+{
+  "experiment_id": "E###",
+  "analysis_version": "0.1",
+  "feature_bank_version": "0.1",
+  "frame_size": 4096,
+  "hop_size": 1024,
+  "random_seed": null,
+  "parameters": {},
+  "notes": "Record every non-default analysis parameter here."
+}
