@@ -70,6 +70,14 @@
 - **Finding:** Event count is not a cross-file similarity measure and is not suitable as part of the repeatability noise floor.
 - **Decision:** Retain event counts to diagnose segmentation and describe within-file event-derived measurements, but base cross-file comparisons on frame distributions and recording-level summaries.
 
+## 2026-09-23 - Unmatched pitch and recording-level replication
+
+- **Question:** What does the lack of matched pitch/register and complete setup metadata imply for comparison confidence?
+- **Observation:** Pitch/register distributions will never be matched, setup metadata will remain incomplete, and each recording contributes many correlated frame rows.
+- **Finding:** Frame count cannot serve as replication count. The independent comparison units are recordings and, for broader generalization, source groups; frame distributions remain descriptive within those units.
+- **Interpretation:** Permanent unmatched pitch and incomplete setup information do not prevent extraction or descriptive comparison, but they prevent clean attribution of differences to the bass or recording domain.
+- **Decision:** Report these as standing limitations, avoid inferential claims based on frame-row counts, and summarize repeatability at recording and source-group level. Use available metadata for descriptive stratification only, never as an assumption that matching exists.
+
 ## 2026-09-23 - Unknown and time-varying recording level
 
 - **Question:** Can file-level gain normalization solve the recording-level confound?
