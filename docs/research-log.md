@@ -121,6 +121,14 @@
 - **Decision:** Preserve original-level outputs, add observed local-level summaries, and label any normalized analysis as derived sensitivity analysis rather than level matching.
 - **Limitation:** No calibration reference or reliable absolute level trajectory is currently available for the four acoustic files.
 
+## 2026-09-23 - Contextual metadata is mostly unknown
+
+- **Observation:** For the expected recordings, the player may be known, but bass identity, room, microphone, placement, recording chain, processing, strings, and take conditions may not be recoverable. Even tracks from the same album should not be assumed to share those conditions.
+- **Finding:** File-level metadata can be measured directly, but contextual metadata cannot be reconstructed reliably from filenames, album membership, or player identity.
+- **Interpretation:** The pipeline can still characterize recordings and compare distributions, but unknown setup and processing remain permanent confounds for attribution and IR generalization.
+- **Decision:** Record the player when known, preserve all other contextual fields as unknown unless documented, and treat metadata absence as part of the uncertainty model rather than fabricating controls.
+- **Limitation:** Historical recordings with unknown chain, room, microphone, bass, and processing cannot support clean causal claims about bass or instrument characteristics.
+
 ## 2026-09-23 - Planned acoustic corpus expansion
 
 - **Question:** How should later recordings change the repeatability analysis?

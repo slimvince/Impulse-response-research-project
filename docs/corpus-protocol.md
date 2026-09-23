@@ -6,9 +6,11 @@ This document specifies how recordings should be captured, labeled, checked, and
 
 Capture SLB-200 DI and acoustic double-bass microphone material that can be compared through the same analysis pipeline. Prefer controlled, repeated material while retaining enough natural variation to test generalization.
 
-## Required capture metadata
+## Capture metadata
 
-For every recording, record:
+The pipeline can always record file-level facts at ingestion, including source hash, sample rate, bit depth, channel count, duration, and format. Contextual metadata must be recorded only when reliably known. For the expected historical recordings, the player may be the only known contextual field; unknown values must remain unknown, not inferred from album or file context.
+
+When available, record:
 
 - stable recording ID;
 - domain: `slb_di` or `acoustic_mic`;
@@ -22,7 +24,7 @@ For every recording, record:
 - date, operator, and source/license status;
 - development or held-out split assignment.
 
-Unknown values must be recorded as unknown, not guessed.
+Unknown values must be recorded as unknown, not guessed. In particular, do not assume that tracks from the same album share bass, room, microphone, placement, recording chain, processing, strings, or take conditions.
 
 ## Capture protocol
 
@@ -43,7 +45,7 @@ A recording may enter the approved corpus only after:
 - the source hash is recorded;
 - clipping, silence, corruption, and unexpected channel layout are checked;
 - license or permission is documented;
-- metadata completeness is reviewed;
+- metadata completeness and unknown contextual fields are reviewed;
 - domain and split are assigned;
 - exclusions or quality concerns are recorded.
 
@@ -53,4 +55,4 @@ Assign development, validation, and held-out status using recording identity, pl
 
 ## Normalization policy
 
-Never replace the original. The absolute recording level may be unknown, and recording level may drift within a file; normalizing a file cannot recover either quantity. Any gain normalization must be a named derived view with explicit parameters and must not be described as level matching. Reports must retain original-level results and distinguish them from any relative-level or locally conditioned view because level itself may interact with the measured feature.
+Never replace the original. The absolute recording level may be unknown, and recording level may drift within a file; normalizing a file cannot recover either quantity. Any gain normalization must be a named derived view with explicit parameters and must not be described as level matching. Reports must retain original-level results and distinguish them from any relative-level or locally conditioned view because level itself may interact with the measured feature. Unknown microphone, room, chain, processing, and setup metadata remain confounds rather than reasons to invent a control.

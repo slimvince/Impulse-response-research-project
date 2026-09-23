@@ -16,7 +16,7 @@ No audio recordings are stored in the repository. Four external candidate record
 
 ### Candidate acoustic repeatability inputs
 
-The source-group labels below are user-provided. Recordings within each group are expected to be similar and are intended to estimate within-source noise and uncertainty. The two groups are different bass/player sources and are not treated as repeatability pairs with each other.
+The source-group labels below are user-provided. Recordings within each group are expected to be similar and are intended to estimate within-source noise and uncertainty. The player is the known contextual label; bass identity, room, microphone, placement, recording chain, processing, strings, and take conditions are unknown unless separately documented. The two groups are different bass/player sources and are not treated as repeatability pairs with each other.
 
 | Recording ID | External path | Source group | SHA-256 | Format | Duration | Status |
 |---|---|---|---|---|---:|---|

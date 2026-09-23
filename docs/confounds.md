@@ -4,13 +4,13 @@ A confound is a factor that can create an apparent domain difference without bei
 
 | ID | Confound | Initial severity | Why it matters | Control or diagnostic | Status |
 |---|---|---:|---|---|---|
-| C001 | Microphone frequency response | high | Can create spectral differences unrelated to the bass/source transformation. | Multiple microphones or calibrated/reference capture; retain model and placement metadata. | unresolved |
-| C002 | Room and room modes | high | Resonances and reflections alter the acoustic target. | Same room documentation, close/reference mic comparisons, room measurements where practical. | unresolved |
+| C001 | Microphone frequency response | high | Can create spectral differences unrelated to the bass/source transformation; historical recordings may not identify the microphone. | Treat microphone identity and placement as unknown unless documented; use repeated source groups and held-out recordings to estimate residual uncertainty. | unresolved |
+| C002 | Room and room modes | high | Resonances and reflections alter the acoustic target; historical recordings may not identify the room. | Treat room identity as unknown unless documented; report this as an irreducible confound for those recordings. | unresolved |
 | C003 | Microphone placement | high | Small position changes can alter low-frequency balance and attack. | Stable placement protocol and measured position metadata. | unresolved |
 | C004 | Recording level/gain | high | Absolute recording level is unknown and may vary within a file; level changes affect amplitude descriptors and nonlinear equipment behavior. | Preserve original levels; report level trajectories and treat any normalization as an explicitly labeled derived view, never as recovery of the original level. | unresolved |
 | C005 | Player technique | high | Pluck position, force, timing, and muting affect timbre and envelope. | Repeated players, controlled material, player metadata, recording-level replication. | unresolved |
 | C006 | Instrument construction/setup | high | Different basses and setups have different spectra and decays. | Multiple instruments or controlled reference instrument; instrument metadata. | unresolved |
-| C007 | Recording chain | medium/high | Preamps, converters, EQ, and DI loading may shape the signal. | Document chain and compare alternate chains where possible. | unresolved |
+| C007 | Recording chain | medium/high | Preamps, converters, EQ, and DI loading may shape the signal and may be undocumented. | Treat chain and processing as unknown unless documented; do not infer a shared chain from album or player identity. | unresolved |
 | C008 | Segmentation error | high | Incorrect event boundaries corrupt attack, sustain, and decay features. | Inspect event overlays, annotate a subset, compare segmenters. | unresolved |
 | C009 | Pitch/register imbalance | high | A domain imbalance in note distribution can mimic timbral differences. | Stratify or model pitch/register; record f0 confidence. | unresolved |
 | C010 | Dynamic-level imbalance | high | Playing level changes spectral and temporal behavior. | Match or condition on dynamics; record level calibration. | unresolved |
