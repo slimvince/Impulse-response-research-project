@@ -20,4 +20,4 @@ Potential confounds must be recorded rather than inferred away: unknown and time
 
 ## Reproducibility
 
-Manifests are explicit; original audio is not modified. Outputs retain source hashes, feature version, Python/platform information, UTC generation time, and Git commit when available. Experiment configuration and corpus split belong in version control; licensed audio remains outside the repository.
+Manifests are explicit; original audio is not modified or manually split for convenience. If long-file processing is later streamed in internal chunks, chunks must preserve frame/hop continuity, event context, and overlap behavior so results match whole-file processing. Outputs retain source hashes, feature version, Python/platform information, UTC generation time, and Git commit when available. Experiment configuration and corpus split belong in version control; licensed audio remains outside the repository.

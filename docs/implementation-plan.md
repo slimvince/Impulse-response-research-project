@@ -45,6 +45,7 @@
 - Freeze development and held-out corpus manifests.
 - Define a closed-loop transform evaluation protocol.
 - Only then investigate candidate FIR or other transformations.
+- If long recordings make memory a practical problem, add internal streaming without requiring manual source splitting; preserve source hashes, frame continuity, event context, and whole-file semantics.
 - Revisit broader audio-format support only if it becomes a concrete corpus blocker.
 
 ## Completion criteria for Phase 1

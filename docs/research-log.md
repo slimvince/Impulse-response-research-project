@@ -26,6 +26,12 @@
 - **Rationale:** Additional format dependencies would increase build and licensing surface without advancing the immediate repeatability or IR-evaluation objective.
 - **Boundary:** If conversion is needed, preserve the original file, record conversion parameters, and retain the original source hash. Revisit native format support only if the corpus makes it necessary.
 
+## 2026-09-23 - Preserve long source recordings
+
+- **Question:** Does reducing memory use require manually cutting long recordings into smaller files?
+- **Decision:** No. Preserve each original recording as one source; any future chunking is an internal streaming optimization only.
+- **Rationale:** Manual splitting can alter event context and boundaries, complicate provenance, and make whole-recording distributions harder to interpret. Internal chunks must preserve frame overlap, hop continuity, event context, and the original source hash.
+
 ## 2026-09-23 - Feature selection strategy
 
 - **Question:** Should the initial feature list represent prior beliefs about relevance?

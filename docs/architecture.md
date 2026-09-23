@@ -42,7 +42,7 @@ The report layer owns provenance, interpretation labels, limitations, and output
 
 ## Planned extension points
 
-- `AudioReader`: broader PCM/float/container support only if a future corpus requires it; WAV remains the Phase 1 input contract.
+- `AudioReader`: broader PCM/float/container support only if a future corpus requires it; WAV remains the Phase 1 input contract. Long source files remain intact; any future chunking is an internal streaming detail with overlap, continuity, and preserved source provenance.
 - `PitchEstimator`: reference autocorrelation plus optional SciPy/librosa/aubio backends for comparison.
 - `EventSegmenter`: threshold baseline, onset-based alternative, and reviewed annotations.
 - `FeatureExtractor`: broad candidate bank with explicit feature IDs and versions.
