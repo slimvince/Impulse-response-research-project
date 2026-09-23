@@ -30,7 +30,7 @@
 - Which features replicate across players, instruments, registers, and dynamics?
 - How much of the observed difference is microphone, room, or recording-chain response?
 - What event segmentation accuracy is required for temporal conclusions?
-- Which features remain stable under gain normalization and reasonable parameter changes?
+- Which features remain stable under explicitly labeled local-level sensitivity analyses and reasonable parameter changes?
 - Is a static linear transform adequate? This remains unresolved.
 
 ## 2026-09-23 - Repeatability baseline for transformation targets
@@ -63,6 +63,16 @@
 - **Hypothesis:** Distribution-level, level-conditioned comparisons may distinguish repeatable source characteristics from variation caused by unmatched musical content.
 - **Decision:** Do not use these raw whole-file differences as IR targets. Implement grouped distributional and recording-level repeatability summaries without requiring matched events, with conditioning or weighting by loudness and pitch when available.
 - **Limitations:** The current run pooled all frames by domain and did not condition on loudness or pitch; unmatched content is an intentional design constraint rather than a missing prerequisite. Event counts were unequal (9, 20, 49, and 27), and no SLB-200 comparison is possible until SLB recordings exist.
+
+## 2026-09-23 - Unknown and time-varying recording level
+
+- **Question:** Can file-level gain normalization solve the recording-level confound?
+- **Observation:** Absolute recording level is not known for the four files, and recording level may change over time within a file.
+- **Finding:** A global normalization can create a derived common reference level but cannot recover the original recording level or its time variation.
+- **Interpretation:** Original-level measurements must remain primary. Level-dependent feature differences may reflect gain, playing dynamics, recording-chain behavior, or source characteristics, and cannot be separated by normalization alone.
+- **Hypothesis:** Features and comparisons that remain stable across observed local-level ranges will be more useful than those whose apparent differences depend strongly on an arbitrary gain choice.
+- **Decision:** Preserve original-level outputs, add observed local-level summaries, and label any normalized analysis as derived sensitivity analysis rather than level matching.
+- **Limitation:** No calibration reference or reliable absolute level trajectory is currently available for the four acoustic files.
 
 ## 2026-09-23 - Durable research-memory layers
 

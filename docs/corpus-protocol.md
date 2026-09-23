@@ -53,4 +53,4 @@ Assign development, validation, and held-out status using recording identity, pl
 
 ## Normalization policy
 
-Never replace the original. Any gain normalization must be a named derived view with explicit parameters. Reports should distinguish level-matched comparisons from original-level comparisons because level itself may interact with the measured feature.
+Never replace the original. The absolute recording level may be unknown, and recording level may drift within a file; normalizing a file cannot recover either quantity. Any gain normalization must be a named derived view with explicit parameters and must not be described as level matching. Reports must retain original-level results and distinguish them from any relative-level or locally conditioned view because level itself may interact with the measured feature.

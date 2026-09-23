@@ -32,7 +32,7 @@
 4. Add feature definitions and validity metadata to a versioned feature configuration.
 5. Add paired-recording metadata and a distribution-level repeatability baseline for recordings expected to match without requiring matched musical content; use the current bass A/bass B candidates as the first input when metadata is complete.
 6. Add recording/event-level aggregation before any inferential statistics.
-7. Add pitch/register and loudness-conditioned summaries.
+7. Add pitch/register and observed-local-level summaries without assuming absolute level calibration.
 8. Add explicit confound tables and missing-metadata warnings.
 9. Compare selected reference algorithms with SciPy/librosa backends without changing the canonical schema silently.
 10. Analyze a pilot corpus and update hypotheses based on measured results.

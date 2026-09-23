@@ -42,7 +42,17 @@ Use `accepted`, `rejected`, `deferred`, or `superseded`. Rejected and superseded
 
 **Boundary:** A residual is a noise floor or uncertainty estimate until it is replicated and its source is understood. It is not evidence of an instrument characteristic and must not be fit directly as an IR.
 
-**Implementation direction:** Record comparison-group and setup metadata, compare distributions and recording-level summaries across unmatched material, condition or weight by pitch/register and loudness where metadata allows, and use held-out takes to test whether candidate differences generalize. Exact event matching is not required for the primary workflow.
+**Implementation direction:** Record comparison-group and setup metadata, compare distributions and recording-level summaries across unmatched material, retain original-level results, and condition or weight by pitch/register and observed local level only where the data supports it. Any normalized view must be explicitly derived and must not be treated as recovery of unknown or drifting absolute level. Use held-out takes to test whether candidate differences generalize. Exact event matching is not required for the primary workflow.
+
+## 2026-09-23: Preserve unknown and time-varying recording level
+
+**Status:** accepted for Phase 1.
+
+**Decision:** Treat absolute recording level as unknown unless a calibration reference exists, and allow level to vary within a recording. Preserve original-level measurements as primary evidence; do not assume that file-wide normalization creates a valid level-matched comparison.
+
+**Rationale:** A single gain operation can make two files have the same selected summary level while discarding information about their original gain and failing to represent within-file level drift. Level also interacts with performance, spectral descriptors, and possible nonlinearities in the recording chain.
+
+**Implementation direction:** Capture frame-level level trajectories, use explicitly labeled local-relative or derived normalized views only for sensitivity analysis, and report whether conclusions survive reasonable level handling choices.
 
 ## Ecosystem recommendation
 
