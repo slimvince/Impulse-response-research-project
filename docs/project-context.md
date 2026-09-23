@@ -4,9 +4,9 @@
 
 ## Project
 
-This repository investigates whether measurable, systematic characteristics distinguish Yamaha SLB-200 pickup/DI recordings from acoustic double-bass recordings captured with a microphone. The eventual goal may be a transformation that makes the SLB signal resemble the acoustic microphone result. The project is currently in Phase 1: **Unified Corpus Characterization**.
+This repository investigates whether measurable, systematic characteristics distinguish Yamaha SLB-200 pickup/DI recordings from acoustic double-bass recordings captured with a microphone. The governing eventual goal is to make an SLB-200 recording sound as close as possible to an acoustic upright-bass microphone recording using an impulse response. The project is currently in Phase 1: **Unified Corpus Characterization**.
 
-The IR optimizer, neural model, TONEX export, Teensy implementation, and any assumption that a static FIR is sufficient are explicitly out of scope for the current phase.
+The IR optimizer, neural model, TONEX export, Teensy implementation, and any assumption that a static FIR is sufficient are explicitly out of scope for the current phase. Phase 1 identifies repeatable, relevant, and plausibly filter-addressable differences for later held-out IR evaluation.
 
 ## Current repository state
 
@@ -14,44 +14,46 @@ The repository began empty. It now contains a Python reference package under `sr
 
 The current implementation performs:
 
-- PCM WAV loading, mono reduction, and SHA-256 capture;
+- PCM WAV loading, mono reduction, and SHA-256 capture. WAV is the Phase 1 input contract; FLAC is deferred unless it becomes a corpus blocker;
 - deterministic frame extraction;
-- frame-level RMS, peak, autocorrelation f0, spectral centroid, spectral rolloff, spectral flux, harmonicity proxy, and broad band energies;
+- frame-level RMS, peak, crest factor, autocorrelation f0 and confidence, spectral centroid, spread, skewness, kurtosis, slope, flatness, rolloff, flux, spectral peak/bandwidth, harmonicity proxy, f0-relative harmonic amplitudes and ratios, harmonic-to-residual ratio, inharmonicity proxy, broad band energies, band ratios, and frame-envelope descriptors;
 - threshold event detection with duration, attack, sustain, and decay measurements;
 - manifest-driven analysis of both domains through the same code path;
 - JSON outputs and a descriptive Markdown report.
 
-There are no real corpus recordings in the repository. The current feature bank is exploratory and incomplete. Results must not be described as evidence of domain differences until real recordings are analyzed.
+There are no audio recordings in the repository. Four external candidate acoustic recordings exist outside Git: two user-reported similar files for bass/player group A and two for group B. They are free to use by user confirmation, but contextual metadata other than file facts and the player label may be unknown. The current feature bank is broad but exploratory; extracted differences are not automatically evidence of intrinsic bass or domain characteristics.
 
 ## Last validated state
 
 This describes the last validated committed state, not necessarily the current working tree. Documentation changes made after that validation must be committed before treating them as part of the canonical remote handoff state.
 
 - `main` is synchronized with `origin/main`.
-- `2493ca6` established the initial unified corpus characterization foundation.
-- `66d98fe` added the research-memory and experiment documentation layers.
-- `8d9663a` corrected the frame-quantized event-onset test expectation.
-- The full automated suite passed: `4 passed`.
-- A disposable synthetic 80 Hz WAV passed through the CLI smoke test.
-- The smoke test produced `metadata.json`, `frames.json`, `events.json`, `summary.json`, and `report.md`.
-- Temporary smoke-test files were removed; no audio or generated results were committed.
-- The Git worktree was clean after validation.
+- Latest validated code baseline before this handoff consolidation is `13d3591` (`Preserve intact long recordings`); the handoff commit that follows will supersede that hash without changing code.
+- Recent decisions include WAV-only Phase 1 input (`789ef74`), unknown historical setup metadata (`544d4f8`), the governing IR objective (`904892d`), broad feature expansion (`1a9e3ef`, `a4a6f97`, `68a3cec`), and recording-level replication guidance (`d088209`).
+- The full automated suite passes: `4 passed`.
+- The four external acoustic WAVs were analyzed successfully with feature schema version `0.3`: `47,055` frames and `105` threshold-detected events.
+- Expanded real-audio validation produced outputs under `C:\IR audio\results\acoustic-repeatability-v03`; the external manifest is `C:\IR audio\acoustic-repeatability-manifest.json`.
+- New spectral and band-ratio features were valid for all frames. f0-dependent descriptors were valid for `47,029` frames and missing for `26` invalid-f0 frames.
+- No audio or generated results are committed to Git. The worktree is clean after the latest commit.
 
-The next real milestone is a licensed pilot corpus and experiment `E001`, not IR optimization.
+The next milestone is grouped recording/source-level repeatability summaries and quality diagnostics, followed by more recordings and an approved/frozen `E001` manifest. The next real transformation milestone is held-out IR evaluation, not optimizer implementation now.
 
 ## Current known limitations
 
-- No real audio corpus is present.
-- The f0 and event detectors are deliberately simple reference implementations.
-- Comparisons are descriptive; frame rows are not independent observations.
-- Phase labels, pitch/register conditioning, dynamics conditioning, and confound-aware statistical models still need development.
-- The candidate feature bank should be expanded before selecting a final feature set.
+- No audio is stored in Git; the four external files are candidate inputs, not a complete or approved corpus.
+- Only player identity may be known contextually; bass identity, room, microphone, placement, recording chain, processing, strings, take conditions, and absolute/time-varying level may be unknown.
+- Pitch/register and musical content are intentionally unmatched; event counts are file-specific segmentation diagnostics and not similarity measures.
+- The f0 and event detectors and several descriptors are deliberately simple reference/proxy implementations.
+- Comparisons are descriptive; overlapping frame rows are not independent observations. Recordings and source groups are the replication units.
+- Grouped repeatability summaries, quality diagnostics, observed-local-level summaries, parameter sensitivity, and confound-aware models still need development.
+- Long recordings must remain intact; future memory optimization may use internal streaming only with frame/event continuity and provenance preservation.
+- No SLB-200 recordings exist yet, so no SLB-to-acoustic comparison or IR target claim is currently possible.
 
 Terminal and agent execution capabilities may differ between LLM sessions. Do not infer validation from a session that did not report actual command output; use the committed Git state and this validated-state section as the repository record.
 
 ## Required research posture
 
-Treat measurements, interpretations, hypotheses, and implementation assumptions as different things. Preserve uncertainty. Do not optimize an IR against one recording or introduce a feature merely because a library provides it.
+Treat measurements, interpretations, hypotheses, and implementation assumptions as different things. Preserve uncertainty. Do not optimize an IR against one recording or introduce a feature as an IR target merely because a library provides it. Broad extraction is exploratory evidence gathering; eventual IR success requires held-out measurable and perceptual evaluation.
 
 ## Reasoning chain
 

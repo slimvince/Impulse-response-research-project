@@ -32,6 +32,14 @@
 - **Decision:** No. Preserve each original recording as one source; any future chunking is an internal streaming optimization only.
 - **Rationale:** Manual splitting can alter event context and boundaries, complicate provenance, and make whole-recording distributions harder to interpret. Internal chunks must preserve frame overlap, hop continuity, event context, and the original source hash.
 
+## 2026-09-23 - Durable handoff consolidation
+
+- **Question:** What must survive when the next session begins?
+- **Observation:** The repository now contains the Phase 1 reference pipeline, a broad exploratory feature bank at schema version `0.3`, the governing SLB-200-to-acoustic-upright IR objective, four external acoustic candidate inputs, and explicit constraints around unknown setup, uncontrolled level, unmatched content, correlated frames, WAV-only input, and intact source recordings.
+- **Validated state:** HEAD `13d3591` is synchronized with `origin/main`; all 4 tests pass; the four external WAVs produced `47,055` frames and `105` events under the expanded pipeline. Generated audio results remain outside Git.
+- **Interpretation:** The implementation is validated as a synthetic and real-audio extraction tool, not as evidence that any feature is an intrinsic bass characteristic or a useful IR target.
+- **Immediate next action:** Implement recording/source-group aggregation, quality diagnostics, and distribution-level repeatability summaries for the bass A and bass B candidate groups; then add more recordings and freeze an approved E001 manifest.
+
 ## 2026-09-23 - Feature selection strategy
 
 - **Question:** Should the initial feature list represent prior beliefs about relevance?

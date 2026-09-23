@@ -23,13 +23,12 @@
 - Add later bass A and bass B recordings to their existing source groups, and register other acoustic basses as separate source groups.
 - Implement within-group repeatability summaries for the bass A and bass B pairs before freezing the first `E001` manifest.
 - Register approved pilot recordings and freeze the first `E001` manifest.
-- Commit and push the current documentation handoff updates before starting a new session.
 
 ### Next implementation steps
 
 1. Make the Python environment reproducible with a locked or recorded dependency set.
 2. Add tests for silence, multichannel input, 24-bit PCM, invalid f0, and deterministic repeated runs.
-3. Expand the feature bank broadly with readily extractable spectral, envelope, harmonic, periodicity, temporal, and dynamics descriptors. Initial spectral-shape, band-ratio, crest-factor, f0-relative harmonic, peak/bandwidth, envelope, f0-confidence, harmonic-to-residual, and inharmonicity descriptors are implemented.
+3. Continue the broad feature bank only where a concrete, testable descriptor remains justified; the current spectral-shape, band-ratio, crest-factor, f0-relative harmonic, peak/bandwidth, envelope, f0-confidence, harmonic-to-residual, and inharmonicity descriptors are implemented.
 4. Add feature definitions and validity metadata to a versioned feature configuration.
 5. Add paired-recording metadata and a distribution-level repeatability baseline for recordings expected to match without requiring matched musical content; use the current bass A/bass B candidates first and support later takes and source groups without changing prior experiment identities.
 6. Add recording/event-level aggregation before any inferential statistics.
