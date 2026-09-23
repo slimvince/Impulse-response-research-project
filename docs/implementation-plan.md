@@ -19,7 +19,9 @@
 ### Immediate blockers
 
 - Obtain or record a small licensed pilot corpus.
-- Register the pilot recordings and freeze the first `E001` manifest.
+- Confirm permission and complete capture metadata for the four external acoustic candidate recordings.
+- Implement within-group repeatability summaries for the bass A and bass B pairs before freezing the first `E001` manifest.
+- Register approved pilot recordings and freeze the first `E001` manifest.
 - Commit and push the current documentation handoff updates before starting a new session.
 
 ### Next implementation steps
@@ -28,7 +30,7 @@
 2. Add tests for silence, multichannel input, 24-bit PCM, invalid f0, and deterministic repeated runs.
 3. Expand the feature bank with spectral slope, envelope summaries, harmonic amplitudes, H1/H2, and phase labels.
 4. Add feature definitions and validity metadata to a versioned feature configuration.
-5. Add paired-recording metadata and a repeatability baseline for recordings expected to match.
+5. Add paired-recording metadata and a repeatability baseline for recordings expected to match; use the current bass A/bass B candidates as the first input when metadata is complete.
 6. Add recording/event-level aggregation before any inferential statistics.
 7. Add pitch/register and loudness-conditioned summaries.
 8. Add explicit confound tables and missing-metadata warnings.

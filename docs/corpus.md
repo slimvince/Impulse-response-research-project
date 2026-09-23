@@ -12,7 +12,22 @@ This document describes the actual data available to the project. It is differen
 
 ## Current inventory
 
-No real audio recordings are currently available in the repository or registered in the corpus catalogue.
+No audio recordings are stored in the repository. Four external candidate recordings are now available for a preliminary acoustic repeatability baseline. They are not yet approved corpus entries because license/permission and full capture metadata have not been recorded.
+
+### Candidate acoustic repeatability inputs
+
+The source-group labels below are user-provided. Recordings within each group are expected to be similar and are intended to estimate within-source noise and uncertainty. The two groups are different bass/player sources and are not treated as repeatability pairs with each other.
+
+| Recording ID | External path | Source group | SHA-256 | Format | Duration | Status |
+|---|---|---|---|---|---:|---|
+| acoustic_bass_a_take_1 | `C:\IR audio\acoustic\bass A\1.wav` | bass A | `e6071462ce5d89f7946f26ee437e5aff13071df1b4d60023fbb755c0c6fc2d3a` | stereo 44.1 kHz 16-bit PCM WAV | 287.58 s | candidate |
+| acoustic_bass_a_take_2 | `C:\IR audio\acoustic\bass A\2.wav` | bass A | `588bf4876bb39c2fef26f85ec23e203d0c3857f1a817c8250ac2f013770f7408` | stereo 44.1 kHz 16-bit PCM WAV | 295.01 s | candidate |
+| acoustic_bass_b_take_1 | `C:\IR audio\acoustic\bass B\3.wav` | bass B | `2b447de8fb902b83530497882c170f6a9a4f537636e0599de15f2bcd7b4452f6` | stereo 44.1 kHz 16-bit PCM WAV | 292.05 s | candidate |
+| acoustic_bass_b_take_2 | `C:\IR audio\acoustic\bass B\4.wav` | bass B | `02c3bbc109c125f9dc8826383cfda80286ff192f1bfba244adbfba4a59939bf` | stereo 44.1 kHz 16-bit PCM WAV | 218.29 s | candidate |
+
+The extraction manifest is outside Git at `C:\IR audio\acoustic-repeatability-manifest.json`; generated outputs are under `C:\IR audio\results\acoustic-repeatability`. The current pipeline extracted 47,055 frames and 105 events from the four files. Its existing domain summary does not yet calculate within-group repeatability statistics.
+
+The `C:\IR audio\slb200` directory is currently empty; no SLB-200 recordings are registered.
 
 ## Planned domains
 

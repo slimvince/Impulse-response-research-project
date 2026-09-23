@@ -43,6 +43,17 @@
 - **Decision:** Add paired-recording metadata, event/frame alignment, recording-level repeatability summaries, and held-out repeatability checks before IR target selection.
 - **Limitation:** This workflow has been documented but not implemented or tested on real recordings. Residual differences must not be treated as causal instrument characteristics.
 
+## 2026-09-23 - Acoustic repeatability candidate inputs
+
+- **Question:** Are there real recordings available to estimate the within-source noise floor before SLB-200 recordings exist?
+- **Observation:** Four external stereo 44.1 kHz 16-bit PCM WAV files are available: two user-reported similar recordings for bass/player group A and two for bass/player group B. The SLB-200 directory is empty.
+- **Evidence:** The existing unified extractor processed all four files, producing 47,055 frame rows and 105 detected events. Source hashes and file metadata are recorded in `docs/corpus.md` and the external manifest.
+- **Finding:** The files are usable candidate inputs for a within-group uncertainty analysis, but no repeatability statistic has been computed yet. Cross-group differences are not a repeatability floor because the bass/player sources differ.
+- **Interpretation:** The two within-group pairs can estimate variation attributable to takes, performance, setup, and analysis. Any result remains conditional on the still-unknown recording and licensing metadata.
+- **Hypothesis:** Features that are stable within both groups may provide a stronger baseline for judging later SLB-to-acoustic differences than raw domain comparisons alone.
+- **Decision:** Preserve the files outside Git, identify them by source hash, keep bass A and bass B as separate comparison groups, and implement grouped repeatability summaries before using them for IR target selection.
+- **Limitation:** No SLB-200 recordings or approved corpus entries exist, and the current domain-level summary cannot yet calculate the grouped noise floor.
+
 ## 2026-09-23 - Durable research-memory layers
 
 - **Question:** What must persist beyond chronological chat and implementation history?
