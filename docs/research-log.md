@@ -52,7 +52,7 @@
 - **Interpretation:** The two within-group pairs can estimate variation attributable to takes, performance, setup, and analysis. Any result remains conditional on the still-unknown recording and licensing metadata.
 - **Hypothesis:** Features that are stable within both groups may provide a stronger baseline for judging later SLB-to-acoustic differences than raw domain comparisons alone.
 - **Decision:** Preserve the files outside Git, identify them by source hash, keep bass A and bass B as separate comparison groups, and implement grouped repeatability summaries before using them for IR target selection.
-- **Limitation:** No SLB-200 recordings or approved corpus entries exist, and the current domain-level summary cannot yet calculate the grouped noise floor.
+- **Limitation:** No SLB-200 recordings or formally approved corpus entries exist, and the current domain-level summary cannot yet calculate the grouped noise floor. The user has confirmed the four acoustic files are free to use; this permission basis is recorded but has not received independent legal review.
 
 ## 2026-09-23 - Durable research-memory layers
 

@@ -12,7 +12,7 @@ This document describes the actual data available to the project. It is differen
 
 ## Current inventory
 
-No audio recordings are stored in the repository. Four external candidate recordings are now available for a preliminary acoustic repeatability baseline. They are not yet approved corpus entries because license/permission and full capture metadata have not been recorded.
+No audio recordings are stored in the repository. Four external candidate recordings are now available for a preliminary acoustic repeatability baseline. The user has confirmed that they are free to use. They remain candidate entries because that permission statement and full capture metadata have not yet been formalized as complete corpus approval records.
 
 ### Candidate acoustic repeatability inputs
 
@@ -26,6 +26,8 @@ The source-group labels below are user-provided. Recordings within each group ar
 | acoustic_bass_b_take_2 | `C:\IR audio\acoustic\bass B\4.wav` | bass B | `02c3bbc109c125f9dc8826383cfda80286ff192f1bfba244adbfba4a59939bf` | stereo 44.1 kHz 16-bit PCM WAV | 218.29 s | candidate |
 
 The extraction manifest is outside Git at `C:\IR audio\acoustic-repeatability-manifest.json`; generated outputs are under `C:\IR audio\results\acoustic-repeatability`. The current pipeline extracted 47,055 frames and 105 events from the four files. Its existing domain summary does not yet calculate within-group repeatability statistics.
+
+Permission basis: user-confirmed free-to-use audio, recorded in the external manifest as `user_confirmed_free_to_use`. This is a project provenance statement, not an independent legal review.
 
 The `C:\IR audio\slb200` directory is currently empty; no SLB-200 recordings are registered.
 
