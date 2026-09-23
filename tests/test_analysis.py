@@ -43,6 +43,13 @@ def test_f0_and_spectral_features_are_consistent_for_synthetic_tone():
     assert np.isfinite(rows[1]["band_200_500_to_80_200_db"])
     assert np.isfinite(rows[1]["crest_factor_db"])
     assert np.isfinite(rows[1]["harmonic_1_db"])
+    assert 0 < rows[1]["f0_confidence"] <= 1
+    assert rows[1]["spectral_peak_hz"] > 0
+    assert rows[1]["spectral_peak_bandwidth_hz"] >= 0
+    assert np.isfinite(rows[1]["envelope_modulation_db"])
+    assert np.isfinite(rows[1]["harmonic_to_residual_db"])
+    assert np.isfinite(rows[1]["inharmonicity"])
+    assert np.isfinite(rows[1]["harmonic_1_to_2_db"])
 
 
 def test_event_detection_finds_active_region():

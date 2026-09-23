@@ -35,6 +35,14 @@
 - **Limitation:** These descriptors are exploratory; no relevance, repeatability, or transformation value has been established. Envelope trajectories, harmonic-to-noise estimators, inharmonicity, and richer temporal features remain future increments.
 - **Next action:** Run the expanded bank on the four acoustic files, inspect missing values and parameter sensitivity, then add further candidates in tested increments.
 
+## 2026-09-23 - Second broad feature-bank increment
+
+- **Question:** Why were the remaining readily extractable candidates not implemented in the first increment?
+- **Correction:** Added dominant spectral peak/bandwidth, frame envelope statistics, normalized f0 confidence, H1/H2 and H2/H3 ratios, harmonic-to-residual ratio, and f0-relative inharmonicity. Feature schema version advanced to `0.3`.
+- **Evidence:** Focused synthetic tests pass after correcting confidence normalization against the unmasked autocorrelation zero-lag value.
+- **Interpretation:** The catalogue now contains a broader set of concrete frame-level measurements; they remain exploratory descriptors rather than selected transformation targets.
+- **Limitations:** Definitions are reference proxies, not replacements for reviewed perceptual or instrument-specific estimators. Rich event trajectories, event-to-event timing, and more specialized library backends remain future work.
+
 ## 2026-09-23 - Dependency strategy
 
 - **Question:** Should one or many open-source audio libraries be used?
