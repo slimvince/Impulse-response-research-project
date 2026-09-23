@@ -4,6 +4,8 @@
 
 The system must support reproducible investigation of differences between SLB-200 DI recordings and acoustic double-bass microphone recordings. It must use the same analysis pipeline for both domains and later for candidate-transformed SLB recordings.
 
+The eventual application objective is to find, evaluate, and if justified implement an impulse response that makes an SLB-200 recording sound as close as possible to an acoustic upright-bass microphone recording. “As close as possible” must be defined by held-out perceptual and measurable evaluation, not by matching one recording or optimizing arbitrary exploratory features.
+
 ## Functional requirements
 
 ### RQ-001: Unified analysis
@@ -58,6 +60,10 @@ The project context must tell a new session what to read, what state to report, 
 
 Each experiment must identify the exact Git commit, manifest hash, configuration hash, source hashes, software versions, and random seed where applicable. Changing experimental inputs or parameters creates a new experiment identity.
 
+### RQ-014: Transformation objective
+
+The later transformation-evaluation phase must apply candidate IRs to held-out SLB-200 recordings and assess whether the transformed outputs move toward acoustic-upright recording distributions and perceptual judgments without overfitting recordings, players, instruments, or setups.
+
 ## Research requirements
 
 ### RR-001: No premature optimizer
@@ -75,6 +81,10 @@ Original recordings must remain unchanged. Derived files and processing paramete
 ### RR-004: Licensing discipline
 
 Only audio and software with suitable redistribution rights may enter the repository or a distributed product.
+
+### RR-005: Model-appropriate improvement
+
+Do not use an IR to compensate for effects that are primarily level-dependent, time-varying, nonlinear, performance-dependent, or otherwise outside a fixed linear time-invariant model. Such effects must be measured and reported even when they cannot be corrected by the eventual IR.
 
 ## Non-goals for Phase 1
 

@@ -10,6 +10,14 @@
 - **Confidence:** High for the architectural direction and basic execution path; low for the scientific usefulness of any current descriptor.
 - **Next action:** Add real licensed pilot recordings and run E001.
 
+## 2026-09-23 - Governing transformation objective
+
+- **Objective:** Ultimately make an SLB-200 recording sound as close as possible to an acoustic upright-bass microphone recording using an impulse response.
+- **Decision:** Treat this as the north-star objective while keeping Phase 1 focused on corpus characterization, repeatability, candidate descriptors, and evaluation design.
+- **Interpretation:** Broad feature extraction is evidence gathering for the later objective, not the objective itself. A feature matters only if it is repeatable, relevant to perceived similarity, and plausibly addressable by a fixed linear time-invariant filter.
+- **Limitation:** An IR cannot automatically correct unknown or drifting level, nonlinearities, player performance, room changes, or other effects outside the model. These must remain explicit evaluation factors.
+- **Next action:** Define held-out measurable and perceptual criteria before any IR fitting or optimization begins.
+
 ## 2026-09-23 - Feature selection strategy
 
 - **Question:** Should the initial feature list represent prior beliefs about relevance?

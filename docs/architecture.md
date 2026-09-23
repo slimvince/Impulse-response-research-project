@@ -2,7 +2,7 @@
 
 ## Principles
 
-The system is a research instrument, not yet a real-time processor. Components should be replaceable, outputs should be explicit, and source-domain labels must not select different measurement algorithms.
+The system is a research instrument, not yet a real-time processor. The eventual objective is to evaluate whether a candidate impulse response can make SLB-200 recordings sound as close as possible to acoustic upright-bass microphone recordings. Components should be replaceable, outputs should be explicit, and source-domain labels must not select different measurement algorithms.
 
 ## Current data flow
 
@@ -48,6 +48,7 @@ The report layer owns provenance, interpretation labels, limitations, and output
 - `FeatureExtractor`: broad candidate bank with explicit feature IDs and versions.
 - `ComparisonModel`: recording-level summaries, stratification, mixed-effects models, and held-out evaluation.
 - `TransformEvaluator`: future closed-loop evaluation only; this is not an optimizer.
+- `TransformEvaluator`: future held-out perceptual and measurable evaluation of candidate IRs; it must distinguish filter-addressable differences from level, nonlinear, temporal, and performance effects.
 
 ## Dependency strategy
 

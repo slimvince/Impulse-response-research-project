@@ -4,6 +4,10 @@
 
 Every manifest recording passes through the same WAV decode, mono reduction, frame extraction, spectral analysis, event detection, and reporting path. Domain and split are metadata labels, not alternate algorithms.
 
+## Eventual transformation objective
+
+The eventual goal is an impulse response that makes an SLB-200 recording sound as close as possible to an acoustic upright-bass microphone recording. Phase 1 does not fit that IR. It identifies measurable candidate differences, estimates their repeatability, and determines which differences are plausibly addressable by a fixed linear time-invariant filter. Level drift, nonlinear processing, player technique, room changes, and other non-filter effects remain evaluation factors rather than automatic IR targets.
+
 ## Implemented measurements
 
 Frame-level output currently includes RMS and peak level in dB, autocorrelation-based f0 estimate, spectral centroid, 85% spectral rolloff, frame-to-frame spectral flux, a coarse harmonicity ratio, and energy in 20-80, 80-200, 200-500, 500-2000, and 2000-8000 Hz bands. Event output includes threshold onset/end, duration, peak time/level, attack time, median late-event level, and a simple decay slope. Recording metadata includes SHA-256, sample rate, channel count, sample count, domain, split, and manifest metadata.
