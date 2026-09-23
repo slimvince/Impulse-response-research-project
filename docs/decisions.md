@@ -38,6 +38,16 @@ Use `accepted`, `rejected`, `deferred`, or `superseded`. Rejected and superseded
 
 **Rationale:** It keeps the first dependency surface small and makes metadata/hash capture explicit. A production reader can be added behind `read_wav` if compressed, float, RF64, or broader WAV support becomes necessary.
 
+## 2026-09-23: WAV-only input for Phase 1
+
+**Status:** accepted for Phase 1.
+
+**Decision:** Do not add FLAC or broader container support to the current pipeline unless the corpus requires it.
+
+**Rationale:** The available and planned pilot material can be supplied as PCM WAV. WAV support is sufficient for the current characterization and repeatability work, while additional format libraries would increase dependency and build surface without directly improving the IR objective.
+
+**Boundary:** Original files may remain in other formats outside the repository, but any conversion to WAV must preserve the original, record the conversion parameters, and retain the original source hash. Format support can be revisited if it becomes a concrete corpus blocker.
+
 ## 2026-09-23: Descriptive comparisons only
 
 **Decision:** Report domain means, standard deviations, and standardized differences with explicit limitations.

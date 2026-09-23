@@ -45,6 +45,7 @@
 - Freeze development and held-out corpus manifests.
 - Define a closed-loop transform evaluation protocol.
 - Only then investigate candidate FIR or other transformations.
+- Revisit broader audio-format support only if it becomes a concrete corpus blocker.
 
 ## Completion criteria for Phase 1
 

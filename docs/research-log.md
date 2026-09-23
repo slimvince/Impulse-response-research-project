@@ -18,6 +18,14 @@
 - **Limitation:** An IR cannot automatically correct unknown or drifting level, nonlinearities, player performance, room changes, or other effects outside the model. These must remain explicit evaluation factors.
 - **Next action:** Define held-out measurable and perceptual criteria before any IR fitting or optimization begins.
 
+## 2026-09-23 - WAV-only Phase 1 input contract
+
+- **Question:** Is FLAC support necessary for the current research workflow?
+- **Observation:** The available and planned pilot material can be analyzed as PCM WAV, and no current corpus blocker requires FLAC ingestion.
+- **Decision:** Keep the Phase 1 input contract WAV-only and defer FLAC or broader container support.
+- **Rationale:** Additional format dependencies would increase build and licensing surface without advancing the immediate repeatability or IR-evaluation objective.
+- **Boundary:** If conversion is needed, preserve the original file, record conversion parameters, and retain the original source hash. Revisit native format support only if the corpus makes it necessary.
+
 ## 2026-09-23 - Feature selection strategy
 
 - **Question:** Should the initial feature list represent prior beliefs about relevance?

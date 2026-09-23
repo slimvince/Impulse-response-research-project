@@ -42,7 +42,7 @@ The report layer owns provenance, interpretation labels, limitations, and output
 
 ## Planned extension points
 
-- `AudioReader`: broader PCM/float/container support, potentially through soundfile/libsndfile.
+- `AudioReader`: broader PCM/float/container support only if a future corpus requires it; WAV remains the Phase 1 input contract.
 - `PitchEstimator`: reference autocorrelation plus optional SciPy/librosa/aubio backends for comparison.
 - `EventSegmenter`: threshold baseline, onset-based alternative, and reviewed annotations.
 - `FeatureExtractor`: broad candidate bank with explicit feature IDs and versions.
@@ -52,7 +52,7 @@ The report layer owns provenance, interpretation labels, limitations, and output
 
 ## Dependency strategy
 
-NumPy is the numerical foundation. SciPy and librosa are optional research backends to add when their behavior is tested against the reference implementation. Optional libraries must not change the core schema without a recorded decision and versioned comparison.
+NumPy is the numerical foundation. SciPy and librosa are optional research backends to add when their behavior is tested against the reference implementation. FLAC and broader container support are deferred and not required for Phase 1. Optional libraries must not change the core schema without a recorded decision and versioned comparison.
 
 ## Data contracts
 
