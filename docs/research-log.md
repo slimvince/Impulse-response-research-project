@@ -54,6 +54,16 @@
 - **Decision:** Preserve the files outside Git, identify them by source hash, keep bass A and bass B as separate comparison groups, and implement grouped repeatability summaries before using them for IR target selection.
 - **Limitation:** No SLB-200 recordings or formally approved corpus entries exist, and the current domain-level summary cannot yet calculate the grouped noise floor. The user has confirmed the four acoustic files are free to use; this permission basis is recorded but has not received independent legal review.
 
+## 2026-09-23 - First extraction from four acoustic files
+
+- **Question:** Can the current pipeline extract the defined characteristics from the four real acoustic recordings?
+- **Observation:** The unified CLI processed all four files, producing 47,055 frames and 105 events. Bass A take 1 minus take 2 had mean differences of approximately 1.0 dB RMS, 27.6 Hz spectral centroid, and 10.8 dB in the 2-8 kHz band. Bass B take 1 minus take 2 had approximately -0.4 dB RMS, -2.3 Hz spectral centroid, and 6.0 dB in the 2-8 kHz band. The pooled bass A minus bass B differences were approximately 5.7 dB RMS, 9.0 Hz spectral centroid, and 18.0 dB in the 500-2000 Hz band.
+- **Finding:** No empirical finding has been established. The pipeline successfully extracts the current feature bank from these real files, and the exploratory summaries show measurable within-pair and cross-group variation.
+- **Interpretation:** Bass B appears more similar between its two files than bass A on the selected whole-file means, while the cross-group differences are larger for several level and band-energy measures. This could reflect recording level, musical content, performance, or setup rather than bass characteristics.
+- **Hypothesis:** Event-matched, level-conditioned comparisons may reduce the observed within-pair differences and reveal which features provide a meaningful repeatability baseline.
+- **Decision:** Do not use these raw whole-file differences as IR targets. Implement grouped, event/frame-aligned and level-conditioned repeatability summaries before drawing source or instrument conclusions.
+- **Limitations:** The current run pooled all frames by domain, did not align corresponding events, did not condition on loudness or pitch, and detected unequal event counts (9, 20, 49, and 27). No SLB-200 comparison is possible until SLB recordings exist.
+
 ## 2026-09-23 - Durable research-memory layers
 
 - **Question:** What must persist beyond chronological chat and implementation history?
