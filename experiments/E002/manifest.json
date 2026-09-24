@@ -1,0 +1,39 @@
+{
+  "experiment_id": "E002",
+  "title": "Basic Pitch Event Segmentation Gate",
+  "recordings": [
+    {
+      "recording_id": "acoustic-bass-A-1",
+      "path": "C:/IR audio/acoustic/bass A/1.wav",
+      "source_group": "bass A",
+      "excerpt_start_s": 0.0,
+      "excerpt_end_s": 30.0,
+      "notes": "Representative opening excerpt chosen to include repeated notes and broad pitch activity."
+    },
+    {
+      "recording_id": "acoustic-bass-A-2",
+      "path": "C:/IR audio/acoustic/bass A/2.wav",
+      "source_group": "bass A",
+      "excerpt_start_s": 0.0,
+      "excerpt_end_s": 30.0,
+      "notes": "Representative opening excerpt chosen to compare segmentation stability across the same source group."
+    },
+    {
+      "recording_id": "acoustic-bass-B-3",
+      "path": "C:/IR audio/acoustic/bass B/3.wav",
+      "source_group": "bass B",
+      "excerpt_start_s": 0.0,
+      "excerpt_end_s": 30.0,
+      "notes": "Representative opening excerpt for the second source group."
+    },
+    {
+      "recording_id": "acoustic-bass-B-4",
+      "path": "C:/IR audio/acoustic/bass B/4.wav",
+      "source_group": "bass B",
+      "excerpt_start_s": 0.0,
+      "excerpt_end_s": 30.0,
+      "notes": "Representative opening excerpt for the second source group."
+    }
+  ],
+  "notes": "This manifest is intentionally small and focused on the current acoustic corpus. It is a gating trial, not a corpus-wide evaluation."
+}

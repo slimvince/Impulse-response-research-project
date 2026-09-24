@@ -96,6 +96,16 @@
 - Which features remain stable under explicitly labeled local-level sensitivity analyses and reasonable parameter changes?
 - Is a static linear transform adequate? This remains unresolved.
 
+## 2026-09-24 - Basic Pitch gate pilot
+
+- **Question:** Can the candidate event detector produce a usable note/event segmentation on the current acoustic corpus?
+- **Observation:** The pilot ran Basic Pitch on four 30-second acoustic excerpts from the two source groups using a default and a stricter parameter set. The results were 82-96 default events and 15-41 stricter events per excerpt, while the repository threshold baseline produced only 4-6 events.
+- **Finding:** Basic Pitch is generating event-like structure on the real corpus, but its surface output is still too granular and ambiguous to be treated as a validated note detector without manual review.
+- **Interpretation:** The detector is promising as a candidate generator and conservative filter, but it is not yet reliable enough to support downstream event-conditioned conclusions without explicit confidence and ambiguity handling.
+- **Hypothesis:** A manual reviewed subset plus confidence filtering should yield a usable event population for later event-level analysis, while the unfiltered output remains too noisy for direct scientific use.
+- **Decision:** Classify the pilot as a conditional pass: useful for continued investigation and filtering, but not yet sufficient to claim a reliable note segmentation method. A small ground-truth benchmark must still be created before proceeding to event-conditioned research.
+- **Limitation:** This is a pilot on a small subset of excerpts only; it does not establish corpus-wide segmentation quality, legato handling, or missed-event rates.
+
 ## 2026-09-23 - Repeatability baseline for transformation targets
 
 - **Question:** Can differences between recordings that should theoretically match improve later IR evaluation?

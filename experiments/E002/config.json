@@ -1,0 +1,36 @@
+{
+  "experiment_id": "E002",
+  "analysis_version": "0.1",
+  "feature_bank_version": "0.1",
+  "tool": "Spotify Basic Pitch",
+  "tool_version": "0.4.0",
+  "python_version": "3.11.9",
+  "os": "Windows 11",
+  "tensorflow_version": "2.15.0",
+  "framework": "tensorflow-cpu",
+  "parameters": [
+    {
+      "id": "default",
+      "onset_threshold": 0.5,
+      "frame_threshold": 0.3,
+      "minimum_note_length": 127.7,
+      "minimum_frequency": 40.0,
+      "maximum_frequency": 400.0,
+      "multiple_pitch_bends": false,
+      "melodia_trick": true,
+      "notes": "Basic Pitch defaults for the first pilot run."
+    },
+    {
+      "id": "stricter",
+      "onset_threshold": 0.7,
+      "frame_threshold": 0.5,
+      "minimum_note_length": 200.0,
+      "minimum_frequency": 40.0,
+      "maximum_frequency": 400.0,
+      "multiple_pitch_bends": false,
+      "melodia_trick": true,
+      "notes": "Stricter filtering to test whether conservative event filtering yields a more usable subset."
+    }
+  ],
+  "notes": "This is a gate experiment for event usefulness, not a final transcription benchmark. It intentionally tests a small parameter sweep only."
+}
