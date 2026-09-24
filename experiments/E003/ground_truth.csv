@@ -1,0 +1,15 @@
+excerpt_id,note_index,start_s,end_s,pitch_hint,confidence,notes
+low_02_low.wav,1,0.00,0.15,low,2,Approximate boundary from manual audition
+low_02_low.wav,2,0.15,0.73,low,2,Approximate boundary from manual audition
+low_02_low.wav,3,0.73,0.85,low,2,Approximate boundary from manual audition
+bass_friendly_01_bass_friendly.wav,1,0.00,0.15,low,2,Approximate boundary from manual audition
+bass_friendly_01_bass_friendly.wav,2,0.15,0.61,low,2,Approximate boundary from manual audition
+bass_friendly_01_bass_friendly.wav,3,0.61,0.76,low,2,Approximate boundary from manual audition
+broad_03_broad.wav,1,0.00,0.15,broad,2,Approximate boundary from manual audition
+broad_03_broad.wav,2,0.15,0.65,broad,2,Approximate boundary from manual audition
+broad_03_broad.wav,3,0.65,0.79,broad,2,Approximate boundary from manual audition
+low_01_low.wav,1,0.00,0.14,low,2,Approximate boundary from manual audition
+low_01_low.wav,2,0.14,0.41,low,2,Approximate boundary from manual audition
+low_01_low.wav,3,0.41,0.57,low,2,Approximate boundary from manual audition
+low_01_low.wav,4,0.57,0.77,low,2,Approximate boundary from manual audition
+low_01_low.wav,5,0.77,0.88,low,2,Approximate boundary from manual audition

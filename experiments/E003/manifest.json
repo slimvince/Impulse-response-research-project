@@ -1,0 +1,25 @@
+{
+  "experiment_id": "E003",
+  "purpose": "Minimal note-level ground-truth benchmark for event segmentation",
+  "status": "partially_labeled",
+  "description": "Create a small manually reviewed note benchmark from acoustic candidate recordings to evaluate note segmentation quality.",
+  "reference_set": "ground_truth.csv",
+  "candidate_inputs": [
+    "low_01_low.wav",
+    "low_02_low.wav",
+    "mid_01_mid.wav",
+    "mid_02_mid.wav",
+    "bass_friendly_01_bass_friendly.wav",
+    "broad_01_broad.wav",
+    "broad_02_broad.wav",
+    "broad_03_broad.wav"
+  ],
+  "labeling_rule": "Ground truth is created by human listening and manual boundary labeling for note start and end times.",
+  "reviewed_note_counts": {
+    "low_02_low.wav": 3,
+    "bass_friendly_01_bass_friendly.wav": 3,
+    "broad_03_broad.wav": 3,
+    "low_01_low.wav": 5
+  },
+  "next_step": "Review boundary precision, then score candidate detectors against the four labeled excerpts."
+}

@@ -1,0 +1,9 @@
+source_file,notes_heard,status,notes
+bass_c_event_07_child_01.wav,1,usable,One note
+bass_c_event_07_child_02.wav,4,disqualified,Four notes merged in one child event
+bass_c_event_07_child_03.wav,2,ambiguous,Two notes with hammer-on articulation
+bass_c_event_07_child_05.wav,1,usable,One note
+bass_c_event_07_child_10.wav,3,disqualified,Three notes merged in one child event
+bass_c_event_07_child_20.wav,1,usable,One note
+bass_c_event_07_child_30.wav,2,disqualified,Two notes merged in one child event
+bass_c_event_07_child_31.wav,4,ambiguous,Four notes and possibly a fifth note

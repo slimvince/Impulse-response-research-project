@@ -29,7 +29,7 @@ The manifest and configuration must be frozen before execution. If either change
 | ID | Status | Question | Evidence | Related findings |
 |---|---|---|---|---|
 | E001 | planned | Validate the initial unified feature pipeline on a licensed pilot corpus. | Synthetic pipeline validation is complete; no real corpus is registered yet. | None |
-| E002 | complete | Can Basic Pitch provide a trustworthy event-segmentation subset for the current acoustic corpus? | Four 30-second excerpts produced 82-96 default events and 15-41 stricter events; the threshold baseline produced 4-6. | Conditional pass only: useful as a candidate generator, not a validated note detector. |
+| E002 | complete | Can Basic Pitch provide a trustworthy event-segmentation subset for the current acoustic corpus? | Four 30-second excerpts produced 82-96 default events and 15-41 stricter events; the threshold baseline produced 4-6. Listener review of the candidate slices showed `low_01_low` = 5 notes and each `mid_*`, `bass_*`, and `broad_*` clip = 3 notes. | Conditional pass only: useful as a candidate generator, not a validated note detector; the selected candidate clips are not single-note events and cannot support note-level benchmarking yet. |
 
 ## Interpretation rule
 

@@ -63,6 +63,25 @@ def test_event_detection_finds_active_region():
     assert events[0]["duration_s"] > 0.3
 
 
+def test_event_detection_splits_two_plucks_with_distinct_pitch_changes():
+    sample_rate = 8000
+    samples = np.zeros(sample_rate)
+
+    # Two distinct note plucks with a clear pitch difference but enough temporal overlap that the
+    # simple RMS threshold still yields a single active region. The split should occur at the pitch step.
+    for index in range(sample_rate):
+        time = index / sample_rate
+        if 0.10 <= time < 0.35:
+            samples[index] += 0.7 * np.sin(2 * np.pi * 82 * time)
+        if 0.32 <= time < 0.55:
+            samples[index] += 0.7 * np.sin(2 * np.pi * 110 * time)
+
+    events = detect_events(samples, sample_rate, frame_size=256, hop_size=64, threshold_db=-35)
+    assert len(events) >= 2
+    assert events[0]["start_s"] <= events[1]["start_s"]
+    assert events[0]["end_s"] <= events[1]["start_s"]
+
+
 def test_manifest_pipeline_and_json_outputs(tmp_path):
     sample_rate = 8000
     time = np.arange(sample_rate) / sample_rate

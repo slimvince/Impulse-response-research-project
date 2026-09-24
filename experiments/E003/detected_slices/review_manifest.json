@@ -1,0 +1,626 @@
+[
+  {
+    "setting": "baseline_256_64_minus35",
+    "source": "low_02_low.wav",
+    "frame_size": 256,
+    "hop_size": 64,
+    "threshold_db": -35.0,
+    "event_count": 8,
+    "events": [
+      {
+        "start_s": 0.0,
+        "end_s": 0.15528344671201813,
+        "duration_s": 0.15528344671201813,
+        "peak_s": 0.005804988662131519,
+        "peak_db": -12.266592025756836,
+        "attack_time_s": 0.005804988662131519,
+        "sustain_db": -22.29592514038086,
+        "decay_db_per_s": 55.35064697265625
+      },
+      {
+        "start_s": 0.15528344671201813,
+        "end_s": 0.40199546485260773,
+        "duration_s": 0.24671201814058957,
+        "peak_s": 0.16108843537414966,
+        "peak_db": -12.503003120422363,
+        "attack_time_s": 0.005804988662131519,
+        "sustain_db": -21.990489959716797,
+        "decay_db_per_s": -20.91855239868164
+      },
+      {
+        "start_s": 0.40199546485260773,
+        "end_s": 0.5079365079365079,
+        "duration_s": 0.10594104308390023,
+        "peak_s": 0.4048979591836735,
+        "peak_db": -26.10317039489746,
+        "attack_time_s": 0.0029024943310657597,
+        "sustain_db": -31.291887283325195,
+        "decay_db_per_s": -7.156322002410889
+      },
+      {
+        "start_s": 0.5093877551020408,
+        "end_s": 0.5340589569160997,
+        "duration_s": 0.024671201814058956,
+        "peak_s": 0.5137414965986394,
+        "peak_db": -31.07900619506836,
+        "attack_time_s": 0.004353741496598639,
+        "sustain_db": -33.220584869384766,
+        "decay_db_per_s": -60.889930725097656
+      },
+      {
+        "start_s": 0.5340589569160997,
+        "end_s": 0.54421768707483,
+        "duration_s": 0.010158730158730159,
+        "peak_s": 0.5398639455782313,
+        "peak_db": -31.954936981201172,
+        "attack_time_s": 0.005804988662131519,
+        "sustain_db": -32.52766418457031,
+        "decay_db_per_s": -230.40647888183594
+      },
+      {
+        "start_s": 0.5456689342403628,
+        "end_s": 0.6472562358276645,
+        "duration_s": 0.10158730158730159,
+        "peak_s": 0.628390022675737,
+        "peak_db": -30.311767578125,
+        "attack_time_s": 0.08272108843537415,
+        "sustain_db": -31.817092895507812,
+        "decay_db_per_s": 1.652766466140747
+      },
+      {
+        "start_s": 0.6472562358276645,
+        "end_s": 0.7343310657596371,
+        "duration_s": 0.08707482993197278,
+        "peak_s": 0.6559637188208617,
+        "peak_db": -30.34084129333496,
+        "attack_time_s": 0.008707482993197279,
+        "sustain_db": -32.196083068847656,
+        "decay_db_per_s": -52.65602493286133
+      },
+      {
+        "start_s": 0.7386848072562359,
+        "end_s": 0.8402721088435374,
+        "duration_s": 0.10158730158730159,
+        "peak_s": 0.7793197278911564,
+        "peak_db": -11.147605895996094,
+        "attack_time_s": 0.040634920634920635,
+        "sustain_db": -17.43611717224121,
+        "decay_db_per_s": -121.55510711669922
+      }
+    ],
+    "files": [
+      "experiments/E003/detected_slices/baseline_256_64_minus35/low_02_low_event_01.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/low_02_low_event_02.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/low_02_low_event_03.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/low_02_low_event_04.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/low_02_low_event_05.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/low_02_low_event_06.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/low_02_low_event_07.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/low_02_low_event_08.wav"
+    ]
+  },
+  {
+    "setting": "baseline_256_64_minus35",
+    "source": "bass_friendly_01_bass_friendly.wav",
+    "frame_size": 256,
+    "hop_size": 64,
+    "threshold_db": -35.0,
+    "event_count": 10,
+    "events": [
+      {
+        "start_s": 0.0,
+        "end_s": 0.15528344671201813,
+        "duration_s": 0.15528344671201813,
+        "peak_s": 0.026122448979591838,
+        "peak_db": -13.07182502746582,
+        "attack_time_s": 0.026122448979591838,
+        "sustain_db": -18.722705841064453,
+        "decay_db_per_s": -38.228790283203125
+      },
+      {
+        "start_s": 0.15528344671201813,
+        "end_s": 0.39764172335600906,
+        "duration_s": 0.24235827664399093,
+        "peak_s": 0.18285714285714286,
+        "peak_db": -12.112100601196289,
+        "attack_time_s": 0.027573696145124716,
+        "sustain_db": -22.98387908935547,
+        "decay_db_per_s": -28.64304542541504
+      },
+      {
+        "start_s": 0.39764172335600906,
+        "end_s": 0.5775963718820861,
+        "duration_s": 0.1799546485260771,
+        "peak_s": 0.39909297052154197,
+        "peak_db": -24.090309143066406,
+        "attack_time_s": 0.0014512471655328798,
+        "sustain_db": -28.265213012695312,
+        "decay_db_per_s": -48.906761169433594
+      },
+      {
+        "start_s": 0.579047619047619,
+        "end_s": 0.5863038548752835,
+        "duration_s": 0.0072562358276643995,
+        "peak_s": 0.5834013605442177,
+        "peak_db": -28.979177474975586,
+        "attack_time_s": 0.004353741496598639,
+        "sustain_db": -29.82463836669922,
+        "decay_db_per_s": 274.26812744140625
+      },
+      {
+        "start_s": 0.5863038548752835,
+        "end_s": 0.6008163265306122,
+        "duration_s": 0.014512471655328799,
+        "peak_s": 0.5950113378684807,
+        "peak_db": -28.264007568359375,
+        "attack_time_s": 0.008707482993197279,
+        "sustain_db": -30.174110412597656,
+        "decay_db_per_s": -171.40318298339844
+      },
+      {
+        "start_s": 0.6022675736961451,
+        "end_s": 0.6095238095238096,
+        "duration_s": 0.0072562358276643995,
+        "peak_s": 0.6066213151927438,
+        "peak_db": -27.48033905029297,
+        "attack_time_s": 0.004353741496598639,
+        "sustain_db": -28.641698837280273,
+        "decay_db_per_s": 249.3446044921875
+      },
+      {
+        "start_s": 0.6095238095238096,
+        "end_s": 0.6240362811791383,
+        "duration_s": 0.014512471655328799,
+        "peak_s": 0.6182312925170068,
+        "peak_db": -27.109233856201172,
+        "attack_time_s": 0.008707482993197279,
+        "sustain_db": -29.09944725036621,
+        "decay_db_per_s": -367.8387145996094
+      },
+      {
+        "start_s": 0.6254875283446713,
+        "end_s": 0.6356462585034014,
+        "duration_s": 0.010158730158730159,
+        "peak_s": 0.6298412698412699,
+        "peak_db": -27.50687599182129,
+        "attack_time_s": 0.004353741496598639,
+        "sustain_db": -28.87921905517578,
+        "decay_db_per_s": -897.0154418945312
+      },
+      {
+        "start_s": 0.6370975056689342,
+        "end_s": 0.7531972789115646,
+        "duration_s": 0.11609977324263039,
+        "peak_s": 0.687891156462585,
+        "peak_db": -18.99309539794922,
+        "attack_time_s": 0.050793650793650794,
+        "sustain_db": -23.80844497680664,
+        "decay_db_per_s": -73.18575286865234
+      },
+      {
+        "start_s": 0.7546485260770975,
+        "end_s": 0.7604535147392291,
+        "duration_s": 0.005804988662131519,
+        "peak_s": 0.7590022675736962,
+        "peak_db": -27.003101348876953,
+        "attack_time_s": 0.004353741496598639,
+        "sustain_db": -28.61661148071289,
+        "decay_db_per_s": 555.9046630859375
+      }
+    ],
+    "files": [
+      "experiments/E003/detected_slices/baseline_256_64_minus35/bass_friendly_01_bass_friendly_event_01.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/bass_friendly_01_bass_friendly_event_02.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/bass_friendly_01_bass_friendly_event_03.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/bass_friendly_01_bass_friendly_event_04.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/bass_friendly_01_bass_friendly_event_05.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/bass_friendly_01_bass_friendly_event_06.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/bass_friendly_01_bass_friendly_event_07.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/bass_friendly_01_bass_friendly_event_08.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/bass_friendly_01_bass_friendly_event_09.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/bass_friendly_01_bass_friendly_event_10.wav"
+    ]
+  },
+  {
+    "setting": "baseline_256_64_minus35",
+    "source": "broad_03_broad.wav",
+    "frame_size": 256,
+    "hop_size": 64,
+    "threshold_db": -35.0,
+    "event_count": 11,
+    "events": [
+      {
+        "start_s": 0.0,
+        "end_s": 0.15528344671201813,
+        "duration_s": 0.15528344671201813,
+        "peak_s": 0.026122448979591838,
+        "peak_db": -13.07182502746582,
+        "attack_time_s": 0.026122448979591838,
+        "sustain_db": -18.722705841064453,
+        "decay_db_per_s": -38.228790283203125
+      },
+      {
+        "start_s": 0.15528344671201813,
+        "end_s": 0.39764172335600906,
+        "duration_s": 0.24235827664399093,
+        "peak_s": 0.18285714285714286,
+        "peak_db": -12.112100601196289,
+        "attack_time_s": 0.027573696145124716,
+        "sustain_db": -22.98387908935547,
+        "decay_db_per_s": -28.64304542541504
+      },
+      {
+        "start_s": 0.39764172335600906,
+        "end_s": 0.5775963718820861,
+        "duration_s": 0.1799546485260771,
+        "peak_s": 0.39909297052154197,
+        "peak_db": -24.090309143066406,
+        "attack_time_s": 0.0014512471655328798,
+        "sustain_db": -28.265213012695312,
+        "decay_db_per_s": -48.906761169433594
+      },
+      {
+        "start_s": 0.579047619047619,
+        "end_s": 0.5863038548752835,
+        "duration_s": 0.0072562358276643995,
+        "peak_s": 0.5834013605442177,
+        "peak_db": -28.979177474975586,
+        "attack_time_s": 0.004353741496598639,
+        "sustain_db": -29.82463836669922,
+        "decay_db_per_s": 274.26812744140625
+      },
+      {
+        "start_s": 0.5863038548752835,
+        "end_s": 0.6008163265306122,
+        "duration_s": 0.014512471655328799,
+        "peak_s": 0.5950113378684807,
+        "peak_db": -28.264007568359375,
+        "attack_time_s": 0.008707482993197279,
+        "sustain_db": -30.174110412597656,
+        "decay_db_per_s": -171.40318298339844
+      },
+      {
+        "start_s": 0.6022675736961451,
+        "end_s": 0.6095238095238096,
+        "duration_s": 0.0072562358276643995,
+        "peak_s": 0.6066213151927438,
+        "peak_db": -27.48033905029297,
+        "attack_time_s": 0.004353741496598639,
+        "sustain_db": -28.641698837280273,
+        "decay_db_per_s": 249.3446044921875
+      },
+      {
+        "start_s": 0.6095238095238096,
+        "end_s": 0.6240362811791383,
+        "duration_s": 0.014512471655328799,
+        "peak_s": 0.6182312925170068,
+        "peak_db": -27.109233856201172,
+        "attack_time_s": 0.008707482993197279,
+        "sustain_db": -29.09944725036621,
+        "decay_db_per_s": -367.8387145996094
+      },
+      {
+        "start_s": 0.6254875283446713,
+        "end_s": 0.6356462585034014,
+        "duration_s": 0.010158730158730159,
+        "peak_s": 0.6298412698412699,
+        "peak_db": -27.50687599182129,
+        "attack_time_s": 0.004353741496598639,
+        "sustain_db": -28.87921905517578,
+        "decay_db_per_s": -897.0154418945312
+      },
+      {
+        "start_s": 0.6370975056689342,
+        "end_s": 0.7531972789115646,
+        "duration_s": 0.11609977324263039,
+        "peak_s": 0.687891156462585,
+        "peak_db": -18.99309539794922,
+        "attack_time_s": 0.050793650793650794,
+        "sustain_db": -23.80844497680664,
+        "decay_db_per_s": -73.18575286865234
+      },
+      {
+        "start_s": 0.7546485260770975,
+        "end_s": 0.7648072562358277,
+        "duration_s": 0.010158730158730159,
+        "peak_s": 0.7590022675736962,
+        "peak_db": -27.003101348876953,
+        "attack_time_s": 0.004353741496598639,
+        "sustain_db": -28.597972869873047,
+        "decay_db_per_s": -594.040283203125
+      },
+      {
+        "start_s": 0.7648072562358277,
+        "end_s": 0.7793197278911564,
+        "duration_s": 0.014512471655328799,
+        "peak_s": 0.7735147392290249,
+        "peak_db": -32.48150634765625,
+        "attack_time_s": 0.008707482993197279,
+        "sustain_db": -34.29417037963867,
+        "decay_db_per_s": -78.68976593017578
+      }
+    ],
+    "files": [
+      "experiments/E003/detected_slices/baseline_256_64_minus35/broad_03_broad_event_01.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/broad_03_broad_event_02.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/broad_03_broad_event_03.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/broad_03_broad_event_04.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/broad_03_broad_event_05.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/broad_03_broad_event_06.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/broad_03_broad_event_07.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/broad_03_broad_event_08.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/broad_03_broad_event_09.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/broad_03_broad_event_10.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/broad_03_broad_event_11.wav"
+    ]
+  },
+  {
+    "setting": "baseline_256_64_minus35",
+    "source": "low_01_low.wav",
+    "frame_size": 256,
+    "hop_size": 64,
+    "threshold_db": -35.0,
+    "event_count": 5,
+    "events": [
+      {
+        "start_s": 0.0,
+        "end_s": 0.18140589569160998,
+        "duration_s": 0.18140589569160998,
+        "peak_s": 0.17124716553287983,
+        "peak_db": -10.57718276977539,
+        "attack_time_s": 0.17124716553287983,
+        "sustain_db": -20.12450408935547,
+        "decay_db_per_s": 42.60673141479492
+      },
+      {
+        "start_s": 0.18140589569160998,
+        "end_s": 0.4005442176870748,
+        "duration_s": 0.21913832199546485,
+        "peak_s": 0.18140589569160998,
+        "peak_db": -12.79623794555664,
+        "attack_time_s": 0.0,
+        "sustain_db": -18.206058502197266,
+        "decay_db_per_s": -63.07540512084961
+      },
+      {
+        "start_s": 0.4005442176870748,
+        "end_s": 0.6240362811791383,
+        "duration_s": 0.2234920634920635,
+        "peak_s": 0.494875283446712,
+        "peak_db": -10.550376892089844,
+        "attack_time_s": 0.09433106575963719,
+        "sustain_db": -15.750493049621582,
+        "decay_db_per_s": 15.960850715637207
+      },
+      {
+        "start_s": 0.6240362811791383,
+        "end_s": 0.7720634920634921,
+        "duration_s": 0.14802721088435375,
+        "peak_s": 0.6298412698412699,
+        "peak_db": -13.069014549255371,
+        "attack_time_s": 0.005804988662131519,
+        "sustain_db": -19.511173248291016,
+        "decay_db_per_s": -53.80891418457031
+      },
+      {
+        "start_s": 0.7720634920634921,
+        "end_s": 0.8751020408163265,
+        "duration_s": 0.10303854875283447,
+        "peak_s": 0.7865759637188209,
+        "peak_db": -12.104325294494629,
+        "attack_time_s": 0.014512471655328799,
+        "sustain_db": -19.739246368408203,
+        "decay_db_per_s": 11.366876602172852
+      }
+    ],
+    "files": [
+      "experiments/E003/detected_slices/baseline_256_64_minus35/low_01_low_event_01.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/low_01_low_event_02.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/low_01_low_event_03.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/low_01_low_event_04.wav",
+      "experiments/E003/detected_slices/baseline_256_64_minus35/low_01_low_event_05.wav"
+    ]
+  },
+  {
+    "setting": "conservative_256_64_minus45",
+    "source": "low_02_low.wav",
+    "frame_size": 256,
+    "hop_size": 64,
+    "threshold_db": -45.0,
+    "event_count": 3,
+    "events": [
+      {
+        "start_s": 0.0,
+        "end_s": 0.14947845804988663,
+        "duration_s": 0.14947845804988663,
+        "peak_s": 0.005804988662131519,
+        "peak_db": -12.266592025756836,
+        "attack_time_s": 0.005804988662131519,
+        "sustain_db": -22.32561492919922,
+        "decay_db_per_s": -49.297607421875
+      },
+      {
+        "start_s": 0.14947845804988663,
+        "end_s": 0.6472562358276645,
+        "duration_s": 0.49777777777777776,
+        "peak_s": 0.16108843537414966,
+        "peak_db": -12.503003120422363,
+        "attack_time_s": 0.011609977324263039,
+        "sustain_db": -31.094205856323242,
+        "decay_db_per_s": -29.536346435546875
+      },
+      {
+        "start_s": 0.6472562358276645,
+        "end_s": 0.8402721088435374,
+        "duration_s": 0.19301587301587303,
+        "peak_s": 0.7793197278911564,
+        "peak_db": -11.147605895996094,
+        "attack_time_s": 0.13206349206349208,
+        "sustain_db": -19.957563400268555,
+        "decay_db_per_s": 23.060714721679688
+      }
+    ],
+    "files": [
+      "experiments/E003/detected_slices/conservative_256_64_minus45/low_02_low_event_01.wav",
+      "experiments/E003/detected_slices/conservative_256_64_minus45/low_02_low_event_02.wav",
+      "experiments/E003/detected_slices/conservative_256_64_minus45/low_02_low_event_03.wav"
+    ]
+  },
+  {
+    "setting": "conservative_256_64_minus45",
+    "source": "bass_friendly_01_bass_friendly.wav",
+    "frame_size": 256,
+    "hop_size": 64,
+    "threshold_db": -45.0,
+    "event_count": 3,
+    "events": [
+      {
+        "start_s": 0.0,
+        "end_s": 0.15528344671201813,
+        "duration_s": 0.15528344671201813,
+        "peak_s": 0.026122448979591838,
+        "peak_db": -13.07182502746582,
+        "attack_time_s": 0.026122448979591838,
+        "sustain_db": -18.722705841064453,
+        "decay_db_per_s": -38.228790283203125
+      },
+      {
+        "start_s": 0.15528344671201813,
+        "end_s": 0.39764172335600906,
+        "duration_s": 0.24235827664399093,
+        "peak_s": 0.18285714285714286,
+        "peak_db": -12.112100601196289,
+        "attack_time_s": 0.027573696145124716,
+        "sustain_db": -22.98387908935547,
+        "decay_db_per_s": -28.64304542541504
+      },
+      {
+        "start_s": 0.39764172335600906,
+        "end_s": 0.7604535147392291,
+        "duration_s": 0.36281179138321995,
+        "peak_s": 0.687891156462585,
+        "peak_db": -18.99309539794922,
+        "attack_time_s": 0.29024943310657597,
+        "sustain_db": -28.249984741210938,
+        "decay_db_per_s": 36.16086959838867
+      }
+    ],
+    "files": [
+      "experiments/E003/detected_slices/conservative_256_64_minus45/bass_friendly_01_bass_friendly_event_01.wav",
+      "experiments/E003/detected_slices/conservative_256_64_minus45/bass_friendly_01_bass_friendly_event_02.wav",
+      "experiments/E003/detected_slices/conservative_256_64_minus45/bass_friendly_01_bass_friendly_event_03.wav"
+    ]
+  },
+  {
+    "setting": "conservative_256_64_minus45",
+    "source": "broad_03_broad.wav",
+    "frame_size": 256,
+    "hop_size": 64,
+    "threshold_db": -45.0,
+    "event_count": 3,
+    "events": [
+      {
+        "start_s": 0.0,
+        "end_s": 0.16108843537414966,
+        "duration_s": 0.16108843537414966,
+        "peak_s": 0.026122448979591838,
+        "peak_db": -13.07182502746582,
+        "attack_time_s": 0.026122448979591838,
+        "sustain_db": -18.801776885986328,
+        "decay_db_per_s": -74.14248657226562
+      },
+      {
+        "start_s": 0.16108843537414966,
+        "end_s": 0.39764172335600906,
+        "duration_s": 0.2365532879818594,
+        "peak_s": 0.18285714285714286,
+        "peak_db": -12.112100601196289,
+        "attack_time_s": 0.021768707482993196,
+        "sustain_db": -22.998388290405273,
+        "decay_db_per_s": 22.358346939086914
+      },
+      {
+        "start_s": 0.39764172335600906,
+        "end_s": 0.7836734693877551,
+        "duration_s": 0.38603174603174606,
+        "peak_s": 0.687891156462585,
+        "peak_db": -18.99309539794922,
+        "attack_time_s": 0.29024943310657597,
+        "sustain_db": -28.551116943359375,
+        "decay_db_per_s": -21.396121978759766
+      }
+    ],
+    "files": [
+      "experiments/E003/detected_slices/conservative_256_64_minus45/broad_03_broad_event_01.wav",
+      "experiments/E003/detected_slices/conservative_256_64_minus45/broad_03_broad_event_02.wav",
+      "experiments/E003/detected_slices/conservative_256_64_minus45/broad_03_broad_event_03.wav"
+    ]
+  },
+  {
+    "setting": "conservative_256_64_minus45",
+    "source": "low_01_low.wav",
+    "frame_size": 256,
+    "hop_size": 64,
+    "threshold_db": -45.0,
+    "event_count": 5,
+    "events": [
+      {
+        "start_s": 0.0,
+        "end_s": 0.18140589569160998,
+        "duration_s": 0.18140589569160998,
+        "peak_s": 0.17124716553287983,
+        "peak_db": -10.57718276977539,
+        "attack_time_s": 0.17124716553287983,
+        "sustain_db": -20.12450408935547,
+        "decay_db_per_s": 42.60673141479492
+      },
+      {
+        "start_s": 0.18140589569160998,
+        "end_s": 0.4005442176870748,
+        "duration_s": 0.21913832199546485,
+        "peak_s": 0.18140589569160998,
+        "peak_db": -12.79623794555664,
+        "attack_time_s": 0.0,
+        "sustain_db": -18.206058502197266,
+        "decay_db_per_s": -63.07540512084961
+      },
+      {
+        "start_s": 0.4005442176870748,
+        "end_s": 0.6240362811791383,
+        "duration_s": 0.2234920634920635,
+        "peak_s": 0.494875283446712,
+        "peak_db": -10.550376892089844,
+        "attack_time_s": 0.09433106575963719,
+        "sustain_db": -15.750493049621582,
+        "decay_db_per_s": 15.960850715637207
+      },
+      {
+        "start_s": 0.6240362811791383,
+        "end_s": 0.7720634920634921,
+        "duration_s": 0.14802721088435375,
+        "peak_s": 0.6298412698412699,
+        "peak_db": -13.069014549255371,
+        "attack_time_s": 0.005804988662131519,
+        "sustain_db": -19.511173248291016,
+        "decay_db_per_s": -53.80891418457031
+      },
+      {
+        "start_s": 0.7720634920634921,
+        "end_s": 0.8751020408163265,
+        "duration_s": 0.10303854875283447,
+        "peak_s": 0.7865759637188209,
+        "peak_db": -12.104325294494629,
+        "attack_time_s": 0.014512471655328799,
+        "sustain_db": -19.739246368408203,
+        "decay_db_per_s": 11.366876602172852
+      }
+    ],
+    "files": [
+      "experiments/E003/detected_slices/conservative_256_64_minus45/low_01_low_event_01.wav",
+      "experiments/E003/detected_slices/conservative_256_64_minus45/low_01_low_event_02.wav",
+      "experiments/E003/detected_slices/conservative_256_64_minus45/low_01_low_event_03.wav",
+      "experiments/E003/detected_slices/conservative_256_64_minus45/low_01_low_event_04.wav",
+      "experiments/E003/detected_slices/conservative_256_64_minus45/low_01_low_event_05.wav"
+    ]
+  }
+]

@@ -1,0 +1,2707 @@
+{
+  "reference": "ground_truth.csv",
+  "classification_note": "Usability classifications are provisional because the reviewed boundaries are approximate audition labels.",
+  "settings": [
+    {
+      "frame_size": 256,
+      "hop_size": 64,
+      "threshold_db": -35.0,
+      "excerpts": [
+        {
+          "excerpt_id": "low_02_low.wav",
+          "events": [
+            {
+              "start_s": 0.0,
+              "end_s": 0.15528344671201813,
+              "duration_s": 0.15528344671201813,
+              "peak_s": 0.005804988662131519,
+              "peak_db": -12.266592025756836,
+              "attack_time_s": 0.005804988662131519,
+              "sustain_db": -22.29592514038086,
+              "decay_db_per_s": 55.35064697265625
+            },
+            {
+              "start_s": 0.15528344671201813,
+              "end_s": 0.40199546485260773,
+              "duration_s": 0.24671201814058957,
+              "peak_s": 0.16108843537414966,
+              "peak_db": -12.503003120422363,
+              "attack_time_s": 0.005804988662131519,
+              "sustain_db": -21.990489959716797,
+              "decay_db_per_s": -20.91855239868164
+            },
+            {
+              "start_s": 0.40199546485260773,
+              "end_s": 0.5079365079365079,
+              "duration_s": 0.10594104308390023,
+              "peak_s": 0.4048979591836735,
+              "peak_db": -26.10317039489746,
+              "attack_time_s": 0.0029024943310657597,
+              "sustain_db": -31.291887283325195,
+              "decay_db_per_s": -7.156322002410889
+            },
+            {
+              "start_s": 0.5093877551020408,
+              "end_s": 0.5340589569160997,
+              "duration_s": 0.024671201814058956,
+              "peak_s": 0.5137414965986394,
+              "peak_db": -31.07900619506836,
+              "attack_time_s": 0.004353741496598639,
+              "sustain_db": -33.220584869384766,
+              "decay_db_per_s": -60.889930725097656
+            },
+            {
+              "start_s": 0.5340589569160997,
+              "end_s": 0.54421768707483,
+              "duration_s": 0.010158730158730159,
+              "peak_s": 0.5398639455782313,
+              "peak_db": -31.954936981201172,
+              "attack_time_s": 0.005804988662131519,
+              "sustain_db": -32.52766418457031,
+              "decay_db_per_s": -230.40647888183594
+            },
+            {
+              "start_s": 0.5456689342403628,
+              "end_s": 0.6472562358276645,
+              "duration_s": 0.10158730158730159,
+              "peak_s": 0.628390022675737,
+              "peak_db": -30.311767578125,
+              "attack_time_s": 0.08272108843537415,
+              "sustain_db": -31.817092895507812,
+              "decay_db_per_s": 1.652766466140747
+            },
+            {
+              "start_s": 0.6472562358276645,
+              "end_s": 0.7343310657596371,
+              "duration_s": 0.08707482993197278,
+              "peak_s": 0.6559637188208617,
+              "peak_db": -30.34084129333496,
+              "attack_time_s": 0.008707482993197279,
+              "sustain_db": -32.196083068847656,
+              "decay_db_per_s": -52.65602493286133
+            },
+            {
+              "start_s": 0.7386848072562359,
+              "end_s": 0.8402721088435374,
+              "duration_s": 0.10158730158730159,
+              "peak_s": 0.7793197278911564,
+              "peak_db": -11.147605895996094,
+              "attack_time_s": 0.040634920634920635,
+              "sustain_db": -17.43611717224121,
+              "decay_db_per_s": -121.55510711669922
+            }
+          ],
+          "score": {
+            "reference_count": 3,
+            "detected_count": 8,
+            "missed_count": 0,
+            "extra_count": 5,
+            "matched_count": 3,
+            "mean_onset_error_s": 0.1110959939531368,
+            "mean_offset_error_s": 0.22511715797430085,
+            "usable_count": 2,
+            "ambiguous_count": 1,
+            "disqualified_count": 5,
+            "classifications": [
+              {
+                "event_index": 1,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 1,
+                "onset_error_s": 0.0,
+                "offset_error_s": 0.005283446712018136
+              },
+              {
+                "event_index": 2,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 2,
+                "onset_error_s": 0.005283446712018136,
+                "offset_error_s": 0.32800453514739225
+              },
+              {
+                "event_index": 3,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 3,
+                "onset_error_s": 0.32800453514739225,
+                "offset_error_s": 0.34206349206349207
+              },
+              {
+                "event_index": 4,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 5,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 6,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 7,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 8,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              }
+            ]
+          }
+        },
+        {
+          "excerpt_id": "bass_friendly_01_bass_friendly.wav",
+          "events": [
+            {
+              "start_s": 0.0,
+              "end_s": 0.15528344671201813,
+              "duration_s": 0.15528344671201813,
+              "peak_s": 0.026122448979591838,
+              "peak_db": -13.07182502746582,
+              "attack_time_s": 0.026122448979591838,
+              "sustain_db": -18.722705841064453,
+              "decay_db_per_s": -38.228790283203125
+            },
+            {
+              "start_s": 0.15528344671201813,
+              "end_s": 0.39764172335600906,
+              "duration_s": 0.24235827664399093,
+              "peak_s": 0.18285714285714286,
+              "peak_db": -12.112100601196289,
+              "attack_time_s": 0.027573696145124716,
+              "sustain_db": -22.98387908935547,
+              "decay_db_per_s": -28.64304542541504
+            },
+            {
+              "start_s": 0.39764172335600906,
+              "end_s": 0.5775963718820861,
+              "duration_s": 0.1799546485260771,
+              "peak_s": 0.39909297052154197,
+              "peak_db": -24.090309143066406,
+              "attack_time_s": 0.0014512471655328798,
+              "sustain_db": -28.265213012695312,
+              "decay_db_per_s": -48.906761169433594
+            },
+            {
+              "start_s": 0.579047619047619,
+              "end_s": 0.5863038548752835,
+              "duration_s": 0.0072562358276643995,
+              "peak_s": 0.5834013605442177,
+              "peak_db": -28.979177474975586,
+              "attack_time_s": 0.004353741496598639,
+              "sustain_db": -29.82463836669922,
+              "decay_db_per_s": 274.26812744140625
+            },
+            {
+              "start_s": 0.5863038548752835,
+              "end_s": 0.6008163265306122,
+              "duration_s": 0.014512471655328799,
+              "peak_s": 0.5950113378684807,
+              "peak_db": -28.264007568359375,
+              "attack_time_s": 0.008707482993197279,
+              "sustain_db": -30.174110412597656,
+              "decay_db_per_s": -171.40318298339844
+            },
+            {
+              "start_s": 0.6022675736961451,
+              "end_s": 0.6095238095238096,
+              "duration_s": 0.0072562358276643995,
+              "peak_s": 0.6066213151927438,
+              "peak_db": -27.48033905029297,
+              "attack_time_s": 0.004353741496598639,
+              "sustain_db": -28.641698837280273,
+              "decay_db_per_s": 249.3446044921875
+            },
+            {
+              "start_s": 0.6095238095238096,
+              "end_s": 0.6240362811791383,
+              "duration_s": 0.014512471655328799,
+              "peak_s": 0.6182312925170068,
+              "peak_db": -27.109233856201172,
+              "attack_time_s": 0.008707482993197279,
+              "sustain_db": -29.09944725036621,
+              "decay_db_per_s": -367.8387145996094
+            },
+            {
+              "start_s": 0.6254875283446713,
+              "end_s": 0.6356462585034014,
+              "duration_s": 0.010158730158730159,
+              "peak_s": 0.6298412698412699,
+              "peak_db": -27.50687599182129,
+              "attack_time_s": 0.004353741496598639,
+              "sustain_db": -28.87921905517578,
+              "decay_db_per_s": -897.0154418945312
+            },
+            {
+              "start_s": 0.6370975056689342,
+              "end_s": 0.7531972789115646,
+              "duration_s": 0.11609977324263039,
+              "peak_s": 0.687891156462585,
+              "peak_db": -18.99309539794922,
+              "attack_time_s": 0.050793650793650794,
+              "sustain_db": -23.80844497680664,
+              "decay_db_per_s": -73.18575286865234
+            },
+            {
+              "start_s": 0.7546485260770975,
+              "end_s": 0.7604535147392291,
+              "duration_s": 0.005804988662131519,
+              "peak_s": 0.7590022675736962,
+              "peak_db": -27.003101348876953,
+              "attack_time_s": 0.004353741496598639,
+              "sustain_db": -28.61661148071289,
+              "decay_db_per_s": 555.9046630859375
+            }
+          ],
+          "score": {
+            "reference_count": 3,
+            "detected_count": 10,
+            "missed_count": 0,
+            "extra_count": 7,
+            "matched_count": 3,
+            "mean_onset_error_s": 0.07254724111866968,
+            "mean_offset_error_s": 0.13334845049130764,
+            "usable_count": 2,
+            "ambiguous_count": 1,
+            "disqualified_count": 7,
+            "classifications": [
+              {
+                "event_index": 1,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 1,
+                "onset_error_s": 0.0,
+                "offset_error_s": 0.005283446712018136
+              },
+              {
+                "event_index": 2,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 2,
+                "onset_error_s": 0.005283446712018136,
+                "offset_error_s": 0.21235827664399093
+              },
+              {
+                "event_index": 3,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 3,
+                "onset_error_s": 0.21235827664399093,
+                "offset_error_s": 0.18240362811791389
+              },
+              {
+                "event_index": 4,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 5,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 6,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 7,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 8,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 9,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 10,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              }
+            ]
+          }
+        },
+        {
+          "excerpt_id": "broad_03_broad.wav",
+          "events": [
+            {
+              "start_s": 0.0,
+              "end_s": 0.15528344671201813,
+              "duration_s": 0.15528344671201813,
+              "peak_s": 0.026122448979591838,
+              "peak_db": -13.07182502746582,
+              "attack_time_s": 0.026122448979591838,
+              "sustain_db": -18.722705841064453,
+              "decay_db_per_s": -38.228790283203125
+            },
+            {
+              "start_s": 0.15528344671201813,
+              "end_s": 0.39764172335600906,
+              "duration_s": 0.24235827664399093,
+              "peak_s": 0.18285714285714286,
+              "peak_db": -12.112100601196289,
+              "attack_time_s": 0.027573696145124716,
+              "sustain_db": -22.98387908935547,
+              "decay_db_per_s": -28.64304542541504
+            },
+            {
+              "start_s": 0.39764172335600906,
+              "end_s": 0.5775963718820861,
+              "duration_s": 0.1799546485260771,
+              "peak_s": 0.39909297052154197,
+              "peak_db": -24.090309143066406,
+              "attack_time_s": 0.0014512471655328798,
+              "sustain_db": -28.265213012695312,
+              "decay_db_per_s": -48.906761169433594
+            },
+            {
+              "start_s": 0.579047619047619,
+              "end_s": 0.5863038548752835,
+              "duration_s": 0.0072562358276643995,
+              "peak_s": 0.5834013605442177,
+              "peak_db": -28.979177474975586,
+              "attack_time_s": 0.004353741496598639,
+              "sustain_db": -29.82463836669922,
+              "decay_db_per_s": 274.26812744140625
+            },
+            {
+              "start_s": 0.5863038548752835,
+              "end_s": 0.6008163265306122,
+              "duration_s": 0.014512471655328799,
+              "peak_s": 0.5950113378684807,
+              "peak_db": -28.264007568359375,
+              "attack_time_s": 0.008707482993197279,
+              "sustain_db": -30.174110412597656,
+              "decay_db_per_s": -171.40318298339844
+            },
+            {
+              "start_s": 0.6022675736961451,
+              "end_s": 0.6095238095238096,
+              "duration_s": 0.0072562358276643995,
+              "peak_s": 0.6066213151927438,
+              "peak_db": -27.48033905029297,
+              "attack_time_s": 0.004353741496598639,
+              "sustain_db": -28.641698837280273,
+              "decay_db_per_s": 249.3446044921875
+            },
+            {
+              "start_s": 0.6095238095238096,
+              "end_s": 0.6240362811791383,
+              "duration_s": 0.014512471655328799,
+              "peak_s": 0.6182312925170068,
+              "peak_db": -27.109233856201172,
+              "attack_time_s": 0.008707482993197279,
+              "sustain_db": -29.09944725036621,
+              "decay_db_per_s": -367.8387145996094
+            },
+            {
+              "start_s": 0.6254875283446713,
+              "end_s": 0.6356462585034014,
+              "duration_s": 0.010158730158730159,
+              "peak_s": 0.6298412698412699,
+              "peak_db": -27.50687599182129,
+              "attack_time_s": 0.004353741496598639,
+              "sustain_db": -28.87921905517578,
+              "decay_db_per_s": -897.0154418945312
+            },
+            {
+              "start_s": 0.6370975056689342,
+              "end_s": 0.7531972789115646,
+              "duration_s": 0.11609977324263039,
+              "peak_s": 0.687891156462585,
+              "peak_db": -18.99309539794922,
+              "attack_time_s": 0.050793650793650794,
+              "sustain_db": -23.80844497680664,
+              "decay_db_per_s": -73.18575286865234
+            },
+            {
+              "start_s": 0.7546485260770975,
+              "end_s": 0.7648072562358277,
+              "duration_s": 0.010158730158730159,
+              "peak_s": 0.7590022675736962,
+              "peak_db": -27.003101348876953,
+              "attack_time_s": 0.004353741496598639,
+              "sustain_db": -28.597972869873047,
+              "decay_db_per_s": -594.040283203125
+            },
+            {
+              "start_s": 0.7648072562358277,
+              "end_s": 0.7793197278911564,
+              "duration_s": 0.014512471655328799,
+              "peak_s": 0.7735147392290249,
+              "peak_db": -32.48150634765625,
+              "attack_time_s": 0.008707482993197279,
+              "sustain_db": -34.29417037963867,
+              "decay_db_per_s": -78.68976593017578
+            }
+          ],
+          "score": {
+            "reference_count": 3,
+            "detected_count": 11,
+            "missed_count": 0,
+            "extra_count": 8,
+            "matched_count": 3,
+            "mean_onset_error_s": 0.08588057445200303,
+            "mean_offset_error_s": 0.156681783824641,
+            "usable_count": 2,
+            "ambiguous_count": 1,
+            "disqualified_count": 8,
+            "classifications": [
+              {
+                "event_index": 1,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 1,
+                "onset_error_s": 0.0,
+                "offset_error_s": 0.005283446712018136
+              },
+              {
+                "event_index": 2,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 2,
+                "onset_error_s": 0.005283446712018136,
+                "offset_error_s": 0.25235827664399096
+              },
+              {
+                "event_index": 3,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 3,
+                "onset_error_s": 0.25235827664399096,
+                "offset_error_s": 0.2124036281179139
+              },
+              {
+                "event_index": 4,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 5,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 6,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 7,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 8,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 9,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 10,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 11,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              }
+            ]
+          }
+        },
+        {
+          "excerpt_id": "low_01_low.wav",
+          "events": [
+            {
+              "start_s": 0.0,
+              "end_s": 0.18140589569160998,
+              "duration_s": 0.18140589569160998,
+              "peak_s": 0.17124716553287983,
+              "peak_db": -10.57718276977539,
+              "attack_time_s": 0.17124716553287983,
+              "sustain_db": -20.12450408935547,
+              "decay_db_per_s": 42.60673141479492
+            },
+            {
+              "start_s": 0.18140589569160998,
+              "end_s": 0.4005442176870748,
+              "duration_s": 0.21913832199546485,
+              "peak_s": 0.18140589569160998,
+              "peak_db": -12.79623794555664,
+              "attack_time_s": 0.0,
+              "sustain_db": -18.206058502197266,
+              "decay_db_per_s": -63.07540512084961
+            },
+            {
+              "start_s": 0.4005442176870748,
+              "end_s": 0.6240362811791383,
+              "duration_s": 0.2234920634920635,
+              "peak_s": 0.494875283446712,
+              "peak_db": -10.550376892089844,
+              "attack_time_s": 0.09433106575963719,
+              "sustain_db": -15.750493049621582,
+              "decay_db_per_s": 15.960850715637207
+            },
+            {
+              "start_s": 0.6240362811791383,
+              "end_s": 0.7720634920634921,
+              "duration_s": 0.14802721088435375,
+              "peak_s": 0.6298412698412699,
+              "peak_db": -13.069014549255371,
+              "attack_time_s": 0.005804988662131519,
+              "sustain_db": -19.511173248291016,
+              "decay_db_per_s": -53.80891418457031
+            },
+            {
+              "start_s": 0.7720634920634921,
+              "end_s": 0.8751020408163265,
+              "duration_s": 0.10303854875283447,
+              "peak_s": 0.7865759637188209,
+              "peak_db": -12.104325294494629,
+              "attack_time_s": 0.014512471655328799,
+              "sustain_db": -19.739246368408203,
+              "decay_db_per_s": 11.366876602172852
+            }
+          ],
+          "score": {
+            "reference_count": 5,
+            "detected_count": 5,
+            "missed_count": 0,
+            "extra_count": 0,
+            "matched_count": 5,
+            "mean_onset_error_s": 0.02139229024943312,
+            "mean_offset_error_s": 0.022371882086167826,
+            "usable_count": 3,
+            "ambiguous_count": 2,
+            "disqualified_count": 0,
+            "classifications": [
+              {
+                "event_index": 1,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 1,
+                "onset_error_s": 0.0,
+                "offset_error_s": 0.04140589569160996
+              },
+              {
+                "event_index": 2,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 2,
+                "onset_error_s": 0.04140589569160996,
+                "offset_error_s": 0.009455782312925154
+              },
+              {
+                "event_index": 3,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 3,
+                "onset_error_s": 0.009455782312925154,
+                "offset_error_s": 0.05403628117913839
+              },
+              {
+                "event_index": 4,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 4,
+                "onset_error_s": 0.05403628117913839,
+                "offset_error_s": 0.0020634920634921006
+              },
+              {
+                "event_index": 5,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 5,
+                "onset_error_s": 0.0020634920634921006,
+                "offset_error_s": 0.004897959183673528
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "frame_size": 256,
+      "hop_size": 32,
+      "threshold_db": -35.0,
+      "excerpts": [
+        {
+          "excerpt_id": "low_02_low.wav",
+          "events": [
+            {
+              "start_s": 0.0,
+              "end_s": 0.1545578231292517,
+              "duration_s": 0.1545578231292517,
+              "peak_s": 0.005804988662131519,
+              "peak_db": -12.266592025756836,
+              "attack_time_s": 0.005804988662131519,
+              "sustain_db": -22.44426727294922,
+              "decay_db_per_s": 55.61050796508789
+            },
+            {
+              "start_s": 0.1545578231292517,
+              "end_s": 0.49124716553287984,
+              "duration_s": 0.33668934240362813,
+              "peak_s": 0.1618140589569161,
+              "peak_db": -12.294307708740234,
+              "attack_time_s": 0.0072562358276643995,
+              "sustain_db": -24.62704849243164,
+              "decay_db_per_s": -69.50656127929688
+            },
+            {
+              "start_s": 0.49197278911564624,
+              "end_s": 0.5035827664399093,
+              "duration_s": 0.011609977324263039,
+              "peak_s": 0.49560090702947845,
+              "peak_db": -31.097021102905273,
+              "attack_time_s": 0.0036281179138321997,
+              "sustain_db": -31.83251953125,
+              "decay_db_per_s": 54.385337829589844
+            },
+            {
+              "start_s": 0.5035827664399093,
+              "end_s": 0.5079365079365079,
+              "duration_s": 0.004353741496598639,
+              "peak_s": 0.5035827664399093,
+              "peak_db": -30.985797882080078,
+              "attack_time_s": 0.0,
+              "sustain_db": -31.438365936279297,
+              "decay_db_per_s": -301.4350280761719
+            },
+            {
+              "start_s": 0.5086621315192744,
+              "end_s": 0.5173696145124717,
+              "duration_s": 0.008707482993197279,
+              "peak_s": 0.5137414965986394,
+              "peak_db": -31.07900619506836,
+              "attack_time_s": 0.005079365079365079,
+              "sustain_db": -31.954925537109375,
+              "decay_db_per_s": -631.8123168945312
+            },
+            {
+              "start_s": 0.518095238095238,
+              "end_s": 0.5260770975056689,
+              "duration_s": 0.00798185941043084,
+              "peak_s": 0.5217233560090703,
+              "peak_db": -31.853118896484375,
+              "attack_time_s": 0.0036281179138321997,
+              "sustain_db": -32.653106689453125,
+              "decay_db_per_s": -322.0584716796875
+            },
+            {
+              "start_s": 0.5268027210884354,
+              "end_s": 0.5391383219954649,
+              "duration_s": 0.012335600907029478,
+              "peak_s": 0.5304308390022676,
+              "peak_db": -32.24183654785156,
+              "attack_time_s": 0.0036281179138321997,
+              "sustain_db": -33.29847717285156,
+              "decay_db_per_s": 125.66456604003906
+            },
+            {
+              "start_s": 0.5391383219954649,
+              "end_s": 0.54421768707483,
+              "duration_s": 0.005079365079365079,
+              "peak_s": 0.5398639455782313,
+              "peak_db": -31.954936981201172,
+              "attack_time_s": 0.0007256235827664399,
+              "sustain_db": -33.04564666748047,
+              "decay_db_per_s": -588.63330078125
+            },
+            {
+              "start_s": 0.5449433106575964,
+              "end_s": 0.5485714285714286,
+              "duration_s": 0.0036281179138321997,
+              "peak_s": 0.5478458049886621,
+              "peak_db": -32.53520202636719,
+              "attack_time_s": 0.0029024943310657597,
+              "sustain_db": -33.0228271484375,
+              "decay_db_per_s": 453.4947204589844
+            },
+            {
+              "start_s": 0.5485714285714286,
+              "end_s": 0.5536507936507936,
+              "duration_s": 0.005079365079365079,
+              "peak_s": 0.5500226757369614,
+              "peak_db": -31.909912109375,
+              "attack_time_s": 0.0014512471655328798,
+              "sustain_db": -33.16731262207031,
+              "decay_db_per_s": -519.6882934570312
+            },
+            {
+              "start_s": 0.5543764172335601,
+              "end_s": 0.6066213151927438,
+              "duration_s": 0.052244897959183675,
+              "peak_s": 0.6015419501133786,
+              "peak_db": -31.10329818725586,
+              "attack_time_s": 0.047165532879818596,
+              "sustain_db": -32.042213439941406,
+              "decay_db_per_s": 92.59156036376953
+            },
+            {
+              "start_s": 0.6066213151927438,
+              "end_s": 0.7343310657596371,
+              "duration_s": 0.12770975056689343,
+              "peak_s": 0.628390022675737,
+              "peak_db": -30.311767578125,
+              "attack_time_s": 0.021768707482993196,
+              "sustain_db": -31.721912384033203,
+              "decay_db_per_s": -46.04379653930664
+            },
+            {
+              "start_s": 0.7386848072562359,
+              "end_s": 0.7611791383219955,
+              "duration_s": 0.022494331065759637,
+              "peak_s": 0.7452154195011338,
+              "peak_db": -17.649843215942383,
+              "attack_time_s": 0.006530612244897959,
+              "sustain_db": -20.586206436157227,
+              "decay_db_per_s": -166.83721923828125
+            },
+            {
+              "start_s": 0.7611791383219955,
+              "end_s": 0.8402721088435374,
+              "duration_s": 0.07909297052154195,
+              "peak_s": 0.77859410430839,
+              "peak_db": -11.066572189331055,
+              "attack_time_s": 0.017414965986394557,
+              "sustain_db": -19.201181411743164,
+              "decay_db_per_s": -103.76151275634766
+            }
+          ],
+          "score": {
+            "reference_count": 3,
+            "detected_count": 14,
+            "missed_count": 0,
+            "extra_count": 11,
+            "matched_count": 3,
+            "mean_onset_error_s": 0.08086167800453516,
+            "mean_offset_error_s": 0.19657596371882083,
+            "usable_count": 2,
+            "ambiguous_count": 1,
+            "disqualified_count": 11,
+            "classifications": [
+              {
+                "event_index": 1,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 1,
+                "onset_error_s": 0.0,
+                "offset_error_s": 0.004557823129251709
+              },
+              {
+                "event_index": 2,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 2,
+                "onset_error_s": 0.004557823129251709,
+                "offset_error_s": 0.23875283446712015
+              },
+              {
+                "event_index": 3,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 3,
+                "onset_error_s": 0.23802721088435375,
+                "offset_error_s": 0.3464172335600907
+              },
+              {
+                "event_index": 4,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 5,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 6,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 7,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 8,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 9,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 10,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 11,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 12,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 13,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 14,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              }
+            ]
+          }
+        },
+        {
+          "excerpt_id": "bass_friendly_01_bass_friendly.wav",
+          "events": [
+            {
+              "start_s": 0.0,
+              "end_s": 0.44263038548752837,
+              "duration_s": 0.44263038548752837,
+              "peak_s": 0.18358276643990928,
+              "peak_db": -12.048542022705078,
+              "attack_time_s": 0.18358276643990928,
+              "sustain_db": -22.87804412841797,
+              "decay_db_per_s": -19.68284034729004
+            },
+            {
+              "start_s": 0.44263038548752837,
+              "end_s": 0.5667120181405896,
+              "duration_s": 0.12408163265306123,
+              "peak_s": 0.49197278911564624,
+              "peak_db": -24.2653865814209,
+              "attack_time_s": 0.04934240362811791,
+              "sustain_db": -28.99526023864746,
+              "decay_db_per_s": -148.7327117919922
+            },
+            {
+              "start_s": 0.567437641723356,
+              "end_s": 0.5775963718820861,
+              "duration_s": 0.010158730158730159,
+              "peak_s": 0.5725170068027211,
+              "peak_db": -28.765371322631836,
+              "attack_time_s": 0.005079365079365079,
+              "sustain_db": -30.688030242919922,
+              "decay_db_per_s": -995.8772583007812
+            },
+            {
+              "start_s": 0.579047619047619,
+              "end_s": 0.5899319727891157,
+              "duration_s": 0.010884353741496598,
+              "peak_s": 0.5841269841269842,
+              "peak_db": -28.78486442565918,
+              "attack_time_s": 0.005079365079365079,
+              "sustain_db": -31.321758270263672,
+              "decay_db_per_s": -1093.209228515625
+            },
+            {
+              "start_s": 0.5906575963718821,
+              "end_s": 0.6008163265306122,
+              "duration_s": 0.010158730158730159,
+              "peak_s": 0.5957369614512472,
+              "peak_db": -28.231372833251953,
+              "attack_time_s": 0.005079365079365079,
+              "sustain_db": -30.138378143310547,
+              "decay_db_per_s": -1083.39453125
+            },
+            {
+              "start_s": 0.6022675736961451,
+              "end_s": 0.6146031746031746,
+              "duration_s": 0.012335600907029478,
+              "peak_s": 0.6073469387755102,
+              "peak_db": -27.39631462097168,
+              "attack_time_s": 0.005079365079365079,
+              "sustain_db": -29.751575469970703,
+              "decay_db_per_s": -525.9337768554688
+            },
+            {
+              "start_s": 0.6146031746031746,
+              "end_s": 0.6240362811791383,
+              "duration_s": 0.00943310657596372,
+              "peak_s": 0.6182312925170068,
+              "peak_db": -27.109233856201172,
+              "attack_time_s": 0.0036281179138321997,
+              "sustain_db": -29.73665428161621,
+              "decay_db_per_s": -1268.1539306640625
+            },
+            {
+              "start_s": 0.6247619047619047,
+              "end_s": 0.6356462585034014,
+              "duration_s": 0.010884353741496598,
+              "peak_s": 0.6298412698412699,
+              "peak_db": -27.50687599182129,
+              "attack_time_s": 0.005079365079365079,
+              "sustain_db": -29.66067123413086,
+              "decay_db_per_s": -1088.7960205078125
+            },
+            {
+              "start_s": 0.6370975056689342,
+              "end_s": 0.7531972789115646,
+              "duration_s": 0.11609977324263039,
+              "peak_s": 0.687891156462585,
+              "peak_db": -18.99309539794922,
+              "attack_time_s": 0.050793650793650794,
+              "sustain_db": -23.83277702331543,
+              "decay_db_per_s": -139.7075958251953
+            },
+            {
+              "start_s": 0.753922902494331,
+              "end_s": 0.7560997732426303,
+              "duration_s": 0.0021768707482993197,
+              "peak_s": 0.7553741496598639,
+              "peak_db": -30.213550567626953,
+              "attack_time_s": 0.0014512471655328798,
+              "sustain_db": -30.607830047607422,
+              "decay_db_per_s": 724.4902954101562
+            },
+            {
+              "start_s": 0.7560997732426303,
+              "end_s": 0.7604535147392291,
+              "duration_s": 0.004353741496598639,
+              "peak_s": 0.7590022675736962,
+              "peak_db": -27.003101348876953,
+              "attack_time_s": 0.0029024943310657597,
+              "sustain_db": -27.37649917602539,
+              "decay_db_per_s": -323.99688720703125
+            }
+          ],
+          "score": {
+            "reference_count": 3,
+            "detected_count": 11,
+            "missed_count": 0,
+            "extra_count": 8,
+            "matched_count": 3,
+            "mean_onset_error_s": 0.11173091458805746,
+            "mean_offset_error_s": 0.17277399848828423,
+            "usable_count": 1,
+            "ambiguous_count": 2,
+            "disqualified_count": 8,
+            "classifications": [
+              {
+                "event_index": 1,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 1,
+                "onset_error_s": 0.0,
+                "offset_error_s": 0.2926303854875284
+              },
+              {
+                "event_index": 2,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 2,
+                "onset_error_s": 0.2926303854875284,
+                "offset_error_s": 0.04328798185941041
+              },
+              {
+                "event_index": 3,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 3,
+                "onset_error_s": 0.04256235827664401,
+                "offset_error_s": 0.18240362811791389
+              },
+              {
+                "event_index": 4,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 5,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 6,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 7,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 8,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 9,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 10,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 11,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              }
+            ]
+          }
+        },
+        {
+          "excerpt_id": "broad_03_broad.wav",
+          "events": [
+            {
+              "start_s": 0.0,
+              "end_s": 0.44263038548752837,
+              "duration_s": 0.44263038548752837,
+              "peak_s": 0.18358276643990928,
+              "peak_db": -12.048542022705078,
+              "attack_time_s": 0.18358276643990928,
+              "sustain_db": -22.87804412841797,
+              "decay_db_per_s": -19.68284034729004
+            },
+            {
+              "start_s": 0.44263038548752837,
+              "end_s": 0.5667120181405896,
+              "duration_s": 0.12408163265306123,
+              "peak_s": 0.49197278911564624,
+              "peak_db": -24.2653865814209,
+              "attack_time_s": 0.04934240362811791,
+              "sustain_db": -28.99526023864746,
+              "decay_db_per_s": -148.7327117919922
+            },
+            {
+              "start_s": 0.567437641723356,
+              "end_s": 0.5775963718820861,
+              "duration_s": 0.010158730158730159,
+              "peak_s": 0.5725170068027211,
+              "peak_db": -28.765371322631836,
+              "attack_time_s": 0.005079365079365079,
+              "sustain_db": -30.688030242919922,
+              "decay_db_per_s": -995.8772583007812
+            },
+            {
+              "start_s": 0.579047619047619,
+              "end_s": 0.5899319727891157,
+              "duration_s": 0.010884353741496598,
+              "peak_s": 0.5841269841269842,
+              "peak_db": -28.78486442565918,
+              "attack_time_s": 0.005079365079365079,
+              "sustain_db": -31.321758270263672,
+              "decay_db_per_s": -1093.209228515625
+            },
+            {
+              "start_s": 0.5906575963718821,
+              "end_s": 0.6008163265306122,
+              "duration_s": 0.010158730158730159,
+              "peak_s": 0.5957369614512472,
+              "peak_db": -28.231372833251953,
+              "attack_time_s": 0.005079365079365079,
+              "sustain_db": -30.138378143310547,
+              "decay_db_per_s": -1083.39453125
+            },
+            {
+              "start_s": 0.6022675736961451,
+              "end_s": 0.6146031746031746,
+              "duration_s": 0.012335600907029478,
+              "peak_s": 0.6073469387755102,
+              "peak_db": -27.39631462097168,
+              "attack_time_s": 0.005079365079365079,
+              "sustain_db": -29.751575469970703,
+              "decay_db_per_s": -525.9337768554688
+            },
+            {
+              "start_s": 0.6146031746031746,
+              "end_s": 0.6240362811791383,
+              "duration_s": 0.00943310657596372,
+              "peak_s": 0.6182312925170068,
+              "peak_db": -27.109233856201172,
+              "attack_time_s": 0.0036281179138321997,
+              "sustain_db": -29.73665428161621,
+              "decay_db_per_s": -1268.1539306640625
+            },
+            {
+              "start_s": 0.6247619047619047,
+              "end_s": 0.6356462585034014,
+              "duration_s": 0.010884353741496598,
+              "peak_s": 0.6298412698412699,
+              "peak_db": -27.50687599182129,
+              "attack_time_s": 0.005079365079365079,
+              "sustain_db": -29.66067123413086,
+              "decay_db_per_s": -1088.7960205078125
+            },
+            {
+              "start_s": 0.6370975056689342,
+              "end_s": 0.7531972789115646,
+              "duration_s": 0.11609977324263039,
+              "peak_s": 0.687891156462585,
+              "peak_db": -18.99309539794922,
+              "attack_time_s": 0.050793650793650794,
+              "sustain_db": -23.83277702331543,
+              "decay_db_per_s": -139.7075958251953
+            },
+            {
+              "start_s": 0.753922902494331,
+              "end_s": 0.7611791383219955,
+              "duration_s": 0.0072562358276643995,
+              "peak_s": 0.7590022675736962,
+              "peak_db": -27.003101348876953,
+              "attack_time_s": 0.005079365079365079,
+              "sustain_db": -28.287914276123047,
+              "decay_db_per_s": 90.59716796875
+            },
+            {
+              "start_s": 0.7611791383219955,
+              "end_s": 0.7684353741496599,
+              "duration_s": 0.0072562358276643995,
+              "peak_s": 0.7626303854875284,
+              "peak_db": -28.49320411682129,
+              "attack_time_s": 0.0014512471655328798,
+              "sustain_db": -33.158329010009766,
+              "decay_db_per_s": -439.77044677734375
+            },
+            {
+              "start_s": 0.7691609977324263,
+              "end_s": 0.7749659863945578,
+              "duration_s": 0.005804988662131519,
+              "peak_s": 0.7735147392290249,
+              "peak_db": -32.48150634765625,
+              "attack_time_s": 0.004353741496598639,
+              "sustain_db": -33.55783462524414,
+              "decay_db_per_s": 469.3092346191406
+            },
+            {
+              "start_s": 0.7749659863945578,
+              "end_s": 0.77859410430839,
+              "duration_s": 0.0036281179138321997,
+              "peak_s": 0.7749659863945578,
+              "peak_db": -32.760318756103516,
+              "attack_time_s": 0.0,
+              "sustain_db": -34.36015319824219,
+              "decay_db_per_s": 83.54209899902344
+            }
+          ],
+          "score": {
+            "reference_count": 3,
+            "detected_count": 13,
+            "missed_count": 0,
+            "extra_count": 10,
+            "matched_count": 3,
+            "mean_onset_error_s": 0.12506424792139081,
+            "mean_offset_error_s": 0.19610733182161758,
+            "usable_count": 1,
+            "ambiguous_count": 2,
+            "disqualified_count": 10,
+            "classifications": [
+              {
+                "event_index": 1,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 1,
+                "onset_error_s": 0.0,
+                "offset_error_s": 0.2926303854875284
+              },
+              {
+                "event_index": 2,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 2,
+                "onset_error_s": 0.2926303854875284,
+                "offset_error_s": 0.08328798185941044
+              },
+              {
+                "event_index": 3,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 3,
+                "onset_error_s": 0.08256235827664404,
+                "offset_error_s": 0.2124036281179139
+              },
+              {
+                "event_index": 4,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 5,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 6,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 7,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 8,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 9,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 10,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 11,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 12,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 13,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              }
+            ]
+          }
+        },
+        {
+          "excerpt_id": "low_01_low.wav",
+          "events": [
+            {
+              "start_s": 0.0,
+              "end_s": 0.19664399092970522,
+              "duration_s": 0.19664399092970522,
+              "peak_s": 0.17124716553287983,
+              "peak_db": -10.57718276977539,
+              "attack_time_s": 0.17124716553287983,
+              "sustain_db": -19.635875701904297,
+              "decay_db_per_s": 18.600112915039062
+            },
+            {
+              "start_s": 0.19664399092970522,
+              "end_s": 0.5841269841269842,
+              "duration_s": 0.3874829931972789,
+              "peak_s": 0.494875283446712,
+              "peak_db": -10.550376892089844,
+              "attack_time_s": 0.2982312925170068,
+              "sustain_db": -17.285297393798828,
+              "decay_db_per_s": 30.11446189880371
+            },
+            {
+              "start_s": 0.5841269841269842,
+              "end_s": 0.8751020408163265,
+              "duration_s": 0.2909750566893424,
+              "peak_s": 0.592108843537415,
+              "peak_db": -11.351177215576172,
+              "attack_time_s": 0.00798185941043084,
+              "sustain_db": -19.06951141357422,
+              "decay_db_per_s": -9.318937301635742
+            }
+          ],
+          "score": {
+            "reference_count": 5,
+            "detected_count": 3,
+            "missed_count": 2,
+            "extra_count": 0,
+            "matched_count": 3,
+            "mean_onset_error_s": 0.07692365835222979,
+            "mean_offset_error_s": 0.17862433862433866,
+            "usable_count": 1,
+            "ambiguous_count": 2,
+            "disqualified_count": 0,
+            "classifications": [
+              {
+                "event_index": 1,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 1,
+                "onset_error_s": 0.0,
+                "offset_error_s": 0.05664399092970521
+              },
+              {
+                "event_index": 2,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 2,
+                "onset_error_s": 0.05664399092970521,
+                "offset_error_s": 0.17412698412698419
+              },
+              {
+                "event_index": 3,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 3,
+                "onset_error_s": 0.17412698412698419,
+                "offset_error_s": 0.3051020408163265
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "frame_size": 128,
+      "hop_size": 32,
+      "threshold_db": -38.0,
+      "excerpts": [
+        {
+          "excerpt_id": "low_02_low.wav",
+          "events": [
+            {
+              "start_s": 0.0,
+              "end_s": 0.4745578231292517,
+              "duration_s": 0.4745578231292517,
+              "peak_s": 0.1654421768707483,
+              "peak_db": -10.714960098266602,
+              "attack_time_s": 0.1654421768707483,
+              "sustain_db": -22.286216735839844,
+              "decay_db_per_s": -66.30989074707031
+            },
+            {
+              "start_s": 0.47528344671201816,
+              "end_s": 0.4926984126984127,
+              "duration_s": 0.017414965986394557,
+              "peak_s": 0.47891156462585033,
+              "peak_db": -28.182865142822266,
+              "attack_time_s": 0.0036281179138321997,
+              "sustain_db": -33.798431396484375,
+              "decay_db_per_s": 192.71322631835938
+            },
+            {
+              "start_s": 0.49342403628117915,
+              "end_s": 0.5108390022675737,
+              "duration_s": 0.017414965986394557,
+              "peak_s": 0.5064852607709751,
+              "peak_db": -29.05147361755371,
+              "attack_time_s": 0.013061224489795919,
+              "sustain_db": -34.530181884765625,
+              "decay_db_per_s": 118.6924057006836
+            },
+            {
+              "start_s": 0.5115646258503401,
+              "end_s": 0.737233560090703,
+              "duration_s": 0.2256689342403628,
+              "peak_s": 0.6995011337868481,
+              "peak_db": -29.411218643188477,
+              "attack_time_s": 0.18793650793650793,
+              "sustain_db": -31.87245750427246,
+              "decay_db_per_s": -58.85344696044922
+            },
+            {
+              "start_s": 0.7415873015873016,
+              "end_s": 0.8431746031746031,
+              "duration_s": 0.10158730158730159,
+              "peak_s": 0.7814965986394558,
+              "peak_db": -8.810710906982422,
+              "attack_time_s": 0.039909297052154194,
+              "sustain_db": -18.315954208374023,
+              "decay_db_per_s": -56.64568328857422
+            }
+          ],
+          "score": {
+            "reference_count": 3,
+            "detected_count": 5,
+            "missed_count": 0,
+            "extra_count": 2,
+            "matched_count": 3,
+            "mean_onset_error_s": 0.187286470143613,
+            "mean_offset_error_s": 0.3003401360544218,
+            "usable_count": 1,
+            "ambiguous_count": 2,
+            "disqualified_count": 2,
+            "classifications": [
+              {
+                "event_index": 1,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 1,
+                "onset_error_s": 0.0,
+                "offset_error_s": 0.32455782312925174
+              },
+              {
+                "event_index": 2,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 2,
+                "onset_error_s": 0.32528344671201814,
+                "offset_error_s": 0.2373015873015873
+              },
+              {
+                "event_index": 3,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 3,
+                "onset_error_s": 0.23657596371882084,
+                "offset_error_s": 0.33916099773242625
+              },
+              {
+                "event_index": 4,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 5,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              }
+            ]
+          }
+        },
+        {
+          "excerpt_id": "bass_friendly_01_bass_friendly.wav",
+          "events": [
+            {
+              "start_s": 0.0,
+              "end_s": 0.5667120181405896,
+              "duration_s": 0.5667120181405896,
+              "peak_s": 0.18358276643990928,
+              "peak_db": -9.818876266479492,
+              "attack_time_s": 0.18358276643990928,
+              "sustain_db": -25.52541732788086,
+              "decay_db_per_s": -32.346107482910156
+            },
+            {
+              "start_s": 0.567437641723356,
+              "end_s": 0.5783219954648526,
+              "duration_s": 0.010884353741496598,
+              "peak_s": 0.5717913832199546,
+              "peak_db": -27.919330596923828,
+              "attack_time_s": 0.004353741496598639,
+              "sustain_db": -29.526880264282227,
+              "decay_db_per_s": -1379.013427734375
+            },
+            {
+              "start_s": 0.579047619047619,
+              "end_s": 0.7633560090702948,
+              "duration_s": 0.18430839002267574,
+              "peak_s": 0.6907936507936508,
+              "peak_db": -16.994064331054688,
+              "attack_time_s": 0.11174603174603175,
+              "sustain_db": -24.718854904174805,
+              "decay_db_per_s": -44.58633804321289
+            }
+          ],
+          "score": {
+            "reference_count": 3,
+            "detected_count": 3,
+            "missed_count": 0,
+            "extra_count": 0,
+            "matched_count": 3,
+            "mean_onset_error_s": 0.1494633408919123,
+            "mean_offset_error_s": 0.15058201058201057,
+            "usable_count": 2,
+            "ambiguous_count": 1,
+            "disqualified_count": 0,
+            "classifications": [
+              {
+                "event_index": 1,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 1,
+                "onset_error_s": 0.0,
+                "offset_error_s": 0.41671201814058956
+              },
+              {
+                "event_index": 2,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 2,
+                "onset_error_s": 0.41743764172335596,
+                "offset_error_s": 0.03167800453514735
+              },
+              {
+                "event_index": 3,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 3,
+                "onset_error_s": 0.030952380952380953,
+                "offset_error_s": 0.003356009070294763
+              }
+            ]
+          }
+        },
+        {
+          "excerpt_id": "broad_03_broad.wav",
+          "events": [
+            {
+              "start_s": 0.0,
+              "end_s": 0.5667120181405896,
+              "duration_s": 0.5667120181405896,
+              "peak_s": 0.18358276643990928,
+              "peak_db": -9.818876266479492,
+              "attack_time_s": 0.18358276643990928,
+              "sustain_db": -25.52541732788086,
+              "decay_db_per_s": -32.346107482910156
+            },
+            {
+              "start_s": 0.567437641723356,
+              "end_s": 0.5783219954648526,
+              "duration_s": 0.010884353741496598,
+              "peak_s": 0.5717913832199546,
+              "peak_db": -27.919330596923828,
+              "attack_time_s": 0.004353741496598639,
+              "sustain_db": -29.526880264282227,
+              "decay_db_per_s": -1379.013427734375
+            },
+            {
+              "start_s": 0.579047619047619,
+              "end_s": 0.7706122448979592,
+              "duration_s": 0.19156462585034015,
+              "peak_s": 0.6907936507936508,
+              "peak_db": -16.994064331054688,
+              "attack_time_s": 0.11174603174603175,
+              "sustain_db": -24.893070220947266,
+              "decay_db_per_s": -107.68350219726562
+            },
+            {
+              "start_s": 0.7713378684807256,
+              "end_s": 0.7829478458049887,
+              "duration_s": 0.011609977324263039,
+              "peak_s": 0.7735147392290249,
+              "peak_db": -32.10621643066406,
+              "attack_time_s": 0.0021768707482993197,
+              "sustain_db": -34.418548583984375,
+              "decay_db_per_s": -749.8980102539062
+            },
+            {
+              "start_s": 0.785124716553288,
+              "end_s": 0.7865759637188209,
+              "duration_s": 0.0014512471655328798,
+              "peak_s": 0.785124716553288,
+              "peak_db": -37.139312744140625,
+              "attack_time_s": 0.0,
+              "sustain_db": -37.471553802490234,
+              "decay_db_per_s": 0.0
+            }
+          ],
+          "score": {
+            "reference_count": 3,
+            "detected_count": 5,
+            "missed_count": 0,
+            "extra_count": 2,
+            "matched_count": 3,
+            "mean_onset_error_s": 0.16279667422524566,
+            "mean_offset_error_s": 0.16925925925925925,
+            "usable_count": 1,
+            "ambiguous_count": 2,
+            "disqualified_count": 2,
+            "classifications": [
+              {
+                "event_index": 1,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 1,
+                "onset_error_s": 0.0,
+                "offset_error_s": 0.41671201814058956
+              },
+              {
+                "event_index": 2,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 2,
+                "onset_error_s": 0.41743764172335596,
+                "offset_error_s": 0.07167800453514739
+              },
+              {
+                "event_index": 3,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 3,
+                "onset_error_s": 0.07095238095238099,
+                "offset_error_s": 0.019387755102040827
+              },
+              {
+                "event_index": 4,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 5,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              }
+            ]
+          }
+        },
+        {
+          "excerpt_id": "low_01_low.wav",
+          "events": [
+            {
+              "start_s": 0.0,
+              "end_s": 0.12408163265306123,
+              "duration_s": 0.12408163265306123,
+              "peak_s": 0.018140589569160998,
+              "peak_db": -9.410969734191895,
+              "attack_time_s": 0.018140589569160998,
+              "sustain_db": -19.645479202270508,
+              "decay_db_per_s": -180.8109130859375
+            },
+            {
+              "start_s": 0.12480725623582767,
+              "end_s": 0.14222222222222222,
+              "duration_s": 0.017414965986394557,
+              "peak_s": 0.12988662131519274,
+              "peak_db": -24.65972900390625,
+              "attack_time_s": 0.005079365079365079,
+              "sustain_db": -26.879573822021484,
+              "decay_db_per_s": 148.5191650390625
+            },
+            {
+              "start_s": 0.14294784580498865,
+              "end_s": 0.8780045351473923,
+              "duration_s": 0.7350566893424036,
+              "peak_s": 0.49560090702947845,
+              "peak_db": -8.421713829040527,
+              "attack_time_s": 0.3526530612244898,
+              "sustain_db": -17.893558502197266,
+              "decay_db_per_s": -21.828350067138672
+            }
+          ],
+          "score": {
+            "reference_count": 5,
+            "detected_count": 3,
+            "missed_count": 2,
+            "extra_count": 0,
+            "matched_count": 3,
+            "mean_onset_error_s": 0.09408163265306123,
+            "mean_offset_error_s": 0.19723356009070295,
+            "usable_count": 2,
+            "ambiguous_count": 1,
+            "disqualified_count": 0,
+            "classifications": [
+              {
+                "event_index": 1,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 1,
+                "onset_error_s": 0.0,
+                "offset_error_s": 0.015918367346938786
+              },
+              {
+                "event_index": 2,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 2,
+                "onset_error_s": 0.015192743764172345,
+                "offset_error_s": 0.2677777777777778
+              },
+              {
+                "event_index": 3,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 3,
+                "onset_error_s": 0.2670521541950113,
+                "offset_error_s": 0.30800453514739234
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "frame_size": 128,
+      "hop_size": 16,
+      "threshold_db": -38.0,
+      "excerpts": [
+        {
+          "excerpt_id": "low_02_low.wav",
+          "events": [
+            {
+              "start_s": 0.0,
+              "end_s": 0.4654875283446712,
+              "duration_s": 0.4654875283446712,
+              "peak_s": 0.1654421768707483,
+              "peak_db": -10.714960098266602,
+              "attack_time_s": 0.1654421768707483,
+              "sustain_db": -22.103147506713867,
+              "decay_db_per_s": -76.75819396972656
+            },
+            {
+              "start_s": 0.4658503401360544,
+              "end_s": 0.4745578231292517,
+              "duration_s": 0.008707482993197279,
+              "peak_s": 0.47020408163265304,
+              "peak_db": -28.197402954101562,
+              "attack_time_s": 0.004353741496598639,
+              "sustain_db": -29.548778533935547,
+              "decay_db_per_s": -1586.5999755859375
+            },
+            {
+              "start_s": 0.4749206349206349,
+              "end_s": 0.4836281179138322,
+              "duration_s": 0.008707482993197279,
+              "peak_s": 0.4792743764172336,
+              "peak_db": -28.130252838134766,
+              "attack_time_s": 0.004353741496598639,
+              "sustain_db": -30.79791259765625,
+              "decay_db_per_s": -2005.7420654296875
+            },
+            {
+              "start_s": 0.4839909297052154,
+              "end_s": 0.4926984126984127,
+              "duration_s": 0.008707482993197279,
+              "peak_s": 0.4883446712018141,
+              "peak_db": -28.856752395629883,
+              "attack_time_s": 0.004353741496598639,
+              "sustain_db": -31.665645599365234,
+              "decay_db_per_s": -2054.548828125
+            },
+            {
+              "start_s": 0.4930612244897959,
+              "end_s": 0.5017687074829932,
+              "duration_s": 0.008707482993197279,
+              "peak_s": 0.49741496598639456,
+              "peak_db": -29.64167594909668,
+              "attack_time_s": 0.004353741496598639,
+              "sustain_db": -31.50885009765625,
+              "decay_db_per_s": -1739.6756591796875
+            },
+            {
+              "start_s": 0.5021315192743764,
+              "end_s": 0.5108390022675737,
+              "duration_s": 0.008707482993197279,
+              "peak_s": 0.5064852607709751,
+              "peak_db": -29.05147361755371,
+              "attack_time_s": 0.004353741496598639,
+              "sustain_db": -32.553993225097656,
+              "decay_db_per_s": -2024.800537109375
+            },
+            {
+              "start_s": 0.5112018140589569,
+              "end_s": 0.5199092970521542,
+              "duration_s": 0.008707482993197279,
+              "peak_s": 0.5151927437641723,
+              "peak_db": -29.7786922454834,
+              "attack_time_s": 0.00399092970521542,
+              "sustain_db": -32.48951721191406,
+              "decay_db_per_s": -1858.706298828125
+            },
+            {
+              "start_s": 0.5202721088435374,
+              "end_s": 0.7368707482993198,
+              "duration_s": 0.2165986394557823,
+              "peak_s": 0.6995011337868481,
+              "peak_db": -29.411218643188477,
+              "attack_time_s": 0.17922902494331067,
+              "sustain_db": -31.83325958251953,
+              "decay_db_per_s": -63.71528244018555
+            },
+            {
+              "start_s": 0.7412244897959184,
+              "end_s": 0.8428117913832199,
+              "duration_s": 0.10158730158730159,
+              "peak_s": 0.7811337868480726,
+              "peak_db": -8.798161506652832,
+              "attack_time_s": 0.039909297052154194,
+              "sustain_db": -18.316736221313477,
+              "decay_db_per_s": -36.517112731933594
+            }
+          ],
+          "score": {
+            "reference_count": 3,
+            "detected_count": 9,
+            "missed_count": 0,
+            "extra_count": 6,
+            "matched_count": 3,
+            "mean_onset_error_s": 0.19030990173847315,
+            "mean_offset_error_s": 0.31243386243386245,
+            "usable_count": 1,
+            "ambiguous_count": 2,
+            "disqualified_count": 6,
+            "classifications": [
+              {
+                "event_index": 1,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 1,
+                "onset_error_s": 0.0,
+                "offset_error_s": 0.3154875283446712
+              },
+              {
+                "event_index": 2,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 2,
+                "onset_error_s": 0.3158503401360544,
+                "offset_error_s": 0.25544217687074827
+              },
+              {
+                "event_index": 3,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 3,
+                "onset_error_s": 0.2550793650793651,
+                "offset_error_s": 0.3663718820861678
+              },
+              {
+                "event_index": 4,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 5,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 6,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 7,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 8,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 9,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              }
+            ]
+          }
+        },
+        {
+          "excerpt_id": "bass_friendly_01_bass_friendly.wav",
+          "events": [
+            {
+              "start_s": 0.0,
+              "end_s": 0.5667120181405896,
+              "duration_s": 0.5667120181405896,
+              "peak_s": 0.18321995464852608,
+              "peak_db": -9.755959510803223,
+              "attack_time_s": 0.18321995464852608,
+              "sustain_db": -25.530445098876953,
+              "decay_db_per_s": -39.01173782348633
+            },
+            {
+              "start_s": 0.5670748299319728,
+              "end_s": 0.5783219954648526,
+              "duration_s": 0.011247165532879818,
+              "peak_s": 0.5721541950113379,
+              "peak_db": -27.918289184570312,
+              "attack_time_s": 0.005079365079365079,
+              "sustain_db": -29.64577865600586,
+              "decay_db_per_s": -1642.01904296875
+            },
+            {
+              "start_s": 0.5786848072562358,
+              "end_s": 0.7629931972789116,
+              "duration_s": 0.18430839002267574,
+              "peak_s": 0.6907936507936508,
+              "peak_db": -16.994064331054688,
+              "attack_time_s": 0.11210884353741496,
+              "sustain_db": -24.75564956665039,
+              "decay_db_per_s": -29.732234954833984
+            }
+          ],
+          "score": {
+            "reference_count": 3,
+            "detected_count": 3,
+            "missed_count": 0,
+            "extra_count": 0,
+            "matched_count": 3,
+            "mean_onset_error_s": 0.1494633408919123,
+            "mean_offset_error_s": 0.15046107331821615,
+            "usable_count": 2,
+            "ambiguous_count": 1,
+            "disqualified_count": 0,
+            "classifications": [
+              {
+                "event_index": 1,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 1,
+                "onset_error_s": 0.0,
+                "offset_error_s": 0.41671201814058956
+              },
+              {
+                "event_index": 2,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 2,
+                "onset_error_s": 0.41707482993197276,
+                "offset_error_s": 0.03167800453514735
+              },
+              {
+                "event_index": 3,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 3,
+                "onset_error_s": 0.03131519274376415,
+                "offset_error_s": 0.0029931972789115635
+              }
+            ]
+          }
+        },
+        {
+          "excerpt_id": "broad_03_broad.wav",
+          "events": [
+            {
+              "start_s": 0.0,
+              "end_s": 0.5667120181405896,
+              "duration_s": 0.5667120181405896,
+              "peak_s": 0.18321995464852608,
+              "peak_db": -9.755959510803223,
+              "attack_time_s": 0.18321995464852608,
+              "sustain_db": -25.530445098876953,
+              "decay_db_per_s": -39.01173782348633
+            },
+            {
+              "start_s": 0.5670748299319728,
+              "end_s": 0.5783219954648526,
+              "duration_s": 0.011247165532879818,
+              "peak_s": 0.5721541950113379,
+              "peak_db": -27.918289184570312,
+              "attack_time_s": 0.005079365079365079,
+              "sustain_db": -29.64577865600586,
+              "decay_db_per_s": -1642.01904296875
+            },
+            {
+              "start_s": 0.5786848072562358,
+              "end_s": 0.770249433106576,
+              "duration_s": 0.19156462585034015,
+              "peak_s": 0.6907936507936508,
+              "peak_db": -16.994064331054688,
+              "attack_time_s": 0.11210884353741496,
+              "sustain_db": -24.87912940979004,
+              "decay_db_per_s": -135.36184692382812
+            },
+            {
+              "start_s": 0.7709750566893424,
+              "end_s": 0.7789569160997732,
+              "duration_s": 0.00798185941043084,
+              "peak_s": 0.7731519274376417,
+              "peak_db": -32.052215576171875,
+              "attack_time_s": 0.0021768707482993197,
+              "sustain_db": -32.773521423339844,
+              "decay_db_per_s": -412.19146728515625
+            },
+            {
+              "start_s": 0.7793197278911564,
+              "end_s": 0.7811337868480726,
+              "duration_s": 0.0018140589569160999,
+              "peak_s": 0.7796825396825396,
+              "peak_db": -36.77735900878906,
+              "attack_time_s": 0.00036281179138321996,
+              "sustain_db": -37.324005126953125,
+              "decay_db_per_s": -475.0216064453125
+            },
+            {
+              "start_s": 0.7814965986394558,
+              "end_s": 0.7825850340136055,
+              "duration_s": 0.0010884353741496598,
+              "peak_s": 0.781859410430839,
+              "peak_db": -36.41069412231445,
+              "attack_time_s": 0.00036281179138321996,
+              "sustain_db": -36.58751678466797,
+              "decay_db_per_s": -649.8162231445312
+            },
+            {
+              "start_s": 0.7847619047619048,
+              "end_s": 0.7862131519274377,
+              "duration_s": 0.0014512471655328798,
+              "peak_s": 0.785124716553288,
+              "peak_db": -37.139312744140625,
+              "attack_time_s": 0.00036281179138321996,
+              "sustain_db": -37.29147720336914,
+              "decay_db_per_s": -706.0377807617188
+            }
+          ],
+          "score": {
+            "reference_count": 3,
+            "detected_count": 7,
+            "missed_count": 0,
+            "extra_count": 4,
+            "matched_count": 3,
+            "mean_onset_error_s": 0.16279667422524566,
+            "mean_offset_error_s": 0.16938019652305367,
+            "usable_count": 1,
+            "ambiguous_count": 2,
+            "disqualified_count": 4,
+            "classifications": [
+              {
+                "event_index": 1,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 1,
+                "onset_error_s": 0.0,
+                "offset_error_s": 0.41671201814058956
+              },
+              {
+                "event_index": 2,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 2,
+                "onset_error_s": 0.41707482993197276,
+                "offset_error_s": 0.07167800453514739
+              },
+              {
+                "event_index": 3,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 3,
+                "onset_error_s": 0.07131519274376419,
+                "offset_error_s": 0.019750566893424026
+              },
+              {
+                "event_index": 4,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 5,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 6,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              },
+              {
+                "event_index": 7,
+                "status": "disqualified",
+                "reason": "extra_event",
+                "reference_index": null,
+                "onset_error_s": null,
+                "offset_error_s": null
+              }
+            ]
+          }
+        },
+        {
+          "excerpt_id": "low_01_low.wav",
+          "events": [
+            {
+              "start_s": 0.0,
+              "end_s": 0.12408163265306123,
+              "duration_s": 0.12408163265306123,
+              "peak_s": 0.018140589569160998,
+              "peak_db": -9.410969734191895,
+              "attack_time_s": 0.018140589569160998,
+              "sustain_db": -19.490081787109375,
+              "decay_db_per_s": -284.8099060058594
+            },
+            {
+              "start_s": 0.12444444444444444,
+              "end_s": 0.14222222222222222,
+              "duration_s": 0.017777777777777778,
+              "peak_s": 0.13024943310657597,
+              "peak_db": -24.607431411743164,
+              "attack_time_s": 0.005804988662131519,
+              "sustain_db": -26.787073135375977,
+              "decay_db_per_s": -163.92501831054688
+            },
+            {
+              "start_s": 0.14258503401360545,
+              "end_s": 0.8776417233560091,
+              "duration_s": 0.7350566893424036,
+              "peak_s": 0.49596371882086165,
+              "peak_db": -8.321822166442871,
+              "attack_time_s": 0.35337868480725626,
+              "sustain_db": -18.02796173095703,
+              "decay_db_per_s": -21.828350067138672
+            }
+          ],
+          "score": {
+            "reference_count": 5,
+            "detected_count": 3,
+            "missed_count": 2,
+            "extra_count": 0,
+            "matched_count": 3,
+            "mean_onset_error_s": 0.09432350718065004,
+            "mean_offset_error_s": 0.19711262282690856,
+            "usable_count": 2,
+            "ambiguous_count": 1,
+            "disqualified_count": 0,
+            "classifications": [
+              {
+                "event_index": 1,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 1,
+                "onset_error_s": 0.0,
+                "offset_error_s": 0.015918367346938786
+              },
+              {
+                "event_index": 2,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 2,
+                "onset_error_s": 0.015555555555555572,
+                "offset_error_s": 0.2677777777777778
+              },
+              {
+                "event_index": 3,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 3,
+                "onset_error_s": 0.2674149659863945,
+                "offset_error_s": 0.30764172335600914
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "frame_size": 256,
+      "hop_size": 64,
+      "threshold_db": -45.0,
+      "excerpts": [
+        {
+          "excerpt_id": "low_02_low.wav",
+          "events": [
+            {
+              "start_s": 0.0,
+              "end_s": 0.14947845804988663,
+              "duration_s": 0.14947845804988663,
+              "peak_s": 0.005804988662131519,
+              "peak_db": -12.266592025756836,
+              "attack_time_s": 0.005804988662131519,
+              "sustain_db": -22.32561492919922,
+              "decay_db_per_s": -49.297607421875
+            },
+            {
+              "start_s": 0.14947845804988663,
+              "end_s": 0.6472562358276645,
+              "duration_s": 0.49777777777777776,
+              "peak_s": 0.16108843537414966,
+              "peak_db": -12.503003120422363,
+              "attack_time_s": 0.011609977324263039,
+              "sustain_db": -31.094205856323242,
+              "decay_db_per_s": -29.536346435546875
+            },
+            {
+              "start_s": 0.6472562358276645,
+              "end_s": 0.8402721088435374,
+              "duration_s": 0.19301587301587303,
+              "peak_s": 0.7793197278911564,
+              "peak_db": -11.147605895996094,
+              "attack_time_s": 0.13206349206349208,
+              "sustain_db": -19.957563400268555,
+              "decay_db_per_s": 23.060714721679688
+            }
+          ],
+          "score": {
+            "reference_count": 3,
+            "detected_count": 3,
+            "missed_count": 0,
+            "extra_count": 0,
+            "matched_count": 3,
+            "mean_onset_error_s": 0.0277551020408163,
+            "mean_offset_error_s": 0.030997732426303815,
+            "usable_count": 2,
+            "ambiguous_count": 1,
+            "disqualified_count": 0,
+            "classifications": [
+              {
+                "event_index": 1,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 1,
+                "onset_error_s": 0.0,
+                "offset_error_s": 0.0005215419501133634
+              },
+              {
+                "event_index": 2,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 2,
+                "onset_error_s": 0.0005215419501133634,
+                "offset_error_s": 0.08274376417233553
+              },
+              {
+                "event_index": 3,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 3,
+                "onset_error_s": 0.08274376417233553,
+                "offset_error_s": 0.009727891156462554
+              }
+            ]
+          }
+        },
+        {
+          "excerpt_id": "bass_friendly_01_bass_friendly.wav",
+          "events": [
+            {
+              "start_s": 0.0,
+              "end_s": 0.15528344671201813,
+              "duration_s": 0.15528344671201813,
+              "peak_s": 0.026122448979591838,
+              "peak_db": -13.07182502746582,
+              "attack_time_s": 0.026122448979591838,
+              "sustain_db": -18.722705841064453,
+              "decay_db_per_s": -38.228790283203125
+            },
+            {
+              "start_s": 0.15528344671201813,
+              "end_s": 0.39764172335600906,
+              "duration_s": 0.24235827664399093,
+              "peak_s": 0.18285714285714286,
+              "peak_db": -12.112100601196289,
+              "attack_time_s": 0.027573696145124716,
+              "sustain_db": -22.98387908935547,
+              "decay_db_per_s": -28.64304542541504
+            },
+            {
+              "start_s": 0.39764172335600906,
+              "end_s": 0.7604535147392291,
+              "duration_s": 0.36281179138321995,
+              "peak_s": 0.687891156462585,
+              "peak_db": -18.99309539794922,
+              "attack_time_s": 0.29024943310657597,
+              "sustain_db": -28.249984741210938,
+              "decay_db_per_s": 36.16086959838867
+            }
+          ],
+          "score": {
+            "reference_count": 3,
+            "detected_count": 3,
+            "missed_count": 0,
+            "extra_count": 0,
+            "matched_count": 3,
+            "mean_onset_error_s": 0.07254724111866968,
+            "mean_offset_error_s": 0.0726984126984127,
+            "usable_count": 2,
+            "ambiguous_count": 1,
+            "disqualified_count": 0,
+            "classifications": [
+              {
+                "event_index": 1,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 1,
+                "onset_error_s": 0.0,
+                "offset_error_s": 0.005283446712018136
+              },
+              {
+                "event_index": 2,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 2,
+                "onset_error_s": 0.005283446712018136,
+                "offset_error_s": 0.21235827664399093
+              },
+              {
+                "event_index": 3,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 3,
+                "onset_error_s": 0.21235827664399093,
+                "offset_error_s": 0.00045351473922905505
+              }
+            ]
+          }
+        },
+        {
+          "excerpt_id": "broad_03_broad.wav",
+          "events": [
+            {
+              "start_s": 0.0,
+              "end_s": 0.16108843537414966,
+              "duration_s": 0.16108843537414966,
+              "peak_s": 0.026122448979591838,
+              "peak_db": -13.07182502746582,
+              "attack_time_s": 0.026122448979591838,
+              "sustain_db": -18.801776885986328,
+              "decay_db_per_s": -74.14248657226562
+            },
+            {
+              "start_s": 0.16108843537414966,
+              "end_s": 0.39764172335600906,
+              "duration_s": 0.2365532879818594,
+              "peak_s": 0.18285714285714286,
+              "peak_db": -12.112100601196289,
+              "attack_time_s": 0.021768707482993196,
+              "sustain_db": -22.998388290405273,
+              "decay_db_per_s": 22.358346939086914
+            },
+            {
+              "start_s": 0.39764172335600906,
+              "end_s": 0.7836734693877551,
+              "duration_s": 0.38603174603174606,
+              "peak_s": 0.687891156462585,
+              "peak_db": -18.99309539794922,
+              "attack_time_s": 0.29024943310657597,
+              "sustain_db": -28.551116943359375,
+              "decay_db_per_s": -21.396121978759766
+            }
+          ],
+          "score": {
+            "reference_count": 3,
+            "detected_count": 3,
+            "missed_count": 0,
+            "extra_count": 0,
+            "matched_count": 3,
+            "mean_onset_error_s": 0.08781557067271355,
+            "mean_offset_error_s": 0.08992441421012853,
+            "usable_count": 2,
+            "ambiguous_count": 1,
+            "disqualified_count": 0,
+            "classifications": [
+              {
+                "event_index": 1,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 1,
+                "onset_error_s": 0.0,
+                "offset_error_s": 0.011088435374149663
+              },
+              {
+                "event_index": 2,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 2,
+                "onset_error_s": 0.011088435374149663,
+                "offset_error_s": 0.25235827664399096
+              },
+              {
+                "event_index": 3,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 3,
+                "onset_error_s": 0.25235827664399096,
+                "offset_error_s": 0.006326530612244974
+              }
+            ]
+          }
+        },
+        {
+          "excerpt_id": "low_01_low.wav",
+          "events": [
+            {
+              "start_s": 0.0,
+              "end_s": 0.18140589569160998,
+              "duration_s": 0.18140589569160998,
+              "peak_s": 0.17124716553287983,
+              "peak_db": -10.57718276977539,
+              "attack_time_s": 0.17124716553287983,
+              "sustain_db": -20.12450408935547,
+              "decay_db_per_s": 42.60673141479492
+            },
+            {
+              "start_s": 0.18140589569160998,
+              "end_s": 0.4005442176870748,
+              "duration_s": 0.21913832199546485,
+              "peak_s": 0.18140589569160998,
+              "peak_db": -12.79623794555664,
+              "attack_time_s": 0.0,
+              "sustain_db": -18.206058502197266,
+              "decay_db_per_s": -63.07540512084961
+            },
+            {
+              "start_s": 0.4005442176870748,
+              "end_s": 0.6240362811791383,
+              "duration_s": 0.2234920634920635,
+              "peak_s": 0.494875283446712,
+              "peak_db": -10.550376892089844,
+              "attack_time_s": 0.09433106575963719,
+              "sustain_db": -15.750493049621582,
+              "decay_db_per_s": 15.960850715637207
+            },
+            {
+              "start_s": 0.6240362811791383,
+              "end_s": 0.7720634920634921,
+              "duration_s": 0.14802721088435375,
+              "peak_s": 0.6298412698412699,
+              "peak_db": -13.069014549255371,
+              "attack_time_s": 0.005804988662131519,
+              "sustain_db": -19.511173248291016,
+              "decay_db_per_s": -53.80891418457031
+            },
+            {
+              "start_s": 0.7720634920634921,
+              "end_s": 0.8751020408163265,
+              "duration_s": 0.10303854875283447,
+              "peak_s": 0.7865759637188209,
+              "peak_db": -12.104325294494629,
+              "attack_time_s": 0.014512471655328799,
+              "sustain_db": -19.739246368408203,
+              "decay_db_per_s": 11.366876602172852
+            }
+          ],
+          "score": {
+            "reference_count": 5,
+            "detected_count": 5,
+            "missed_count": 0,
+            "extra_count": 0,
+            "matched_count": 5,
+            "mean_onset_error_s": 0.02139229024943312,
+            "mean_offset_error_s": 0.022371882086167826,
+            "usable_count": 3,
+            "ambiguous_count": 2,
+            "disqualified_count": 0,
+            "classifications": [
+              {
+                "event_index": 1,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 1,
+                "onset_error_s": 0.0,
+                "offset_error_s": 0.04140589569160996
+              },
+              {
+                "event_index": 2,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 2,
+                "onset_error_s": 0.04140589569160996,
+                "offset_error_s": 0.009455782312925154
+              },
+              {
+                "event_index": 3,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 3,
+                "onset_error_s": 0.009455782312925154,
+                "offset_error_s": 0.05403628117913839
+              },
+              {
+                "event_index": 4,
+                "status": "ambiguous",
+                "reason": "onset_requires_audition",
+                "reference_index": 4,
+                "onset_error_s": 0.05403628117913839,
+                "offset_error_s": 0.0020634920634921006
+              },
+              {
+                "event_index": 5,
+                "status": "usable",
+                "reason": "onset_within_tolerance",
+                "reference_index": 5,
+                "onset_error_s": 0.0020634920634921006,
+                "offset_error_s": 0.004897959183673528
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,259 @@
+{
+  "purpose": "Real-recording hit-rate audit sample",
+  "setting": "256/64/-45 with bounded recursive refinement",
+  "sample_count": 36,
+  "files": [
+    {
+      "source_id": "bass_a_take_1",
+      "stratum": "lower_typical",
+      "source_event_index": 491,
+      "file": "experiments/E004/real_hit_rate_sample/bass_a_take_1_lower_typical_event_00491.wav",
+      "duration_s": 0.09433106575963719
+    },
+    {
+      "source_id": "bass_a_take_1",
+      "stratum": "median_typical",
+      "source_event_index": 91,
+      "file": "experiments/E004/real_hit_rate_sample/bass_a_take_1_median_typical_event_00091.wav",
+      "duration_s": 0.18575963718820862
+    },
+    {
+      "source_id": "bass_a_take_1",
+      "stratum": "short_risk",
+      "source_event_index": 23,
+      "file": "experiments/E004/real_hit_rate_sample/bass_a_take_1_short_risk_event_00023.wav",
+      "duration_s": 0.0014512471655328798
+    },
+    {
+      "source_id": "bass_a_take_1",
+      "stratum": "upper_typical",
+      "source_event_index": 485,
+      "file": "experiments/E004/real_hit_rate_sample/bass_a_take_1_upper_typical_event_00485.wav",
+      "duration_s": 0.313469387755102
+    },
+    {
+      "source_id": "bass_a_take_2",
+      "stratum": "lower_typical",
+      "source_event_index": 689,
+      "file": "experiments/E004/real_hit_rate_sample/bass_a_take_2_lower_typical_event_00689.wav",
+      "duration_s": 0.036281179138321996
+    },
+    {
+      "source_id": "bass_a_take_2",
+      "stratum": "median_typical",
+      "source_event_index": 1229,
+      "file": "experiments/E004/real_hit_rate_sample/bass_a_take_2_median_typical_event_01229.wav",
+      "duration_s": 0.1436734693877551
+    },
+    {
+      "source_id": "bass_a_take_2",
+      "stratum": "short_risk",
+      "source_event_index": 3,
+      "file": "experiments/E004/real_hit_rate_sample/bass_a_take_2_short_risk_event_00003.wav",
+      "duration_s": 0.0014512471655328798
+    },
+    {
+      "source_id": "bass_a_take_2",
+      "stratum": "upper_typical",
+      "source_event_index": 653,
+      "file": "experiments/E004/real_hit_rate_sample/bass_a_take_2_upper_typical_event_00653.wav",
+      "duration_s": 0.26412698412698415
+    },
+    {
+      "source_id": "bass_a_take_3",
+      "stratum": "lower_typical",
+      "source_event_index": 42,
+      "file": "experiments/E004/real_hit_rate_sample/bass_a_take_3_lower_typical_event_00042.wav",
+      "duration_s": 0.014512471655328799
+    },
+    {
+      "source_id": "bass_a_take_3",
+      "stratum": "median_typical",
+      "source_event_index": 2238,
+      "file": "experiments/E004/real_hit_rate_sample/bass_a_take_3_median_typical_event_02238.wav",
+      "duration_s": 0.040612244897959185
+    },
+    {
+      "source_id": "bass_a_take_3",
+      "stratum": "short_risk",
+      "source_event_index": 94,
+      "file": "experiments/E004/real_hit_rate_sample/bass_a_take_3_short_risk_event_00094.wav",
+      "duration_s": 0.0014512471655328798
+    },
+    {
+      "source_id": "bass_a_take_3",
+      "stratum": "upper_typical",
+      "source_event_index": 1594,
+      "file": "experiments/E004/real_hit_rate_sample/bass_a_take_3_upper_typical_event_01594.wav",
+      "duration_s": 0.19301587301587303
+    },
+    {
+      "source_id": "bass_a_take_4",
+      "stratum": "lower_typical",
+      "source_event_index": 817,
+      "file": "experiments/E004/real_hit_rate_sample/bass_a_take_4_lower_typical_event_00817.wav",
+      "duration_s": 0.10448979591836735
+    },
+    {
+      "source_id": "bass_a_take_4",
+      "stratum": "median_typical",
+      "source_event_index": 587,
+      "file": "experiments/E004/real_hit_rate_sample/bass_a_take_4_median_typical_event_00587.wav",
+      "duration_s": 0.18285714285714286
+    },
+    {
+      "source_id": "bass_a_take_4",
+      "stratum": "short_risk",
+      "source_event_index": 303,
+      "file": "experiments/E004/real_hit_rate_sample/bass_a_take_4_short_risk_event_00303.wav",
+      "duration_s": 0.0014512471655328798
+    },
+    {
+      "source_id": "bass_a_take_4",
+      "stratum": "upper_typical",
+      "source_event_index": 897,
+      "file": "experiments/E004/real_hit_rate_sample/bass_a_take_4_upper_typical_event_00897.wav",
+      "duration_s": 0.3004081632653061
+    },
+    {
+      "source_id": "bass_a_take_5",
+      "stratum": "lower_typical",
+      "source_event_index": 1436,
+      "file": "experiments/E004/real_hit_rate_sample/bass_a_take_5_lower_typical_event_01436.wav",
+      "duration_s": 0.005804988662131519
+    },
+    {
+      "source_id": "bass_a_take_5",
+      "stratum": "median_typical",
+      "source_event_index": 995,
+      "file": "experiments/E004/real_hit_rate_sample/bass_a_take_5_median_typical_event_00995.wav",
+      "duration_s": 0.021768707482993196
+    },
+    {
+      "source_id": "bass_a_take_5",
+      "stratum": "short_risk",
+      "source_event_index": 55,
+      "file": "experiments/E004/real_hit_rate_sample/bass_a_take_5_short_risk_event_00055.wav",
+      "duration_s": 0.0014512471655328798
+    },
+    {
+      "source_id": "bass_a_take_5",
+      "stratum": "upper_typical",
+      "source_event_index": 705,
+      "file": "experiments/E004/real_hit_rate_sample/bass_a_take_5_upper_typical_event_00705.wav",
+      "duration_s": 0.15383219954648525
+    },
+    {
+      "source_id": "bass_b_take_1",
+      "stratum": "lower_typical",
+      "source_event_index": 2185,
+      "file": "experiments/E004/real_hit_rate_sample/bass_b_take_1_lower_typical_event_02185.wav",
+      "duration_s": 0.0072562358276643995
+    },
+    {
+      "source_id": "bass_b_take_1",
+      "stratum": "median_typical",
+      "source_event_index": 971,
+      "file": "experiments/E004/real_hit_rate_sample/bass_b_take_1_median_typical_event_00971.wav",
+      "duration_s": 0.03192743764172336
+    },
+    {
+      "source_id": "bass_b_take_1",
+      "stratum": "short_risk",
+      "source_event_index": 46,
+      "file": "experiments/E004/real_hit_rate_sample/bass_b_take_1_short_risk_event_00046.wav",
+      "duration_s": 0.0014512471655328798
+    },
+    {
+      "source_id": "bass_b_take_1",
+      "stratum": "upper_typical",
+      "source_event_index": 2202,
+      "file": "experiments/E004/real_hit_rate_sample/bass_b_take_1_upper_typical_event_02202.wav",
+      "duration_s": 0.16399092970521542
+    },
+    {
+      "source_id": "bass_b_take_2",
+      "stratum": "lower_typical",
+      "source_event_index": 54,
+      "file": "experiments/E004/real_hit_rate_sample/bass_b_take_2_lower_typical_event_00054.wav",
+      "duration_s": 0.011609977324263039
+    },
+    {
+      "source_id": "bass_b_take_2",
+      "stratum": "median_typical",
+      "source_event_index": 298,
+      "file": "experiments/E004/real_hit_rate_sample/bass_b_take_2_median_typical_event_00298.wav",
+      "duration_s": 0.04789115646258504
+    },
+    {
+      "source_id": "bass_b_take_2",
+      "stratum": "short_risk",
+      "source_event_index": 20,
+      "file": "experiments/E004/real_hit_rate_sample/bass_b_take_2_short_risk_event_00020.wav",
+      "duration_s": 0.0014285714285714286
+    },
+    {
+      "source_id": "bass_b_take_2",
+      "stratum": "upper_typical",
+      "source_event_index": 522,
+      "file": "experiments/E004/real_hit_rate_sample/bass_b_take_2_upper_typical_event_00522.wav",
+      "duration_s": 0.18866213151927438
+    },
+    {
+      "source_id": "bass_c_take_1",
+      "stratum": "lower_typical",
+      "source_event_index": 140,
+      "file": "experiments/E004/real_hit_rate_sample/bass_c_take_1_lower_typical_event_00140.wav",
+      "duration_s": 0.15816326530612246
+    },
+    {
+      "source_id": "bass_c_take_1",
+      "stratum": "median_typical",
+      "source_event_index": 81,
+      "file": "experiments/E004/real_hit_rate_sample/bass_c_take_1_median_typical_event_00081.wav",
+      "duration_s": 0.25541950113378686
+    },
+    {
+      "source_id": "bass_c_take_1",
+      "stratum": "short_risk",
+      "source_event_index": 161,
+      "file": "experiments/E004/real_hit_rate_sample/bass_c_take_1_short_risk_event_00161.wav",
+      "duration_s": 0.0029024943310657597
+    },
+    {
+      "source_id": "bass_c_take_1",
+      "stratum": "upper_typical",
+      "source_event_index": 72,
+      "file": "experiments/E004/real_hit_rate_sample/bass_c_take_1_upper_typical_event_00072.wav",
+      "duration_s": 0.37151927437641724
+    },
+    {
+      "source_id": "bass_d_take_1",
+      "stratum": "lower_typical",
+      "source_event_index": 38,
+      "file": "experiments/E004/real_hit_rate_sample/bass_d_take_1_lower_typical_event_00038.wav",
+      "duration_s": 0.011609977324263039
+    },
+    {
+      "source_id": "bass_d_take_1",
+      "stratum": "median_typical",
+      "source_event_index": 22,
+      "file": "experiments/E004/real_hit_rate_sample/bass_d_take_1_median_typical_event_00022.wav",
+      "duration_s": 0.03337868480725623
+    },
+    {
+      "source_id": "bass_d_take_1",
+      "stratum": "short_risk",
+      "source_event_index": 29,
+      "file": "experiments/E004/real_hit_rate_sample/bass_d_take_1_short_risk_event_00029.wav",
+      "duration_s": 0.0014512471655328798
+    },
+    {
+      "source_id": "bass_d_take_1",
+      "stratum": "upper_typical",
+      "source_event_index": 53,
+      "file": "experiments/E004/real_hit_rate_sample/bass_d_take_1_upper_typical_event_00053.wav",
+      "duration_s": 0.1349659863945578
+    }
+  ]
+}

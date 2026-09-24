@@ -1,0 +1,8 @@
+source_file,event_index,status,notes
+bass_c_event_01_source_index_077.wav,77,disqualified,Silence; no note heard
+bass_c_event_02_source_index_023.wav,23,usable,One note; slicing acceptable
+bass_c_event_03_source_index_064.wav,64,usable,One note; slicing acceptable
+bass_c_event_04_source_index_059.wav,59,usable,One note; slicing acceptable
+bass_c_event_05_source_index_042.wav,42,ambiguous,One note with noise at end; noise may be a very short second note
+bass_c_event_06_source_index_026.wav,26,ambiguous,One note with noise at end; noise may contain one or two very short notes
+bass_c_event_07_source_index_001.wav,1,disqualified,Approximately 30-50 notes merged into one approximately 10-second event; too many to count reliably

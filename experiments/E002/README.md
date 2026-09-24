@@ -13,6 +13,8 @@ Can Basic Pitch provide a trustworthy subset of note- or excitation-like events 
 
 This pilot ran the Spotify Basic Pitch detector on four 30-second acoustic excerpts, each drawn from one of the two available source groups. The repository threshold detector produced between 4 and 6 events on the same excerpts, while Basic Pitch produced 82-96 events under the default parameter set and 15-41 events under a stricter conservative parameter set.
 
+A follow-up range sweep on one representative excerpt tested four settings: low-register (35 events), mid-range (55), bass-friendly (55), and broad-bass (88). This indicates that widening the maximum fundamental range immediately increases the event count, but the range alone does not yet establish adequacy. The low-register pass is cleaner but may miss valid upper-register notes; the broader pass may add noise or false detections. The result is not yet a validated segmentation method and still needs listener review and a small benchmark set.
+
 The output shows that Basic Pitch is active and produces event-like structure on the actual corpus, but the event population is still too granular and ambiguous to be treated as a validated note detector without a manual benchmark. The stricter setting yields a smaller, more conservative subset that is more usable as a candidate filter, but the pilot is not yet a final scientific claim about segmentation accuracy.
 
 ## Interpretation

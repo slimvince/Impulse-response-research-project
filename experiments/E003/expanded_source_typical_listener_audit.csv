@@ -1,0 +1,9 @@
+source_file,source_group,notes_heard,status,articulation,notes
+bass_a_3_typical_01_source_event_1089.wav,bass_a,1,usable,glissando,One note with glissando articulation; retain articulation label
+bass_a_3_typical_02_source_event_1651.wav,bass_a,1,usable,plucked,One note
+bass_a_4_typical_01_source_event_0373.wav,bass_a,2,ambiguous,short_upbeat,Very short upbeat note followed by another note
+bass_a_4_typical_02_source_event_0720.wav,bass_a,1,usable,glissando,One note with glissando articulation; retain articulation label
+bass_a_5_typical_01_source_event_0707.wav,bass_a,4,disqualified,fast_multi_note,Four notes merged in one event
+bass_a_5_typical_02_source_event_0992.wav,bass_a,1,ambiguous,low_signal,One very silent note; signal quality uncertain
+bass_d_1_typical_01_source_event_0035.wav,bass_d,1,ambiguous,low_signal,One very silent note; signal quality uncertain
+bass_d_1_typical_02_source_event_0050.wav,bass_d,1,usable,plucked,One note

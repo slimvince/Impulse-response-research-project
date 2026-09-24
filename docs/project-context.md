@@ -21,31 +21,57 @@ The current implementation performs:
 - manifest-driven analysis of both domains through the same code path;
 - JSON outputs and a descriptive Markdown report.
 
-There are no audio recordings in the repository. Four external candidate acoustic recordings exist outside Git: two user-reported similar files for bass/player group A and two for group B. They are free to use by user confirmation, but contextual metadata other than file facts and the player label may be unknown. The current feature bank is broad but exploratory; extracted differences are not automatically evidence of intrinsic bass or domain characteristics.
+There are no audio recordings in the repository. Nine external candidate acoustic recordings exist outside Git: five for source group A, two for group B, one for group C, and one for new source group D. They are free to use by user confirmation, but contextual metadata other than file facts and the player label may be unknown. The current feature bank is broad but exploratory; extracted differences are not automatically evidence of intrinsic bass or domain characteristics.
+
+## Current status after E003 note benchmark
+
+The immediate research gate is note/event segmentation. Four manually reviewed listener excerpts now have approximate note labels in `experiments/E003/ground_truth.csv`: three notes in `low_02_low.wav`, three in `bass_friendly_01_bass_friendly.wav`, three in `broad_03_broad.wav`, and five in `low_01_low.wav`. The labels are confidence-2 audition boundaries, not high-precision ground truth.
+
+The E003 evaluator tested five frame/hop/threshold settings. The best count agreement was `frame_size=256`, `hop_size=64`, `threshold_db=-45`, producing 3/3, 3/3, 3/3, and 3/5 detected/reference counts, with total absolute count error 2. The detector still merges notes in `low_01_low.wav`; this is not evidence that it can reliably identify all individual notes.
+
+The pitch-aware splitter remains a reference implementation with a two-break global cap. A probe raising the cap to four was rejected because it produced false splits and changed the conservative-setting counts to 5/5/5/5. The next implementation should use a selective rule for long multi-note regions, validated against all excerpts, rather than globally allowing more splits.
+
+Audition exports under `experiments/E003/detected_slices` are raw exact-boundary sample slices: no fades, context, normalization, or other postprocessing. Analysis inputs remain the original WAVs under `experiments/E002/listener_slices`. The full current handover is in `docs/handover-current.md`.
+
+## Current status after the E002 gate
+
+The project is still in Phase 1, but the event-segmentation gate is now a first-class milestone. The repository includes a completed `E002` experiment under `experiments/E002/` that ran the Spotify Basic Pitch detector on four 30-second acoustic excerpts. The observed output was:
+
+- default Basic Pitch setting: 82-96 events per excerpt;
+- stricter filtered setting: 15-41 events per excerpt;
+- repository threshold detector baseline: 4-6 events per excerpt.
+
+The listener-review pass did not rescue the situation, but it corrected the interpretation. A small candidate set from the main settings was auditioned and every selected clip contained multiple distinct plucked notes in sequence: `low_01_low` contained five notes; the `mid_*` clips contained three notes each; the `bass_*` clips contained three notes each; the `broad_*` clips contained three notes each. The pitch/frequency domain showed clear note-to-note changes with no glissandi or portamenti, and the notes were not tied, so this was a series of individually plucked notes rather than a single sustained note or hammer-on/legato event.
+
+This is decisive evidence that the current single-pass Basic Pitch candidate clips are not valid single-note segmentation samples, but the issue is not that the clips are musically wrong; it is that the selected windows contain multiple separate notes and therefore do not isolate a single note boundary. The detector may still be useful as a broad candidate generator, but it is not yet credible as a note-level segmentation method for downstream IR evaluation without explicit boundary labeling and a true single-note benchmark.
+
+This is not a final note detector validation; it is a conditional pass with a more precise conclusion than before. The evidence supports using Basic Pitch as a candidate event generator and conservative filter only for exploratory triage, not as a fully trusted note-segmentation method. The project must still create a small manually reviewed ground-truth subset of isolated notes and note transitions, then quantify split/merge/missed-boundary errors before event-conditioned analyses can be treated as scientifically reliable.
+
+Human auditory validation remains valuable. Individual event slices can be auditioned by a listener to judge whether detections are split, merged, or missed, and to provide a quick sanity check before full benchmark scoring. This does not replace quantitative measurement, but it helps quickly identify obvious failure modes and prioritize manual review. In the current setting, the audition clarifies that the selected candidate windows contain multiple distinct notes and therefore cannot be treated as isolated single-note examples.
 
 ## Last validated state
 
 This describes the last validated committed state, not necessarily the current working tree. Documentation changes made after that validation must be committed before treating them as part of the canonical remote handoff state.
 
 - `main` is synchronized with `origin/main`.
-- Latest validated code baseline before this handoff consolidation is `13d3591` (`Preserve intact long recordings`); the handoff commit that follows will supersede that hash without changing code.
-- Recent decisions include WAV-only Phase 1 input (`789ef74`), unknown historical setup metadata (`544d4f8`), the governing IR objective (`904892d`), broad feature expansion (`1a9e3ef`, `a4a6f97`, `68a3cec`), and recording-level replication guidance (`d088209`).
+- Current validated commit: `50f899b` (`Finalize Basic Pitch gate metadata`).
 - The full automated suite passes: `4 passed`.
-- The four external acoustic WAVs were analyzed successfully with feature schema version `0.3`: `47,055` frames and `105` threshold-detected events.
-- Expanded real-audio validation produced outputs under `C:\IR audio\results\acoustic-repeatability-v03`; the external manifest is `C:\IR audio\acoustic-repeatability-manifest.json`.
-- New spectral and band-ratio features were valid for all frames. f0-dependent descriptors were valid for `47,029` frames and missing for `26` invalid-f0 frames.
-- No audio or generated results are committed to Git. The worktree is clean after the latest commit.
+- The event gate experiment `E002` is recorded with `manifest.json`, `config.json`, the execution script, and a summary JSON under `experiments/E002/`.
+- The Basic Pitch pilot is considered a conditional pass, not a final scientific conclusion.
+- The next milestone is a manually reviewed event benchmark on a small ground-truth subset; only then should more event-conditioned pipeline work proceed confidently.
+- No audio or generated results are committed to Git beyond the intentionally small experiment metadata and summary outputs. The worktree is clean after the latest commit.
 
-The next milestone is grouped recording/source-level repeatability summaries and quality diagnostics, followed by more recordings and an approved/frozen `E001` manifest. The next real transformation milestone is held-out IR evaluation, not optimizer implementation now.
+The next real transformation milestone is held-out IR evaluation, not optimizer implementation now. Prior to that, the project needs a conservative event-quality benchmark, explicit confidence labeling, and human review of split/merge behavior.
 
 ## Current known limitations
 
-- No audio is stored in Git; the four external files are candidate inputs, not a complete or approved corpus.
+- No audio is stored in Git; the nine external files are candidate inputs, not a complete or approved corpus.
 - Only player identity may be known contextually; bass identity, room, microphone, placement, recording chain, processing, strings, take conditions, and absolute/time-varying level may be unknown.
 - Pitch/register and musical content are intentionally unmatched; event counts are file-specific segmentation diagnostics and not similarity measures.
 - The f0 and event detectors and several descriptors are deliberately simple reference/proxy implementations.
 - Comparisons are descriptive; overlapping frame rows are not independent observations. Recordings and source groups are the replication units.
 - Grouped repeatability summaries, quality diagnostics, observed-local-level summaries, parameter sensitivity, and confound-aware models still need development.
+- The Basic Pitch pilot demonstrates a candidate event generator but does not yet validate segmentation quality; it remains a conditional pass pending manual benchmark review.
 - Long recordings must remain intact; future memory optimization may use internal streaming only with frame/event continuity and provenance preservation.
 - No SLB-200 recordings exist yet, so no SLB-to-acoustic comparison or IR target claim is currently possible.
 
@@ -67,20 +93,22 @@ An observation is measured or directly documented. A finding is a replicated or 
 
 ## Reading order for a new session
 
-1. This file: current state and constraints.
-2. `docs/requirements.md`: what the system must eventually provide.
-3. `docs/architecture.md`: ownership boundaries and data flow.
-4. `docs/feature-catalog.md`: feature definitions and status.
-5. `docs/implementation-plan.md`: next work and blockers.
-6. `docs/research-findings.md`: accumulated evidence and current knowledge.
-7. `docs/experiments.md`: experiment registry and evidence locations.
-8. `docs/corpus-protocol.md` and `docs/corpus.md`: how data must be captured and what data exists.
-9. `docs/confounds.md`: threats to interpretation.
-10. `docs/external-research.md` and `docs/ecosystem.md`: source ledger and current dependency summary.
-11. `docs/decisions.md`, `docs/methodology.md`, and `docs/hypotheses.md`: rationale and research method.
-12. `docs/research-log.md`: dated progress and unresolved questions.
-13. `README.md`: setup and command reference.
-14. `experiments/_template/README.md`, `manifest.json`, and `config.json`: the required shape of the next experiment.
+1. `docs/handover-current.md`: most recent E003 state, validation, raw-audition policy, and next actions.
+2. This file: current state and constraints.
+3. `docs/requirements.md`: what the system must eventually provide.
+4. `docs/architecture.md`: ownership boundaries and data flow.
+5. `docs/feature-catalog.md`: feature definitions and status.
+6. `docs/implementation-plan.md`: next work and blockers.
+7. `docs/note-segmentation-benchmark.md`: the current benchmark-first plan for note and event segmentation.
+8. `docs/research-findings.md`: accumulated evidence and current knowledge.
+9. `docs/experiments.md`: experiment registry and evidence locations.
+10. `docs/corpus-protocol.md` and `docs/corpus.md`: how data must be captured and what data exists.
+11. `docs/confounds.md`: threats to interpretation.
+12. `docs/external-research.md` and `docs/ecosystem.md`: source ledger and current dependency summary.
+13. `docs/decisions.md`, `docs/methodology.md`, and `docs/hypotheses.md`: rationale and research method.
+14. `docs/research-log.md`: dated progress and unresolved questions.
+15. `README.md`: setup and command reference.
+16. `experiments/_template/README.md`, `manifest.json`, and `config.json`: the required shape of the next experiment.
 
 ## New-session handoff protocol
 

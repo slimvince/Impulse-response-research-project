@@ -1,0 +1,15 @@
+excerpt_id,event_index,status,notes
+low_02_low.wav,1,usable,Listener judged slicing correct
+low_02_low.wav,2,usable,Listener judged slicing correct
+low_02_low.wav,3,usable,Listener judged slicing correct
+bass_friendly_01_bass_friendly.wav,1,usable,Listener judged slicing correct
+bass_friendly_01_bass_friendly.wav,2,usable,Listener judged slicing correct
+bass_friendly_01_bass_friendly.wav,3,usable,Listener judged slicing correct
+broad_03_broad.wav,1,usable,Listener judged slicing correct
+broad_03_broad.wav,2,usable,Listener judged slicing correct
+broad_03_broad.wav,3,usable,Listener judged slicing correct
+low_01_low.wav,1,ambiguous,Contains a very short piece of note 2 at the end
+low_01_low.wav,2,ambiguous,Mostly correct but misses the initial short part of note 2
+low_01_low.wav,3,disqualified,Contains two notes and the second continues into event 4
+low_01_low.wav,4,disqualified,Contains one note that started in event 3
+low_01_low.wav,5,usable,Listener judged slicing correct

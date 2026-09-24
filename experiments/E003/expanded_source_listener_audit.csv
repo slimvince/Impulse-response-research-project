@@ -1,0 +1,13 @@
+source_file,source_group,notes_heard,status,notes
+bass_a_3_audit_01_source_event_0091.wav,bass_a,0,disqualified,Silence; no note heard
+bass_a_3_audit_02_source_event_1638.wav,bass_a,2,disqualified,Two-note double stop; polyphonic event
+bass_a_3_audit_03_source_event_1377.wav,bass_a,3,disqualified,Two notes plus an additional simultaneous note at the end
+bass_a_4_audit_01_source_event_0280.wav,bass_a,0,disqualified,Silence; no note heard
+bass_a_4_audit_02_source_event_0849.wav,bass_a,12-16,disqualified,Very fast multi-note passage; too many notes for one event
+bass_a_4_audit_03_source_event_0491.wav,bass_a,10-15,disqualified,Very fast multi-note passage; too many notes for one event
+bass_a_5_audit_01_source_event_0033.wav,bass_a,0,disqualified,Silence; no note heard
+bass_a_5_audit_02_source_event_0178.wav,bass_a,2,disqualified,Two simultaneous tail notes with no clear onset
+bass_a_5_audit_03_source_event_1356.wav,bass_a,2,disqualified,Two simultaneous notes
+bass_d_1_audit_01_source_event_0022.wav,bass_d,0,disqualified,Silence; no note heard
+bass_d_1_audit_02_source_event_0035.wav,bass_d,1,usable,One note
+bass_d_1_audit_03_source_event_0019.wav,bass_d,2,disqualified,Very short upbeat note followed by another note

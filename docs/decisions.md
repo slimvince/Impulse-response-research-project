@@ -93,3 +93,13 @@ Event counts are retained for segmentation diagnostics only. They are not assume
 Use NumPy now; evaluate SciPy for filters, signal processing, and statistical distributions when those needs arise. Consider Essentia for a broad C++/Python feature catalog if the project later needs its specialized descriptors, but its AGPL-3.0 license is a material constraint for proprietary distribution. aubio is a focused onset/pitch option, but its GPL licensing is a material constraint for proprietary distribution and it should be introduced only if its pitch/onset behavior demonstrably improves the corpus. libsndfile/libsndfile-derived bindings are candidates when WAV/AIFF/CAF and broader PCM/float coverage is needed. Timbre Toolbox is valuable as research literature/software context, but its MATLAB-oriented workflow and distribution/dependency model make it unsuitable as the core production dependency here.
 
 All future library choices must record exact versions, license implications, and numerical behavior in experiment metadata.
+
+## 2026-09-24: Benchmark-first note segmentation and raw audition outputs
+
+**Status:** accepted for current Phase 1 work.
+
+**Decision:** Use the small manually reviewed E003 set as the current gate for detector changes. Keep the best tested threshold configuration as an exploratory baseline, but do not accept it as a reliable note detector while `low_01_low.wav` remains merged. All audition exports must be raw exact-boundary slices from the original analysis inputs, with no fades, context, normalization, or other postprocessing.
+
+**Evidence:** The `256/64/-45` configuration matched counts on three excerpts and undercounted the five-note excerpt as 3/5. Raising the global pitch-split limit from two to four produced false splits and worsened the other excerpts.
+
+**Boundary:** Count agreement alone does not establish onset/offset accuracy or scientific validity. Approximate listener labels remain screening evidence until a larger, more precise benchmark exists.

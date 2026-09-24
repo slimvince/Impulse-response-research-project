@@ -1,0 +1,66 @@
+[
+  {
+    "id": "low_01",
+    "setting": "low",
+    "start_s": 27.1492,
+    "end_s": 27.7297,
+    "file": "C:\\IR research\\experiments\\E002\\listener_slices\\low_01_low.wav",
+    "reason": "Likely sustained note; good candidate for split/merge sanity check"
+  },
+  {
+    "id": "low_02",
+    "setting": "low",
+    "start_s": 26.2088,
+    "end_s": 26.7545,
+    "file": "C:\\IR research\\experiments\\E002\\listener_slices\\low_02_low.wav",
+    "reason": "Lower-register note near the edge of the conservative pass"
+  },
+  {
+    "id": "mid_01",
+    "setting": "mid",
+    "start_s": 27.5672,
+    "end_s": 27.7413,
+    "file": "C:\\IR research\\experiments\\E002\\listener_slices\\mid_01_mid.wav",
+    "reason": "Shorter event: likely false split or legitimate brief note"
+  },
+  {
+    "id": "mid_02",
+    "setting": "mid",
+    "start_s": 27.1492,
+    "end_s": 27.5672,
+    "file": "C:\\IR research\\experiments\\E002\\listener_slices\\mid_02_mid.wav",
+    "reason": "Longer event likely to reveal merge or boundary issues"
+  },
+  {
+    "id": "bass_friendly_01",
+    "setting": "bass_friendly",
+    "start_s": 27.7529,
+    "end_s": 28.2186,
+    "file": "C:\\IR research\\experiments\\E002\\listener_slices\\bass_friendly_01_bass_friendly.wav",
+    "reason": "Candidate positive; good baseline for comparing settings"
+  },
+  {
+    "id": "broad_01",
+    "setting": "broad",
+    "start_s": 29.6118,
+    "end_s": 29.7743,
+    "file": "C:\\IR research\\experiments\\E002\\listener_slices\\broad_01_broad.wav",
+    "reason": "Potential extra note or spurious fragment; likely false-positive candidate"
+  },
+  {
+    "id": "broad_02",
+    "setting": "broad",
+    "start_s": 29.1474,
+    "end_s": 29.3448,
+    "file": "C:\\IR research\\experiments\\E002\\listener_slices\\broad_02_broad.wav",
+    "reason": "Short broad-range event; useful for split-vs-merge judgment"
+  },
+  {
+    "id": "broad_03",
+    "setting": "broad",
+    "start_s": 27.7529,
+    "end_s": 28.2418,
+    "file": "C:\\IR research\\experiments\\E002\\listener_slices\\broad_03_broad.wav",
+    "reason": "Overlap case in the broader pass; likely to show boundary drift"
+  }
+]

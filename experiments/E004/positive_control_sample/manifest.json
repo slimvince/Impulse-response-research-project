@@ -1,0 +1,150 @@
+{
+  "purpose": "Positive-control audit sample",
+  "selection": "duration 0.08-0.8 s, attack <=0.12 s, highest peak among eligible events",
+  "files": [
+    {
+      "source_id": "bass_a_take_1",
+      "file": "experiments/E004/positive_control_sample/bass_a_take_1_positive_01_event_00979.wav",
+      "source_event_index": 979,
+      "duration_s": 0.6791836734693878,
+      "peak_db": -5.164061069488525,
+      "attack_time_s": 0.040634920634920635
+    },
+    {
+      "source_id": "bass_a_take_1",
+      "file": "experiments/E004/positive_control_sample/bass_a_take_1_positive_02_event_00897.wav",
+      "source_event_index": 897,
+      "duration_s": 0.5616326530612245,
+      "peak_db": -5.183943748474121,
+      "attack_time_s": 0.06095238095238095
+    },
+    {
+      "source_id": "bass_a_take_2",
+      "file": "experiments/E004/positive_control_sample/bass_a_take_2_positive_01_event_01189.wav",
+      "source_event_index": 1189,
+      "duration_s": 0.4513378684807256,
+      "peak_db": -5.267209529876709,
+      "attack_time_s": 0.05950113378684807
+    },
+    {
+      "source_id": "bass_a_take_2",
+      "file": "experiments/E004/positive_control_sample/bass_a_take_2_positive_02_event_00982.wav",
+      "source_event_index": 982,
+      "duration_s": 0.12480725623582767,
+      "peak_db": -5.571434020996094,
+      "attack_time_s": 0.04208616780045352
+    },
+    {
+      "source_id": "bass_a_take_3",
+      "file": "experiments/E004/positive_control_sample/bass_a_take_3_positive_01_event_01696.wav",
+      "source_event_index": 1696,
+      "duration_s": 0.2786394557823129,
+      "peak_db": -4.5596723556518555,
+      "attack_time_s": 0.0653061224489796
+    },
+    {
+      "source_id": "bass_a_take_3",
+      "file": "experiments/E004/positive_control_sample/bass_a_take_3_positive_02_event_01688.wav",
+      "source_event_index": 1688,
+      "duration_s": 0.5688888888888889,
+      "peak_db": -4.608362197875977,
+      "attack_time_s": 0.03773242630385488
+    },
+    {
+      "source_id": "bass_a_take_4",
+      "file": "experiments/E004/positive_control_sample/bass_a_take_4_positive_01_event_00811.wav",
+      "source_event_index": 811,
+      "duration_s": 0.18140589569160998,
+      "peak_db": -4.354717254638672,
+      "attack_time_s": 0.024671201814058956
+    },
+    {
+      "source_id": "bass_a_take_4",
+      "file": "experiments/E004/positive_control_sample/bass_a_take_4_positive_02_event_00800.wav",
+      "source_event_index": 800,
+      "duration_s": 0.23800453514739228,
+      "peak_db": -4.803337574005127,
+      "attack_time_s": 0.03918367346938775
+    },
+    {
+      "source_id": "bass_a_take_5",
+      "file": "experiments/E004/positive_control_sample/bass_a_take_5_positive_01_event_01452.wav",
+      "source_event_index": 1452,
+      "duration_s": 0.17414965986394557,
+      "peak_db": -6.199914932250977,
+      "attack_time_s": 0.07111111111111111
+    },
+    {
+      "source_id": "bass_a_take_5",
+      "file": "experiments/E004/positive_control_sample/bass_a_take_5_positive_02_event_00256.wav",
+      "source_event_index": 256,
+      "duration_s": 0.3657142857142857,
+      "peak_db": -7.318602085113525,
+      "attack_time_s": 0.06095238095238095
+    },
+    {
+      "source_id": "bass_b_take_1",
+      "file": "experiments/E004/positive_control_sample/bass_b_take_1_positive_01_event_00608.wav",
+      "source_event_index": 608,
+      "duration_s": 0.6211337868480725,
+      "peak_db": -5.833578586578369,
+      "attack_time_s": 0.07546485260770976
+    },
+    {
+      "source_id": "bass_b_take_1",
+      "file": "experiments/E004/positive_control_sample/bass_b_take_1_positive_02_event_00100.wav",
+      "source_event_index": 100,
+      "duration_s": 0.11609977324263039,
+      "peak_db": -7.232461929321289,
+      "attack_time_s": 0.05514739229024943
+    },
+    {
+      "source_id": "bass_b_take_2",
+      "file": "experiments/E004/positive_control_sample/bass_b_take_2_positive_01_event_01170.wav",
+      "source_event_index": 1170,
+      "duration_s": 0.5906575963718821,
+      "peak_db": -8.249892234802246,
+      "attack_time_s": 0.05950113378684807
+    },
+    {
+      "source_id": "bass_b_take_2",
+      "file": "experiments/E004/positive_control_sample/bass_b_take_2_positive_02_event_00375.wav",
+      "source_event_index": 375,
+      "duration_s": 0.33378684807256237,
+      "peak_db": -8.68195915222168,
+      "attack_time_s": 0.09723356009070294
+    },
+    {
+      "source_id": "bass_c_take_1",
+      "file": "experiments/E004/positive_control_sample/bass_c_take_1_positive_01_event_00036.wav",
+      "source_event_index": 36,
+      "duration_s": 0.4397278911564626,
+      "peak_db": -4.341867446899414,
+      "attack_time_s": 0.0653061224489796
+    },
+    {
+      "source_id": "bass_c_take_1",
+      "file": "experiments/E004/positive_control_sample/bass_c_take_1_positive_02_event_00141.wav",
+      "source_event_index": 141,
+      "duration_s": 0.3686167800453515,
+      "peak_db": -4.397012710571289,
+      "attack_time_s": 0.01886621315192744
+    },
+    {
+      "source_id": "bass_d_take_1",
+      "file": "experiments/E004/positive_control_sample/bass_d_take_1_positive_01_event_00053.wav",
+      "source_event_index": 53,
+      "duration_s": 0.1349659863945578,
+      "peak_db": -18.365283966064453,
+      "attack_time_s": 0.06820861678004535
+    },
+    {
+      "source_id": "bass_d_take_1",
+      "file": "experiments/E004/positive_control_sample/bass_d_take_1_positive_02_event_00001.wav",
+      "source_event_index": 1,
+      "duration_s": 0.1001360544217687,
+      "peak_db": -19.56060791015625,
+      "attack_time_s": 0.0029024943310657597
+    }
+  ]
+}

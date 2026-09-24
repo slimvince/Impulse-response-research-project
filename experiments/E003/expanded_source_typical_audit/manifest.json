@@ -1,0 +1,50 @@
+[
+  {
+    "source_id": "bass_a_3",
+    "source_event_index": 1089,
+    "file": "experiments/E003/expanded_source_typical_audit/bass_a_3_typical_01_source_event_1089.wav",
+    "duration_s": 0.6632199546485261
+  },
+  {
+    "source_id": "bass_a_3",
+    "source_event_index": 1651,
+    "file": "experiments/E003/expanded_source_typical_audit/bass_a_3_typical_02_source_event_1651.wav",
+    "duration_s": 0.1436734693877551
+  },
+  {
+    "source_id": "bass_a_4",
+    "source_event_index": 373,
+    "file": "experiments/E003/expanded_source_typical_audit/bass_a_4_typical_01_source_event_0373.wav",
+    "duration_s": 0.567437641723356
+  },
+  {
+    "source_id": "bass_a_4",
+    "source_event_index": 720,
+    "file": "experiments/E003/expanded_source_typical_audit/bass_a_4_typical_02_source_event_0720.wav",
+    "duration_s": 0.35555555555555557
+  },
+  {
+    "source_id": "bass_a_5",
+    "source_event_index": 707,
+    "file": "experiments/E003/expanded_source_typical_audit/bass_a_5_typical_01_source_event_0707.wav",
+    "duration_s": 0.615328798185941
+  },
+  {
+    "source_id": "bass_a_5",
+    "source_event_index": 992,
+    "file": "experiments/E003/expanded_source_typical_audit/bass_a_5_typical_02_source_event_0992.wav",
+    "duration_s": 0.18430839002267574
+  },
+  {
+    "source_id": "bass_d_1",
+    "source_event_index": 35,
+    "file": "experiments/E003/expanded_source_typical_audit/bass_d_1_typical_01_source_event_0035.wav",
+    "duration_s": 0.2438095238095238
+  },
+  {
+    "source_id": "bass_d_1",
+    "source_event_index": 50,
+    "file": "experiments/E003/expanded_source_typical_audit/bass_d_1_typical_02_source_event_0050.wav",
+    "duration_s": 0.2786394557823129
+  }
+]

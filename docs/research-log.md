@@ -100,11 +100,11 @@
 
 - **Question:** Can the candidate event detector produce a usable note/event segmentation on the current acoustic corpus?
 - **Observation:** The pilot ran Basic Pitch on four 30-second acoustic excerpts from the two source groups using a default and a stricter parameter set. The results were 82-96 default events and 15-41 stricter events per excerpt, while the repository threshold baseline produced only 4-6 events.
-- **Finding:** Basic Pitch is generating event-like structure on the real corpus, but its surface output is still too granular and ambiguous to be treated as a validated note detector without manual review.
-- **Interpretation:** The detector is promising as a candidate generator and conservative filter, but it is not yet reliable enough to support downstream event-conditioned conclusions without explicit confidence and ambiguity handling.
-- **Hypothesis:** A manual reviewed subset plus confidence filtering should yield a usable event population for later event-level analysis, while the unfiltered output remains too noisy for direct scientific use.
-- **Decision:** Classify the pilot as a conditional pass: useful for continued investigation and filtering, but not yet sufficient to claim a reliable note segmentation method. A small ground-truth benchmark must still be created before proceeding to event-conditioned research.
-- **Limitation:** This is a pilot on a small subset of excerpts only; it does not establish corpus-wide segmentation quality, legato handling, or missed-event rates.
+- **Finding:** Basic Pitch is generating event-like structure on the real corpus, but its surface output is still too granular and ambiguous to be treated as a validated note detector without manual review. The listener review of selected candidate clips resolved this ambiguity further: `low_01_low` contained five notes, and each of the `mid_*`, `bass_*`, and `broad_*` clips contained three notes. The pitch/frequency domain showed clear note-to-note changes with no glissandi or portamenti, and the notes were not tied, so these are sequences of individually plucked notes rather than single-note or hammer-on events.
+- **Interpretation:** The detector is promising as a candidate generator and conservative filter, but it is not yet reliable enough to support downstream event-conditioned conclusions without explicit confidence and ambiguity handling. The selected candidate clips are not valid single-note samples, and the real issue is boundary accuracy over a sequence of distinct plucks rather than a simple false-positive problem.
+- **Hypothesis:** A manual reviewed subset of isolated notes and note transitions, plus confidence filtering on the note boundaries, should yield a usable event population for later event-level analysis, while the unfiltered output remains too noisy for direct scientific use.
+- **Decision:** Classify the pilot as a conditional pass: useful for continued investigation and filtering, but not yet sufficient to claim a reliable note segmentation method. A small ground-truth benchmark on note boundaries and note sequences must still be created before proceeding to event-conditioned research.
+- **Limitation:** This is a pilot on a small subset of excerpts only; it does not establish corpus-wide segmentation quality, legato handling, or missed-event rates. The current candidate slice test already shows that the relevant problem is multi-note segmentation within a phrase, not the presence of a single sustained note with a tied/hammer-on articulation.
 
 ## 2026-09-23 - Repeatability baseline for transformation targets
 
@@ -211,3 +211,231 @@
 - **Correction:** Added those requirements and template fields. Corrected an inconsistent aubio licensing description in `decisions.md`.
 - **Remaining limitation:** The current repository records synthetic validation and design knowledge, but no real corpus findings exist yet.
 - **Next action:** Commit these documentation corrections, then begin E001 only after licensed pilot recordings are registered.
+
+## 2026-09-24 - E003 note benchmark and raw audition policy
+
+- **Question:** Does the pitch-aware reference detector reliably separate the individually plucked notes in the reviewed excerpts?
+- **Observation:** Four excerpts were manually labeled by ear with approximate boundaries: 3, 3, 3, and 5 notes. The labels are confidence-2 screening labels, not high-precision ground truth. The E003 evaluator tested five frame/hop/threshold settings.
+- **Finding:** The best tested setting, `256/64/-45`, produced counts 3/3, 3/3, 3/3, and 3/5, for total absolute count error 2. It still merges notes in `low_01_low.wav`.
+- **Interpretation:** The setting is a useful exploratory baseline, but count agreement on three clips does not establish reliable individual-note segmentation or boundary accuracy.
+- **Hypothesis:** A selective split rule for long multi-note regions may resolve the remaining merge, but a global increase in permitted split points is unsafe.
+- **Probe result:** Raising the global pitch-aware split limit from two to four changed the conservative-setting counts to 5/5/5/5, introducing false splits in the first three excerpts. The change was rejected and the validated two-split implementation restored.
+- **Decision:** Keep the current detector as a reference implementation only. Use the E003 benchmark as the gate for future detector changes. Export audition files as raw exact-boundary slices with no fades, context, normalization, or other postprocessing, while retaining the original WAV excerpts as the only analysis inputs.
+- **Validation:** The latest direct Python run reported `5 passed`; the benchmark and raw-slice exporter completed successfully; touched-file diagnostics reported no errors.
+- **Next action:** Continue with a selective, benchmarked boundary-refinement experiment and expand the manually reviewed set before event-conditioned IR analysis.
+
+## 2026-09-24 - Listener audit refines the low_01 failure mode
+
+- **Observation:** Audition of the raw detector outputs found that `low_01` event 1 contains the first note plus a short fragment of the second; event 2 contains three notes; event 3 contains two notes, with its first note being the second half of the last note in event 2.
+- **Finding:** The detector failure is not only a merge of multiple notes. It also places boundaries inside notes and distributes one musical note across adjacent events.
+- **Interpretation:** Event count alone understates the segmentation error. The current ordered-count metric can report three events while the event contents have incorrect musical boundaries and overlap the reference note structure.
+- **Decision:** Add boundary-inside-note and cross-event note-fragment errors to the benchmark review. Do not evaluate a proposed detector only by matching total note counts.
+- **Next action:** Build a boundary-aware evaluation for the reviewed excerpts, then test a selective refinement rule against both count and note-boundary errors.
+
+## 2026-09-24 - Qualitative audit separates three successes from one failure
+
+- **Observation:** The listener found the detector slicing musically correct for `low_02_low.wav`, `bass_friendly_01_bass_friendly.wav`, and `broad_03_broad.wav`. `low_01_low.wav` is the one reviewed excerpt with incorrect internal boundaries and cross-event note fragmentation.
+- **Finding:** The current detector is not uniformly failing on the reviewed material. It has three qualitative successes and one known difficult failure.
+- **Interpretation:** The benchmark should preserve per-excerpt boundary outcomes rather than reduce the result to a single global count or a blanket accept/reject statement.
+- **Decision:** Treat the current detector as a useful reference baseline for the three successful excerpts, while keeping it unvalidated for general note-level use because one failure remains and the reviewed set is small.
+- **Next action:** Add per-excerpt boundary judgments and boundary-aware metrics before changing the detector.
+
+## 2026-09-24 - Hard split cap identified as low_01 root cause
+
+- **Question:** Is `low_01` failing because its audio lacks separable note evidence, or because the implementation limits the number of splits?
+- **Observation:** At `256/64` with thresholds `-35`, `-38`, and `-45` dB, `low_01` produces one continuous active region from 0.000 to approximately 0.875 seconds. The splitter selects at most two pitch-change breaks because its loop stops at `len(selected_breaks) >= 2`.
+- **Finding:** The current implementation mechanically cannot emit more than three pieces from that active region, even when the listener identifies five notes.
+- **Interpretation:** The three-event result is partly an algorithmic ceiling, not evidence that the recording cannot be segmented. The earlier four-break probe was confounded by false candidate breaks in other excerpts.
+- **Decision:** Treat the two-break cap as a known implementation limitation. Do not raise it globally; replace it with selective break validation using segment duration, pitch stability, and boundary evidence.
+- **Next action:** Implement and benchmark a selective multi-break strategy, including boundary-aware metrics and per-excerpt qualitative judgments.
+
+## 2026-09-24 - First envelope-onset retry rejected
+
+- **Probe:** A separate raw-only envelope-rise probe was run on `low_01_low.wav` without changing the production detector. It used local RMS rises, a minimum spacing, and no fades or postprocessing.
+- **Observation:** The probe found candidate boundaries near 0.126, 0.261, 0.401, 0.588, and 0.772 seconds, producing six slices. The 0.261-second candidate is a secondary envelope rise rather than a confirmed note boundary.
+- **Finding:** Removing the hard split cap alone is insufficient; envelope candidates also require boundary-quality validation.
+- **Decision:** Reject the probe output and remove its temporary files. Keep the production detector unchanged at the validated 3/3, 3/3, 3/3, 3/5 benchmark result.
+- **Next action:** Combine pitch continuity, onset strength, local valleys, and minimum segment quality in a boundary-aware selective splitter, then benchmark it before exporting audition files.
+
+## 2026-09-24 - Adaptive multi-break splitter succeeds on initial benchmark
+
+- **Implementation:** Removed the fixed two-break ceiling. Nearby pitch candidates are clustered, and long active regions with sparse pitch evidence may receive widely spaced envelope-onset breaks. A one-cluster region receives at most one onset supplement; a two-cluster region requires at least four well-spaced onset candidates before supplementation.
+- **Validation:** The existing suite passed with `5 passed`. At `256/64/-45`, the benchmark counts are `3/3`, `3/3`, `3/3`, and `5/5` for the reviewed excerpts, with total absolute count error `0`.
+- **Interpretation:** The adaptive rule fixes the known five-note count failure without changing the three previously successful counts. This is stronger evidence than the former count-only baseline, but it does not yet establish precise onset/offset accuracy or generalization.
+- **Decision:** Retain the adaptive splitter as the current experimental implementation. Keep raw exact-boundary exports for audition and continue boundary-aware qualitative review.
+- **Next action:** Audition the five raw `low_01` outputs, then expand the labeled benchmark and measure boundary errors before treating the detector as reliable.
+
+## 2026-09-24 - Adaptive five-event output still has boundary continuity errors
+
+- **Observation:** The listener found event 1 contains a short tail of note 2; event 2 is otherwise correct but lacks the initial short part of note 2; event 3 contains two notes and its second continues into event 4; event 4 contains one note that began in event 3; event 5 is correct.
+- **Finding:** The adaptive splitter reaches the correct five-event count but still places boundaries inside notes and distributes note energy across adjacent slices.
+- **Interpretation:** Count error is now zero on this excerpt, while boundary error remains nonzero. The event count metric is therefore insufficient for accepting the detector.
+- **Decision:** Retain the adaptive splitter as an experimental improvement, but do not claim precise note segmentation. Add boundary continuity, cross-event fragment, onset, and offset metrics to the benchmark.
+- **Next action:** Refine candidate break positions toward attack/onset boundaries and evaluate boundary errors across all reviewed excerpts.
+
+## 2026-09-24 - Imperfect events can be retained but disqualified
+
+- **Observation:** Some detector outputs may remain imperfect even after automated refinement, especially in difficult transitions.
+- **Finding:** Perfect slicing of every event is not required if unusable events can be identified and excluded without deleting their evidence.
+- **Decision:** Preserve all detector outputs and classify them as `usable`, `ambiguous`, or `disqualified` for downstream analysis. Disqualified events remain available for detector evaluation and failure analysis but are excluded from event-conditioned feature analysis.
+- **Interpretation:** Human audition can focus on difficult or high-impact cases, while clear cases can be classified through automated boundary metrics and confidence rules.
+
+## 2026-09-24 - Manual usability audit recorded
+
+- **Observation:** The listener reviewed all 14 adaptive detector outputs in the four-excerpt benchmark.
+- **Finding:** All events in `low_02_low.wav`, `bass_friendly_01_bass_friendly.wav`, and `broad_03_broad.wav` were judged usable. In `low_01_low.wav`, events 1 and 2 were ambiguous, events 3 and 4 were disqualified, and event 5 was usable.
+- **Decision:** Store these decisions in `experiments/E003/listener_audit.csv`; retain all audio outputs, exclude disqualified events from downstream event-conditioned analysis, and use the audit to calibrate automated triage.
+
+## 2026-09-24 - Bass C unlabeled stress test
+
+- **Observation:** The new `bass_c` file produced 77 events at `256/64/-45` and 175 events at `128/32/-38`. The shortest detected durations were 0.0029 and 0.0007 seconds, respectively.
+- **Finding:** The new source is useful for stress-testing parameter sensitivity, but these counts cannot be interpreted as note counts without manual reference labels.
+- **Decision:** Keep bass C outside the labeled E003 benchmark for now. Use it only as an unlabeled diagnostic until a small manually reviewed subset is created.
+
+## 2026-09-24 - Bass C listener audit identifies long-block failure
+
+- **Observation:** The listener audited seven representative raw bass C outputs. One was silence, three contained one acceptable note, two contained one note plus possible short-note noise at the end, and one approximately 10-second event contained an estimated 30-50 notes, too many to count reliably.
+- **Finding:** The detector can isolate usable events in bass C, but it can also leave a long multi-note active region as one event. The top-level count of 77 events therefore does not imply note-level segmentation quality.
+- **Decision:** Record the results in `experiments/E003/bass_c_listener_audit.csv`; classify the silence and multi-note block as disqualified, the two possible short-note cases as ambiguous, and the three isolated notes as usable.
+- **Next action:** Target recursive splitting of long active regions and audition only the resulting ambiguous or high-duration cases.
+
+## 2026-09-24 - Acoustic candidate corpus expanded
+
+- **Observation:** Three additional bass A files and one bass D file are available: bass A takes 3-5 are 386.87 s, 261.77 s, and 204.60 s; bass D take 1 is 8.72 s. All are stereo 44.1 kHz 16-bit PCM WAVs.
+- **Finding:** The external candidate inventory now contains nine recordings across four source groups: A, B, C, and D.
+- **Decision:** Register bass A files as additional takes in `bass_a`; register bass D as a new `bass_d` source group. Preserve all files outside Git and keep unknown player/capture metadata explicit.
+- **Next action:** Run the same manifest-driven diagnostics on the expanded inventory, without treating source-group counts as repeatability evidence until metadata and within-group coverage are reviewed.
+
+## 2026-09-24 - Expanded source slicing scan
+
+- **Observation:** At `256/64/-45` with bounded long-event refinement, bass A3 produced 2,187 events with 776 under 20 ms; A4 produced 1,018 with 31 under 20 ms; A5 produced 1,395 with 728 under 20 ms; bass D1 produced 50 with 25 under 20 ms.
+- **Finding:** The expanded files expose strong source-to-source variation in fragmentation and event counts. Bass D is shorter and less fragmented than the new bass A files, while A3 and A5 contain many short artifacts.
+- **Decision:** Preserve a 12-file shortest/longest audit set under `experiments/E003/expanded_source_audit/`; do not interpret counts as note counts.
+- **Next action:** Use the audit to determine whether the current duration guard is too permissive for bass A or whether those recordings require different thresholds or source-specific escalation.
+
+## 2026-09-24 - Expanded source listener audit
+
+- **Observation:** The 12 shortest/longest audit slices contained three silence cases, one clear single note, double stops/simultaneous notes, and dense passages estimated at 10-16 or 12-16 fast notes.
+- **Finding:** Most selected long events are not monophonic note events: they contain polyphony, simultaneous tails, or fast note sequences. The bass D long event was a clear single note; its longest selected event contained a short upbeat note followed by another note.
+- **Decision:** Record the judgments in `experiments/E003/expanded_source_listener_audit.csv`. Disqualify silence and polyphonic/multi-note slices for the current monophonic event analysis, while retaining them as evidence about articulation and future polyphonic analysis.
+- **Next action:** Separate monophonic-note, double-stop, fast-passage, and silence strata before judging detector accuracy on the expanded corpus.
+
+## 2026-09-24 - Typical-duration audit sample created
+
+- **Observation:** The shortest/longest audit was failure-biased, so eight additional raw slices were selected from the ordinary 0.08-0.8 second duration stratum, two each from bass A takes 3-5 and bass D take 1.
+- **Decision:** Preserve the typical sample under `experiments/E003/expanded_source_typical_audit/` and use its listener results to estimate ordinary-event usability separately from stress-case performance.
+
+## 2026-09-24 - Typical-duration listener audit
+
+- **Observation:** The eight ordinary-duration slices contained four usable single notes, including two glissandi; one four-note merge; one short-upbeat two-note transition; and two very silent single-note candidates.
+- **Finding:** Glissando is still one note and should not be treated as segmentation ambiguity. Short-upbeat transitions and very-silent cases require separate handling.
+- **Decision:** Record 4 usable, 3 ambiguous, and 1 disqualified in `experiments/E003/expanded_source_typical_listener_audit.csv`; retain glissando as an articulation label.
+
+## 2026-09-24 - Real-recording hit-rate sample created
+
+- **Observation:** A stratified sample was generated from all nine actual external recordings, with four duration/risk strata per source file.
+- **Result:** 36 raw exact-boundary detector slices were generated and recorded in `experiments/E004/real_hit_rate_sample/manifest.json`.
+- **Decision:** Use this real-recording sample for hit-rate measurement; do not mix it with synthetic tests or the deliberately stress-biased E003 audit samples.
+- **Next action:** Audit the 36 slices by source group and classify each as usable, ambiguous, or disqualified, then calculate hit rate with strata reported separately.
+
+## 2026-09-24 - Real-recording hit-rate audit completed
+
+- **Observation:** The 36-slice audit from all nine real external recordings contains 12 usable and 24 disqualified events, with no ambiguous labels.
+- **Finding:** Overall usable rate is `33.3%`. By stratum: short-risk `0/9`, lower-typical `3/9`, median-typical `4/9`, upper-typical `5/9`.
+- **Interpretation:** The detector is currently below the desired usable-event rate, and short-risk output is consistently unusable. The ordinary-duration strata are better but still below a high-accuracy target.
+- **Limitation:** The sample was deliberately stratified by duration/risk, so `33.3%` is not a natural prevalence estimate. Source-level and stratum-level rates must remain separate.
+- **Next action:** Improve artifact suppression and event-type classification, then repeat the same real-recording audit with an unchanged sampling protocol.
+
+## 2026-09-24 - Positive-control audit sample created
+
+- **Observation:** The overall real-recording hit rate is low and the first sample was deliberately stratified across risk levels.
+- **Decision:** Create an 18-slice positive-control sample from all nine real recordings, selecting ordinary-duration, fast-attack, high-peak events that the detector would be most likely to trust.
+- **Purpose:** Measure the precision of automatic high-confidence selection separately from overall event usability.
+- **Status:** Files and direct-link index exist under `experiments/E004/positive_control_sample/`; human judgments are pending.
+
+## 2026-09-24 - Bass C failure traced to localized under-segmentation
+
+- **Observation:** At `256/64/-45`, bass C contains four threshold-active regions. The first lasts approximately 47.864 seconds. The detector produces 77 outputs overall, but its first output lasts 10.0325 seconds and contains an estimated 30-50 notes.
+- **Finding:** The detector is identifying activity and subdividing the long region, but it misses many internal boundaries near the beginning of that region. The 77-event total therefore hides a severe localized merge.
+- **Interpretation:** The failure is caused by the interaction of long contiguous activity with incomplete internal onset/pitch evidence, not by an absence of audible note structure.
+- **Decision:** Add a maximum event-duration warning and recursively reprocess unusually long outputs; do not treat a high top-level event count as evidence of note-level success.
+
+## 2026-09-24 - Bass C parameter sweep separates resolution from fragmentation
+
+- **Observation:** On the original bass C recording, `64/16/-35` produced 1,220 events with 903 shorter than 20 ms and a longest event of 1.034 s. `256/64/-35` produced 192 events with a longest event of 1.617 s. `128/32/-38` produced 175 events with a longest event of 5.777 s. The baseline `256/64/-45` produced 77 events with a longest event of 10.032 s.
+- **Finding:** The 10-second merge is parameter-sensitive: finer resolution reduces long merges, but aggressive settings create many false fragments. No single global setting is adequate.
+- **Interpretation:** The next solution should apply fine-resolution analysis selectively to unusually long active regions, then filter or disqualify short artifacts, rather than making the whole recording use the most aggressive setting.
+- **Decision:** Preserve `256/64/-45` as the conservative baseline and prototype recursive long-event refinement with provenance for the parent event and child events.
+
+## 2026-09-24 - Recursive retry of bass C long event
+
+- **Experiment:** Reprocessed only the 10.0325-second `bass_c_event_07_source_index_001.wav` parent with `256/64/-35`, then discarded child events shorter than 20 ms.
+- **Result:** 31 raw child slices remained; the longest was 0.83 seconds, compared with the original 10.0325-second merged event. All child files and parent provenance are recorded in `experiments/E003/bass_c_recursive_event_07/manifest.json`.
+- **Interpretation:** Selective recursive refinement is substantially better than applying aggressive settings to the entire bass C recording, but the 31 children still require listener audit before being treated as notes.
+- **Next action:** Audit a representative spread of the 31 children, then adjust the recursive minimum-duration and boundary rules based on observed false splits and merges.
+
+## 2026-09-24 - Bounded long-event refinement enabled
+
+- **Implementation:** `detect_events` now recursively reprocesses events longer than 1.5 seconds once at `256/64/-35`, filters children shorter than 20 ms, and falls back to the parent when refinement produces no useful children.
+- **Validation:** Existing tests pass. Bass C changes from 77 events with a 10.032-second maximum event to 144 events with a 1.474-second maximum event. The former 10-second region becomes 31 production child outputs.
+- **Decision:** Keep this bounded refinement enabled as the current production experiment. Preserve parent-child provenance and continue human auditing of representative child events.
+
+## 2026-09-24 - Second bounded recursion level retained
+
+- **Implementation:** Long-event refinement now escalates events over 0.75 seconds for at most two levels, using `256/64/-35` and filtering children shorter than 20 ms.
+- **Validation:** E003 remains at exact counts `3/3, 3/3, 3/3, 5/5`; the suite passes with `5 passed`. Bass C improves from 144 to 161 events and its longest event decreases from 1.474 to 1.387 seconds, with two sub-20 ms fragments.
+- **Decision:** Retain the second bounded level. It improves the stress case without changing the labeled benchmark counts.
+
+## 2026-09-24 - Spectral-flux candidate experiment rejected
+
+- **Probe:** Added normalized spectral-flux onset candidates to the long, pitch-sparse fallback path.
+- **Result:** E003 best-setting count error worsened from 0 to 3, with `low_01` changing from 5 to 8 events. Bass C changed only marginally.
+- **Decision:** Remove the spectral-flux addition and restore the validated adaptive pitch/envelope splitter. Do not treat an independent onset signal as beneficial without candidate agreement or stronger filtering.
+
+## 2026-09-24 - Librosa onset detector probe
+
+- **Probe:** Tested the installed `librosa 1.0.0` onset-strength and peak-picking detector on the four E003 excerpts.
+- **Result:** It returned 3 onsets for the 5-note `low_01`, 2 for `bass_friendly_01_bass_friendly`, and 3 for `broad_03_broad`; it also produced extra early onsets in `low_02_low`.
+- **Decision:** Do not adopt librosa onset detection as a standalone slicer. Use it only as a possible candidate source inside a globally scored hybrid method.
+
+## 2026-09-24 - Global boundary optimizer probe rejected
+
+- **Probe:** Implemented an isolated dynamic boundary optimizer over current detector boundaries and envelope-onset candidates, with penalties for boundary movement and long segments.
+- **Result:** Proposed boundaries improved on `low_02` and `low_01`, but moved incorrectly on the bass-friendly and broad excerpts.
+- **Decision:** Do not integrate the optimizer into production. It needs stronger pitch/transition evidence and per-class constraints before it can replace the current detector.
+
+## 2026-09-24 - Bass C recursive v2 audit
+
+- **Observation:** The v2 audit found one note in children 1, 5, and 20; two hammer-on notes in child 3; four notes in child 2; two notes in children 10 and 30; and five notes in child 31.
+- **Finding:** The v2 refinement produces usable isolated-note children, but four of the eight audited children remain merged or articulation-ambiguous.
+- **Decision:** Store the corrected v2 judgments in `experiments/E003/bass_c_recursive_v2_listener_audit.csv`: 3 usable, 1 ambiguous, 4 disqualified.
+- **Next action:** Recursively reprocess disqualified v2 children and treat hammer-on articulation as a separate event class.
+
+## 2026-09-24 - Bass C recursive v3 audit
+
+- **Observation:** V3 children 1, 5, and 20 contained one note; child 3 contained two hammer-on notes; child 30 was possibly one note but uncertain; children 2 and 10 contained two or four merged notes; child 35 was duophonic, with one voice playing two notes while another sustained one.
+- **Finding:** The second recursion level preserves the three clear usable examples, reduces some merged material, and exposes duophonic content that should not be forced into a monophonic slicer.
+- **Decision:** Store the v3 judgments in `experiments/E003/bass_c_recursive_v3_listener_audit.csv`: 3 usable, 2 ambiguous, 3 disqualified.
+- **Next action:** Keep monophonic, hammer-on, and duophonic events as separate analysis strata rather than treating all multi-note material as one detector problem.
+
+## 2026-09-24 - Recursive bass C child audit
+
+- **Observation:** The listener audited eight representative children from the recursive pass: children 1, 5, and 20 contained one note; child 3 contained two notes with hammer-on articulation; child 31 contained four and possibly five notes; children 2, 10, and 30 contained 4, 3, and 2 merged notes respectively.
+- **Finding:** Recursive refinement materially reduces the 10-second merge, but several child events still contain multiple notes.
+- **Decision:** Preserve the child audit in `experiments/E003/bass_c_recursive_listener_audit.csv`; classify three children as usable, three as disqualified, and two as ambiguous.
+- **Next action:** Recursively reprocess only multi-note children, while preserving parent-child provenance and treating hammer-on cases separately from plucked-note segmentation.
+
+## 2026-09-24 - Second recursive pass is selectively useful
+
+- **Observation:** Reprocessing audited children with `128/32/-38` left most merged children as one event. `64/16/-45` split child 2 into two events and child 31 into two events, but left children 10 and 30 merged.
+- **Finding:** Recursive finer-resolution analysis improves some children but does not solve the hardest multi-note merges.
+- **Interpretation:** The remaining failures require onset/pitch-transition evidence or another detector, not only smaller frames and hops.
+- **Decision:** Keep recursive refinement as a selective stage, but add a long/merged-child escalation path that can invoke onset or alternate candidate generation and then apply usability classification.
+
+## 2026-09-24 - Third acoustic player/bass candidate added
+
+- **Observation:** A new external file was added at `C:\IR audio\acoustic\bass C\5.wav`. Verified metadata is stereo 44.1 kHz 16-bit PCM WAV, 48.16 seconds, SHA-256 `fc8b93807bc8e33e5da50e6691b884d844aec72e97bbcf55fb6befcbfa8c6c7f`.
+- **Finding:** This is a distinct third source group, not an additional take for bass A or bass B.
+- **Interpretation:** The file can expand the candidate acoustic repeatability inventory, but one file does not establish within-group repeatability for bass C and unknown capture metadata remain confounds.
+- **Decision:** Register it as `acoustic_bass_c_take_1` / source group `bass_c`, preserve it outside Git, and leave player, microphone, room, chain, and other contextual metadata explicitly unknown.
+- **Next action:** Verify permission and metadata, then analyze it through the same manifest-driven pipeline without pooling it into bass A or bass B.

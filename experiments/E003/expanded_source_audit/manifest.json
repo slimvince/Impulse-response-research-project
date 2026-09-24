@@ -1,0 +1,110 @@
+[
+  {
+    "source_id": "bass_a_3",
+    "source_path": "C:\\IR audio\\acoustic\\bass A\\3.wav",
+    "source_event_index": 91,
+    "file": "experiments/E003/expanded_source_audit/bass_a_3_audit_01_source_event_0091.wav",
+    "start_s": 9.694331065759638,
+    "end_s": 9.69578231292517,
+    "duration_s": 0.0014512471655328798
+  },
+  {
+    "source_id": "bass_a_3",
+    "source_path": "C:\\IR audio\\acoustic\\bass A\\3.wav",
+    "source_event_index": 1638,
+    "file": "experiments/E003/expanded_source_audit/bass_a_3_audit_02_source_event_1638.wav",
+    "start_s": 298.8306575963719,
+    "end_s": 300.31528344671204,
+    "duration_s": 1.484625850340136
+  },
+  {
+    "source_id": "bass_a_3",
+    "source_path": "C:\\IR audio\\acoustic\\bass A\\3.wav",
+    "source_event_index": 1377,
+    "file": "experiments/E003/expanded_source_audit/bass_a_3_audit_03_source_event_1377.wav",
+    "start_s": 251.11655328798187,
+    "end_s": 252.65922902494333,
+    "duration_s": 1.5426757369614512
+  },
+  {
+    "source_id": "bass_a_4",
+    "source_path": "C:\\IR audio\\acoustic\\bass A\\4.wav",
+    "source_event_index": 280,
+    "file": "experiments/E003/expanded_source_audit/bass_a_4_audit_01_source_event_0280.wav",
+    "start_s": 68.29424036281179,
+    "end_s": 68.29569160997733,
+    "duration_s": 0.0014512471655328798
+  },
+  {
+    "source_id": "bass_a_4",
+    "source_path": "C:\\IR audio\\acoustic\\bass A\\4.wav",
+    "source_event_index": 849,
+    "file": "experiments/E003/expanded_source_audit/bass_a_4_audit_02_source_event_0849.wav",
+    "start_s": 220.31818594104308,
+    "end_s": 221.81297052154196,
+    "duration_s": 1.4947845804988662
+  },
+  {
+    "source_id": "bass_a_4",
+    "source_path": "C:\\IR audio\\acoustic\\bass A\\4.wav",
+    "source_event_index": 491,
+    "file": "experiments/E003/expanded_source_audit/bass_a_4_audit_03_source_event_0491.wav",
+    "start_s": 121.96861678004535,
+    "end_s": 123.5156462585034,
+    "duration_s": 1.5470294784580498
+  },
+  {
+    "source_id": "bass_a_5",
+    "source_path": "C:\\IR audio\\acoustic\\bass A\\5.wav",
+    "source_event_index": 33,
+    "file": "experiments/E003/expanded_source_audit/bass_a_5_audit_01_source_event_0033.wav",
+    "start_s": 6.381133786848072,
+    "end_s": 6.382585034013606,
+    "duration_s": 0.0014512471655328798
+  },
+  {
+    "source_id": "bass_a_5",
+    "source_path": "C:\\IR audio\\acoustic\\bass A\\5.wav",
+    "source_event_index": 178,
+    "file": "experiments/E003/expanded_source_audit/bass_a_5_audit_02_source_event_0178.wav",
+    "start_s": 22.58140589569161,
+    "end_s": 24.50721088435374,
+    "duration_s": 1.9258049886621316
+  },
+  {
+    "source_id": "bass_a_5",
+    "source_path": "C:\\IR audio\\acoustic\\bass A\\5.wav",
+    "source_event_index": 1356,
+    "file": "experiments/E003/expanded_source_audit/bass_a_5_audit_03_source_event_1356.wav",
+    "start_s": 191.2003628117914,
+    "end_s": 193.9069387755102,
+    "duration_s": 2.7065759637188207
+  },
+  {
+    "source_id": "bass_d_1",
+    "source_path": "C:\\IR audio\\acoustic\\bass D\\1.wav",
+    "source_event_index": 22,
+    "file": "experiments/E003/expanded_source_audit/bass_d_1_audit_01_source_event_0022.wav",
+    "start_s": 3.417687074829932,
+    "end_s": 3.4191383219954647,
+    "duration_s": 0.0014512471655328798
+  },
+  {
+    "source_id": "bass_d_1",
+    "source_path": "C:\\IR audio\\acoustic\\bass D\\1.wav",
+    "source_event_index": 35,
+    "file": "experiments/E003/expanded_source_audit/bass_d_1_audit_02_source_event_0035.wav",
+    "start_s": 4.626575963718821,
+    "end_s": 5.765804988662132,
+    "duration_s": 1.1392290249433106
+  },
+  {
+    "source_id": "bass_d_1",
+    "source_path": "C:\\IR audio\\acoustic\\bass D\\1.wav",
+    "source_event_index": 19,
+    "file": "experiments/E003/expanded_source_audit/bass_d_1_audit_03_source_event_0019.wav",
+    "start_s": 2.020136054421769,
+    "end_s": 3.3770521541950114,
+    "duration_s": 1.3569160997732426
+  }
+]

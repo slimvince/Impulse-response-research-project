@@ -1,0 +1,37 @@
+source_id,stratum,status,notes
+bass_a_take_1,lower_typical,usable,
+bass_a_take_1,median_typical,disqualified,2 notes
+bass_a_take_1,short_risk,disqualified,silence
+bass_a_take_1,upper_typical,disqualified,2 notes
+bass_a_take_2,lower_typical,disqualified,noise
+bass_a_take_2,median_typical,usable,
+bass_a_take_2,short_risk,disqualified,silence
+bass_a_take_2,upper_typical,disqualified,2 notes
+bass_a_take_3,lower_typical,disqualified,noise
+bass_a_take_3,median_typical,disqualified,noise
+bass_a_take_3,short_risk,disqualified,silence
+bass_a_take_3,upper_typical,usable,
+bass_a_take_4,lower_typical,usable,
+bass_a_take_4,median_typical,usable,
+bass_a_take_4,short_risk,disqualified,silence
+bass_a_take_4,upper_typical,disqualified,4 very fast notes
+bass_a_take_5,lower_typical,disqualified,short click
+bass_a_take_5,median_typical,disqualified,short noise
+bass_a_take_5,short_risk,disqualified,silence
+bass_a_take_5,upper_typical,usable,
+bass_b_take_1,lower_typical,disqualified,short click
+bass_b_take_1,median_typical,disqualified,short noise
+bass_b_take_1,short_risk,disqualified,silence
+bass_b_take_1,upper_typical,usable,
+bass_b_take_2,lower_typical,disqualified,short noise
+bass_b_take_2,median_typical,usable,
+bass_b_take_2,short_risk,disqualified,silence
+bass_b_take_2,upper_typical,usable,
+bass_c_take_1,lower_typical,usable,
+bass_c_take_1,median_typical,disqualified,2 notes
+bass_c_take_1,short_risk,disqualified,silence
+bass_c_take_1,upper_typical,disqualified,2 notes
+bass_d_take_1,lower_typical,disqualified,silence
+bass_d_take_1,median_typical,usable,
+bass_d_take_1,short_risk,disqualified,silence
+bass_d_take_1,upper_typical,usable,

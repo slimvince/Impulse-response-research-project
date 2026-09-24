@@ -1,0 +1,4 @@
+excerpt_id,note_index,start_s,end_s,pitch_hint,confidence,notes
+example_excerpt,1,0.00,0.18,low,1,clear note onset and decay
+example_excerpt,2,0.23,0.40,low,1,distinct pitch change; note is separate from previous
+example_excerpt,3,0.45,0.62,mid,1,clear next note with no tie or legato

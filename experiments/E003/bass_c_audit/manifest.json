@@ -1,0 +1,51 @@
+[
+  {
+    "file": "experiments/E003/bass_c_audit/bass_c_event_01_source_index_077.wav",
+    "source_event_index": 77,
+    "start_s": 48.06820861678005,
+    "end_s": 48.07111111111111,
+    "duration_s": 0.0029024943310657597
+  },
+  {
+    "file": "experiments/E003/bass_c_audit/bass_c_event_02_source_index_023.wav",
+    "source_event_index": 23,
+    "start_s": 18.9924716553288,
+    "end_s": 19.11873015873016,
+    "duration_s": 0.12625850340136055
+  },
+  {
+    "file": "experiments/E003/bass_c_audit/bass_c_event_03_source_index_064.wav",
+    "source_event_index": 64,
+    "start_s": 35.53814058956916,
+    "end_s": 35.75582766439909,
+    "duration_s": 0.21768707482993196
+  },
+  {
+    "file": "experiments/E003/bass_c_audit/bass_c_event_04_source_index_059.wav",
+    "source_event_index": 59,
+    "start_s": 32.46004535147392,
+    "end_s": 32.760453514739226,
+    "duration_s": 0.3004081632653061
+  },
+  {
+    "file": "experiments/E003/bass_c_audit/bass_c_event_05_source_index_042.wav",
+    "source_event_index": 42,
+    "start_s": 25.32281179138322,
+    "end_s": 25.803174603174604,
+    "duration_s": 0.48036281179138324
+  },
+  {
+    "file": "experiments/E003/bass_c_audit/bass_c_event_06_source_index_026.wav",
+    "source_event_index": 26,
+    "start_s": 19.937233560090704,
+    "end_s": 20.683174603174603,
+    "duration_s": 0.7459410430839002
+  },
+  {
+    "file": "experiments/E003/bass_c_audit/bass_c_event_07_source_index_001.wav",
+    "source_event_index": 1,
+    "start_s": 0.14222222222222222,
+    "end_s": 10.17469387755102,
+    "duration_s": 10.032471655328798
+  }
+]
