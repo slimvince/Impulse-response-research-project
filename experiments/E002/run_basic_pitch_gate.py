@@ -123,6 +123,9 @@ for excerpt in EXCERPTS:
             }
         )
 
+    if temp_path.exists():
+        temp_path.unlink()
+
     summary["results"].append(entry)
 
 summary_path = RESULTS / "basic_pitch_gate_summary.json"
