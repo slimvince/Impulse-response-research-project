@@ -1,0 +1,158 @@
+{
+  "reference_labels": "E003/ground_truth.csv; approximate manual times",
+  "candidates": {
+    "recursive_detector": {
+      "low_02_low.wav": {
+        "reference_count": 3,
+        "detected_count": 3,
+        "count_error": 0,
+        "mean_ordered_onset_error_s": 0.0277551020408163,
+        "max_ordered_onset_error_s": 0.08274376417233553
+      },
+      "bass_friendly_01_bass_friendly.wav": {
+        "reference_count": 3,
+        "detected_count": 3,
+        "count_error": 0,
+        "mean_ordered_onset_error_s": 0.07254724111866968,
+        "max_ordered_onset_error_s": 0.21235827664399093
+      },
+      "broad_03_broad.wav": {
+        "reference_count": 3,
+        "detected_count": 3,
+        "count_error": 0,
+        "mean_ordered_onset_error_s": 0.08781557067271355,
+        "max_ordered_onset_error_s": 0.25235827664399096
+      },
+      "low_01_low.wav": {
+        "reference_count": 5,
+        "detected_count": 5,
+        "count_error": 0,
+        "mean_ordered_onset_error_s": 0.02139229024943312,
+        "max_ordered_onset_error_s": 0.05403628117913839
+      }
+    },
+    "librosa_onset": {
+      "low_02_low.wav": {
+        "reference_count": 3,
+        "detected_count": 5,
+        "count_error": 2,
+        "mean_ordered_onset_error_s": 0.2270597127739985,
+        "max_ordered_onset_error_s": 0.5906802721088436
+      },
+      "bass_friendly_01_bass_friendly.wav": {
+        "reference_count": 3,
+        "detected_count": 2,
+        "count_error": 1,
+        "mean_ordered_onset_error_s": 0.32699546485260766,
+        "max_ordered_onset_error_s": 0.4943537414965986
+      },
+      "broad_03_broad.wav": {
+        "reference_count": 3,
+        "detected_count": 3,
+        "count_error": 0,
+        "mean_ordered_onset_error_s": 0.2577173091458806,
+        "max_ordered_onset_error_s": 0.4943537414965986
+      },
+      "low_01_low.wav": {
+        "reference_count": 5,
+        "detected_count": 3,
+        "count_error": 2,
+        "mean_ordered_onset_error_s": 0.3062207105064248,
+        "max_ordered_onset_error_s": 0.42308390022675735
+      }
+    },
+    "aubio_tuned": {
+      "low_02_low.wav": {
+        "reference_count": 3,
+        "detected_count": 3,
+        "count_error": 0,
+        "mean_ordered_onset_error_s": 0.22685563405354817,
+        "max_ordered_onset_error_s": 0.5951246976852417
+      },
+      "bass_friendly_01_bass_friendly.wav": {
+        "reference_count": 3,
+        "detected_count": 3,
+        "count_error": 0,
+        "mean_ordered_onset_error_s": 0.019085404078165696,
+        "max_ordered_onset_error_s": 0.03505666494369508
+      },
+      "broad_03_broad.wav": {
+        "reference_count": 3,
+        "detected_count": 3,
+        "count_error": 0,
+        "mean_ordered_onset_error_s": 0.009047627449035653,
+        "max_ordered_onset_error_s": 0.022199547290802008
+      },
+      "low_01_low.wav": {
+        "reference_count": 5,
+        "detected_count": 3,
+        "count_error": 2,
+        "mean_ordered_onset_error_s": 0.2105442225933075,
+        "max_ordered_onset_error_s": 0.3658957147598267
+      }
+    },
+    "basic_pitch_default": {
+      "low_02_low.wav": {
+        "reference_count": 3,
+        "detected_count": 2,
+        "count_error": 1,
+        "mean_ordered_onset_error_s": 0.3081292517006803,
+        "max_ordered_onset_error_s": 0.5001587301587301
+      },
+      "bass_friendly_01_bass_friendly.wav": {
+        "reference_count": 3,
+        "detected_count": 2,
+        "count_error": 1,
+        "mean_ordered_onset_error_s": 0.14465986394557823,
+        "max_ordered_onset_error_s": 0.1509297052154195
+      },
+      "broad_03_broad.wav": {
+        "reference_count": 3,
+        "detected_count": 2,
+        "count_error": 1,
+        "mean_ordered_onset_error_s": 0.14465986394557823,
+        "max_ordered_onset_error_s": 0.1509297052154195
+      },
+      "low_01_low.wav": {
+        "reference_count": 5,
+        "detected_count": 2,
+        "count_error": 3,
+        "mean_ordered_onset_error_s": 0.29058956916099776,
+        "max_ordered_onset_error_s": 0.5688888888888889
+      }
+    }
+  },
+  "human_audits": {
+    "e003_listener_audit": {
+      "total": 14,
+      "statuses": {
+        "usable": 10,
+        "ambiguous": 2,
+        "disqualified": 2
+      },
+      "usable_rate": 0.7142857142857143
+    },
+    "e004_hit_rate": {
+      "total": 36,
+      "statuses": {
+        "usable": 12,
+        "disqualified": 24
+      },
+      "usable_rate": 0.3333333333333333
+    },
+    "e004_positive_control": {
+      "total": 18,
+      "statuses": {
+        "disqualified": 9,
+        "usable": 9
+      },
+      "usable_rate": 0.5
+    }
+  },
+  "limitations": [
+    "Ordered onset errors use approximate manual labels.",
+    "Only the recursive detector has a complete listener usability audit on E003.",
+    "Candidate count/onset metrics do not measure split/merge correctness without human labels for each candidate.",
+    "Essentia, MuScriptor, MT3, and commercial systems are not included."
+  ]
+}

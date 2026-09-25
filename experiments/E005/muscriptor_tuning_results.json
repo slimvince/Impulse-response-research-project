@@ -1,0 +1,56 @@
+{
+  "parameters": [
+    {
+      "id": "greedy_cfg1",
+      "beam_size": 1,
+      "cfg_coef": 1.0,
+      "counts": {
+        "low_02_low.wav": 2,
+        "bass_friendly_01_bass_friendly.wav": 11,
+        "broad_03_broad.wav": 2,
+        "low_01_low.wav": 27
+      },
+      "development_count_error": 10,
+      "holdout_count_error": 22
+    },
+    {
+      "id": "beam2_cfg1",
+      "beam_size": 2,
+      "cfg_coef": 1.0,
+      "counts": {
+        "low_02_low.wav": 2,
+        "bass_friendly_01_bass_friendly.wav": 11,
+        "broad_03_broad.wav": 2,
+        "low_01_low.wav": 23
+      },
+      "development_count_error": 10,
+      "holdout_count_error": 18
+    },
+    {
+      "id": "greedy_cfg1_5",
+      "beam_size": 1,
+      "cfg_coef": 1.5,
+      "counts": {
+        "low_02_low.wav": 5,
+        "bass_friendly_01_bass_friendly.wav": 3,
+        "broad_03_broad.wav": 2,
+        "low_01_low.wav": 4
+      },
+      "development_count_error": 3,
+      "holdout_count_error": 1
+    },
+    {
+      "id": "beam2_cfg1_5",
+      "beam_size": 2,
+      "cfg_coef": 1.5,
+      "counts": {
+        "low_02_low.wav": 5,
+        "bass_friendly_01_bass_friendly.wav": 3,
+        "broad_03_broad.wav": 2,
+        "low_01_low.wav": 4
+      },
+      "development_count_error": 3,
+      "holdout_count_error": 1
+    }
+  ]
+}

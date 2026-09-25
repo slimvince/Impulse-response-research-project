@@ -1,0 +1,180 @@
+{
+  "strategy": "recursive primary + aubio secondary evidence + Basic Pitch candidate context",
+  "match_tolerance_s": 0.08,
+  "long_event_threshold_s": 0.75,
+  "limitations": [
+    "Routing is a prototype; it does not fuse or auto-accept events as scientifically usable.",
+    "Human audits remain required for ambiguous and secondary-review routes.",
+    "Basic Pitch and aubio outputs are candidate evidence, not ground truth."
+  ],
+  "excerpts": {
+    "low_02_low.wav": {
+      "primary_detector": "recursive_detector",
+      "secondary_detector": "aubio_specdiff_threshold_0.7",
+      "candidate_context": "basic_pitch_default",
+      "events": [
+        {
+          "event_index": 1,
+          "start_s": 0.0,
+          "end_s": 0.14947845804988663,
+          "duration_s": 0.14947845804988663,
+          "route": "candidate",
+          "aubio_onset_support": true,
+          "basic_pitch_support": false,
+          "long_event": false
+        },
+        {
+          "event_index": 2,
+          "start_s": 0.14947845804988663,
+          "end_s": 0.6472562358276645,
+          "duration_s": 0.49777777777777776,
+          "route": "candidate",
+          "aubio_onset_support": false,
+          "basic_pitch_support": true,
+          "long_event": false
+        },
+        {
+          "event_index": 3,
+          "start_s": 0.6472562358276645,
+          "end_s": 0.8402721088435374,
+          "duration_s": 0.19301587301587303,
+          "route": "candidate",
+          "aubio_onset_support": false,
+          "basic_pitch_support": true,
+          "long_event": false
+        }
+      ]
+    },
+    "bass_friendly_01_bass_friendly.wav": {
+      "primary_detector": "recursive_detector",
+      "secondary_detector": "aubio_specdiff_threshold_0.7",
+      "candidate_context": "basic_pitch_default",
+      "events": [
+        {
+          "event_index": 1,
+          "start_s": 0.0,
+          "end_s": 0.15528344671201813,
+          "duration_s": 0.15528344671201813,
+          "route": "candidate",
+          "aubio_onset_support": true,
+          "basic_pitch_support": true,
+          "long_event": false
+        },
+        {
+          "event_index": 2,
+          "start_s": 0.15528344671201813,
+          "end_s": 0.39764172335600906,
+          "duration_s": 0.24235827664399093,
+          "route": "candidate",
+          "aubio_onset_support": true,
+          "basic_pitch_support": true,
+          "long_event": false
+        },
+        {
+          "event_index": 3,
+          "start_s": 0.39764172335600906,
+          "end_s": 0.7604535147392291,
+          "duration_s": 0.36281179138321995,
+          "route": "ambiguous",
+          "aubio_onset_support": false,
+          "basic_pitch_support": false,
+          "long_event": false
+        }
+      ]
+    },
+    "broad_03_broad.wav": {
+      "primary_detector": "recursive_detector",
+      "secondary_detector": "aubio_specdiff_threshold_0.7",
+      "candidate_context": "basic_pitch_default",
+      "events": [
+        {
+          "event_index": 1,
+          "start_s": 0.0,
+          "end_s": 0.16108843537414966,
+          "duration_s": 0.16108843537414966,
+          "route": "candidate",
+          "aubio_onset_support": true,
+          "basic_pitch_support": true,
+          "long_event": false
+        },
+        {
+          "event_index": 2,
+          "start_s": 0.16108843537414966,
+          "end_s": 0.39764172335600906,
+          "duration_s": 0.2365532879818594,
+          "route": "candidate",
+          "aubio_onset_support": true,
+          "basic_pitch_support": true,
+          "long_event": false
+        },
+        {
+          "event_index": 3,
+          "start_s": 0.39764172335600906,
+          "end_s": 0.7836734693877551,
+          "duration_s": 0.38603174603174606,
+          "route": "ambiguous",
+          "aubio_onset_support": false,
+          "basic_pitch_support": false,
+          "long_event": false
+        }
+      ]
+    },
+    "low_01_low.wav": {
+      "primary_detector": "recursive_detector",
+      "secondary_detector": "aubio_specdiff_threshold_0.7",
+      "candidate_context": "basic_pitch_default",
+      "events": [
+        {
+          "event_index": 1,
+          "start_s": 0.0,
+          "end_s": 0.18140589569160998,
+          "duration_s": 0.18140589569160998,
+          "route": "candidate",
+          "aubio_onset_support": true,
+          "basic_pitch_support": false,
+          "long_event": false
+        },
+        {
+          "event_index": 2,
+          "start_s": 0.18140589569160998,
+          "end_s": 0.4005442176870748,
+          "duration_s": 0.21913832199546485,
+          "route": "candidate",
+          "aubio_onset_support": false,
+          "basic_pitch_support": true,
+          "long_event": false
+        },
+        {
+          "event_index": 3,
+          "start_s": 0.4005442176870748,
+          "end_s": 0.6240362811791383,
+          "duration_s": 0.2234920634920635,
+          "route": "candidate",
+          "aubio_onset_support": true,
+          "basic_pitch_support": false,
+          "long_event": false
+        },
+        {
+          "event_index": 4,
+          "start_s": 0.6240362811791383,
+          "end_s": 0.7720634920634921,
+          "duration_s": 0.14802721088435375,
+          "route": "candidate",
+          "aubio_onset_support": false,
+          "basic_pitch_support": true,
+          "long_event": false
+        },
+        {
+          "event_index": 5,
+          "start_s": 0.7720634920634921,
+          "end_s": 0.8751020408163265,
+          "duration_s": 0.10303854875283447,
+          "route": "candidate",
+          "aubio_onset_support": true,
+          "basic_pitch_support": false,
+          "long_event": false
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "purpose": "E006 EUB representative event audit",
+  "files": [
+    {
+      "recording_id": "ns_design_eub_di",
+      "source_group": "ns_design_eub",
+      "label": "shortest",
+      "source_path": "C:\\IR audio\\NS Design\\rr-eub-di.wav",
+      "file": "experiments/E006/audit_slices/ns_design_eub_di_shortest_event_0004.wav",
+      "source_event_index": 4,
+      "start_s": 1.696,
+      "end_s": 1.7013333333333334,
+      "duration_s": 0.005333333333333333,
+      "articulation": "unknown"
+    },
+    {
+      "recording_id": "ns_design_eub_di",
+      "source_group": "ns_design_eub",
+      "label": "median",
+      "source_path": "C:\\IR audio\\NS Design\\rr-eub-di.wav",
+      "file": "experiments/E006/audit_slices/ns_design_eub_di_median_event_0017.wav",
+      "source_event_index": 17,
+      "start_s": 11.277333333333333,
+      "end_s": 11.39,
+      "duration_s": 0.11266666666666666,
+      "articulation": "unknown"
+    },
+    {
+      "recording_id": "ns_design_eub_di",
+      "source_group": "ns_design_eub",
+      "label": "longest",
+      "source_path": "C:\\IR audio\\NS Design\\rr-eub-di.wav",
+      "file": "experiments/E006/audit_slices/ns_design_eub_di_longest_event_0006.wav",
+      "source_event_index": 6,
+      "start_s": 2.24,
+      "end_s": 4.314666666666667,
+      "duration_s": 2.074666666666667,
+      "articulation": "unknown"
+    },
+    {
+      "recording_id": "ergo_eub_a0_1_f",
+      "source_group": "ergo_eub",
+      "label": "median",
+      "source_path": "C:\\IR audio\\derived\\eub_poc\\ergo_pcm16\\A0_1_f.wav",
+      "file": "experiments/E006/audit_slices/ergo_eub_a0_1_f_median_event_0045.wav",
+      "source_event_index": 45,
+      "start_s": 2.3147392290249433,
+      "end_s": 2.3423129251700683,
+      "duration_s": 0.027573696145124716,
+      "articulation": "f"
+    },
+    {
+      "recording_id": "ergo_eub_a0_1_mf",
+      "source_group": "ergo_eub",
+      "label": "median",
+      "source_path": "C:\\IR audio\\derived\\eub_poc\\ergo_pcm16\\A0_1_mf.wav",
+      "file": "experiments/E006/audit_slices/ergo_eub_a0_1_mf_median_event_0016.wav",
+      "source_event_index": 16,
+      "start_s": 0.5355102040816326,
+      "end_s": 0.5587301587301587,
+      "duration_s": 0.023219954648526078,
+      "articulation": "mf"
+    },
+    {
+      "recording_id": "ergo_eub_a0_1_p",
+      "source_group": "ergo_eub",
+      "label": "median",
+      "source_path": "C:\\IR audio\\derived\\eub_poc\\ergo_pcm16\\A0_1_p.wav",
+      "file": "experiments/E006/audit_slices/ergo_eub_a0_1_p_median_event_0014.wav",
+      "source_event_index": 14,
+      "start_s": 0.7212698412698413,
+      "end_s": 0.7430385487528345,
+      "duration_s": 0.021768707482993196,
+      "articulation": "p"
+    },
+    {
+      "recording_id": "ergo_eub_a1_1_f",
+      "source_group": "ergo_eub",
+      "label": "median",
+      "source_path": "C:\\IR audio\\derived\\eub_poc\\ergo_pcm16\\A1_1_f.wav",
+      "file": "experiments/E006/audit_slices/ergo_eub_a1_1_f_median_event_0002.wav",
+      "source_event_index": 2,
+      "start_s": 0.11755102040816326,
+      "end_s": 0.26267573696145124,
+      "duration_s": 0.14512471655328799,
+      "articulation": "f"
+    },
+    {
+      "recording_id": "ergo_eub_a1_1_mf",
+      "source_group": "ergo_eub",
+      "label": "median",
+      "source_path": "C:\\IR audio\\derived\\eub_poc\\ergo_pcm16\\A1_1_mf.wav",
+      "file": "experiments/E006/audit_slices/ergo_eub_a1_1_mf_median_event_0002.wav",
+      "source_event_index": 2,
+      "start_s": 0.4992290249433107,
+      "end_s": 0.6704761904761904,
+      "duration_s": 0.17124716553287983,
+      "articulation": "mf"
+    },
+    {
+      "recording_id": "ergo_eub_a1_1_p",
+      "source_group": "ergo_eub",
+      "label": "median",
+      "source_path": "C:\\IR audio\\derived\\eub_poc\\ergo_pcm16\\A1_1_p.wav",
+      "file": "experiments/E006/audit_slices/ergo_eub_a1_1_p_median_event_0006.wav",
+      "source_event_index": 6,
+      "start_s": 3.7268027210884354,
+      "end_s": 3.7384126984126986,
+      "duration_s": 0.011609977324263039,
+      "articulation": "p"
+    }
+  ]
+}

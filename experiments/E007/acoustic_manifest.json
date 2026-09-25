@@ -1,0 +1,158 @@
+{
+  "experiment_id": "E007_acoustic",
+  "recordings": [
+    {
+      "recording_id": "acoustic_bass_a_take_1",
+      "domain": "acoustic_mic",
+      "split": "development",
+      "path": "C:\\IR audio\\acoustic\\bass A\\1.wav",
+      "metadata": {
+        "comparison_group_id": "acoustic_bass_a_repeatability",
+        "source_group": "bass_a",
+        "take_id": "1",
+        "player": "unknown",
+        "instrument": "bass_a",
+        "microphone": "unknown",
+        "license_status": "user_confirmed_free_to_use",
+        "permission_basis": "User confirmed the audio files are free to use.",
+        "intended_use": "within-group noise floor and uncertainty baseline"
+      }
+    },
+    {
+      "recording_id": "acoustic_bass_a_take_2",
+      "domain": "acoustic_mic",
+      "split": "development",
+      "path": "C:\\IR audio\\acoustic\\bass A\\2.wav",
+      "metadata": {
+        "comparison_group_id": "acoustic_bass_a_repeatability",
+        "source_group": "bass_a",
+        "take_id": "2",
+        "player": "unknown",
+        "instrument": "bass_a",
+        "microphone": "unknown",
+        "license_status": "user_confirmed_free_to_use",
+        "permission_basis": "User confirmed the audio files are free to use.",
+        "intended_use": "within-group noise floor and uncertainty baseline"
+      }
+    },
+    {
+      "recording_id": "acoustic_bass_a_take_3",
+      "domain": "acoustic_mic",
+      "split": "development",
+      "path": "C:\\IR audio\\acoustic\\bass A\\3.wav",
+      "metadata": {
+        "comparison_group_id": "acoustic_bass_a_repeatability",
+        "source_group": "bass_a",
+        "take_id": "3",
+        "player": "unknown",
+        "instrument": "bass_a",
+        "microphone": "unknown",
+        "license_status": "user_confirmed_free_to_use",
+        "permission_basis": "User confirmed the audio files are free to use.",
+        "intended_use": "within-group noise floor and uncertainty baseline"
+      }
+    },
+    {
+      "recording_id": "acoustic_bass_a_take_4",
+      "domain": "acoustic_mic",
+      "split": "development",
+      "path": "C:\\IR audio\\acoustic\\bass A\\4.wav",
+      "metadata": {
+        "comparison_group_id": "acoustic_bass_a_repeatability",
+        "source_group": "bass_a",
+        "take_id": "4",
+        "player": "unknown",
+        "instrument": "bass_a",
+        "microphone": "unknown",
+        "license_status": "user_confirmed_free_to_use",
+        "permission_basis": "User confirmed the audio files are free to use.",
+        "intended_use": "within-group noise floor and uncertainty baseline"
+      }
+    },
+    {
+      "recording_id": "acoustic_bass_a_take_5",
+      "domain": "acoustic_mic",
+      "split": "development",
+      "path": "C:\\IR audio\\acoustic\\bass A\\5.wav",
+      "metadata": {
+        "comparison_group_id": "acoustic_bass_a_repeatability",
+        "source_group": "bass_a",
+        "take_id": "5",
+        "player": "unknown",
+        "instrument": "bass_a",
+        "microphone": "unknown",
+        "license_status": "user_confirmed_free_to_use",
+        "permission_basis": "User confirmed the audio files are free to use.",
+        "intended_use": "within-group noise floor and uncertainty baseline"
+      }
+    },
+    {
+      "recording_id": "acoustic_bass_b_take_1",
+      "domain": "acoustic_mic",
+      "split": "development",
+      "path": "C:\\IR audio\\acoustic\\bass B\\3.wav",
+      "metadata": {
+        "comparison_group_id": "acoustic_bass_b_repeatability",
+        "source_group": "bass_b",
+        "take_id": "1",
+        "player": "unknown",
+        "instrument": "bass_b",
+        "microphone": "unknown",
+        "license_status": "user_confirmed_free_to_use",
+        "permission_basis": "User confirmed the audio files are free to use.",
+        "intended_use": "within-group noise floor and uncertainty baseline"
+      }
+    },
+    {
+      "recording_id": "acoustic_bass_b_take_2",
+      "domain": "acoustic_mic",
+      "split": "development",
+      "path": "C:\\IR audio\\acoustic\\bass B\\4.wav",
+      "metadata": {
+        "comparison_group_id": "acoustic_bass_b_repeatability",
+        "source_group": "bass_b",
+        "take_id": "2",
+        "player": "unknown",
+        "instrument": "bass_b",
+        "microphone": "unknown",
+        "license_status": "user_confirmed_free_to_use",
+        "permission_basis": "User confirmed the audio files are free to use.",
+        "intended_use": "within-group noise floor and uncertainty baseline"
+      }
+    },
+    {
+      "recording_id": "acoustic_bass_c_take_1",
+      "domain": "acoustic_mic",
+      "split": "development",
+      "path": "C:\\IR audio\\acoustic\\bass C\\5.wav",
+      "metadata": {
+        "comparison_group_id": "acoustic_bass_c_repeatability",
+        "source_group": "bass_c",
+        "take_id": "1",
+        "player": "unknown",
+        "instrument": "bass_c",
+        "microphone": "unknown",
+        "license_status": "user_confirmed_free_to_use",
+        "permission_basis": "User confirmed the audio files are free to use.",
+        "intended_use": "within-group noise floor and uncertainty baseline"
+      }
+    },
+    {
+      "recording_id": "acoustic_bass_d_take_1",
+      "domain": "acoustic_mic",
+      "split": "development",
+      "path": "C:\\IR audio\\acoustic\\bass D\\1.wav",
+      "metadata": {
+        "comparison_group_id": "acoustic_bass_d_repeatability",
+        "source_group": "bass_d",
+        "take_id": "1",
+        "player": "unknown",
+        "instrument": "bass_d",
+        "microphone": "unknown",
+        "license_status": "user_confirmed_free_to_use",
+        "permission_basis": "User confirmed the audio files are free to use.",
+        "intended_use": "within-group noise floor and uncertainty baseline"
+      }
+    }
+  ]
+}

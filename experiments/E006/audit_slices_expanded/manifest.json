@@ -1,0 +1,196 @@
+{
+  "purpose": "Expanded E006 source-balanced event audit",
+  "selection": "one high-signal ordinary-duration event per recording plus NS short/long extras",
+  "files": [
+    {
+      "recording_id": "ns_design_eub_di",
+      "source_group": "ns_design_eub",
+      "file": "experiments/E006/audit_slices_expanded/ns_design_eub_di_high_signal_event_0017.wav",
+      "source_event_index": 17,
+      "start_s": 11.277333333333333,
+      "end_s": 11.39,
+      "duration_s": 0.11266666666666666,
+      "peak_db": -17.29435157775879
+    },
+    {
+      "recording_id": "ergo_eub_a0_1_f",
+      "source_group": "ergo_eub",
+      "file": "experiments/E006/audit_slices_expanded/ergo_eub_a0_1_f_high_signal_event_0022.wav",
+      "source_event_index": 22,
+      "start_s": 0.7807709750566894,
+      "end_s": 0.857687074829932,
+      "duration_s": 0.07691609977324262,
+      "peak_db": -19.157392501831055
+    },
+    {
+      "recording_id": "ergo_eub_a0_1_mf",
+      "source_group": "ergo_eub",
+      "file": "experiments/E006/audit_slices_expanded/ergo_eub_a0_1_mf_high_signal_event_0001.wav",
+      "source_event_index": 1,
+      "start_s": 0.0,
+      "end_s": 0.021768707482993196,
+      "duration_s": 0.021768707482993196,
+      "peak_db": -14.02894115447998
+    },
+    {
+      "recording_id": "ergo_eub_a0_1_p",
+      "source_group": "ergo_eub",
+      "file": "experiments/E006/audit_slices_expanded/ergo_eub_a0_1_p_high_signal_event_0002.wav",
+      "source_event_index": 2,
+      "start_s": 0.056598639455782314,
+      "end_s": 0.08272108843537415,
+      "duration_s": 0.026122448979591838,
+      "peak_db": -23.11250877380371
+    },
+    {
+      "recording_id": "ergo_eub_a1_1_f",
+      "source_group": "ergo_eub",
+      "file": "experiments/E006/audit_slices_expanded/ergo_eub_a1_1_f_high_signal_event_0001.wav",
+      "source_event_index": 1,
+      "start_s": 0.0,
+      "end_s": 0.11755102040816326,
+      "duration_s": 0.11755102040816326,
+      "peak_db": -15.77784538269043
+    },
+    {
+      "recording_id": "ergo_eub_a1_1_mf",
+      "source_group": "ergo_eub",
+      "file": "experiments/E006/audit_slices_expanded/ergo_eub_a1_1_mf_high_signal_event_0001.wav",
+      "source_event_index": 1,
+      "start_s": 0.2438095238095238,
+      "end_s": 0.4992290249433107,
+      "duration_s": 0.25541950113378686,
+      "peak_db": -19.556123733520508
+    },
+    {
+      "recording_id": "ergo_eub_a1_1_p",
+      "source_group": "ergo_eub",
+      "file": "experiments/E006/audit_slices_expanded/ergo_eub_a1_1_p_high_signal_event_0001.wav",
+      "source_event_index": 1,
+      "start_s": 0.38893424036281177,
+      "end_s": 0.6341950113378685,
+      "duration_s": 0.2452607709750567,
+      "peak_db": -24.383235931396484
+    },
+    {
+      "recording_id": "ergo_eub_a2_1_f",
+      "source_group": "ergo_eub",
+      "file": "experiments/E006/audit_slices_expanded/ergo_eub_a2_1_f_high_signal_event_0001.wav",
+      "source_event_index": 1,
+      "start_s": 0.0,
+      "end_s": 0.18285714285714286,
+      "duration_s": 0.18285714285714286,
+      "peak_db": -10.921628952026367
+    },
+    {
+      "recording_id": "ergo_eub_a2_1_mf",
+      "source_group": "ergo_eub",
+      "file": "experiments/E006/audit_slices_expanded/ergo_eub_a2_1_mf_high_signal_event_0002.wav",
+      "source_event_index": 2,
+      "start_s": 0.026122448979591838,
+      "end_s": 0.3308843537414966,
+      "duration_s": 0.3047619047619048,
+      "peak_db": -22.941741943359375
+    },
+    {
+      "recording_id": "ergo_eub_a2_1_p",
+      "source_group": "ergo_eub",
+      "file": "experiments/E006/audit_slices_expanded/ergo_eub_a2_1_p_high_signal_event_0001.wav",
+      "source_event_index": 1,
+      "start_s": 0.020317460317460317,
+      "end_s": 0.07401360544217687,
+      "duration_s": 0.05369614512471655,
+      "peak_db": -29.151081085205078
+    },
+    {
+      "recording_id": "ergo_eub_c1_1_f",
+      "source_group": "ergo_eub",
+      "file": "experiments/E006/audit_slices_expanded/ergo_eub_c1_1_f_high_signal_event_0002.wav",
+      "source_event_index": 2,
+      "start_s": 0.04934240362811791,
+      "end_s": 0.3033106575963719,
+      "duration_s": 0.25396825396825395,
+      "peak_db": -15.125656127929688
+    },
+    {
+      "recording_id": "ergo_eub_c1_1_mf",
+      "source_group": "ergo_eub",
+      "file": "experiments/E006/audit_slices_expanded/ergo_eub_c1_1_mf_high_signal_event_0006.wav",
+      "source_event_index": 6,
+      "start_s": 0.3947392290249433,
+      "end_s": 0.7096598639455782,
+      "duration_s": 0.31492063492063493,
+      "peak_db": -23.103248596191406
+    },
+    {
+      "recording_id": "ergo_eub_c1_1_p",
+      "source_group": "ergo_eub",
+      "file": "experiments/E006/audit_slices_expanded/ergo_eub_c1_1_p_high_signal_event_0001.wav",
+      "source_event_index": 1,
+      "start_s": 0.0,
+      "end_s": 1.4628571428571429,
+      "duration_s": 1.4628571428571429,
+      "peak_db": -31.225099563598633
+    },
+    {
+      "recording_id": "ergo_eub_a3_1",
+      "source_group": "ergo_eub",
+      "file": "experiments/E006/audit_slices_expanded/ergo_eub_a3_1_high_signal_event_0001.wav",
+      "source_event_index": 1,
+      "start_s": 0.0,
+      "end_s": 0.5108390022675737,
+      "duration_s": 0.5108390022675737,
+      "peak_db": -19.181106567382812
+    },
+    {
+      "recording_id": "ergo_eub_a3_2",
+      "source_group": "ergo_eub",
+      "file": "experiments/E006/audit_slices_expanded/ergo_eub_a3_2_high_signal_event_0001.wav",
+      "source_event_index": 1,
+      "start_s": 0.0,
+      "end_s": 0.40634920634920635,
+      "duration_s": 0.40634920634920635,
+      "peak_db": -19.337297439575195
+    },
+    {
+      "recording_id": "ergo_eub_a3_3",
+      "source_group": "ergo_eub",
+      "file": "experiments/E006/audit_slices_expanded/ergo_eub_a3_3_high_signal_event_0001.wav",
+      "source_event_index": 1,
+      "start_s": 0.0,
+      "end_s": 0.4295691609977324,
+      "duration_s": 0.4295691609977324,
+      "peak_db": -17.990968704223633
+    },
+    {
+      "recording_id": "ergo_eub_a3_4",
+      "source_group": "ergo_eub",
+      "file": "experiments/E006/audit_slices_expanded/ergo_eub_a3_4_high_signal_event_0001.wav",
+      "source_event_index": 1,
+      "start_s": 0.0,
+      "end_s": 0.46439909297052157,
+      "duration_s": 0.46439909297052157,
+      "peak_db": -17.890832901000977
+    },
+    {
+      "recording_id": "ns_design_eub_di",
+      "source_group": "ns_design_eub",
+      "file": "experiments/E006/audit_slices_expanded/ns_design_eub_di_short_extra_event_0004.wav",
+      "source_event_index": 4,
+      "start_s": 1.696,
+      "end_s": 1.7013333333333334,
+      "duration_s": 0.005333333333333333,
+      "peak_db": -32.592159271240234
+    },
+    {
+      "recording_id": "ns_design_eub_di",
+      "source_group": "ns_design_eub",
+      "file": "experiments/E006/audit_slices_expanded/ns_design_eub_di_long_extra_event_0006.wav",
+      "source_event_index": 6,
+      "start_s": 2.24,
+      "end_s": 4.314666666666667,
+      "duration_s": 2.074666666666667,
+      "peak_db": -27.383602142333984
+    }
+  ]
+}

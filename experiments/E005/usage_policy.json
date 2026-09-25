@@ -1,0 +1,44 @@
+{
+  "purpose": "Tailored operational policy for excitation-event analysis",
+  "primary_detector": {
+    "candidate": "recursive_detector",
+    "frame_size": 256,
+    "hop_size": 64,
+    "threshold_db": -45.0,
+    "refine_long_events": true,
+    "role": "conservative baseline and primary event boundaries"
+  },
+  "secondary_evidence": {
+    "candidate": "aubio",
+    "method": "specdiff",
+    "threshold": 0.7,
+    "role": "independent onset evidence for long or uncertain primary events; never blind union"
+  },
+  "candidate_generator": {
+    "candidate": "basic_pitch",
+    "parameters": {
+      "onset_threshold": 0.5,
+      "frame_threshold": 0.3,
+      "minimum_note_length_ms": 127.7
+    },
+    "role": "candidate note/event proposals and pitch context; not final boundaries"
+  },
+  "strict_monophonic_analysis": {
+    "include": ["usable single-note events", "usable glissando events with articulation label"],
+    "manual_review": ["short upbeat transitions", "low signal", "hammer-on or legato", "boundary disagreement"],
+    "exclude": ["silence/artifacts", "double stops", "duophonic events", "fast multi-note passages", "merged multi-note events"]
+  },
+  "decision_rules": {
+    "do_not_auto_trust_high_confidence": true,
+    "require_human_audit_for_new_algorithm": true,
+    "false_boundary_priority_over_recall": true,
+    "preserve_all_raw_outputs": true,
+    "fuse_only_after_individual_boundary_audits": true
+  },
+  "evidence_limits": {
+    "recursive_positive_control_precision": 0.5,
+    "e003_usable_rate": 0.714,
+    "e004_stratified_usable_rate": 0.333,
+    "note": "These rates are conditional on their samples and are not general corpus accuracy estimates."
+  }
+}

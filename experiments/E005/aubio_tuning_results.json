@@ -1,0 +1,198 @@
+{
+  "development": [
+    "low_02_low.wav",
+    "bass_friendly_01_bass_friendly.wav",
+    "broad_03_broad.wav"
+  ],
+  "holdout": [
+    "low_01_low.wav"
+  ],
+  "scores": [
+    {
+      "method": "default",
+      "threshold": 0.1,
+      "development_count_error": 7
+    },
+    {
+      "method": "default",
+      "threshold": 0.3,
+      "development_count_error": 1
+    },
+    {
+      "method": "default",
+      "threshold": 0.5,
+      "development_count_error": 1
+    },
+    {
+      "method": "default",
+      "threshold": 0.7,
+      "development_count_error": 2
+    },
+    {
+      "method": "hfc",
+      "threshold": 0.1,
+      "development_count_error": 7
+    },
+    {
+      "method": "hfc",
+      "threshold": 0.3,
+      "development_count_error": 1
+    },
+    {
+      "method": "hfc",
+      "threshold": 0.5,
+      "development_count_error": 1
+    },
+    {
+      "method": "hfc",
+      "threshold": 0.7,
+      "development_count_error": 2
+    },
+    {
+      "method": "energy",
+      "threshold": 0.1,
+      "development_count_error": 34
+    },
+    {
+      "method": "energy",
+      "threshold": 0.3,
+      "development_count_error": 32
+    },
+    {
+      "method": "energy",
+      "threshold": 0.5,
+      "development_count_error": 30
+    },
+    {
+      "method": "energy",
+      "threshold": 0.7,
+      "development_count_error": 26
+    },
+    {
+      "method": "specflux",
+      "threshold": 0.1,
+      "development_count_error": 34
+    },
+    {
+      "method": "specflux",
+      "threshold": 0.3,
+      "development_count_error": 26
+    },
+    {
+      "method": "specflux",
+      "threshold": 0.5,
+      "development_count_error": 14
+    },
+    {
+      "method": "specflux",
+      "threshold": 0.7,
+      "development_count_error": 4
+    },
+    {
+      "method": "specdiff",
+      "threshold": 0.1,
+      "development_count_error": 25
+    },
+    {
+      "method": "specdiff",
+      "threshold": 0.3,
+      "development_count_error": 10
+    },
+    {
+      "method": "specdiff",
+      "threshold": 0.5,
+      "development_count_error": 5
+    },
+    {
+      "method": "specdiff",
+      "threshold": 0.7,
+      "development_count_error": 0
+    },
+    {
+      "method": "phase",
+      "threshold": 0.1,
+      "development_count_error": 32
+    },
+    {
+      "method": "phase",
+      "threshold": 0.3,
+      "development_count_error": 22
+    },
+    {
+      "method": "phase",
+      "threshold": 0.5,
+      "development_count_error": 7
+    },
+    {
+      "method": "phase",
+      "threshold": 0.7,
+      "development_count_error": 2
+    },
+    {
+      "method": "complex",
+      "threshold": 0.1,
+      "development_count_error": 8
+    },
+    {
+      "method": "complex",
+      "threshold": 0.3,
+      "development_count_error": 2
+    },
+    {
+      "method": "complex",
+      "threshold": 0.5,
+      "development_count_error": 1
+    },
+    {
+      "method": "complex",
+      "threshold": 0.7,
+      "development_count_error": 1
+    },
+    {
+      "method": "kl",
+      "threshold": 0.1,
+      "development_count_error": 31
+    },
+    {
+      "method": "kl",
+      "threshold": 0.3,
+      "development_count_error": 21
+    },
+    {
+      "method": "kl",
+      "threshold": 0.5,
+      "development_count_error": 12
+    },
+    {
+      "method": "kl",
+      "threshold": 0.7,
+      "development_count_error": 9
+    },
+    {
+      "method": "mkl",
+      "threshold": 0.1,
+      "development_count_error": 10
+    },
+    {
+      "method": "mkl",
+      "threshold": 0.3,
+      "development_count_error": 1
+    },
+    {
+      "method": "mkl",
+      "threshold": 0.5,
+      "development_count_error": 1
+    },
+    {
+      "method": "mkl",
+      "threshold": 0.7,
+      "development_count_error": 1
+    }
+  ],
+  "best": {
+    "method": "specdiff",
+    "threshold": 0.7,
+    "development_count_error": 0
+  },
+  "holdout_count_error": 2
+}

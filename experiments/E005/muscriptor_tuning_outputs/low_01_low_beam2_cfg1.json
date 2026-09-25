@@ -1,0 +1,278 @@
+[
+  {
+    "type": "start",
+    "pitch": 43,
+    "start_time": 0.15,
+    "index": 0,
+    "instrument": "electric_bass"
+  },
+  {
+    "type": "end",
+    "end_time": 0.42,
+    "start_event_index": 0
+  },
+  {
+    "type": "start",
+    "pitch": 38,
+    "start_time": 0.42,
+    "index": 1,
+    "instrument": "electric_bass"
+  },
+  {
+    "type": "end",
+    "end_time": 0.57,
+    "start_event_index": 1
+  },
+  {
+    "type": "start",
+    "pitch": 43,
+    "start_time": 0.57,
+    "index": 2,
+    "instrument": "electric_bass"
+  },
+  {
+    "type": "end",
+    "end_time": 0.79,
+    "start_event_index": 2
+  },
+  {
+    "type": "start",
+    "pitch": 41,
+    "start_time": 0.79,
+    "index": 3,
+    "instrument": "electric_bass"
+  },
+  {
+    "type": "end",
+    "end_time": 1.01,
+    "start_event_index": 3
+  },
+  {
+    "type": "start",
+    "pitch": 43,
+    "start_time": 1.01,
+    "index": 4,
+    "instrument": "electric_bass"
+  },
+  {
+    "type": "end",
+    "end_time": 1.23,
+    "start_event_index": 4
+  },
+  {
+    "type": "start",
+    "pitch": 41,
+    "start_time": 1.23,
+    "index": 5,
+    "instrument": "electric_bass"
+  },
+  {
+    "type": "end",
+    "end_time": 1.45,
+    "start_event_index": 5
+  },
+  {
+    "type": "start",
+    "pitch": 43,
+    "start_time": 1.45,
+    "index": 6,
+    "instrument": "electric_bass"
+  },
+  {
+    "type": "end",
+    "end_time": 1.67,
+    "start_event_index": 6
+  },
+  {
+    "type": "start",
+    "pitch": 41,
+    "start_time": 1.67,
+    "index": 7,
+    "instrument": "electric_bass"
+  },
+  {
+    "type": "end",
+    "end_time": 1.89,
+    "start_event_index": 7
+  },
+  {
+    "type": "start",
+    "pitch": 43,
+    "start_time": 1.89,
+    "index": 8,
+    "instrument": "electric_bass"
+  },
+  {
+    "type": "end",
+    "end_time": 2.11,
+    "start_event_index": 8
+  },
+  {
+    "type": "start",
+    "pitch": 41,
+    "start_time": 2.11,
+    "index": 9,
+    "instrument": "electric_bass"
+  },
+  {
+    "type": "end",
+    "end_time": 2.33,
+    "start_event_index": 9
+  },
+  {
+    "type": "start",
+    "pitch": 43,
+    "start_time": 2.33,
+    "index": 10,
+    "instrument": "electric_bass"
+  },
+  {
+    "type": "end",
+    "end_time": 2.55,
+    "start_event_index": 10
+  },
+  {
+    "type": "start",
+    "pitch": 41,
+    "start_time": 2.55,
+    "index": 11,
+    "instrument": "electric_bass"
+  },
+  {
+    "type": "end",
+    "end_time": 2.77,
+    "start_event_index": 11
+  },
+  {
+    "type": "start",
+    "pitch": 43,
+    "start_time": 2.77,
+    "index": 12,
+    "instrument": "electric_bass"
+  },
+  {
+    "type": "end",
+    "end_time": 2.99,
+    "start_event_index": 12
+  },
+  {
+    "type": "start",
+    "pitch": 41,
+    "start_time": 2.99,
+    "index": 13,
+    "instrument": "electric_bass"
+  },
+  {
+    "type": "end",
+    "end_time": 3.21,
+    "start_event_index": 13
+  },
+  {
+    "type": "start",
+    "pitch": 43,
+    "start_time": 3.21,
+    "index": 14,
+    "instrument": "electric_bass"
+  },
+  {
+    "type": "end",
+    "end_time": 3.43,
+    "start_event_index": 14
+  },
+  {
+    "type": "start",
+    "pitch": 41,
+    "start_time": 3.43,
+    "index": 15,
+    "instrument": "electric_bass"
+  },
+  {
+    "type": "end",
+    "end_time": 3.65,
+    "start_event_index": 15
+  },
+  {
+    "type": "start",
+    "pitch": 43,
+    "start_time": 3.65,
+    "index": 16,
+    "instrument": "electric_bass"
+  },
+  {
+    "type": "end",
+    "end_time": 3.87,
+    "start_event_index": 16
+  },
+  {
+    "type": "start",
+    "pitch": 41,
+    "start_time": 3.87,
+    "index": 17,
+    "instrument": "electric_bass"
+  },
+  {
+    "type": "end",
+    "end_time": 4.09,
+    "start_event_index": 17
+  },
+  {
+    "type": "start",
+    "pitch": 43,
+    "start_time": 4.09,
+    "index": 18,
+    "instrument": "electric_bass"
+  },
+  {
+    "type": "end",
+    "end_time": 4.31,
+    "start_event_index": 18
+  },
+  {
+    "type": "start",
+    "pitch": 41,
+    "start_time": 4.31,
+    "index": 19,
+    "instrument": "electric_bass"
+  },
+  {
+    "type": "end",
+    "end_time": 4.53,
+    "start_event_index": 19
+  },
+  {
+    "type": "start",
+    "pitch": 43,
+    "start_time": 4.53,
+    "index": 20,
+    "instrument": "electric_bass"
+  },
+  {
+    "type": "end",
+    "end_time": 4.75,
+    "start_event_index": 20
+  },
+  {
+    "type": "start",
+    "pitch": 41,
+    "start_time": 4.75,
+    "index": 21,
+    "instrument": "electric_bass"
+  },
+  {
+    "type": "end",
+    "end_time": 4.97,
+    "start_event_index": 21
+  },
+  {
+    "type": "start",
+    "pitch": 43,
+    "start_time": 4.97,
+    "index": 22,
+    "instrument": "electric_bass"
+  },
+  {
+    "type": "end",
+    "end_time": 4.9799999999999995,
+    "start_event_index": 22
+  }
+]

@@ -1,0 +1,86 @@
+{
+  "development": [
+    "low_02_low.wav",
+    "bass_friendly_01_bass_friendly.wav",
+    "broad_03_broad.wav"
+  ],
+  "holdout": [
+    "low_01_low.wav"
+  ],
+  "recursive_scores": [
+    {
+      "setting": [
+        128,
+        32,
+        -38.0
+      ],
+      "development_count_error": 4
+    },
+    {
+      "setting": [
+        256,
+        64,
+        -45.0
+      ],
+      "development_count_error": 0
+    },
+    {
+      "setting": [
+        256,
+        64,
+        -40.0
+      ],
+      "development_count_error": 0
+    },
+    {
+      "setting": [
+        256,
+        64,
+        -35.0
+      ],
+      "development_count_error": 20
+    }
+  ],
+  "best_recursive": {
+    "setting": [
+      256,
+      64,
+      -45.0
+    ],
+    "development_count_error": 0
+  },
+  "holdout_recursive_count_error": 0,
+  "librosa_scores": [
+    {
+      "delta": 0.1,
+      "wait": 10,
+      "development_count_error": 21
+    },
+    {
+      "delta": 0.2,
+      "wait": 10,
+      "development_count_error": 3
+    },
+    {
+      "delta": 0.3,
+      "wait": 10,
+      "development_count_error": 3
+    },
+    {
+      "delta": 0.2,
+      "wait": 20,
+      "development_count_error": 3
+    },
+    {
+      "delta": 0.3,
+      "wait": 20,
+      "development_count_error": 3
+    }
+  ],
+  "best_librosa": {
+    "delta": 0.2,
+    "wait": 10,
+    "development_count_error": 3
+  },
+  "holdout_librosa_count_error": 2
+}

@@ -353,6 +353,184 @@
 - **Purpose:** Measure the precision of automatic high-confidence selection separately from overall event usability.
 - **Status:** Files and direct-link index exist under `experiments/E004/positive_control_sample/`; human judgments are pending.
 
+## 2026-09-24 - Positive-control audit completed
+
+- **Observation:** The listener classified 18 events selected as the detector's most trustworthy ordinary-duration/high-signal candidates: 9 usable, 9 disqualified, and 0 ambiguous.
+- **Finding:** Automatic high-confidence selection precision is only `50%`. Many-note merges and duophonic events survive the current duration/attack/peak filters.
+- **Decision:** Do not trust the current heuristic confidence selection for automatic downstream inclusion. Preserve the result as the baseline for the algorithm bake-off.
+- **Next action:** Benchmark independent event algorithms and add event-class/polyphony evidence before designing confidence fusion.
+
+## 2026-09-24 - E005 algorithm bake-off started
+
+- **Implementation:** Created `experiments/E005/` with manifest, configuration, README, and a reproducible baseline runner.
+- **Observation:** On the four shared real excerpts, the recursive detector produced counts `3, 3, 3, 5`; librosa onset peak-picking produced `5, 2, 3, 3`.
+- **Finding:** The independent onset baseline does not consistently improve event counts; it over-detects one excerpt and under-detects two.
+- **Decision:** Do not select either method based on count alone. Preserve both raw outputs and run Basic Pitch next, followed by Essentia/aubio where practical.
+
+## 2026-09-24 - E005 Basic Pitch comparison
+
+- **Environment:** Dedicated `.venv-basicpitch` environment; inference completed successfully.
+- **Observation:** Basic Pitch returned default event counts `2,2,2,2` and stricter counts `1,1,1,1` on the four shared excerpts.
+- **Finding:** Basic Pitch under-segments this short-note benchmark under both tested settings, despite producing plausible candidate note events in the earlier pilot.
+- **Decision:** Preserve its raw output but do not treat Basic Pitch as an adequate standalone event detector for this material. Continue the bake-off with Essentia/aubio where practical.
+
+## 2026-09-24 - Bake-off parameter tuning requirement
+
+- **Observation:** The first E005 candidate results used baseline settings: the current detector's selected configuration, librosa onset defaults, and Basic Pitch default/stricter settings.
+- **Finding:** Baseline comparisons do not establish algorithm rankings because event boundaries are sensitive to source-specific parameters.
+- **Decision:** Tune each candidate on development excerpts, preserve held-out excerpts for final evaluation, and score false boundaries, splitting, missed boundaries, ambiguity, and usable-event yield rather than count alone.
+
+## 2026-09-24 - First E005 development/holdout tuning run
+
+- **Setup:** Development excerpts were `low_02`, `bass_friendly`, and `broad`; `low_01` was held out.
+- **Observation:** The recursive detector selected `256/64/-45` with count error 0 on development and holdout. Librosa selected `delta=0.2`, `wait=10`, with count error 3 on development and 2 on holdout.
+- **Finding:** The recursive detector's count setting transfers better on this small split, but count transfer does not establish boundary quality.
+- **Decision:** Preserve the tuning result in `experiments/E005/tuning_results.json`; continue evaluating boundary precision and usable-event yield rather than optimizing count alone.
+
+## 2026-09-24 - Basic Pitch parameter tuning
+
+- **Observation:** A four-setting Basic Pitch sweep selected the default configuration with development count error 3 and holdout count error 3. A permissive short-note configuration produced development error 106.
+- **Finding:** Lower Basic Pitch thresholds do not automatically recover useful short events; they can sharply increase over-detection.
+- **Decision:** Keep Basic Pitch default settings as its current benchmark configuration, preserve all raw outputs, and treat it as a candidate generator rather than a standalone slicer.
+
+## 2026-09-24 - E005 unattended bake-off completed
+
+- **Scope:** Recursive detector, librosa onset, aubio, and Basic Pitch were run/tuned on the same real excerpts with development/holdout separation.
+- **Results:** Recursive `0/0` count error; librosa `3/2`; aubio `0/2`; Basic Pitch `3/3` for development/holdout. Full report: `experiments/E005/BAKEOFF_REPORT.md`.
+- **Limitations:** These are count-transfer results only. Essentia was blocked by its Windows build, and MuScriptor, MT3, and commercial references were not run.
+- **Decision:** Keep the recursive detector as baseline, retain aubio as a promising next boundary-audit candidate, and do not select a final algorithm until false-boundary, split/merge, and usable-event metrics are measured.
+
+## 2026-09-24 - E005 measurements consolidated
+
+- **Observation:** Ordered measurements over approximate E003 onsets are: recursive count error 0 / mean onset error 52 ms; aubio tuned 2 / 116 ms; Basic Pitch 6 / 222 ms; librosa 5 / 280 ms.
+- **Human evidence:** Usable rates are 10/14 (71.4%) for E003 listener-audited outputs, 12/36 (33.3%) for the stratified real-recording E004 sample, and 9/18 (50%) for positive controls.
+- **Limitation:** Candidate timing metrics and human usability metrics are not interchangeable; only the recursive candidate has complete listener judgments on the shared E003 outputs.
+- **Decision:** Use the recursive detector as the current count/onset baseline, keep aubio as the strongest independent candidate for further human boundary audit, and do not claim final algorithm superiority yet.
+
+## 2026-09-24 - Tailored algorithm usage policy
+
+- **Decision:** Route the recursive detector as the primary conservative boundary source, use tuned aubio as secondary onset evidence for long/uncertain events, and retain Basic Pitch for candidate proposals and pitch context.
+- **Exclusion policy:** Exclude or manually review silence, polyphony, fast passages, merged events, and unresolved boundaries for strict monophonic analysis.
+- **Boundary:** Do not fuse detector boundaries until individual candidates have comparable human boundary audits. The current high-confidence filter precision is only 50 percent.
+
+## 2026-09-24 - Tailored routing prototype executed
+
+- **Implementation:** Ran `experiments/E005/execute_strategy.py` on the shared excerpts using recursive primary events, tuned aubio onset evidence, and Basic Pitch candidate context.
+- **Result:** `low_02` routed 3 candidates; bass-friendly routed 2 candidates and 1 ambiguous; broad routed 2 candidates and 1 ambiguous; `low_01` routed 5 candidates. No event was auto-declared scientifically usable.
+- **Decision:** Keep routing as a review-prioritization layer, not a final fusion or acceptance mechanism.
+
+## 2026-09-24 - Remaining candidate environment check
+
+- **Observation:** The active `.venv` contains librosa and the repository/basic-pitch tooling, but not Essentia, aubio, or madmom.
+- **Decision:** Do not interpret missing packages as algorithm failures. Create a compatible dedicated environment with exact versions before running those candidates.
+
+## 2026-09-24 - Aubio bake-off result and Essentia build blocker
+
+- **Environment:** Created `.venv-audioalgorithms` from the Basic Pitch-compatible runtime. aubio 0.4.9 installed successfully.
+- **Observation:** Aubio default onset detection returned `5,6,6,7` events on the four E005 excerpts, versus reviewed counts `3,3,3,5`.
+- **Finding:** Aubio's default onset detector over-detects this benchmark and requires tuning before comparison is fair.
+- **Limitation:** Essentia's available source distribution failed to build with an internal `IndexError`; no Essentia result was obtained.
+- **Decision:** Preserve aubio raw output in `experiments/E005/aubio_results.json`; treat Essentia as an environment blocker, not an algorithm failure.
+
+## 2026-09-24 - Aubio parameter tuning
+
+- **Observation:** A development sweep over aubio onset methods and thresholds selected `specdiff` at threshold `0.7` with development count error `0` and holdout count error `2`.
+- **Finding:** Aubio can transfer count behavior after tuning better than its default configuration on this small split.
+- **Limitation:** Count transfer does not establish onset boundary precision, false split rate, or usable-event yield.
+- **Decision:** Preserve the tuning result in `experiments/E005/aubio_tuning_results.json`; evaluate its raw boundaries against the listener audits before considering it a candidate for fusion.
+
+## 2026-09-24 - MuScriptor model-access blocker
+
+- **Observation:** MuScriptor 0.3.0 installed successfully in `.venv-muscriptor`, and its CLI exposes transcription, model, and decoding parameters.
+- **Blocker:** The MuScriptor model weights are gated on Hugging Face and require license acceptance plus machine authentication. No token or authenticated model access is available in this session.
+- **Decision:** Do not fabricate a MuScriptor result. Record the installation and CLI verification, and resume the benchmark only after model access is authorized.
+
+## 2026-09-25 - MuScriptor bake-off and tuning
+
+- **Environment:** Authenticated `.venv-muscriptor`; MuScriptor small model downloaded and ran on all four shared excerpts.
+- **Observation:** Default/greedy counts were `2,11,2,27`. A four-variant decoding sweep found `cfg_coef=1.5` with greedy or beam-2 counts `5,3,2,4`, development count error `3`, holdout error `1`.
+- **Finding:** MuScriptor improves substantially with guidance tuning on this split, but its count pattern still does not establish event-boundary quality.
+- **Decision:** Retain MuScriptor as a serious independent candidate for human boundary audit; preserve all raw JSON outputs and tuning metadata.
+
+## 2026-09-25 - Transformability question clarified
+
+- **Observation:** Exact sample-synchronous performances by an acoustic upright bass and an SLB-200 are not realistically available. The research goal is to understand whether acoustic note-life behavior can be represented by a fixed IR.
+- **Finding:** A fixed IR does not understand note identity or note state. It can alter harmonic balance and waveform evolution through an LTI filter, but cannot condition itself on register, dynamics, articulation, or note age.
+- **Interpretation:** Unpaired events can test conditional distribution-level spectral differences, but cannot identify a unique event-specific transfer function. Exact pairing is not necessary for a candidate statistical transform, but controlled repeated material is needed for validation.
+- **Decision:** Make transformability the next gate. Test whether conditional time-frequency differences are stable and filter-addressable before investing further in perfect event slicing or IR optimization.
+
+## 2026-09-25 - E006 EUB proof of concept executed
+
+- **Observation:** The existing unified pipeline processed one NS Design direct/EUB recording and 16 representative Ergo EUB recordings after explicit float-to-PCM16 derivation. It produced 4,620 frame rows and 243 threshold events.
+- **Finding:** The pipeline executes on both EUB source types without an EUB-specific feature path. Event counts remain diagnostics until audited.
+- **Boundary:** The NS microphone track is not an acoustic target and is excluded from transformation interpretation.
+- **Decision:** Proceed with a representative NS/Ergo event-quality audit, then compare EUB source-domain structure before any acoustic-vs-EUB transform hypothesis.
+
+## 2026-09-25 - E006 representative audit set prepared
+
+- **Implementation:** Generated raw exact-boundary audit slices from NS shortest/median/longest events and representative Ergo events across two phrase groups and `f`/`mf`/`p` source codes.
+- **Location:** `experiments/E006/audit_slices/AUDIT_LINKS.md` and `manifest.json`.
+- **Status:** Human audit pending; no EUB source-domain or acoustic-vs-EUB interpretation should be made before review.
+
+## 2026-09-25 - E006 representative audit completed
+
+- **Observation:** The listener audited nine representative EUB slices: NS had two usable events and one silence; Ergo had two usable events, three noise/silence cases, and one silence.
+- **Finding:** 4/9 selected EUB events were usable; failures were mostly silence/noise rather than confirmed note merges.
+- **Limitation:** The sample is small and duration-selected, so it is not an EUB-wide hit-rate estimate.
+- **Decision:** Retain the audit in `experiments/E006/audit_slices/listener_audit.csv`; expand the EUB audit before interpreting NS-vs-Ergo source-domain structure.
+
+## 2026-09-25 - E006 expanded source-balanced audit prepared
+
+- **Implementation:** Generated 19 raw audit slices: one high-signal ordinary-duration event per E006 recording plus NS shortest/longest controls.
+- **Location:** `experiments/E006/audit_slices_expanded/AUDIT_LINKS.md` and `manifest.json`.
+- **Status:** Human judgments pending; no EUB-vs-EUB interpretation should be made until this expanded audit is complete.
+
+## 2026-09-25 - E006 expanded audit completed
+
+- **Observation:** The listener audited all 19 source-balanced NS/Ergo slices: 15 usable and 4 disqualified.
+- **Finding:** Usable yield was 15/19 (`78.9%`) in this selected high-signal sample. Failures were three Ergo noise/too-short events and one NS silence control; no broad overlap/polyphony failure was reported in this sample.
+- **Limitation:** This is a selected high-signal audit, not an unbiased EUB-wide accuracy estimate.
+- **Decision:** The existing pipeline is sufficiently promising to proceed with EUB source-domain characterization while retaining event quality labels and excluding disqualified events.
+
+## 2026-09-25 - E007 first acoustic-vs-EUB descriptive comparison
+
+- **Observation:** The first 30 seconds of nine acoustic candidates were analyzed with the existing pipeline and compared descriptively to E006 NS/Ergo EUB frames.
+- **Finding:** Acoustic 30-second windows averaged RMS -25.246 dB, centroid 130.879 Hz, rolloff 166.663 Hz, flux 1.025, f0 80.803 Hz, and harmonicity -9.135 dB. EUB combined frames averaged RMS -35.415 dB, centroid 304.491 Hz, rolloff 534.270 Hz, flux 0.139, f0 104.138 Hz, and harmonicity -9.460 dB. NS and Ergo also differed descriptively.
+- **Interpretation:** These differences are confounded by level, content, articulation, window selection, capture chain, and source-group coverage. They are not acoustic/EUB causal findings or IR targets.
+- **Decision:** Use E007 only as pipeline/source-domain evidence. Condition future comparisons by register, local level, articulation, and source group before testing transformability.
+
+## 2026-09-25 - Conditional per-event differences are feasible without sync
+
+- **Clarification:** Exact acoustic/EUB note pairing is not required to compare event populations conditionally.
+- **Decision:** Use measured register, local level, articulation, and onset-relative phase to compare acoustic and EUB event trajectories. Treat repeated conditional differences as candidate filter-addressable effects, not as one-to-one transfer ratios.
+- **Next action:** Build the conditional event-level summaries before deciding whether a fixed IR, IR bank, or time-varying model is justified.
+
+## 2026-09-25 - First conditional event analysis is coverage-limited
+
+- **Implementation:** Built `experiments/E007/event_features.csv` with four onset-relative phases and `conditional_comparison.json` with register/level bins.
+- **Observation:** 3,201 event rows were generated, but only three register/level cells contained both acoustic and EUB events; all were high-register by the current estimator, and one had six EUB events.
+- **Finding:** Conditional comparison is technically feasible without synchronization, but the current corpus/event labels do not yet provide balanced register coverage.
+- **Decision:** Treat current deltas as exploratory only. Improve event quality, pitch/register coverage, and articulation metadata before estimating candidate IR effects.
+
+## 2026-09-25 - SLB-200 acquisition made highest priority
+
+- **Observation:** The corpus has acoustic, NS Design EUB, and Ergo EUB material but no registered SLB-200 recordings.
+- **Finding:** Further EUB/acoustic work can validate methodology, but cannot answer the governing SLB-200 transformation question without SLB source material.
+- **Decision:** Prioritize multiple SLB-200 takes across register, dynamics, articulation, and setup, with at least one held-out take. Follow `docs/recording-acquisition-plan.md` for provenance and capture metadata.
+
+## 2026-09-25 - Per-event evidence prioritized over whole-piece averages
+
+- **Hypothesis:** Per-event conditional behavior is more relevant to the eventual IR target than averages over entire pieces of music.
+- **Rationale:** Whole-piece averages mix register, loudness, articulation, phrase content, player behavior, and capture conditions. These mixtures can hide or manufacture apparent source-domain differences.
+- **Decision:** Treat whole-recording averages as secondary QC/context. Prioritize event-level spectral and temporal trajectories conditioned on register, local level, articulation, and onset-relative phase.
+
+## 2026-09-25 - E006 first NS-vs-Ergo descriptive comparison
+
+- **Observation:** The unified summary shows NS mean RMS -32.100 dB versus Ergo -39.569 dB; spectral centroid 153.701 versus 571.286 Hz; rolloff 213.415 versus 1000.826 Hz; spectral flux 0.226 versus 0.074; f0 75.317 versus 133.482 Hz; f0 confidence 0.587 versus 0.741; harmonicity -10.371 versus -8.627 dB.
+- **Finding:** The pipeline exposes measurable source-group differences in this proof-of-concept set.
+- **Interpretation:** These differences may reflect content, articulation, level, instrument/source construction, recording chain, and processing. They are not generic EUB characteristics or acoustic-target evidence.
+- **Decision:** Keep the result descriptive and proceed with conditional, repeatability-aware EUB characterization before acoustic-vs-EUB transformation analysis.
+
 ## 2026-09-24 - Bass C failure traced to localized under-segmentation
 
 - **Observation:** At `256/64/-45`, bass C contains four threshold-active regions. The first lasts approximately 47.864 seconds. The detector produces 77 outputs overall, but its first output lasts 10.0325 seconds and contains an estimated 30-50 notes.

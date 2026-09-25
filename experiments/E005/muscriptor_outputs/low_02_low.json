@@ -1,0 +1,26 @@
+[
+  {
+    "type": "start",
+    "pitch": 45,
+    "start_time": 0.15,
+    "index": 0,
+    "instrument": "electric_bass"
+  },
+  {
+    "type": "end",
+    "end_time": 0.75,
+    "start_event_index": 0
+  },
+  {
+    "type": "start",
+    "pitch": 40,
+    "start_time": 0.75,
+    "index": 1,
+    "instrument": "electric_bass"
+  },
+  {
+    "type": "end",
+    "end_time": 1.87,
+    "start_event_index": 1
+  }
+]

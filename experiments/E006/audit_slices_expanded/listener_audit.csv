@@ -1,0 +1,20 @@
+source_group,source_file,status,notes
+Ergo,ergo_eub_a0_1_f_high_signal_event_0022.wav,disqualified,noise
+Ergo,ergo_eub_a0_1_mf_high_signal_event_0001.wav,disqualified,too short note
+Ergo,ergo_eub_a0_1_p_high_signal_event_0002.wav,disqualified,short noise
+Ergo,ergo_eub_a1_1_f_high_signal_event_0001.wav,usable,
+Ergo,ergo_eub_a1_1_mf_high_signal_event_0001.wav,usable,
+Ergo,ergo_eub_a1_1_p_high_signal_event_0001.wav,usable,
+Ergo,ergo_eub_a2_1_f_high_signal_event_0001.wav,usable,
+Ergo,ergo_eub_a2_1_mf_high_signal_event_0002.wav,usable,
+Ergo,ergo_eub_a2_1_p_high_signal_event_0001.wav,usable,
+Ergo,ergo_eub_c1_1_f_high_signal_event_0002.wav,usable,
+Ergo,ergo_eub_c1_1_mf_high_signal_event_0006.wav,usable,
+Ergo,ergo_eub_c1_1_p_high_signal_event_0001.wav,usable,
+Ergo,ergo_eub_a3_1_high_signal_event_0001.wav,usable,
+Ergo,ergo_eub_a3_2_high_signal_event_0001.wav,usable,
+Ergo,ergo_eub_a3_3_high_signal_event_0001.wav,usable,
+Ergo,ergo_eub_a3_4_high_signal_event_0001.wav,usable,
+NS Design,ns_design_eub_di_high_signal_event_0017.wav,usable,
+NS Design,ns_design_eub_di_short_extra_event_0004.wav,disqualified,silence
+NS Design,ns_design_eub_di_long_extra_event_0006.wav,usable,

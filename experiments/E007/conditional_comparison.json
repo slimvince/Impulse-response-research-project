@@ -1,0 +1,206 @@
+{
+  "event_count": 1472,
+  "level_tercile_edges_db": [
+    -33.84890956536106,
+    -25.194441253048794
+  ],
+  "comparisons": [
+    {
+      "register": "high",
+      "level_bin": "low",
+      "acoustic_n": 169,
+      "eub_n": 322,
+      "features": {
+        "event level": {
+          "acoustic_median": -39.48708718109559,
+          "eub_median": -37.84716052499495,
+          "acoustic_minus_eub": -1.6399266561006414,
+          "acoustic_n": 169,
+          "eub_n": 322
+        },
+        "attack centroid": {
+          "acoustic_median": 98.19667964850895,
+          "eub_median": 104.78928463511969,
+          "acoustic_minus_eub": -6.592604986610738,
+          "acoustic_n": 169,
+          "eub_n": 322
+        },
+        "sustain centroid": {
+          "acoustic_median": 73.2871860137149,
+          "eub_median": 61.329382511387266,
+          "acoustic_minus_eub": 11.957803502327636,
+          "acoustic_n": 169,
+          "eub_n": 322
+        },
+        "decay centroid": {
+          "acoustic_median": 77.63796285168202,
+          "eub_median": 48.98569390185473,
+          "acoustic_minus_eub": 28.65226894982729,
+          "acoustic_n": 168,
+          "eub_n": 322
+        },
+        "attack harmonicity": {
+          "acoustic_median": -8.780171638558876,
+          "eub_median": -10.633059266917932,
+          "acoustic_minus_eub": 1.8528876283590563,
+          "acoustic_n": 169,
+          "eub_n": 322
+        },
+        "decay harmonicity": {
+          "acoustic_median": -9.038758416362679,
+          "eub_median": -12.953014025823187,
+          "acoustic_minus_eub": 3.9142556094605077,
+          "acoustic_n": 168,
+          "eub_n": 322
+        },
+        "attack flux": {
+          "acoustic_median": 0.042495589596209436,
+          "eub_median": 0.020567175619924417,
+          "acoustic_minus_eub": 0.02192841397628502,
+          "acoustic_n": 169,
+          "eub_n": 322
+        },
+        "decay flux": {
+          "acoustic_median": 0.04739889022193912,
+          "eub_median": 0.008383099933088653,
+          "acoustic_minus_eub": 0.039015790288850466,
+          "acoustic_n": 168,
+          "eub_n": 322
+        }
+      }
+    },
+    {
+      "register": "high",
+      "level_bin": "mid",
+      "acoustic_n": 378,
+      "eub_n": 112,
+      "features": {
+        "event level": {
+          "acoustic_median": -28.94394649204979,
+          "eub_median": -31.13710264753866,
+          "acoustic_minus_eub": 2.1931561554888717,
+          "acoustic_n": 378,
+          "eub_n": 112
+        },
+        "attack centroid": {
+          "acoustic_median": 112.18138761549089,
+          "eub_median": 122.85859122229749,
+          "acoustic_minus_eub": -10.6772036068066,
+          "acoustic_n": 378,
+          "eub_n": 112
+        },
+        "sustain centroid": {
+          "acoustic_median": 97.90879934949685,
+          "eub_median": 101.77224829340585,
+          "acoustic_minus_eub": -3.863448943909006,
+          "acoustic_n": 378,
+          "eub_n": 112
+        },
+        "decay centroid": {
+          "acoustic_median": 108.73240260667389,
+          "eub_median": 66.16972372645594,
+          "acoustic_minus_eub": 42.562678880217945,
+          "acoustic_n": 376,
+          "eub_n": 112
+        },
+        "attack harmonicity": {
+          "acoustic_median": -8.44372553590042,
+          "eub_median": -8.819133485149383,
+          "acoustic_minus_eub": 0.37540794924896304,
+          "acoustic_n": 378,
+          "eub_n": 112
+        },
+        "decay harmonicity": {
+          "acoustic_median": -8.366488428974332,
+          "eub_median": -11.12701762627692,
+          "acoustic_minus_eub": 2.7605291973025885,
+          "acoustic_n": 376,
+          "eub_n": 112
+        },
+        "attack flux": {
+          "acoustic_median": 0.1494954836517727,
+          "eub_median": 0.10605840299355754,
+          "acoustic_minus_eub": 0.043437080658215166,
+          "acoustic_n": 378,
+          "eub_n": 112
+        },
+        "decay flux": {
+          "acoustic_median": 0.13713353112307236,
+          "eub_median": 0.08315848135767381,
+          "acoustic_minus_eub": 0.05397504976539855,
+          "acoustic_n": 376,
+          "eub_n": 112
+        }
+      }
+    },
+    {
+      "register": "high",
+      "level_bin": "high",
+      "acoustic_n": 485,
+      "eub_n": 6,
+      "features": {
+        "event level": {
+          "acoustic_median": -20.316162867993036,
+          "eub_median": -23.865710067847182,
+          "acoustic_minus_eub": 3.549547199854146,
+          "acoustic_n": 485,
+          "eub_n": 6
+        },
+        "attack centroid": {
+          "acoustic_median": 106.69214253706531,
+          "eub_median": 351.98171335501195,
+          "acoustic_minus_eub": -245.28957081794664,
+          "acoustic_n": 485,
+          "eub_n": 6
+        },
+        "sustain centroid": {
+          "acoustic_median": 96.04561008404224,
+          "eub_median": 374.0316586427799,
+          "acoustic_minus_eub": -277.9860485587377,
+          "acoustic_n": 485,
+          "eub_n": 6
+        },
+        "decay centroid": {
+          "acoustic_median": 105.01972209329254,
+          "eub_median": 293.00972293316704,
+          "acoustic_minus_eub": -187.99000083987448,
+          "acoustic_n": 485,
+          "eub_n": 6
+        },
+        "attack harmonicity": {
+          "acoustic_median": -8.299782343956144,
+          "eub_median": -9.197851576058092,
+          "acoustic_minus_eub": 0.8980692321019479,
+          "acoustic_n": 485,
+          "eub_n": 6
+        },
+        "decay harmonicity": {
+          "acoustic_median": -8.384962241580302,
+          "eub_median": -9.389727278482573,
+          "acoustic_minus_eub": 1.0047650369022705,
+          "acoustic_n": 485,
+          "eub_n": 6
+        },
+        "attack flux": {
+          "acoustic_median": 0.4837474576195403,
+          "eub_median": 0.39595993772606064,
+          "acoustic_minus_eub": 0.08778751989347966,
+          "acoustic_n": 485,
+          "eub_n": 6
+        },
+        "decay flux": {
+          "acoustic_median": 0.3924765869260882,
+          "eub_median": 0.269383999851719,
+          "acoustic_minus_eub": 0.12309258707436921,
+          "acoustic_n": 485,
+          "eub_n": 6
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "E003/E006 event boundaries and articulations are not fully audited for every row.",
+    "Register and level bins are descriptive; they do not make the recordings paired.",
+    "Comparisons are exploratory and do not establish causal instrument effects or IR targets."
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "experiment_id": "E005",
+  "purpose": "Real-recording event-segmentation algorithm bake-off",
+  "status": "initial_baselines",
+  "reference_set": "../E003/ground_truth.csv",
+  "inputs": [
+    "../E002/listener_slices/low_02_low.wav",
+    "../E002/listener_slices/bass_friendly_01_bass_friendly.wav",
+    "../E002/listener_slices/broad_03_broad.wav",
+    "../E002/listener_slices/low_01_low.wav"
+  ],
+  "candidates": ["recursive_detector", "librosa_onset", "basic_pitch"],
+  "raw_outputs_required": true,
+  "notes": "Do not rank candidates by pitch accuracy alone; compare excitation-boundary quality and usable-event yield."
+}

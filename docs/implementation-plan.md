@@ -2,6 +2,14 @@
 
 ## Current phase: Unified Corpus Characterization and event benchmarking
 
+### Current handover state: E005/E006/E007
+
+- E005 algorithm bake-off and tuning are complete for the practical Windows candidates.
+- E006 NS/Ergo EUB proof of concept is complete at pipeline level; expanded event audit is complete with 15/19 usable in a selected sample.
+- E007 acoustic-vs-EUB descriptive comparison is complete but not a transformation result.
+- Next priority is conditional per-event characterization and transformability testing, not whole-piece averaging or immediate IR optimization.
+- Preserve the distinction between descriptive source-domain differences, candidate filter-addressable effects, and validated IR behavior.
+
 ### Completed
 
 - Python package scaffold and editable installation configuration
@@ -36,6 +44,13 @@
 - Event-validation work should proceed with a small manually reviewed subset of isolated notes and note transitions before any broader event-level dataset is treated as trusted.
 
 ### Current status after `E003`
+
+### Current status after `E005` and `E006`
+
+- E005 completed the first real-recording algorithm bake-off: recursive detector, librosa, aubio, Basic Pitch, and MuScriptor were run/tuned with development/holdout separation.
+- The recursive detector remains the count/onset baseline; aubio and MuScriptor are promising independent candidates. Essentia is blocked on Windows; MT3 and commercial references remain untested.
+- E006 executed the unchanged unified pipeline on one NS Design direct/EUB recording and 16 representative Ergo EUB recordings, producing 4,620 frames and 243 diagnostic events.
+- The next task is E006 event-quality auditing and EUB-vs-EUB/source-domain characterization. Do not start IR optimization or require perfect event pairing before testing transformability.
 
 - A partially labeled benchmark exists at `experiments/E003/ground_truth.csv` with 14 approximate note intervals across four excerpts.
 - The evaluator and raw-slice exporter are implemented in `experiments/E003/`.

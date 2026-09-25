@@ -25,6 +25,10 @@ There are no audio recordings in the repository. Nine external candidate acousti
 
 ## Current status after E003 note benchmark
 
+## Current status after E005/E006
+
+The algorithm bake-off and EUB proof of concept have now advanced beyond the original E003 state. E005 tested and tuned the recursive detector, librosa, aubio, Basic Pitch, and MuScriptor. The recursive detector remains the best count/onset baseline; aubio and MuScriptor are the strongest independent candidates by count transfer. E006 applies the unchanged unified pipeline to NS Design direct/EUB and representative Ergo EUB material. The immediate next gate is EUB event-quality audit followed by conditional source-domain/time-frequency analysis, not more blind detector tuning or IR optimization.
+
 The immediate research gate is note/event segmentation. Four manually reviewed listener excerpts now have approximate note labels in `experiments/E003/ground_truth.csv`: three notes in `low_02_low.wav`, three in `bass_friendly_01_bass_friendly.wav`, three in `broad_03_broad.wav`, and five in `low_01_low.wav`. The labels are confidence-2 audition boundaries, not high-precision ground truth.
 
 The E003 evaluator tested five frame/hop/threshold settings. The best count agreement was `frame_size=256`, `hop_size=64`, `threshold_db=-45`, producing 3/3, 3/3, 3/3, and 3/5 detected/reference counts, with total absolute count error 2. The detector still merges notes in `low_01_low.wav`; this is not evidence that it can reliably identify all individual notes.
@@ -34,6 +38,12 @@ The pitch-aware splitter remains a reference implementation with a two-break glo
 Audition exports under `experiments/E003/detected_slices` are raw exact-boundary sample slices: no fades, context, normalization, or other postprocessing. Analysis inputs remain the original WAVs under `experiments/E002/listener_slices`. The full current handover is in `docs/handover-current.md`.
 
 ## Current status after the E002 gate
+
+## Current consolidated status: E005/E006/E007
+
+The current research state is beyond the original E003 segmentation gate. E005 completed a first real-recording algorithm bake-off: recursive detector, librosa, aubio, Basic Pitch, and MuScriptor were run/tuned with development/holdout separation. The recursive detector is the count/onset baseline; aubio and MuScriptor are independent candidates requiring human boundary audits. E006 executed the unified pipeline on NS Design direct/EUB and representative Ergo EUB material. E007 began descriptive acoustic-vs-EUB analysis using real recordings, but its aggregate differences are confounded and are not IR targets.
+
+The current transformability hypothesis is conditional per-event comparison: prioritize event-level spectral/temporal trajectories conditioned on register, local level, articulation, and onset-relative phase. Exact acoustic/EUB sample synchronization is not required for a statistical candidate transform, but controlled repeated material is needed for validation. Whole-piece averages remain secondary context.
 
 The project is still in Phase 1, but the event-segmentation gate is now a first-class milestone. The repository includes a completed `E002` experiment under `experiments/E002/` that ran the Spotify Basic Pitch detector on four 30-second acoustic excerpts. The observed output was:
 

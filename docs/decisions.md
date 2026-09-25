@@ -103,3 +103,13 @@ All future library choices must record exact versions, license implications, and
 **Evidence:** The `256/64/-45` configuration matched counts on three excerpts and undercounted the five-note excerpt as 3/5. Raising the global pitch-split limit from two to four produced false splits and worsened the other excerpts.
 
 **Boundary:** Count agreement alone does not establish onset/offset accuracy or scientific validity. Approximate listener labels remain screening evidence until a larger, more precise benchmark exists.
+
+## 2026-09-25: Separate transformability from perfect event pairing
+
+**Status:** accepted for Phase 1 research direction.
+
+**Decision:** Do not require sample-synchronous acoustic/SLB note pairs as a prerequisite for investigating a candidate statistical IR transform. Use unpaired event populations to test conditional, distribution-level, filter-addressable differences, while reserving paired or controlled repeated material for transformation validation.
+
+**Rationale:** A fixed IR cannot model note identity or note state directly; it applies one LTI transformation whose effect interacts with the input spectrum and waveform. Unpaired data can estimate conditional average spectral behavior, but cannot identify a unique physical transfer function or event-specific temporal mapping.
+
+**Boundary:** If the desired transformation depends materially on register, dynamics, articulation, or note state, a single fixed IR is not an adequate model. Consider an IR bank or a time-varying/nonlinear approach only after held-out testing demonstrates the limitation.

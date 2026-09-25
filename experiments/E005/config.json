@@ -1,0 +1,18 @@
+{
+  "recursive_detector": {
+    "frame_size": 256,
+    "hop_size": 64,
+    "threshold_db": -45.0,
+    "refine_long_events": true
+  },
+  "librosa_onset": {
+    "n_fft": 256,
+    "hop_length": 64,
+    "delta": 0.2,
+    "wait": 10
+  },
+  "reference": {
+    "onset_tolerance_s": 0.04,
+    "labels_are_approximate": true
+  }
+}

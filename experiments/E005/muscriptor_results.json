@@ -1,0 +1,30 @@
+{
+  "candidate": "muscriptor",
+  "model": "small",
+  "results": [
+    {
+      "excerpt": "low_02_low.wav",
+      "output": "c:\\IR research\\experiments\\E005\\muscriptor_outputs\\low_02_low.json",
+      "event_count": 2,
+      "raw_record_count": 4
+    },
+    {
+      "excerpt": "bass_friendly_01_bass_friendly.wav",
+      "output": "c:\\IR research\\experiments\\E005\\muscriptor_outputs\\bass_friendly_01_bass_friendly.json",
+      "event_count": 11,
+      "raw_record_count": 22
+    },
+    {
+      "excerpt": "broad_03_broad.wav",
+      "output": "c:\\IR research\\experiments\\E005\\muscriptor_outputs\\broad_03_broad.json",
+      "event_count": 2,
+      "raw_record_count": 4
+    },
+    {
+      "excerpt": "low_01_low.wav",
+      "output": "c:\\IR research\\experiments\\E005\\muscriptor_outputs\\low_01_low.json",
+      "event_count": 27,
+      "raw_record_count": 54
+    }
+  ]
+}
