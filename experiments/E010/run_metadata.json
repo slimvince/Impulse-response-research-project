@@ -1,0 +1,15 @@
+{
+  "source": "C:\\IR audio\\slb200\\vincents 1.wav",
+  "source_sha256": "138b5de97de26392c368c01e98c3804fcf040501cd35526f618239f7c82fd46e",
+  "sample_rate": 44100,
+  "source_channels": 2,
+  "sample_width_bytes": 2,
+  "event_count": 445,
+  "quality_status_counts": {
+    "disqualified": 93,
+    "pitch_unconfirmed": 16,
+    "tonal_candidate": 336
+  },
+  "slice_policy": "Exact detector-boundary samples from the mono analysis signal; no fades, padding, normalization, or postprocessing.",
+  "note": "Independent E010 iteration. E008/E009 slices and judgments were not modified or remapped."
+}

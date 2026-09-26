@@ -1,6 +1,6 @@
 # Current Handover: E003 Note Segmentation
 
-**Updated:** 2026-09-24
+**Updated:** 2026-09-26
 **Purpose:** Durable handover for a fresh session with no chat context.
 
 ## Research objective
@@ -23,12 +23,16 @@ The next research gate is transformability, not perfect note slicing: determine 
 
 E007 now contains `event_features.csv` and `conditional_comparison.json`, built from acoustic 30-second windows and E006 EUB events. The first conditional comparison populated only three register/level cells with both domains, all classified high register by the current f0 estimator; one cell had only six EUB events. Do not interpret the resulting deltas as IR evidence until register coverage, event quality, and articulation labels improve.
 
-## Consolidated current state: 2026-09-25
+## Consolidated current state: 2026-09-26
 
 ### Event segmentation
 
 - Production `detect_events` uses clustered pitch evidence, envelope-onset supplementation, and bounded two-level refinement for events longer than 0.75 seconds.
-- E003 count benchmark at `256/64/-45` is exact: `3/3, 3/3, 3/3, 5/5`; tests pass (`5 passed`).
+- Recursive refinement now uses 2048-sample pitch windows with a 256-sample hop; pitch-based splits require a nearby envelope onset. Continuous glissando and distinct-pluck regression tests cover these behaviors.
+- Events now carry periodic-pitch quality metadata. Only very short, low-level slices with no periodic evidence are marked `disqualified`; weak evidence is retained as `pitch_unconfirmed`.
+- E003 count benchmark at `256/64/-45` remains exact: `3/3, 3/3, 3/3, 5/5`; tests pass (`7 passed`).
+- E009 is the separate revised SLB run: 449 slices, 5 strict nonperiodic-fragment disqualifications, and 2 pitch-unconfirmed events. E008's 578 slices and all prior human judgments were preserved and not remapped.
+- Polyphony classification and precise attack/decay boundary accuracy remain unvalidated; do not treat the E009 detector labels as proof of clean monophonic notes.
 - E004 real-recording hit-rate sample: `12/36` usable (`33.3%`); positive-control precision: `9/18` (`50%`).
 - Event routing is conservative: recursive detector primary, aubio secondary evidence, Basic Pitch candidate context; no automatic scientific acceptance or blind fusion.
 
@@ -262,7 +266,7 @@ The first descriptive NS-vs-Ergo source-group comparison is `experiments/E006/RE
 5. Compare conditional distributions and repeatability across acoustic, NS, and Ergo groups.
 6. Test whether differences are stable and filter-addressable before estimating any candidate IR.
 
-The current corpus still has no registered SLB-200 recordings. See `docs/recording-acquisition-plan.md`; acquiring multiple SLB-200 takes across register, dynamics, articulation, and setup is now the highest-priority external dependency.
+One user-provided SLB-200 candidate is now registered outside Git at `C:\IR audio\slb200\vincents 1.wav`. Its file facts and hash are recorded in `docs/corpus.md`, but player, setup, chain, articulation, and permission-status metadata remain pending. Acquiring multiple documented SLB-200 takes across register, dynamics, articulation, and setup remains the highest-priority external dependency.
 
 ## Relevant code ownership
 

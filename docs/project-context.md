@@ -83,7 +83,7 @@ The next real transformation milestone is held-out IR evaluation, not optimizer 
 - Grouped repeatability summaries, quality diagnostics, observed-local-level summaries, parameter sensitivity, and confound-aware models still need development.
 - The Basic Pitch pilot demonstrates a candidate event generator but does not yet validate segmentation quality; it remains a conditional pass pending manual benchmark review.
 - Long recordings must remain intact; future memory optimization may use internal streaming only with frame/event continuity and provenance preservation.
-- No SLB-200 recordings exist yet, so no SLB-to-acoustic comparison or IR target claim is currently possible.
+- One user-provided SLB-200 candidate is now available outside Git, but no SLB-to-acoustic comparison or IR target claim is currently possible. Multiple documented takes and contextual metadata are still required.
 
 Terminal and agent execution capabilities may differ between LLM sessions. Do not infer validation from a session that did not report actual command output; use the committed Git state and this validated-state section as the repository record.
 

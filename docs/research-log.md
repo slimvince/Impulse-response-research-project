@@ -518,6 +518,19 @@
 - **Finding:** Further EUB/acoustic work can validate methodology, but cannot answer the governing SLB-200 transformation question without SLB source material.
 - **Decision:** Prioritize multiple SLB-200 takes across register, dynamics, articulation, and setup, with at least one held-out take. Follow `docs/recording-acquisition-plan.md` for provenance and capture metadata.
 
+## 2026-09-25 - First SLB-200 candidate registered
+
+- **Observation:** `C:\IR audio\slb200\vincents 1.wav` is available as a stereo 44.1 kHz 16-bit PCM WAV of 284 seconds with SHA-256 `138b5de97de26392c368c01e98c3804fcf040501cd35526f618239f7c82fd46e`.
+- **Finding:** The project now has one SLB-200 candidate for file-quality checks and exploratory event analysis, but not enough documented material for a source-domain comparison or held-out transformation evaluation.
+- **Decision:** Register it as `slb200_vincents_take_1` in candidate status, preserve the original outside Git, and keep metadata and permission status explicit until confirmed.
+
+## 2026-09-26 - Revised SLB event slicing in E009
+
+- **Observation:** The existing 578-event SLB slicing pass included short nonperiodic fragments and pitch evidence from 256-sample recursive windows, too short to resolve bass fundamentals at 44.1 kHz.
+- **Implementation:** Recursive refinement now uses 2048-sample windows with a 256-sample hop; pitch-step splits require a nearby envelope onset. Event outputs include periodic-pitch quality metadata, with only strict short/low-level/nonperiodic fragments marked disqualified.
+- **Finding:** E003 still matches its selected count benchmark exactly (`3, 3, 3, 5`), and the SLB rerun produces 449 events: 5 strict fragment disqualifications and 2 pitch-unconfirmed cases. The synthetic glissando test stays intact as one event.
+- **Decision:** Preserve E008 raw slices and browser judgments; keep revised slices and review state separate under E009. Continue to treat E009 boundaries, polyphony flags, and quality labels as provisional pending review.
+
 ## 2026-09-25 - Per-event evidence prioritized over whole-piece averages
 
 - **Hypothesis:** Per-event conditional behavior is more relevant to the eventual IR target than averages over entire pieces of music.

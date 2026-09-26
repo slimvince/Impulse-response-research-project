@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SLB-200 Event Review</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17212b;
+      --muted: #61707d;
+      --line: #d9e0e5;
+      --paper: #f7f9fa;
+      --panel: #ffffff;
+      --accent: #0c6e8f;
+      --use: #19734a;
+      --ambiguous: #a36b00;
+      --disq: #a63d40;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(circle at top right, #e3f1f4 0, transparent 34%), var(--paper);
+      color: var(--ink);
+      font: 16px/1.45 Georgia, "Times New Roman", serif;
+    }
+    main { width: min(920px, 100%); margin: 0 auto; padding: 32px 18px 48px; }
+    header { display: flex; justify-content: space-between; gap: 20px; align-items: end; margin-bottom: 24px; }
+    h1 { margin: 0; font: 700 clamp(28px, 5vw, 48px)/1.05 Georgia, "Times New Roman", serif; letter-spacing: 0; }
+    .progress { color: var(--muted); white-space: nowrap; }
+    .panel { background: color-mix(in srgb, var(--panel) 92%, transparent); border: 1px solid var(--line); padding: 22px; box-shadow: 0 12px 32px #20313d12; }
+    .meta { display: flex; flex-wrap: wrap; gap: 8px 18px; color: var(--muted); font-size: 14px; margin-bottom: 18px; }
+    audio { display: block; width: 100%; margin: 14px 0 22px; }
+    .verdicts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    button { border: 1px solid var(--line); background: #fff; color: var(--ink); cursor: pointer; font: 700 16px Georgia, "Times New Roman", serif; padding: 12px 14px; }
+    button:hover { border-color: var(--accent); }
+    button.selected { color: white; }
+    button[data-verdict="Use"].selected { background: var(--use); border-color: var(--use); }
+    button[data-verdict="Ambiguous"].selected { background: var(--ambiguous); border-color: var(--ambiguous); }
+    button[data-verdict="Disq"].selected { background: var(--disq); border-color: var(--disq); }
+    label { display: block; margin: 22px 0 7px; font-weight: 700; }
+    textarea { width: 100%; min-height: 100px; resize: vertical; border: 1px solid var(--line); padding: 12px; color: var(--ink); background: #fff; font: 16px/1.4 Georgia, "Times New Roman", serif; }
+    .actions { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; margin-top: 20px; }
+    .actions button { background: var(--ink); color: white; border-color: var(--ink); }
+    .actions .secondary { background: transparent; color: var(--ink); }
+    .hint { color: var(--muted); font-size: 14px; margin-top: 18px; }
+    @media (max-width: 560px) {
+      header { display: block; }
+      .progress { margin-top: 10px; }
+      .verdicts { grid-template-columns: 1fr; }
+      .actions { display: grid; grid-template-columns: 1fr 1fr; }
+      .actions button:last-child { grid-column: 1 / -1; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>SLB-200 Event Review</h1>
+    <div class="progress" id="progress">Loading...</div>
+  </header>
+  <section class="panel">
+    <div class="meta" id="meta"></div>
+    <audio id="player" controls preload="metadata"></audio>
+    <div class="verdicts" aria-label="Verdict">
+      <button data-verdict="Use">Use</button>
+      <button data-verdict="Ambiguous">Ambiguous</button>
+      <button data-verdict="Disq">Disq</button>
+    </div>
+    <label for="note">Annotation</label>
+    <textarea id="note" placeholder="Optional note: merged notes, silence, clean single note, boundary issue..."></textarea>
+    <div class="actions">
+      <button class="secondary" id="previous">Previous</button>
+      <button class="secondary" id="skip">Skip</button>
+      <button id="next">Next</button>
+      <button id="export">Export CSV</button>
+    </div>
+    <div class="hint">Progress is saved in this browser. Keyboard: Space plays/pauses, 1 = Use, 2 = Ambiguous, 3 = Disq, Enter = Next.</div>
+  </section>
+</main>
+<script>
+const samples = [
+  {category:"late_attack",event:1,start:0,end:0.383,duration:0.383,peak:-25.2,attack:0.372,f0:"55.1",file:"late_attack_event_0001.wav"},
+  {category:"late_attack",event:2,start:0.383,end:0.836,duration:0.453,peak:-19.3,attack:0.441,f0:"61.2",file:"late_attack_event_0002.wav"},
+  {category:"longest",event:21,start:12.028,end:13.363,duration:1.335,peak:-21.3,attack:0.046,f0:"98.2",file:"longest_event_0021.wav"},
+  {category:"shortest",event:26,start:16.579,end:16.591,duration:0.012,peak:-43.4,attack:0,f0:"221.6",file:"shortest_event_0026.wav"},
+  {category:"shortest",event:47,start:24.021,end:24.033,duration:0.012,peak:-44.4,attack:0,f0:"250.6",file:"shortest_event_0047.wav"},
+  {category:"timeline",event:53,start:27.945,end:28.166,duration:0.221,peak:-34.5,attack:0.035,f0:"245.0",file:"timeline_event_0053.wav"},
+  {category:"late_attack",event:64,start:32.996,end:33.530,duration:0.534,peak:-16.1,attack:0.522,f0:"92.9",file:"late_attack_event_0064.wav"},
+  {category:"shortest",event:73,start:36.212,end:36.223,duration:0.012,peak:-44.5,attack:0,f0:"113.7",file:"shortest_event_0073.wav"},
+  {category:"shortest",event:87,start:41.273,end:41.285,duration:0.012,peak:-26.0,attack:0,f0:"129.7",file:"shortest_event_0087.wav"},
+  {category:"timeline",event:105,start:47.044,end:47.357,duration:0.313,peak:-28.9,attack:0.035,f0:"91.1",file:"timeline_event_0105.wav"},
+  {category:"shortest",event:136,start:68.650,end:68.661,duration:0.012,peak:-44.5,attack:0,f0:"105.8",file:"shortest_event_0136.wav"},
+  {category:"shortest",event:137,start:68.673,end:68.685,duration:0.012,peak:-44.9,attack:0,f0:"142.7",file:"shortest_event_0137.wav"},
+  {category:"longest",event:142,start:71.239,end:72.853,duration:1.614,peak:-21.3,attack:0.104,f0:"129.1",file:"longest_event_0142.wav"},
+  {category:"timeline",event:158,start:80.573,end:80.655,duration:0.081,peak:-35.5,attack:0.035,f0:"53.6",file:"timeline_event_0158.wav"},
+  {category:"longest",event:159,start:80.655,end:82.106,duration:1.451,peak:-36.5,attack:0.046,f0:"53.0",file:"longest_event_0159.wav"},
+  {category:"shortest",event:160,start:82.454,end:82.466,duration:0.012,peak:-41.6,attack:0,f0:"250.6",file:"shortest_event_0160.wav"},
+  {category:"shortest",event:163,start:83.940,end:83.952,duration:0.012,peak:-44.7,attack:0,f0:"250.6",file:"shortest_event_0163.wav"},
+  {category:"longest",event:168,start:84.381,end:85.972,duration:1.591,peak:-14.7,attack:0.058,f0:"49.2",file:"longest_event_0168.wav"},
+  {category:"shortest",event:171,start:87.679,end:87.690,duration:0.012,peak:-34.5,attack:0,f0:"250.6",file:"shortest_event_0171.wav"},
+  {category:"shortest",event:206,start:98.081,end:98.093,duration:0.012,peak:-32.0,attack:0,f0:"250.6",file:"shortest_event_0206.wav"},
+  {category:"longest",event:209,start:99.765,end:101.843,duration:2.078,peak:-20.8,attack:0.081,f0:"73.4",file:"longest_event_0209.wav"},
+  {category:"timeline",event:210,start:102.470,end:102.960,duration:0.491,peak:-16.6,attack:0.012,f0:"98.2",file:"timeline_event_0210.wav"},
+  {category:"longest",event:213,start:107.775,end:109.993,duration:2.218,peak:-17.0,attack:0.035,f0:"92.5",file:"longest_event_0213.wav"},
+  {category:"quietest",event:214,start:110.039,end:110.086,duration:0.046,peak:-44.9,attack:0.012,f0:"92.8",file:"quietest_event_0214.wav"},
+  {category:"shortest",event:215,start:110.097,end:110.109,duration:0.012,peak:-45.0,attack:0,f0:"96.5",file:"shortest_event_0215.wav"},
+  {category:"shortest",event:216,start:110.353,end:110.364,duration:0.012,peak:-44.8,attack:0,f0:"unknown",file:"shortest_event_0216.wav"},
+  {category:"quietest",event:218,start:112.292,end:112.303,duration:0.012,peak:-44.9,attack:0,f0:"unknown",file:"quietest_event_0218.wav"},
+  {category:"longest",event:219,start:113.511,end:116.448,duration:2.937,peak:-15.6,attack:0.046,f0:"69.7",file:"longest_event_0219.wav"},
+  {category:"quietest",event:220,start:116.541,end:116.553,duration:0.012,peak:-44.9,attack:0,f0:"250.6",file:"quietest_event_0220.wav"},
+  {category:"quietest",event:225,start:117.946,end:117.957,duration:0.012,peak:-44.9,attack:0,f0:"250.6",file:"quietest_event_0225.wav"},
+  {category:"longest",event:229,start:118.840,end:120.140,duration:1.300,peak:-16.2,attack:0.035,f0:"52.4",file:"longest_event_0229.wav"},
+  {category:"late_attack",event:238,start:124.761,end:125.562,duration:0.801,peak:-19.9,attack:0.789,f0:"53.3",file:"late_attack_event_0238.wav"},
+  {category:"late_attack",event:249,start:127.977,end:128.813,duration:0.836,peak:-19.3,attack:0.824,f0:"67.4",file:"late_attack_event_0249.wav"},
+  {category:"timeline",event:263,start:136.509,end:136.548,duration:0.039,peak:-27.2,attack:0.010,f0:"108.1",file:"timeline_event_0263.wav"},
+  {category:"quietest",event:292,start:151.348,end:151.359,duration:0.012,peak:-45.0,attack:0,f0:"250.6",file:"quietest_event_0292.wav"},
+  {category:"timeline",event:315,start:161.193,end:161.239,duration:0.046,peak:-41.8,attack:0.012,f0:"250.6",file:"timeline_event_0315.wav"},
+  {category:"quietest",event:338,start:167.869,end:167.880,duration:0.012,peak:-45.0,attack:0,f0:"250.6",file:"quietest_event_0338.wav"},
+  {category:"quietest",event:341,start:168.705,end:168.716,duration:0.012,peak:-44.9,attack:0,f0:"218.3",file:"quietest_event_0341.wav"},
+  {category:"quietest",event:356,start:173.023,end:173.047,duration:0.023,peak:-44.8,attack:0,f0:"178.5",file:"quietest_event_0356.wav"},
+  {category:"timeline",event:368,start:181.789,end:181.847,duration:0.058,peak:-41.3,attack:0.023,f0:"250.6",file:"timeline_event_0368.wav"},
+  {category:"quietest",event:383,start:187.176,end:187.188,duration:0.012,peak:-44.9,attack:0,f0:"105.8",file:"quietest_event_0383.wav"},
+  {category:"quietest",event:386,start:188.604,end:188.616,duration:0.012,peak:-45.0,attack:0,f0:"110.8",file:"quietest_event_0386.wav"},
+  {category:"timeline",event:420,start:207.807,end:209.096,duration:1.289,peak:-28.3,attack:0.035,f0:"75.5",file:"timeline_event_0420.wav"},
+  {category:"longest",event:435,start:216.027,end:217.490,duration:1.463,peak:-23.0,attack:0.046,f0:"60.3",file:"longest_event_0435.wav"},
+  {category:"longest",event:437,start:217.815,end:219.150,duration:1.335,peak:-26.9,attack:0.046,f0:"57.6",file:"longest_event_0437.wav"},
+  {category:"longest",event:438,start:219.359,end:221.042,duration:1.683,peak:-30.1,attack:0.046,f0:"54.9",file:"longest_event_0438.wav"},
+  {category:"longest",event:466,start:234.057,end:235.416,duration:1.358,peak:-23.8,attack:0.046,f0:"43.4",file:"longest_event_0466.wav"},
+  {category:"timeline",event:473,start:239.235,end:239.630,duration:0.395,peak:-18.2,attack:0,f0:"55.3",file:"timeline_event_0473.wav"},
+  {category:"late_attack",event:489,start:244.162,end:244.592,duration:0.430,peak:-14.7,attack:0.334,f0:"81.8",file:"late_attack_event_0489.wav"},
+  {category:"late_attack",event:492,start:245.365,end:245.725,duration:0.360,peak:-15.8,attack:0.255,f0:"41.3",file:"late_attack_event_0492.wav"},
+  {category:"late_attack",event:501,start:247.374,end:247.919,duration:0.546,peak:-16.3,attack:0.534,f0:"55.2",file:"late_attack_event_0501.wav"},
+  {category:"late_attack",event:504,start:248.744,end:249.231,duration:0.488,peak:-19.3,attack:0.476,f0:"80.8",file:"late_attack_event_0504.wav"},
+  {category:"late_attack",event:520,start:255.512,end:255.988,duration:0.476,peak:-20.8,attack:0.348,f0:"94.0",file:"late_attack_event_0520.wav"},
+  {category:"late_attack",event:523,start:256.743,end:257.428,duration:0.685,peak:-17.9,attack:0.511,f0:"75.3",file:"late_attack_event_0523.wav"},
+  {category:"timeline",event:525,start:257.637,end:258.078,duration:0.441,peak:-20.1,attack:0.070,f0:"69.7",file:"timeline_event_0525.wav"},
+  {category:"late_attack",event:543,start:264.069,end:264.580,duration:0.511,peak:-20.3,attack:0.499,f0:"77.5",file:"late_attack_event_0543.wav"},
+  {category:"timeline",event:578,start:280.114,end:280.253,duration:0.139,peak:-39.9,attack:0.093,f0:"227.3",file:"timeline_event_0578.wav"}
+];
+const storageKey = "slb200-event-review-v1";
+const state = JSON.parse(localStorage.getItem(storageKey) || "{}");
+let index = Number(state.index || 0);
+const player = document.getElementById("player");
+const note = document.getElementById("note");
+const meta = document.getElementById("meta");
+const progress = document.getElementById("progress");
+function save() { localStorage.setItem(storageKey, JSON.stringify(state)); }
+function currentKey() { return String(samples[index].event); }
+function render() {
+  const sample = samples[index];
+  const decision = state[currentKey()] || {};
+  player.src = sample.file;
+  player.load();
+  meta.textContent = `${sample.category} | event ${sample.event} | ${sample.start.toFixed(3)}-${sample.end.toFixed(3)} s | duration ${sample.duration.toFixed(3)} s | peak ${sample.peak.toFixed(1)} dB | f0 ${sample.f0} Hz`;
+  note.value = decision.note || "";
+  document.querySelectorAll("[data-verdict]").forEach(button => button.classList.toggle("selected", button.dataset.verdict === decision.verdict));
+  const judged = samples.filter(item => state[String(item.event)]?.verdict).length;
+  progress.textContent = `${index + 1} / ${samples.length} | judged ${judged}`;
+  state.index = index;
+  save();
+}
+function setVerdict(verdict) { state[currentKey()] = { ...(state[currentKey()] || {}), verdict, note: note.value }; save(); render(); }
+function move(step) { state[currentKey()] = { ...(state[currentKey()] || {}), note: note.value }; index = Math.max(0, Math.min(samples.length - 1, index + step)); player.pause(); render(); }
+function exportCsv() {
+  const rows = [["event","category","start_s","end_s","duration_s","peak_db","attack_s","median_f0_hz","verdict","annotation","file"]];
+  samples.forEach(sample => { const decision = state[String(sample.event)] || {}; rows.push([sample.event,sample.category,sample.start,sample.end,sample.duration,sample.peak,sample.attack,sample.f0,decision.verdict || "",(decision.note || "").replaceAll('"','""'),sample.file]); });
+  const csv = rows.map(row => row.map(value => `"${value}"`).join(",")).join("\n");
+  const link = document.createElement("a"); link.href = URL.createObjectURL(new Blob([csv], {type:"text/csv"})); link.download = "slb200_event_review.csv"; link.click(); URL.revokeObjectURL(link.href);
+}
+document.querySelectorAll("[data-verdict]").forEach(button => button.addEventListener("click", () => setVerdict(button.dataset.verdict)));
+note.addEventListener("input", () => { state[currentKey()] = { ...(state[currentKey()] || {}), note: note.value }; save(); });
+document.getElementById("previous").addEventListener("click", () => move(-1));
+document.getElementById("skip").addEventListener("click", () => move(1));
+document.getElementById("next").addEventListener("click", () => move(1));
+document.getElementById("export").addEventListener("click", exportCsv);
+document.addEventListener("keydown", event => { if (event.target === note) return; if (event.code === "Space") { event.preventDefault(); player.paused ? player.play() : player.pause(); } if (event.key === "1") setVerdict("Use"); if (event.key === "2") setVerdict("Ambiguous"); if (event.key === "3") setVerdict("Disq"); if (event.key === "Enter") move(1); });
+render();
+</script>
+</body>
+</html>

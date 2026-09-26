@@ -24,7 +24,9 @@ def _estimate_f0_details(frame: np.ndarray, sample_rate: int, low_hz: float = 30
     maximum = min(len(centered) - 1, int(sample_rate / low_hz))
     if maximum <= minimum:
         return float("nan"), float("nan")
-    correlation = np.correlate(centered, centered, mode="full")[len(centered) - 1:]
+    fft_size = 1 << (2 * len(centered) - 1).bit_length()
+    spectrum = np.fft.rfft(centered, n=fft_size)
+    correlation = np.fft.irfft(spectrum * np.conjugate(spectrum), n=fft_size)[:len(centered)]
     zero_lag = float(correlation[0])
     correlation[:minimum] = 0.0
     lag = minimum + int(np.argmax(correlation[minimum:maximum + 1]))

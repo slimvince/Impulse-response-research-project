@@ -2,7 +2,7 @@
 
 ## Priority
 
-The project currently has no registered SLB-200 recordings. Further acoustic/EUB analysis can characterize the pipeline, but it cannot answer the governing SLB-200-to-acoustic transformation question until SLB material exists.
+One user-provided SLB-200 candidate is now registered, but further acoustic/EUB analysis cannot answer the governing SLB-200-to-acoustic transformation question until multiple documented SLB takes exist.
 
 ## Highest-priority recordings
 

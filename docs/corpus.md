@@ -30,11 +30,17 @@ The source-group labels below are user-provided. Recordings within each group ar
 | acoustic_bass_c_take_1 | `C:\IR audio\acoustic\bass C\5.wav` | bass C | `fc8b93807bc8e33e5da50e6691b884d844aec72e97bbcf55fb6befcbfa8c6c7f` | stereo 44.1 kHz 16-bit PCM WAV | 48.16 s | candidate |
 | acoustic_bass_d_take_1 | `C:\IR audio\acoustic\bass D\1.wav` | bass D | `47752e8583fead843c283f2083cfa47f8c85d975d58f1268e3f3ceca9e2bf97d` | stereo 44.1 kHz 16-bit PCM WAV | 8.72 s | candidate |
 
+### Candidate SLB-200 input
+
+| Recording ID | External path | Source group | SHA-256 | Format | Duration | Status |
+|---|---|---|---|---|---:|---|
+| slb200_vincents_take_1 | `C:\IR audio\slb200\vincents 1.wav` | slb200_vincents | `138b5de97de26392c368c01e98c3804fcf040501cd35526f618239f7c82fd46e` | stereo 44.1 kHz 16-bit PCM WAV | 284.00 s | candidate |
+
 The extraction manifest is outside Git at `C:\IR audio\acoustic-repeatability-manifest.json`; generated outputs are under `C:\IR audio\results\acoustic-repeatability`. The current pipeline extracted 47,055 frames and 105 events from the four files. Its existing domain summary does not yet calculate within-group repeatability statistics.
 
 Permission basis: user-confirmed free-to-use audio, recorded in the external manifest as `user_confirmed_free_to_use`. This is a project provenance statement, not an independent legal review.
 
-The `C:\IR audio\slb200` directory is currently empty; no SLB-200 recordings are registered.
+The SLB-200 file is user-provided and remains a candidate pending contextual metadata and permission-status confirmation. Player, instrument setup, strings, pickup/DI path, gain, articulation coverage, and take conditions are currently unknown.
 
 ### Planned corpus expansion
 

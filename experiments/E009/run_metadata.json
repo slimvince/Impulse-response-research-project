@@ -1,0 +1,22 @@
+{
+  "source": "C:\\IR audio\\slb200\\vincents 1.wav",
+  "source_sha256": "138b5de97de26392c368c01e98c3804fcf040501cd35526f618239f7c82fd46e",
+  "sample_rate": 44100,
+  "source_channels": 2,
+  "sample_width_bytes": 2,
+  "event_count": 449,
+  "slicing": {
+    "frame_size": 2048,
+    "hop_size": 512,
+    "threshold_db": -45.0,
+    "recursive_frame_size": 2048,
+    "recursive_hop_size": 256
+  },
+  "slice_policy": "Exact detector-boundary samples from the mono analysis signal; no fades, padding, normalization, or postprocessing.",
+  "quality_status_counts": {
+    "disqualified": 5,
+    "pitch_unconfirmed": 2,
+    "tonal_candidate": 442
+  },
+  "note": "Separate rerun; prior E008 slices and human decisions were not modified or remapped."
+}

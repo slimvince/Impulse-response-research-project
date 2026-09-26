@@ -82,6 +82,34 @@ def test_event_detection_splits_two_plucks_with_distinct_pitch_changes():
     assert events[0]["end_s"] <= events[1]["start_s"]
 
 
+def test_event_detection_does_not_split_a_continuous_glissando():
+    sample_rate = 8000
+    samples = np.zeros(sample_rate)
+    start = int(0.10 * sample_rate)
+    duration = 0.65
+    count = int(duration * sample_rate)
+    time = np.arange(count) / sample_rate
+    slope_hz_per_s = 60.0 / duration
+    phase = 2 * np.pi * (80.0 * time + 0.5 * slope_hz_per_s * time**2)
+    samples[start:start + count] = 0.5 * np.sin(phase)
+
+    events = detect_events(samples, sample_rate, frame_size=256, hop_size=64, threshold_db=-35, refine_long_events=False)
+
+    assert len(events) == 1
+
+
+def test_event_detection_marks_short_nonperiodic_fragment_disqualified():
+    sample_rate = 8000
+    samples = np.zeros(sample_rate)
+    rng = np.random.default_rng(4)
+    samples[1000:1192] = rng.normal(0.0, 0.005, 192)
+
+    events = detect_events(samples, sample_rate, frame_size=128, hop_size=64, threshold_db=-48, refine_long_events=False)
+
+    assert events
+    assert any(event["quality_status"] == "disqualified" for event in events)
+
+
 def test_manifest_pipeline_and_json_outputs(tmp_path):
     sample_rate = 8000
     time = np.arange(sample_rate) / sample_rate

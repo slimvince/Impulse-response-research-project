@@ -2,11 +2,12 @@
 
 ## Current phase: Unified Corpus Characterization and event benchmarking
 
-### Current handover state: E005/E006/E007
+### Current handover state: E005/E006/E007/E009
 
 - E005 algorithm bake-off and tuning are complete for the practical Windows candidates.
 - E006 NS/Ergo EUB proof of concept is complete at pipeline level; expanded event audit is complete with 15/19 usable in a selected sample.
 - E007 acoustic-vs-EUB descriptive comparison is complete but not a transformation result.
+- E009 revises SLB event slicing with longer pitch windows, onset-corroborated pitch splits, and conservative periodicity quality flags; the previous E008 audit remains intact.
 - Next priority is conditional per-event characterization and transformability testing, not whole-piece averaging or immediate IR optimization.
 - Preserve the distinction between descriptive source-domain differences, candidate filter-addressable effects, and validated IR behavior.
 
@@ -20,7 +21,7 @@
 - JSON and Markdown outputs
 - Synthetic test definitions
 - Research documentation and licensing boundary
-- Full test suite: 4 passing tests
+- Full test suite: 7 passing tests
 - Synthetic WAV CLI smoke test with all five expected output files
 - Git initialization, commits, push, and clean synchronized worktree
 

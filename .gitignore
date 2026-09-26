@@ -9,3 +9,4 @@ build/
 results/*.csv
 results/*.json
 corpus/
+.venv-*/
