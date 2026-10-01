@@ -1,0 +1,166 @@
+{
+  "source_event_count": 24,
+  "acoustic_train_event_count": 659,
+  "acoustic_train_set_counts": {
+    "acoustic_bass_a_take_2_cubase_slices": 327,
+    "acoustic_bass_a_take_3_cubase_slices": 332
+  },
+  "acoustic_holdout_event_count": 195,
+  "heldout_set": "acoustic_bass_b_take_1_cubase_slices",
+  "objective": "median per-event unit-power third-octave log-spectrum; filter fit is median acoustic-minus-SLB profile, centered over 100-1000 Hz, smoothed and gain-capped",
+  "metrics_mae_db": {
+    "dry_to_train_median_profile": 7.521611172154549,
+    "dry_to_holdout_median_profile": 8.23413510603912,
+    "E014_to_train_median_profile": 6.942330165774667,
+    "E014_to_holdout_median_profile": 8.978697958014353,
+    "E016_to_train_median_profile": 7.547565002266155,
+    "E016_to_holdout_median_profile": 9.583932794505841
+  },
+  "per_confirmed_slb_event_median_distance_to_train_population_mae_db": {
+    "E014_median": 10.375175802498424,
+    "E016_median": 10.015082684735184,
+    "E016_closer_event_fraction": 0.4583333333333333
+  },
+  "gain_db_by_third_octave": [
+    {
+      "center_hz": 31.5,
+      "gain_db": -6.0
+    },
+    {
+      "center_hz": 39.68751307168851,
+      "gain_db": -6.0
+    },
+    {
+      "center_hz": 50.00313313699828,
+      "gain_db": -6.0
+    },
+    {
+      "center_hz": 63.0,
+      "gain_db": -5.836016080234127
+    },
+    {
+      "center_hz": 79.37502614337701,
+      "gain_db": -4.815681395842469
+    },
+    {
+      "center_hz": 100.00626627399657,
+      "gain_db": -3.6632254600768714
+    },
+    {
+      "center_hz": 126.0,
+      "gain_db": -2.639546922137303
+    },
+    {
+      "center_hz": 158.75005228675403,
+      "gain_db": -2.9698452810551443
+    },
+    {
+      "center_hz": 200.01253254799312,
+      "gain_db": -2.9064038355428856
+    },
+    {
+      "center_hz": 252.0,
+      "gain_db": -2.4020083275208335
+    },
+    {
+      "center_hz": 317.50010457350805,
+      "gain_db": -0.656171892190456
+    },
+    {
+      "center_hz": 400.02506509598624,
+      "gain_db": 0.8707511732283156
+    },
+    {
+      "center_hz": 504.0,
+      "gain_db": 2.311223323190785
+    },
+    {
+      "center_hz": 635.000209147016,
+      "gain_db": 3.238674583939026
+    },
+    {
+      "center_hz": 800.0501301919727,
+      "gain_db": 4.227581499057752
+    },
+    {
+      "center_hz": 1008.0,
+      "gain_db": 4.576984364375905
+    },
+    {
+      "center_hz": 1270.000418294032,
+      "gain_db": 3.456477290541871
+    },
+    {
+      "center_hz": 1600.1002603839454,
+      "gain_db": 0.7393467912101235
+    },
+    {
+      "center_hz": 2016.0,
+      "gain_db": -2.5432556416558327
+    },
+    {
+      "center_hz": 2540.000836588064,
+      "gain_db": -4.6809593412756945
+    },
+    {
+      "center_hz": 3200.200520767891,
+      "gain_db": -5.695556203759302
+    },
+    {
+      "center_hz": 4032.0,
+      "gain_db": -5.894886751901461
+    },
+    {
+      "center_hz": 5080.001673176128,
+      "gain_db": -6.0
+    },
+    {
+      "center_hz": 6400.401041535782,
+      "gain_db": -6.0
+    },
+    {
+      "center_hz": 8064.0,
+      "gain_db": -6.0
+    },
+    {
+      "center_hz": 10160.003346352261,
+      "gain_db": -6.0
+    },
+    {
+      "center_hz": 12800.802083071556,
+      "gain_db": -6.0
+    }
+  ],
+  "render_source_duration_s": 284.0,
+  "render_duration_s": 284.18573696145125,
+  "render_stats": {
+    "e014_loudness_matched": {
+      "peak_before_safety_gain": 0.4547992203898246,
+      "safety_gain_db": 0.0,
+      "frames": 12532591,
+      "channels": 2,
+      "duration_s": 284.18573696145125
+    },
+    "e016_raw": {
+      "peak_before_safety_gain": 0.2574872648439436,
+      "safety_gain_db": 0.0,
+      "frames": 12532591,
+      "channels": 2,
+      "duration_s": 284.18573696145125
+    },
+    "e016_loudness_matched": {
+      "peak_before_safety_gain": 0.4370404813570161,
+      "safety_gain_db": 0.0,
+      "frames": 12532591,
+      "channels": 2,
+      "duration_s": 284.18573696145125
+    }
+  },
+  "limitations": [
+    "The 24 source events are listener-confirmed, but they are the same SLB events used to fit E014/E016; their per-event comparison is in-sample.",
+    "The acoustic training and holdout slices are E013 heuristic accepts, not manually validated events.",
+    "The B3 acoustic slice set was examined in earlier experiments; treat its result as a diagnostic, not a fresh untouched test.",
+    "Median event log-spectrum objective differs from E014's pooled linear-power objective, so metrics are reported for this explicit objective and should not be directly interchanged with E014's score.",
+    "This remains a shared spectral-shape FIR candidate, not a physical room/microphone impulse response or perceptually validated emulator."
+  ]
+}

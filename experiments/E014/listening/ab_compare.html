@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>E014 Full-Length A/B</title>
+<style>
+:root{color-scheme:light;--ink:#17212b;--muted:#61707d;--line:#d9e0e5;--paper:#f4f7f8;--panel:#fff;--accent:#0c6e8f}*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 90% 0%,#dceff1,transparent 35%),var(--paper);color:var(--ink);font:16px/1.45 Georgia,"Times New Roman",serif}main{width:min(960px,100%);margin:auto;padding:32px 18px 48px}header{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:22px}h1{font-size:clamp(28px,5vw,44px);line-height:1.05;margin:0}.tag{font:700 12px/1.2 Arial,sans-serif;color:var(--accent);text-transform:uppercase}.summary{color:var(--muted);max-width:68ch;margin:10px 0 22px}.decks{display:grid;grid-template-columns:1fr 1fr;gap:14px}.deck{background:var(--panel);border:1px solid var(--line);padding:18px}.deck h2{font-size:20px;margin:0 0 8px}.deck p{font-size:14px;color:var(--muted);margin:0 0 14px}.deck audio{width:100%}.controls{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0}.controls button{border:1px solid var(--line);background:#fff;color:var(--ink);padding:10px 15px;font:700 15px Georgia,serif;cursor:pointer}.controls button.primary{background:var(--ink);color:#fff;border-color:var(--ink)}.controls button.active{background:var(--accent);color:#fff;border-color:var(--accent)}.status{font-size:14px;color:var(--muted);min-height:1.5em}.caveat{border-top:1px solid var(--line);margin-top:24px;padding-top:14px;font-size:14px;color:var(--muted)}a{color:var(--accent)}@media(max-width:650px){header{display:block}.decks{grid-template-columns:1fr}}
+</style>
+</head>
+<body><main>
+<header><div><div class="tag">E014 · Full recording</div><h1>Dry / Candidate A-B</h1></div><div class="status" id="status">Both files are 44.1 kHz stereo, 16-bit PCM.</div></header>
+<p class="summary">Use A and B to switch playback at the same timeline position. The candidate uses a capped, minimum-phase spectral-shape filter. Its held-out spectral metric was slightly worse, so this is an audition trial, not a validated acoustic emulation.</p>
+<section class="decks">
+<article class="deck"><h2>A · Dry SLB-200</h2><p>Original full take, unchanged.</p><audio id="dry" controls preload="metadata" src="vincents_1_dry_reference.wav"></audio></article>
+<article class="deck"><h2>B · Candidate filter</h2><p>Same take processed with the E014 candidate FIR.</p><audio id="wet" controls preload="metadata" src="vincents_1_candidate_acoustic_EQ_E014.wav"></audio></article>
+</section>
+<div class="controls"><button class="primary" id="play-a">Play A · Dry</button><button id="play-b">Play B · Candidate</button><button id="stop">Stop</button><button id="restart">Restart A/B</button></div>
+<div class="caveat">Render: 284.19 s including the FIR tail. No normalization was applied; an automatic peak-safety attenuation would be recorded in E014 render metadata if needed. <a href="../README.md">E014 method and caveats</a>.</div>
+</main>
+<script>
+const dry=document.getElementById('dry'),wet=document.getElementById('wet'),status=document.getElementById('status');let active='dry';function selected(){return active==='dry'?dry:wet}function other(){return active==='dry'?wet:dry}function switchTo(which){const target=which==='dry'?dry:wet,otherAudio=which==='dry'?wet:dry;const time=selected().currentTime||0;otherAudio.pause();target.currentTime=Math.min(time,Number.isFinite(target.duration)?target.duration:time);active=which;dry.pause();wet.pause();document.querySelectorAll('.controls button').forEach(b=>b.classList.remove('active'));document.getElementById(which==='dry'?'play-a':'play-b').classList.add('active');target.play().catch(()=>{status.textContent='Press Play on the audio control if browser playback was blocked.'})}document.getElementById('play-a').onclick=()=>switchTo('dry');document.getElementById('play-b').onclick=()=>switchTo('wet');document.getElementById('stop').onclick=()=>{dry.pause();wet.pause();status.textContent='Paused.'};document.getElementById('restart').onclick=()=>{dry.pause();wet.pause();dry.currentTime=0;wet.currentTime=0;active='dry';document.querySelectorAll('.controls button').forEach(b=>b.classList.remove('active'));status.textContent='Reset to the beginning.'};dry.onplay=()=>{active='dry';wet.pause()};wet.onplay=()=>{active='wet';dry.pause()};</script>
+</body></html>

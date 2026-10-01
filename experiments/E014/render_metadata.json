@@ -1,0 +1,21 @@
+{
+  "source_path": "C:\\IR audio\\slb200\\vincents 1.wav",
+  "source_sha256": "138b5de97de26392c368c01e98c3804fcf040501cd35526f618239f7c82fd46e",
+  "output_path": "C:\\IR audio\\results\\E014\\vincents_1_candidate_acoustic_EQ_E014.wav",
+  "output_sha256": "cd3b32e9acaed7427d83e9c6366fa2e75441307d3fbc62b1e0c32157faeb6f39",
+  "filter_path": "C:\\IR research\\experiments\\E014\\candidate_minimum_phase_fir.npz",
+  "render": {
+    "peak_before_safety_gain": 0.2576672646158227,
+    "safety_gain_db": 0.0,
+    "frames": 12532591,
+    "channels": 2,
+    "duration_s": 284.18573696145125
+  },
+  "filter": {
+    "sample_rate": 44100,
+    "tap_count": 8192,
+    "minimum_phase_assumption": true,
+    "gain_cap_db": 6.0
+  },
+  "caveat": "Exploratory candidate transform only; not a validated acoustic-bass emulator or physical impulse response. Preserve the dry source."
+}

@@ -1,0 +1,50 @@
+{
+  "manifest": "C:\\IR audio\\slb200-cubase-slices-manifest.json",
+  "candidate_count": 498,
+  "by_slice_set": {
+    "slb200_audio02_cubase_slices": {
+      "count": 135,
+      "judgments": {
+        "accept": 9,
+        "uncertain": 126
+      },
+      "reason_counts": {
+        "no_flagged_event_validity_issue": 9,
+        "possible_multiple_excitation_or_internal_transient": 125,
+        "very_short_candidate": 1,
+        "possible_truncated_sustain_or_decay": 1
+      },
+      "f0_reliability": {
+        "reliable": 135
+      }
+    },
+    "slb200_vincents_take_1_cubase_slices": {
+      "count": 363,
+      "judgments": {
+        "reject": 150,
+        "accept": 33,
+        "uncertain": 180
+      },
+      "reason_counts": {
+        "digital_or_effective_silence": 150,
+        "no_flagged_event_validity_issue": 33,
+        "possible_leading_bleed_or_missing_attack": 91,
+        "possible_truncated_sustain_or_decay": 68,
+        "possible_multiple_excitation_or_internal_transient": 80,
+        "low_signal_level": 57,
+        "possible_clipping": 1
+      },
+      "f0_reliability": {
+        "weak": 190,
+        "reliable": 173
+      }
+    }
+  },
+  "definitions": {
+    "accept": "No current heuristic flag. Provisional only; not human-validated.",
+    "reject": "Only file hash/read failure, effective digital silence, or >=1% clipped samples.",
+    "uncertain": "One or more inspectable concerns; no hard exclusion implied.",
+    "thresholds": "Exploratory starting values, not established validator thresholds."
+  },
+  "scope": "Event validity is separate from feature reliability and transformation relevance; bowed-note classification is out of scope."
+}

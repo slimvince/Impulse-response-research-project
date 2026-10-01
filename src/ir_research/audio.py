@@ -33,7 +33,8 @@ def read_wav(path: str | Path) -> AudioData:
     if sample_width == 3:
         values = np.frombuffer(raw, dtype=np.uint8).reshape(-1, 3)
         signed = (values[:, 0].astype(np.int32) | (values[:, 1].astype(np.int32) << 8) | (values[:, 2].astype(np.int32) << 16))
-        signed[signed & 0x800000] -= 1 << 24
+        negative = (signed & 0x800000) != 0
+        signed[negative] -= 1 << 24
         samples = signed.astype(np.float32) / float(1 << 23)
     else:
         samples = np.frombuffer(raw, dtype=dtype).astype(np.float32) / float(1 << (8 * sample_width - 1))

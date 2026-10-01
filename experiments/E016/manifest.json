@@ -1,0 +1,15 @@
+{
+  "experiment_id": "E016",
+  "status": "alternative_candidate_render_mixed_metrics",
+  "source_slb": {
+    "path": "C:\\IR audio\\slb200\\vincents 1.wav",
+    "sha256": "138b5de97de26392c368c01e98c3804fcf040501cd35526f618239f7c82fd46e",
+    "source_event_reference": "24 listener-confirmed Use intervals in E008 audit CSV"
+  },
+  "acoustic_training": [
+    {"slice_set_id": "acoustic_bass_a_take_2_cubase_slices", "accepted_candidates": 327},
+    {"slice_set_id": "acoustic_bass_a_take_3_cubase_slices", "accepted_candidates": 332}
+  ],
+  "acoustic_diagnostic_holdout": {"slice_set_id": "acoustic_bass_b_take_1_cubase_slices", "accepted_candidates": 195, "note": "Previously inspected in E014/E015; diagnostic, not untouched test data."},
+  "candidate_selection_basis": "E013 provisional accept; no human acoustic-candidate labels available."
+}

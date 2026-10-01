@@ -1,0 +1,65 @@
+{
+  "experiment_id": "E018",
+  "source_path": "C:\\IR audio\\slb200\\recording two slices\\yamaha bass slb200.wav",
+  "source_sha256": "c00f60b0e6777171a03f69441083b2b47f90d34e27057c036a660e9eaffb4e08",
+  "source_sample_rate": 44100,
+  "source_channels": 2,
+  "source_sample_width_bytes": 2,
+  "source_duration_s": 362.0,
+  "source_relation_note": "User identified this as unsliced SLB-200 recording two; it is in the former Audio 02 slice folder. Identity with those Cubase slices is plausible but not assumed as verified provenance.",
+  "renders": {
+    "E014": {
+      "filter_path": "C:\\IR research\\experiments\\E014\\results\\candidate_minimum_phase_fir.npz",
+      "tap_count": 8192,
+      "dry_rms_linear": 0.026026981627532263,
+      "filtered_rms_linear": 0.01483691159643587,
+      "whole_file_rms_match_gain_db": 4.881605929859415,
+      "raw": {
+        "peak_before_safety_gain": 0.2547526955604553,
+        "requested_gain": 1.0,
+        "safety_gain_db": 0.0,
+        "frames": 15972391,
+        "duration_s": 362.18573696145125,
+        "output_sha256": "16fa3310b7a5212ada7ed9e5163cfc19ebedee702ba4c3cb72bc1947bd2cccc7"
+      },
+      "rms_matched": {
+        "peak_before_safety_gain": 0.4468884028741574,
+        "requested_gain": 1.7542048059236584,
+        "safety_gain_db": 0.0,
+        "frames": 15972391,
+        "duration_s": 362.18573696145125,
+        "output_sha256": "948ea78dc0b3a8449b80d95be4fb4cf78e9ad9fe91ec1e04eda387710bebfb65"
+      }
+    },
+    "E016": {
+      "filter_path": "C:\\IR research\\experiments\\E016\\results\\candidate_per_event_median_fir.npz",
+      "tap_count": 8192,
+      "dry_rms_linear": 0.026026981627532263,
+      "filtered_rms_linear": 0.015481951726652487,
+      "whole_file_rms_match_gain_db": 4.511961930653633,
+      "raw": {
+        "peak_before_safety_gain": 0.2510010898113251,
+        "requested_gain": 1.0,
+        "safety_gain_db": 0.0,
+        "frames": 15972391,
+        "duration_s": 362.18573696145125,
+        "output_sha256": "d59c04d575195604b92d34960768bff8164579032d40910e372e6cf95653396c"
+      },
+      "rms_matched": {
+        "peak_before_safety_gain": 0.4219623512818211,
+        "requested_gain": 1.6811176062980675,
+        "safety_gain_db": 0.0,
+        "frames": 15972391,
+        "duration_s": 362.18573696145125,
+        "output_sha256": "eed06552605a2454f31b498c857c1a112ce06ecc4bec59b48f2fbb3d78c59181"
+      }
+    }
+  },
+  "audition_files": {
+    "E014_rms_matched": "listening/recording_two_E014_rms_matched.wav",
+    "E016_raw": "listening/recording_two_E016_raw.wav",
+    "E016_rms_matched": "listening/recording_two_E016_rms_matched.wav"
+  },
+  "source_preserved": true,
+  "interpretation": "Applies existing exploratory E014/E016 filters to a second complete SLB take; does not validate acoustic emulation."
+}

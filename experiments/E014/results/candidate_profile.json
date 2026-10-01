@@ -1,0 +1,165 @@
+{
+  "sample_rate": 44100,
+  "source_use_event_count": 24,
+  "source_use_event_ids": [
+    1,
+    2,
+    21,
+    64,
+    105,
+    159,
+    168,
+    209,
+    210,
+    213,
+    219,
+    229,
+    238,
+    249,
+    420,
+    435,
+    437,
+    438,
+    466,
+    501,
+    504,
+    525,
+    543,
+    578
+  ],
+  "acoustic_training_sets": {
+    "acoustic_bass_a_take_2_cubase_slices": {
+      "n": 327
+    },
+    "acoustic_bass_a_take_3_cubase_slices": {
+      "n": 332
+    }
+  },
+  "acoustic_holdout_set": {
+    "slice_set_id": "acoustic_bass_b_take_1_cubase_slices",
+    "n": 195
+  },
+  "gain_cap_db": 6.0,
+  "fir_taps": 8192,
+  "gain_db_by_third_octave": [
+    {
+      "center_hz": 31.5,
+      "gain_db": -6.0
+    },
+    {
+      "center_hz": 39.68751307168851,
+      "gain_db": -6.0
+    },
+    {
+      "center_hz": 50.00313313699828,
+      "gain_db": -6.0
+    },
+    {
+      "center_hz": 63.0,
+      "gain_db": -6.0
+    },
+    {
+      "center_hz": 79.37502614337701,
+      "gain_db": -5.341394785314621
+    },
+    {
+      "center_hz": 100.00626627399657,
+      "gain_db": -4.372737451045351
+    },
+    {
+      "center_hz": 126.0,
+      "gain_db": -3.3460687299697147
+    },
+    {
+      "center_hz": 158.75005228675403,
+      "gain_db": -3.2575254118176926
+    },
+    {
+      "center_hz": 200.01253254799312,
+      "gain_db": -2.9860382227324944
+    },
+    {
+      "center_hz": 252.0,
+      "gain_db": -2.1558456886120743
+    },
+    {
+      "center_hz": 317.50010457350805,
+      "gain_db": -0.1707511243461708
+    },
+    {
+      "center_hz": 400.02506509598624,
+      "gain_db": 1.4004864922572728
+    },
+    {
+      "center_hz": 504.0,
+      "gain_db": 2.732246259528966
+    },
+    {
+      "center_hz": 635.000209147016,
+      "gain_db": 3.2674906498723524
+    },
+    {
+      "center_hz": 800.0501301919727,
+      "gain_db": 4.174742177738898
+    },
+    {
+      "center_hz": 1008.0,
+      "gain_db": 4.9861211552711495
+    },
+    {
+      "center_hz": 1270.000418294032,
+      "gain_db": 5.236960489262527
+    },
+    {
+      "center_hz": 1600.1002603839454,
+      "gain_db": 4.054986150918087
+    },
+    {
+      "center_hz": 2016.0,
+      "gain_db": 1.3197961243516807
+    },
+    {
+      "center_hz": 2540.000836588064,
+      "gain_db": -1.785380878424196
+    },
+    {
+      "center_hz": 3200.200520767891,
+      "gain_db": -4.260556230617307
+    },
+    {
+      "center_hz": 4032.0,
+      "gain_db": -5.525366204050901
+    },
+    {
+      "center_hz": 5080.001673176128,
+      "gain_db": -5.938516022713092
+    },
+    {
+      "center_hz": 6400.401041535782,
+      "gain_db": -6.0
+    },
+    {
+      "center_hz": 8064.0,
+      "gain_db": -6.0
+    },
+    {
+      "center_hz": 10160.003346352261,
+      "gain_db": -6.0
+    },
+    {
+      "center_hz": 12800.802083071556,
+      "gain_db": -6.0
+    }
+  ],
+  "holdout_spectral_shape_mae_db_before": 9.095905738542303,
+  "holdout_spectral_shape_mae_db_after": 9.204791679910464,
+  "interpretation": "Unpaired population spectral-shape trial. The holdout metric compares distributions of normalized average spectra, not perceptual quality or a physical transfer function.",
+  "limitations": [
+    "SLB reference consists of 24 user-confirmed E008 Use intervals from one take.",
+    "Acoustic candidate slices are provisionally accepted by uncalibrated E013 rules; they have no human labels yet.",
+    "Acoustic sets have unknown microphone, room, placement, chain, player/instrument conditions; A2/A3 train and B3 is held out only by slice set.",
+    "Cubase boundaries are candidate intervals, not ground truth; slices without sufficient attack or decay may bias the estimated spectrum.",
+    "The FIR matches averaged magnitude shape only, uses a minimum-phase assumption, and discards unknown original recording gain by normalization.",
+    "This does not establish that a fixed FIR is sufficient or that the output perceptually emulates acoustic upright bass."
+  ]
+}

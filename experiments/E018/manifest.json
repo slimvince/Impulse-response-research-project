@@ -1,0 +1,26 @@
+{
+  "experiment_id": "E018",
+  "status": "full_file_candidate_renders_complete",
+  "source_recording": {
+    "recording_id": "slb200_recording_two_take_1",
+    "domain": "slb_di",
+    "path": "C:\\IR audio\\slb200\\recording two slices\\yamaha bass slb200.wav",
+    "sha256": "c00f60b0e6777171a03f69441083b2b47f90d34e27057c036a660e9eaffb4e08",
+    "format": "stereo 44.1 kHz 16-bit PCM WAV",
+    "duration_s": 362.0,
+    "status": "candidate"
+  },
+  "cubase_slice_set_association": {
+    "slice_set_id": "slb200_audio02_cubase_slices",
+    "count": 135,
+    "slice_duration_sum_s": 360.0,
+    "association": "user identified this new unsplit file as recording two; duration sum is consistent",
+    "waveform_alignment_verified": false
+  },
+  "filters": [
+    {"filter_id": "E014", "path": "experiments/E014/results/candidate_minimum_phase_fir.npz", "tap_count": 8192, "phase": "minimum-phase assumption"},
+    {"filter_id": "E016", "path": "experiments/E016/results/candidate_per_event_median_fir.npz", "tap_count": 8192, "phase": "minimum-phase assumption"}
+  ],
+  "outputs": "C:\\IR audio\\results\\E018\\",
+  "note": "Derived full-file trials only; source remains unchanged. These are exploratory transforms, not validated acoustic emulations."
+}

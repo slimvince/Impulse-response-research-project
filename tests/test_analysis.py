@@ -28,6 +28,24 @@ def test_frame_signal_has_stable_hop_positions():
     np.testing.assert_array_equal(frames[1], [3, 4, 5, 6])
 
 
+def test_read_wav_decodes_signed_24_bit_pcm(tmp_path):
+    values = np.array([-8388608, -1, 0, 1, 8388607], dtype=np.int32)
+    unsigned = values & 0xFFFFFF
+    packed = np.column_stack((unsigned & 0xFF, (unsigned >> 8) & 0xFF, (unsigned >> 16) & 0xFF)).astype(np.uint8)
+    wav_path = tmp_path / "signed_24bit.wav"
+    with wave.open(str(wav_path), "wb") as handle:
+        handle.setnchannels(1)
+        handle.setsampwidth(3)
+        handle.setframerate(44100)
+        handle.writeframes(packed.tobytes())
+
+    from ir_research.audio import read_wav
+
+    audio = read_wav(wav_path)
+
+    np.testing.assert_allclose(audio.samples, values.astype(np.float32) / (1 << 23), atol=1e-7)
+
+
 def test_f0_and_spectral_features_are_consistent_for_synthetic_tone():
     sample_rate = 8000
     time = np.arange(sample_rate) / sample_rate

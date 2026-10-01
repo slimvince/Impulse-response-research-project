@@ -1,0 +1,114 @@
+{
+  "source_slb_file": "C:\\IR audio\\slb200\\vincents 1.wav",
+  "filtered_slb_file": "C:\\IR audio\\results\\E014\\vincents_1_candidate_acoustic_EQ_E014.wav",
+  "cubase_source_time_mapped_count": 160,
+  "slb_candidate_count": 363,
+  "slb_validator_accept_count": 33,
+  "accepted_slb_candidates_mapped_count": 33,
+  "listener_confirmed_slb_use_event_count": 24,
+  "acoustic_train_count": 668,
+  "acoustic_holdout_count": 211,
+  "level_tercile_edges_dbfs_from_acoustic_training": [
+    -21.817356471646747,
+    -18.46739409758725
+  ],
+  "conditional_comparisons": [
+    {
+      "register": "all",
+      "level_bin": "all",
+      "slb_n": 33,
+      "acoustic_train_n": 668,
+      "acoustic_holdout_n": 211,
+      "dry_vs_acoustic_train_mae_db": 11.113377430682716,
+      "filtered_vs_acoustic_train_mae_db": 12.133209287002943,
+      "dry_vs_acoustic_holdout_mae_db": 9.171717362619994,
+      "filtered_vs_acoustic_holdout_mae_db": 10.43583349582096
+    },
+    {
+      "register": "high",
+      "level_bin": "low",
+      "slb_n": 33,
+      "acoustic_train_n": 21,
+      "acoustic_holdout_n": 11,
+      "dry_vs_acoustic_train_mae_db": 9.955227709143717,
+      "filtered_vs_acoustic_train_mae_db": 7.765013874055193,
+      "dry_vs_acoustic_holdout_mae_db": 7.03137057761657,
+      "filtered_vs_acoustic_holdout_mae_db": 6.930085876090614
+    }
+  ],
+  "listener_confirmed_slb_in_sample_diagnostic": [
+    {
+      "register": "all",
+      "level_bin": "all",
+      "slb_human_use_n": 24,
+      "acoustic_train_n": 668,
+      "acoustic_holdout_n": 211,
+      "dry_vs_acoustic_train_mae_db": 7.402962066304351,
+      "filtered_vs_acoustic_train_mae_db": 4.111092906635362,
+      "dry_vs_acoustic_holdout_mae_db": 7.344092952579664,
+      "filtered_vs_acoustic_holdout_mae_db": 4.210751172433489,
+      "status": "in_sample_diagnostic_filter_estimated_using_these_events"
+    },
+    {
+      "register": "low",
+      "level_bin": "low",
+      "slb_human_use_n": 16,
+      "acoustic_train_n": 126,
+      "acoustic_holdout_n": 65,
+      "dry_vs_acoustic_train_mae_db": 7.30096570879295,
+      "filtered_vs_acoustic_train_mae_db": 3.9154461671823904,
+      "dry_vs_acoustic_holdout_mae_db": 9.308314840559088,
+      "filtered_vs_acoustic_holdout_mae_db": 5.810159195321681,
+      "status": "in_sample_diagnostic_filter_estimated_using_these_events"
+    },
+    {
+      "register": "low",
+      "level_bin": "mid",
+      "slb_human_use_n": 1,
+      "acoustic_train_n": 115,
+      "acoustic_holdout_n": 73,
+      "dry_vs_acoustic_train_mae_db": 7.554152850112048,
+      "filtered_vs_acoustic_train_mae_db": 5.181021870611401,
+      "dry_vs_acoustic_holdout_mae_db": 10.220293914055404,
+      "filtered_vs_acoustic_holdout_mae_db": 7.565375815973939,
+      "status": "in_sample_diagnostic_filter_estimated_using_these_events"
+    },
+    {
+      "register": "mid",
+      "level_bin": "low",
+      "slb_human_use_n": 6,
+      "acoustic_train_n": 76,
+      "acoustic_holdout_n": 14,
+      "dry_vs_acoustic_train_mae_db": 4.273063362982781,
+      "filtered_vs_acoustic_train_mae_db": 4.531618441438839,
+      "dry_vs_acoustic_holdout_mae_db": 7.344139264286183,
+      "filtered_vs_acoustic_holdout_mae_db": 5.583151335796286,
+      "status": "in_sample_diagnostic_filter_estimated_using_these_events"
+    },
+    {
+      "register": "high",
+      "level_bin": "low",
+      "slb_human_use_n": 1,
+      "acoustic_train_n": 21,
+      "acoustic_holdout_n": 11,
+      "dry_vs_acoustic_train_mae_db": 12.6856172930592,
+      "filtered_vs_acoustic_train_mae_db": 10.805764606598629,
+      "dry_vs_acoustic_holdout_mae_db": 10.343420277377689,
+      "filtered_vs_acoustic_holdout_mae_db": 8.639755266560755,
+      "status": "in_sample_diagnostic_filter_estimated_using_these_events"
+    }
+  ],
+  "per_slice_summary": {
+    "median_centroid_shift_hz": 40.79057575285702,
+    "median_level_shift_db": -2.8452238597217914,
+    "median_f0_shift_hz": 0.0,
+    "fraction_per_slice_closer_to_training_shape": 0.030303030303030304
+  },
+  "limitations": [
+    "Waveform alignment recovers timing only for unique high-correlation Cubase slices; unmatched/ambiguous slices are excluded from paired dry/filtered analysis.",
+    "The E013 acoustic accept set is heuristic and uncalibrated; acoustic candidates have no human labels.",
+    "Acoustic and SLB events are unpaired populations; the conditional comparisons are distribution-level diagnostics, not event matches.",
+    "Register/level cells with empty or small counts are omitted; no inferential significance is claimed.",
+    "The E014 filter is one shared candidate FIR; this report diagnoses residuals but does not retune the held-out set."
+  ]
+}

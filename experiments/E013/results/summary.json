@@ -1,0 +1,148 @@
+{
+  "manifest": "C:\\IR audio\\slb200-cubase-slices-manifest.json",
+  "manifest_sha256": "77e1bc851b2c1a3564aaff3539c220c73b4ce3dc5c1269ae359287594e1c7a24",
+  "candidate_count": 3754,
+  "input_sets": [
+    {
+      "slice_set_id": "slb200_vincents_take_1_cubase_slices",
+      "directory": "C:\\IR audio\\slb200",
+      "source_recording": "vincents 1.wav",
+      "source_available": false,
+      "file_count": 363,
+      "integrity_basis": "external_pinned_manifest"
+    },
+    {
+      "slice_set_id": "slb200_audio02_cubase_slices",
+      "directory": "C:\\IR audio\\slb200\\recording two slices",
+      "source_recording": null,
+      "source_available": false,
+      "file_count": 135,
+      "integrity_basis": "external_pinned_manifest"
+    },
+    {
+      "slice_set_id": "acoustic_bass_a_take_2_cubase_slices",
+      "directory": "C:\\IR audio\\acoustic\\bass A\\2 sliced",
+      "source_recording": "C:\\IR audio\\acoustic\\bass A\\2.wav",
+      "source_available": true,
+      "file_count": 1204,
+      "integrity_basis": "sha256_recorded_during_E012_validation"
+    },
+    {
+      "slice_set_id": "acoustic_bass_a_take_3_cubase_slices",
+      "directory": "C:\\IR audio\\acoustic\\bass A\\3 sliced",
+      "source_recording": "C:\\IR audio\\acoustic\\bass A\\3.wav",
+      "source_available": true,
+      "file_count": 689,
+      "integrity_basis": "sha256_recorded_during_E012_validation"
+    },
+    {
+      "slice_set_id": "acoustic_bass_b_take_1_cubase_slices",
+      "directory": "C:\\IR audio\\acoustic\\bass B\\3 split",
+      "source_recording": "C:\\IR audio\\acoustic\\bass B\\3.wav",
+      "source_available": true,
+      "file_count": 1363,
+      "integrity_basis": "sha256_recorded_during_E012_validation"
+    }
+  ],
+  "by_slice_set": {
+    "acoustic_bass_a_take_2_cubase_slices": {
+      "count": 1204,
+      "judgments": {
+        "uncertain": 870,
+        "accept": 334
+      },
+      "reason_counts": {
+        "possible_truncated_sustain_or_decay": 855,
+        "no_flagged_event_validity_issue": 334,
+        "very_short_candidate": 66,
+        "possible_multiple_excitation_or_internal_transient": 38
+      },
+      "f0_reliability": {
+        "reliable": 1172,
+        "insufficient_duration": 2,
+        "weak": 30
+      }
+    },
+    "acoustic_bass_a_take_3_cubase_slices": {
+      "count": 689,
+      "judgments": {
+        "uncertain": 355,
+        "accept": 334
+      },
+      "reason_counts": {
+        "possible_leading_bleed_or_missing_attack": 1,
+        "possible_truncated_sustain_or_decay": 329,
+        "no_flagged_event_validity_issue": 334,
+        "possible_multiple_excitation_or_internal_transient": 34,
+        "very_short_candidate": 18
+      },
+      "f0_reliability": {
+        "reliable": 680,
+        "weak": 9
+      }
+    },
+    "acoustic_bass_b_take_1_cubase_slices": {
+      "count": 1363,
+      "judgments": {
+        "uncertain": 1152,
+        "accept": 211
+      },
+      "reason_counts": {
+        "possible_leading_bleed_or_missing_attack": 1,
+        "possible_truncated_sustain_or_decay": 1149,
+        "no_flagged_event_validity_issue": 211,
+        "very_short_candidate": 126,
+        "possible_multiple_excitation_or_internal_transient": 23
+      },
+      "f0_reliability": {
+        "weak": 86,
+        "reliable": 1276,
+        "insufficient_duration": 1
+      }
+    },
+    "slb200_audio02_cubase_slices": {
+      "count": 135,
+      "judgments": {
+        "accept": 9,
+        "uncertain": 126
+      },
+      "reason_counts": {
+        "no_flagged_event_validity_issue": 9,
+        "possible_multiple_excitation_or_internal_transient": 125,
+        "very_short_candidate": 1,
+        "possible_truncated_sustain_or_decay": 1
+      },
+      "f0_reliability": {
+        "reliable": 135
+      }
+    },
+    "slb200_vincents_take_1_cubase_slices": {
+      "count": 363,
+      "judgments": {
+        "reject": 150,
+        "accept": 33,
+        "uncertain": 180
+      },
+      "reason_counts": {
+        "digital_or_effective_silence": 150,
+        "no_flagged_event_validity_issue": 33,
+        "possible_leading_bleed_or_missing_attack": 91,
+        "possible_truncated_sustain_or_decay": 68,
+        "possible_multiple_excitation_or_internal_transient": 80,
+        "low_signal_level": 57,
+        "possible_clipping": 1
+      },
+      "f0_reliability": {
+        "weak": 190,
+        "reliable": 173
+      }
+    }
+  },
+  "definitions": {
+    "accept": "No current heuristic flag. Provisional only; not human-validated.",
+    "reject": "Only file hash/read failure, effective digital silence, or >=1% clipped samples.",
+    "uncertain": "One or more inspectable concerns; no hard exclusion implied.",
+    "thresholds": "Exploratory starting values, not established validator thresholds."
+  },
+  "scope": "Event validity is separate from feature reliability and transformation relevance; bowed-note classification is out of scope."
+}

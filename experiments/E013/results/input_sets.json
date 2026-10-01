@@ -1,0 +1,42 @@
+[
+  {
+    "slice_set_id": "slb200_vincents_take_1_cubase_slices",
+    "directory": "C:\\IR audio\\slb200",
+    "source_recording": "vincents 1.wav",
+    "source_available": false,
+    "file_count": 363,
+    "integrity_basis": "external_pinned_manifest"
+  },
+  {
+    "slice_set_id": "slb200_audio02_cubase_slices",
+    "directory": "C:\\IR audio\\slb200\\recording two slices",
+    "source_recording": null,
+    "source_available": false,
+    "file_count": 135,
+    "integrity_basis": "external_pinned_manifest"
+  },
+  {
+    "slice_set_id": "acoustic_bass_a_take_2_cubase_slices",
+    "directory": "C:\\IR audio\\acoustic\\bass A\\2 sliced",
+    "source_recording": "C:\\IR audio\\acoustic\\bass A\\2.wav",
+    "source_available": true,
+    "file_count": 1204,
+    "integrity_basis": "sha256_recorded_during_E012_validation"
+  },
+  {
+    "slice_set_id": "acoustic_bass_a_take_3_cubase_slices",
+    "directory": "C:\\IR audio\\acoustic\\bass A\\3 sliced",
+    "source_recording": "C:\\IR audio\\acoustic\\bass A\\3.wav",
+    "source_available": true,
+    "file_count": 689,
+    "integrity_basis": "sha256_recorded_during_E012_validation"
+  },
+  {
+    "slice_set_id": "acoustic_bass_b_take_1_cubase_slices",
+    "directory": "C:\\IR audio\\acoustic\\bass B\\3 split",
+    "source_recording": "C:\\IR audio\\acoustic\\bass B\\3.wav",
+    "source_available": true,
+    "file_count": 1363,
+    "integrity_basis": "sha256_recorded_during_E012_validation"
+  }
+]

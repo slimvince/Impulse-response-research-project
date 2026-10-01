@@ -1,0 +1,16 @@
+{
+  "filter_fit": "difference between median per-event unit-power third-octave log spectra",
+  "source_events": "24 listener-confirmed E008 Use intervals",
+  "acoustic_training_sets": ["acoustic_bass_a_take_2_cubase_slices", "acoustic_bass_a_take_3_cubase_slices"],
+  "acoustic_diagnostic_set": "acoustic_bass_b_take_1_cubase_slices",
+  "minimum_event_duration_s": 0.12,
+  "third_octave_centers": "31.5 Hz times powers of 2 in one-third-octave steps, through 16 kHz",
+  "smoothing_kernel": [1, 2, 3, 2, 1],
+  "reference_band_hz": [100, 1000],
+  "gain_cap_db": 6,
+  "fir_sample_rate_hz": 44100,
+  "fir_taps": 8192,
+  "phase_assumption": "minimum phase",
+  "render_variants": ["raw E016", "whole-file RMS-matched E016", "whole-file RMS-matched E014"],
+  "status": "predeclared single alternative; no iterative tuning on B3"
+}

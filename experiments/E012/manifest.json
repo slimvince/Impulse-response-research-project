@@ -1,0 +1,29 @@
+{
+  "experiment_id": "E012",
+  "status": "first_pass_uncalibrated",
+  "question": "Can explicit quality diagnostics triage Cubase candidate slices into accept, reject, or uncertain without conflating event validity and feature reliability?",
+  "candidate_manifest": "C:\\IR audio\\slb200-cubase-slices-manifest.json",
+  "candidate_sets": [
+    {
+      "slice_set_id": "slb200_vincents_take_1_cubase_slices",
+      "count": 363,
+      "source_recording": "C:\\IR audio\\slb200\\vincents 1.wav",
+      "source_available": true,
+      "partition": "development"
+    },
+    {
+      "slice_set_id": "slb200_audio02_cubase_slices",
+      "count": 135,
+      "source_recording": null,
+      "source_available": false,
+      "partition": "development"
+    }
+  ],
+  "integrity_check": {
+    "manifest_sha256_verified_before_run": true,
+    "candidate_count_verified": 498,
+    "missing_files": 0,
+    "hash_mismatches": 0
+  },
+  "label_status": "no Cubase candidate slices manually labeled yet; no precision/recall claim"
+}

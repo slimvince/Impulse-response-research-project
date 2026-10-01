@@ -1,0 +1,1153 @@
+{
+  "validation_source": "durable E008 listener audit CSV, mapped by source-time overlap",
+  "reviewed_label_count": 57,
+  "verdict_counts": {
+    "Use": 24,
+    "Disq": 33
+  },
+  "outcome_counts": {
+    "use_contained_tightly": 22,
+    "silence_disqualified": 6,
+    "silence_interval_absorbed": 2,
+    "negative_interval_retained_or_absorbed": 25,
+    "use_contained_in_longer_or_split_event": 2
+  },
+  "quality_status_counts": {
+    "tonal_candidate": 336,
+    "disqualified": 93,
+    "pitch_unconfirmed": 19
+  },
+  "event_count": 448,
+  "labels": [
+    {
+      "old_event": 1,
+      "verdict": "Use",
+      "annotation": "",
+      "old_start_s": 0.0,
+      "old_end_s": 0.3831292517006803,
+      "covered_fraction": 1.0,
+      "outcome": "use_contained_tightly",
+      "overlaps": [
+        {
+          "event": 1,
+          "start_s": 0.0,
+          "end_s": 0.3831292517006803,
+          "duration_s": 0.3831292517006803,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 0.3831292517006803
+        }
+      ]
+    },
+    {
+      "old_event": 2,
+      "verdict": "Use",
+      "annotation": "",
+      "old_start_s": 0.3831292517006803,
+      "old_end_s": 0.8359183673469388,
+      "covered_fraction": 1.0,
+      "outcome": "use_contained_tightly",
+      "overlaps": [
+        {
+          "event": 2,
+          "start_s": 0.3831292517006803,
+          "end_s": 0.8359183673469388,
+          "duration_s": 0.4527891156462585,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 0.4527891156462585
+        }
+      ]
+    },
+    {
+      "old_event": 21,
+      "verdict": "Use",
+      "annotation": "",
+      "old_start_s": 12.027936507936507,
+      "old_end_s": 13.363083900226757,
+      "covered_fraction": 1.0,
+      "outcome": "use_contained_tightly",
+      "overlaps": [
+        {
+          "event": 21,
+          "start_s": 12.027936507936507,
+          "end_s": 13.363083900226757,
+          "duration_s": 1.3351473922902495,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 1.3351473922902493
+        }
+      ]
+    },
+    {
+      "old_event": 26,
+      "verdict": "Disq",
+      "annotation": "silence",
+      "old_start_s": 16.579047619047618,
+      "old_end_s": 16.590657596371884,
+      "covered_fraction": 1.0,
+      "outcome": "silence_disqualified",
+      "overlaps": [
+        {
+          "event": 25,
+          "start_s": 16.579047619047618,
+          "end_s": 16.590657596371884,
+          "duration_s": 0.011609977324263039,
+          "quality_status": "disqualified",
+          "overlap_s": 0.011609977324265941
+        }
+      ]
+    },
+    {
+      "old_event": 47,
+      "verdict": "Disq",
+      "annotation": "silence",
+      "old_start_s": 24.021043083900228,
+      "old_end_s": 24.03265306122449,
+      "covered_fraction": 1.0,
+      "outcome": "silence_disqualified",
+      "overlaps": [
+        {
+          "event": 46,
+          "start_s": 24.021043083900228,
+          "end_s": 24.03265306122449,
+          "duration_s": 0.011609977324263039,
+          "quality_status": "disqualified",
+          "overlap_s": 0.011609977324262388
+        }
+      ]
+    },
+    {
+      "old_event": 53,
+      "verdict": "Disq",
+      "annotation": "silcence",
+      "old_start_s": 27.945215419501135,
+      "old_end_s": 28.16580498866213,
+      "covered_fraction": 1.0,
+      "outcome": "silence_interval_absorbed",
+      "overlaps": [
+        {
+          "event": 52,
+          "start_s": 27.945215419501135,
+          "end_s": 28.16580498866213,
+          "duration_s": 0.22058956916099773,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 0.22058956916099604
+        }
+      ]
+    },
+    {
+      "old_event": 64,
+      "verdict": "Use",
+      "annotation": "",
+      "old_start_s": 32.995555555555555,
+      "old_end_s": 33.52961451247165,
+      "covered_fraction": 1.0,
+      "outcome": "use_contained_tightly",
+      "overlaps": [
+        {
+          "event": 63,
+          "start_s": 32.995555555555555,
+          "end_s": 33.52961451247165,
+          "duration_s": 0.5340589569160997,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 0.5340589569160983
+        }
+      ]
+    },
+    {
+      "old_event": 73,
+      "verdict": "Disq",
+      "annotation": "silence",
+      "old_start_s": 36.211519274376414,
+      "old_end_s": 36.22312925170068,
+      "covered_fraction": 1.0,
+      "outcome": "silence_disqualified",
+      "overlaps": [
+        {
+          "event": 72,
+          "start_s": 36.211519274376414,
+          "end_s": 36.22312925170068,
+          "duration_s": 0.011609977324263039,
+          "quality_status": "disqualified",
+          "overlap_s": 0.011609977324269494
+        }
+      ]
+    },
+    {
+      "old_event": 87,
+      "verdict": "Disq",
+      "annotation": "silence",
+      "old_start_s": 41.2734693877551,
+      "old_end_s": 41.28507936507936,
+      "covered_fraction": 1.0,
+      "outcome": "silence_disqualified",
+      "overlaps": [
+        {
+          "event": 85,
+          "start_s": 41.2734693877551,
+          "end_s": 41.28507936507936,
+          "duration_s": 0.011609977324263039,
+          "quality_status": "disqualified",
+          "overlap_s": 0.011609977324262388
+        }
+      ]
+    },
+    {
+      "old_event": 105,
+      "verdict": "Use",
+      "annotation": "",
+      "old_start_s": 47.04362811791383,
+      "old_end_s": 47.35709750566893,
+      "covered_fraction": 1.0,
+      "outcome": "use_contained_tightly",
+      "overlaps": [
+        {
+          "event": 103,
+          "start_s": 47.04362811791383,
+          "end_s": 47.35709750566893,
+          "duration_s": 0.313469387755102,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 0.3134693877550987
+        }
+      ]
+    },
+    {
+      "old_event": 136,
+      "verdict": "Disq",
+      "annotation": "silence",
+      "old_start_s": 68.64979591836735,
+      "old_end_s": 68.66140589569162,
+      "covered_fraction": 1.0,
+      "outcome": "silence_disqualified",
+      "overlaps": [
+        {
+          "event": 131,
+          "start_s": 68.64979591836735,
+          "end_s": 68.66140589569162,
+          "duration_s": 0.011609977324263039,
+          "quality_status": "disqualified",
+          "overlap_s": 0.011609977324269494
+        }
+      ]
+    },
+    {
+      "old_event": 137,
+      "verdict": "Disq",
+      "annotation": "silence",
+      "old_start_s": 68.67301587301587,
+      "old_end_s": 68.68462585034014,
+      "covered_fraction": 1.0,
+      "outcome": "silence_disqualified",
+      "overlaps": [
+        {
+          "event": 132,
+          "start_s": 68.67301587301587,
+          "end_s": 68.68462585034014,
+          "duration_s": 0.011609977324263039,
+          "quality_status": "disqualified",
+          "overlap_s": 0.011609977324269494
+        }
+      ]
+    },
+    {
+      "old_event": 142,
+      "verdict": "Disq",
+      "annotation": "mostly one note, but at very end a hammer on.",
+      "old_start_s": 71.23882086167801,
+      "old_end_s": 72.85260770975057,
+      "covered_fraction": 1.0,
+      "outcome": "negative_interval_retained_or_absorbed",
+      "overlaps": [
+        {
+          "event": 136,
+          "start_s": 71.23882086167801,
+          "end_s": 72.85260770975057,
+          "duration_s": 1.6137868480725623,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 1.6137868480725643
+        }
+      ]
+    },
+    {
+      "old_event": 158,
+      "verdict": "Disq",
+      "annotation": "",
+      "old_start_s": 80.5732426303855,
+      "old_end_s": 80.65451247165532,
+      "covered_fraction": 1.0,
+      "outcome": "negative_interval_retained_or_absorbed",
+      "overlaps": [
+        {
+          "event": 146,
+          "start_s": 79.09877551020408,
+          "end_s": 82.10575963718821,
+          "duration_s": 3.006984126984127,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 0.08126984126982961
+        }
+      ]
+    },
+    {
+      "old_event": 159,
+      "verdict": "Use",
+      "annotation": "",
+      "old_start_s": 80.65451247165532,
+      "old_end_s": 82.10575963718821,
+      "covered_fraction": 1.0,
+      "outcome": "use_contained_in_longer_or_split_event",
+      "overlaps": [
+        {
+          "event": 146,
+          "start_s": 79.09877551020408,
+          "end_s": 82.10575963718821,
+          "duration_s": 3.006984126984127,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 1.451247165532891
+        }
+      ]
+    },
+    {
+      "old_event": 160,
+      "verdict": "Disq",
+      "annotation": "silence",
+      "old_start_s": 82.4540589569161,
+      "old_end_s": 82.46566893424037,
+      "covered_fraction": 1.0,
+      "outcome": "silence_interval_absorbed",
+      "overlaps": [
+        {
+          "event": 147,
+          "start_s": 82.4540589569161,
+          "end_s": 83.9285260770975,
+          "duration_s": 1.474467120181406,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 0.011609977324269494
+        }
+      ]
+    },
+    {
+      "old_event": 163,
+      "verdict": "Disq",
+      "annotation": "",
+      "old_start_s": 83.94013605442177,
+      "old_end_s": 83.95174603174603,
+      "covered_fraction": 1.0,
+      "outcome": "negative_interval_retained_or_absorbed",
+      "overlaps": [
+        {
+          "event": 148,
+          "start_s": 83.94013605442177,
+          "end_s": 83.95174603174603,
+          "duration_s": 0.011609977324263039,
+          "quality_status": "disqualified",
+          "overlap_s": 0.011609977324255283
+        }
+      ]
+    },
+    {
+      "old_event": 168,
+      "verdict": "Use",
+      "annotation": "",
+      "old_start_s": 84.38131519274377,
+      "old_end_s": 85.9718820861678,
+      "covered_fraction": 0.9744525547445291,
+      "outcome": "use_contained_tightly",
+      "overlaps": [
+        {
+          "event": 152,
+          "start_s": 84.39292517006803,
+          "end_s": 85.94285714285714,
+          "duration_s": 1.5499319727891157,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 1.5499319727891105
+        }
+      ]
+    },
+    {
+      "old_event": 171,
+      "verdict": "Disq",
+      "annotation": "",
+      "old_start_s": 87.67854875283447,
+      "old_end_s": 87.69015873015873,
+      "covered_fraction": 1.0,
+      "outcome": "negative_interval_retained_or_absorbed",
+      "overlaps": [
+        {
+          "event": 155,
+          "start_s": 87.67854875283447,
+          "end_s": 88.53768707482993,
+          "duration_s": 0.8591383219954648,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 0.011609977324255283
+        }
+      ]
+    },
+    {
+      "old_event": 206,
+      "verdict": "Disq",
+      "annotation": "",
+      "old_start_s": 98.08108843537416,
+      "old_end_s": 98.09269841269841,
+      "covered_fraction": 1.0,
+      "outcome": "negative_interval_retained_or_absorbed",
+      "overlaps": [
+        {
+          "event": 159,
+          "start_s": 98.08108843537416,
+          "end_s": 99.06793650793651,
+          "duration_s": 0.9868480725623583,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 0.011609977324255283
+        }
+      ]
+    },
+    {
+      "old_event": 209,
+      "verdict": "Use",
+      "annotation": "",
+      "old_start_s": 99.7645351473923,
+      "old_end_s": 101.84272108843537,
+      "covered_fraction": 0.9525139664804476,
+      "outcome": "use_contained_tightly",
+      "overlaps": [
+        {
+          "event": 160,
+          "start_s": 99.7645351473923,
+          "end_s": 101.72081632653061,
+          "duration_s": 1.956281179138322,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 1.9562811791383155
+        },
+        {
+          "event": 161,
+          "start_s": 101.72662131519274,
+          "end_s": 101.74984126984127,
+          "duration_s": 0.023219954648526078,
+          "quality_status": "pitch_unconfirmed",
+          "overlap_s": 0.023219954648524777
+        }
+      ]
+    },
+    {
+      "old_event": 210,
+      "verdict": "Use",
+      "annotation": "",
+      "old_start_s": 102.46965986394558,
+      "old_end_s": 102.96018140589568,
+      "covered_fraction": 1.0,
+      "outcome": "use_contained_in_longer_or_split_event",
+      "overlaps": [
+        {
+          "event": 162,
+          "start_s": 102.43482993197279,
+          "end_s": 104.46657596371882,
+          "duration_s": 2.0317460317460316,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 0.4905215419501019
+        }
+      ]
+    },
+    {
+      "old_event": 213,
+      "verdict": "Use",
+      "annotation": "",
+      "old_start_s": 107.77541950113378,
+      "old_end_s": 109.99292517006803,
+      "covered_fraction": 1.0,
+      "outcome": "use_contained_tightly",
+      "overlaps": [
+        {
+          "event": 164,
+          "start_s": 107.77541950113378,
+          "end_s": 109.99292517006803,
+          "duration_s": 2.2175056689342405,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 2.217505668934251
+        }
+      ]
+    },
+    {
+      "old_event": 214,
+      "verdict": "Disq",
+      "annotation": "",
+      "old_start_s": 110.03936507936508,
+      "old_end_s": 110.08580498866213,
+      "covered_fraction": 1.0,
+      "outcome": "negative_interval_retained_or_absorbed",
+      "overlaps": [
+        {
+          "event": 165,
+          "start_s": 110.03936507936508,
+          "end_s": 110.08580498866213,
+          "duration_s": 0.046439909297052155,
+          "quality_status": "disqualified",
+          "overlap_s": 0.04643990929704955
+        }
+      ]
+    },
+    {
+      "old_event": 215,
+      "verdict": "Disq",
+      "annotation": "",
+      "old_start_s": 110.09741496598639,
+      "old_end_s": 110.10902494331066,
+      "covered_fraction": 1.0,
+      "outcome": "negative_interval_retained_or_absorbed",
+      "overlaps": [
+        {
+          "event": 166,
+          "start_s": 110.09741496598639,
+          "end_s": 110.10902494331066,
+          "duration_s": 0.011609977324263039,
+          "quality_status": "disqualified",
+          "overlap_s": 0.011609977324269494
+        }
+      ]
+    },
+    {
+      "old_event": 216,
+      "verdict": "Disq",
+      "annotation": "",
+      "old_start_s": 110.35283446712018,
+      "old_end_s": 110.36444444444444,
+      "covered_fraction": 1.0,
+      "outcome": "negative_interval_retained_or_absorbed",
+      "overlaps": [
+        {
+          "event": 167,
+          "start_s": 110.35283446712018,
+          "end_s": 110.36444444444444,
+          "duration_s": 0.011609977324263039,
+          "quality_status": "disqualified",
+          "overlap_s": 0.011609977324269494
+        }
+      ]
+    },
+    {
+      "old_event": 218,
+      "verdict": "Disq",
+      "annotation": "",
+      "old_start_s": 112.29170068027211,
+      "old_end_s": 112.30331065759637,
+      "covered_fraction": 1.0,
+      "outcome": "negative_interval_retained_or_absorbed",
+      "overlaps": [
+        {
+          "event": 169,
+          "start_s": 112.29170068027211,
+          "end_s": 112.30331065759637,
+          "duration_s": 0.011609977324263039,
+          "quality_status": "disqualified",
+          "overlap_s": 0.011609977324255283
+        }
+      ]
+    },
+    {
+      "old_event": 219,
+      "verdict": "Use",
+      "annotation": "",
+      "old_start_s": 113.51074829931973,
+      "old_end_s": 116.44807256235828,
+      "covered_fraction": 1.0,
+      "outcome": "use_contained_tightly",
+      "overlaps": [
+        {
+          "event": 170,
+          "start_s": 113.51074829931973,
+          "end_s": 116.44807256235828,
+          "duration_s": 2.9373242630385485,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 2.9373242630385477
+        }
+      ]
+    },
+    {
+      "old_event": 220,
+      "verdict": "Disq",
+      "annotation": "",
+      "old_start_s": 116.54095238095238,
+      "old_end_s": 116.55256235827665,
+      "covered_fraction": 1.0,
+      "outcome": "negative_interval_retained_or_absorbed",
+      "overlaps": [
+        {
+          "event": 171,
+          "start_s": 116.54095238095238,
+          "end_s": 116.55256235827665,
+          "duration_s": 0.011609977324263039,
+          "quality_status": "disqualified",
+          "overlap_s": 0.011609977324269494
+        }
+      ]
+    },
+    {
+      "old_event": 225,
+      "verdict": "Disq",
+      "annotation": "",
+      "old_start_s": 117.9457596371882,
+      "old_end_s": 117.95736961451247,
+      "covered_fraction": 1.0,
+      "outcome": "negative_interval_retained_or_absorbed",
+      "overlaps": [
+        {
+          "event": 174,
+          "start_s": 117.9457596371882,
+          "end_s": 117.95736961451247,
+          "duration_s": 0.011609977324263039,
+          "quality_status": "disqualified",
+          "overlap_s": 0.011609977324269494
+        }
+      ]
+    },
+    {
+      "old_event": 229,
+      "verdict": "Use",
+      "annotation": "",
+      "old_start_s": 118.83972789115646,
+      "old_end_s": 120.14004535147393,
+      "covered_fraction": 0.9687500000000048,
+      "outcome": "use_contained_tightly",
+      "overlaps": [
+        {
+          "event": 176,
+          "start_s": 118.8281179138322,
+          "end_s": 120.06458049886622,
+          "duration_s": 1.2364625850340136,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 1.2248526077097637
+        },
+        {
+          "event": 177,
+          "start_s": 120.07038548752834,
+          "end_s": 120.10521541950114,
+          "duration_s": 0.034829931972789115,
+          "quality_status": "pitch_unconfirmed",
+          "overlap_s": 0.03482993197279427
+        }
+      ]
+    },
+    {
+      "old_event": 238,
+      "verdict": "Use",
+      "annotation": "",
+      "old_start_s": 124.76081632653062,
+      "old_end_s": 125.56190476190476,
+      "covered_fraction": 1.0,
+      "outcome": "use_contained_tightly",
+      "overlaps": [
+        {
+          "event": 183,
+          "start_s": 124.76081632653062,
+          "end_s": 125.56190476190476,
+          "duration_s": 0.8010884353741496,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 0.8010884353741403
+        }
+      ]
+    },
+    {
+      "old_event": 249,
+      "verdict": "Use",
+      "annotation": "",
+      "old_start_s": 127.97678004535148,
+      "old_end_s": 128.8126984126984,
+      "covered_fraction": 1.0,
+      "outcome": "use_contained_tightly",
+      "overlaps": [
+        {
+          "event": 187,
+          "start_s": 127.97678004535148,
+          "end_s": 128.8126984126984,
+          "duration_s": 0.8359183673469388,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 0.8359183673469346
+        }
+      ]
+    },
+    {
+      "old_event": 263,
+      "verdict": "Disq",
+      "annotation": "",
+      "old_start_s": 136.50866213151926,
+      "old_end_s": 136.54784580498864,
+      "covered_fraction": 1.0,
+      "outcome": "negative_interval_retained_or_absorbed",
+      "overlaps": [
+        {
+          "event": 198,
+          "start_s": 135.69741496598638,
+          "end_s": 137.19510204081632,
+          "duration_s": 1.497687074829932,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 0.03918367346938112
+        }
+      ]
+    },
+    {
+      "old_event": 292,
+      "verdict": "Disq",
+      "annotation": "",
+      "old_start_s": 151.34766439909296,
+      "old_end_s": 151.35927437641723,
+      "covered_fraction": 1.0,
+      "outcome": "negative_interval_retained_or_absorbed",
+      "overlaps": [
+        {
+          "event": 226,
+          "start_s": 151.34766439909296,
+          "end_s": 151.35927437641723,
+          "duration_s": 0.011609977324263039,
+          "quality_status": "disqualified",
+          "overlap_s": 0.011609977324269494
+        }
+      ]
+    },
+    {
+      "old_event": 315,
+      "verdict": "Disq",
+      "annotation": "",
+      "old_start_s": 161.19292517006804,
+      "old_end_s": 161.2393650793651,
+      "covered_fraction": 1.0,
+      "outcome": "negative_interval_retained_or_absorbed",
+      "overlaps": [
+        {
+          "event": 249,
+          "start_s": 161.19292517006804,
+          "end_s": 161.2393650793651,
+          "duration_s": 0.046439909297052155,
+          "quality_status": "disqualified",
+          "overlap_s": 0.04643990929704955
+        }
+      ]
+    },
+    {
+      "old_event": 338,
+      "verdict": "Disq",
+      "annotation": "",
+      "old_start_s": 167.86866213151927,
+      "old_end_s": 167.88027210884354,
+      "covered_fraction": 1.0,
+      "outcome": "negative_interval_retained_or_absorbed",
+      "overlaps": [
+        {
+          "event": 272,
+          "start_s": 167.86866213151927,
+          "end_s": 167.88027210884354,
+          "duration_s": 0.011609977324263039,
+          "quality_status": "disqualified",
+          "overlap_s": 0.011609977324269494
+        }
+      ]
+    },
+    {
+      "old_event": 341,
+      "verdict": "Disq",
+      "annotation": "",
+      "old_start_s": 168.70458049886622,
+      "old_end_s": 168.71619047619046,
+      "covered_fraction": 1.0,
+      "outcome": "negative_interval_retained_or_absorbed",
+      "overlaps": [
+        {
+          "event": 275,
+          "start_s": 168.70458049886622,
+          "end_s": 168.71619047619046,
+          "duration_s": 0.011609977324263039,
+          "quality_status": "disqualified",
+          "overlap_s": 0.011609977324241072
+        }
+      ]
+    },
+    {
+      "old_event": 356,
+      "verdict": "Disq",
+      "annotation": "",
+      "old_start_s": 173.02349206349206,
+      "old_end_s": 173.0467120181406,
+      "covered_fraction": 1.0,
+      "outcome": "negative_interval_retained_or_absorbed",
+      "overlaps": [
+        {
+          "event": 290,
+          "start_s": 173.02349206349206,
+          "end_s": 173.0467120181406,
+          "duration_s": 0.023219954648526078,
+          "quality_status": "disqualified",
+          "overlap_s": 0.023219954648538987
+        }
+      ]
+    },
+    {
+      "old_event": 368,
+      "verdict": "Disq",
+      "annotation": "",
+      "old_start_s": 181.78902494331066,
+      "old_end_s": 181.84707482993198,
+      "covered_fraction": 1.0,
+      "outcome": "negative_interval_retained_or_absorbed",
+      "overlaps": [
+        {
+          "event": 300,
+          "start_s": 181.78902494331066,
+          "end_s": 181.84707482993198,
+          "duration_s": 0.058049886621315196,
+          "quality_status": "disqualified",
+          "overlap_s": 0.05804988662131905
+        }
+      ]
+    },
+    {
+      "old_event": 383,
+      "verdict": "Disq",
+      "annotation": "",
+      "old_start_s": 187.1760544217687,
+      "old_end_s": 187.18766439909297,
+      "covered_fraction": 1.0,
+      "outcome": "negative_interval_retained_or_absorbed",
+      "overlaps": [
+        {
+          "event": 310,
+          "start_s": 187.1760544217687,
+          "end_s": 187.18766439909297,
+          "duration_s": 0.011609977324263039,
+          "quality_status": "disqualified",
+          "overlap_s": 0.011609977324269494
+        }
+      ]
+    },
+    {
+      "old_event": 386,
+      "verdict": "Disq",
+      "annotation": "",
+      "old_start_s": 188.60408163265305,
+      "old_end_s": 188.61569160997732,
+      "covered_fraction": 1.0,
+      "outcome": "negative_interval_retained_or_absorbed",
+      "overlaps": [
+        {
+          "event": 313,
+          "start_s": 188.60408163265305,
+          "end_s": 188.61569160997732,
+          "duration_s": 0.011609977324263039,
+          "quality_status": "disqualified",
+          "overlap_s": 0.011609977324269494
+        }
+      ]
+    },
+    {
+      "old_event": 420,
+      "verdict": "Use",
+      "annotation": "",
+      "old_start_s": 207.80698412698413,
+      "old_end_s": 209.09569160997734,
+      "covered_fraction": 1.0,
+      "outcome": "use_contained_tightly",
+      "overlaps": [
+        {
+          "event": 330,
+          "start_s": 207.80698412698413,
+          "end_s": 209.09569160997734,
+          "duration_s": 1.2887074829931973,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 1.2887074829932033
+        }
+      ]
+    },
+    {
+      "old_event": 435,
+      "verdict": "Use",
+      "annotation": "",
+      "old_start_s": 216.02684807256236,
+      "old_end_s": 217.4897052154195,
+      "covered_fraction": 1.0,
+      "outcome": "use_contained_tightly",
+      "overlaps": [
+        {
+          "event": 335,
+          "start_s": 216.02684807256236,
+          "end_s": 217.4897052154195,
+          "duration_s": 1.4628571428571429,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 1.462857142857132
+        }
+      ]
+    },
+    {
+      "old_event": 437,
+      "verdict": "Use",
+      "annotation": "",
+      "old_start_s": 217.81478458049887,
+      "old_end_s": 219.14993197278912,
+      "covered_fraction": 1.0,
+      "outcome": "use_contained_tightly",
+      "overlaps": [
+        {
+          "event": 337,
+          "start_s": 217.81478458049887,
+          "end_s": 219.14993197278912,
+          "duration_s": 1.3351473922902495,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 1.3351473922902528
+        }
+      ]
+    },
+    {
+      "old_event": 438,
+      "verdict": "Use",
+      "annotation": "",
+      "old_start_s": 219.35891156462586,
+      "old_end_s": 221.042358276644,
+      "covered_fraction": 1.0,
+      "outcome": "use_contained_tightly",
+      "overlaps": [
+        {
+          "event": 338,
+          "start_s": 219.35891156462586,
+          "end_s": 221.042358276644,
+          "duration_s": 1.6834467120181407,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 1.6834467120181387
+        }
+      ]
+    },
+    {
+      "old_event": 466,
+      "verdict": "Use",
+      "annotation": "",
+      "old_start_s": 234.05714285714285,
+      "old_end_s": 235.41551020408164,
+      "covered_fraction": 1.0,
+      "outcome": "use_contained_tightly",
+      "overlaps": [
+        {
+          "event": 349,
+          "start_s": 234.05714285714285,
+          "end_s": 235.41551020408164,
+          "duration_s": 1.3583673469387756,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 1.3583673469387918
+        }
+      ]
+    },
+    {
+      "old_event": 473,
+      "verdict": "Disq",
+      "annotation": "",
+      "old_start_s": 239.23519274376417,
+      "old_end_s": 239.6299319727891,
+      "covered_fraction": 1.0,
+      "outcome": "negative_interval_retained_or_absorbed",
+      "overlaps": [
+        {
+          "event": 354,
+          "start_s": 239.23519274376417,
+          "end_s": 239.6299319727891,
+          "duration_s": 0.3947392290249433,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 0.3947392290249354
+        }
+      ]
+    },
+    {
+      "old_event": 489,
+      "verdict": "Disq",
+      "annotation": "",
+      "old_start_s": 244.16217687074828,
+      "old_end_s": 244.59174603174603,
+      "covered_fraction": 1.0,
+      "outcome": "negative_interval_retained_or_absorbed",
+      "overlaps": [
+        {
+          "event": 367,
+          "start_s": 244.13460317460317,
+          "end_s": 244.44807256235828,
+          "duration_s": 0.313469387755102,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 0.2858956916099942
+        },
+        {
+          "event": 368,
+          "start_s": 244.44807256235828,
+          "end_s": 245.03437641723355,
+          "duration_s": 0.5863038548752835,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 0.14367346938774972
+        }
+      ]
+    },
+    {
+      "old_event": 492,
+      "verdict": "Disq",
+      "annotation": "",
+      "old_start_s": 245.36526077097506,
+      "old_end_s": 245.7251700680272,
+      "covered_fraction": 1.0,
+      "outcome": "negative_interval_retained_or_absorbed",
+      "overlaps": [
+        {
+          "event": 369,
+          "start_s": 245.0750113378685,
+          "end_s": 245.5974603174603,
+          "duration_s": 0.5224489795918368,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 0.23219954648524777
+        },
+        {
+          "event": 370,
+          "start_s": 245.5974603174603,
+          "end_s": 245.9109297052154,
+          "duration_s": 0.313469387755102,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 0.1277097505669076
+        }
+      ]
+    },
+    {
+      "old_event": 501,
+      "verdict": "Use",
+      "annotation": "",
+      "old_start_s": 247.37378684807257,
+      "old_end_s": 247.91945578231292,
+      "covered_fraction": 1.0,
+      "outcome": "use_contained_tightly",
+      "overlaps": [
+        {
+          "event": 374,
+          "start_s": 247.37378684807257,
+          "end_s": 247.91945578231292,
+          "duration_s": 0.5456689342403628,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 0.5456689342403536
+        }
+      ]
+    },
+    {
+      "old_event": 504,
+      "verdict": "Use",
+      "annotation": "",
+      "old_start_s": 248.7437641723356,
+      "old_end_s": 249.23138321995464,
+      "covered_fraction": 1.0,
+      "outcome": "use_contained_tightly",
+      "overlaps": [
+        {
+          "event": 377,
+          "start_s": 248.7437641723356,
+          "end_s": 249.23138321995464,
+          "duration_s": 0.4876190476190476,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 0.4876190476190345
+        }
+      ]
+    },
+    {
+      "old_event": 520,
+      "verdict": "Disq",
+      "annotation": "",
+      "old_start_s": 255.51238095238097,
+      "old_end_s": 255.98839002267573,
+      "covered_fraction": 1.0,
+      "outcome": "negative_interval_retained_or_absorbed",
+      "overlaps": [
+        {
+          "event": 393,
+          "start_s": 255.51238095238097,
+          "end_s": 255.8374603174603,
+          "duration_s": 0.3250793650793651,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 0.32507936507934687
+        },
+        {
+          "event": 394,
+          "start_s": 255.8374603174603,
+          "end_s": 256.38312925170067,
+          "duration_s": 0.5456689342403628,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 0.15092970521541815
+        }
+      ]
+    },
+    {
+      "old_event": 523,
+      "verdict": "Disq",
+      "annotation": "",
+      "old_start_s": 256.74303854875285,
+      "old_end_s": 257.42802721088435,
+      "covered_fraction": 1.0,
+      "outcome": "negative_interval_retained_or_absorbed",
+      "overlaps": [
+        {
+          "event": 396,
+          "start_s": 256.74303854875285,
+          "end_s": 257.42802721088435,
+          "duration_s": 0.6849886621315193,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 0.6849886621315022
+        }
+      ]
+    },
+    {
+      "old_event": 525,
+      "verdict": "Use",
+      "annotation": "",
+      "old_start_s": 257.6370068027211,
+      "old_end_s": 258.0781859410431,
+      "covered_fraction": 1.0,
+      "outcome": "use_contained_tightly",
+      "overlaps": [
+        {
+          "event": 398,
+          "start_s": 257.6370068027211,
+          "end_s": 258.0781859410431,
+          "duration_s": 0.44117913832199546,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 0.4411791383220134
+        }
+      ]
+    },
+    {
+      "old_event": 543,
+      "verdict": "Use",
+      "annotation": "",
+      "old_start_s": 264.0689342403628,
+      "old_end_s": 264.5797732426304,
+      "covered_fraction": 1.0,
+      "outcome": "use_contained_tightly",
+      "overlaps": [
+        {
+          "event": 415,
+          "start_s": 264.0689342403628,
+          "end_s": 264.5797732426304,
+          "duration_s": 0.5108390022675737,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 0.5108390022675735
+        }
+      ]
+    },
+    {
+      "old_event": 578,
+      "verdict": "Use",
+      "annotation": "",
+      "old_start_s": 280.1139229024943,
+      "old_end_s": 280.2532426303855,
+      "covered_fraction": 1.0,
+      "outcome": "use_contained_tightly",
+      "overlaps": [
+        {
+          "event": 448,
+          "start_s": 280.1139229024943,
+          "end_s": 280.2532426303855,
+          "duration_s": 0.13931972789115646,
+          "quality_status": "tonal_candidate",
+          "overlap_s": 0.13931972789117708
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Only the durable 57-row E008 audit CSV was available; later browser-only rulings were not present in the workspace.",
+    "E008 verdicts are interval usability labels, not precise ground-truth onset/offset labels.",
+    "A Use label means the old interval was judged usable; it does not prove the new event must have identical endpoints.",
+    "Silence/noise is automatically rejected only for strict short, low-level, nonperiodic cases. Longer user-labeled silence cases with periodic-looking content remain unresolved or are absorbed into longer events.",
+    "This experiment does not validate polyphony classification or prove all tonal candidates are clean monophonic notes."
+  ]
+}

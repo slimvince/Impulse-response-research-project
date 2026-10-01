@@ -1,0 +1,28 @@
+{
+  "experiment_id": "E014",
+  "status": "exploratory_candidate_transform",
+  "source_slb_recording": {
+    "recording_id": "slb200_vincents_take_1",
+    "path": "C:\\IR audio\\slb200\\vincents 1.wav",
+    "sha256": "138b5de97de26392c368c01e98c3804fcf040501cd35526f618239f7c82fd46e"
+  },
+  "slb_reference_events": {
+    "source": "experiments/E008/audit_slices/slb200_event_review.csv",
+    "verdict": "Use",
+    "count_used": 24,
+    "role": "confirmed SLB spectral reference only; same recording as full render source"
+  },
+  "acoustic_training_sets": [
+    {"slice_set_id": "acoustic_bass_a_take_2_cubase_slices", "source": "C:\\IR audio\\acoustic\\bass A\\2.wav", "validator_selection": "E013 accept", "used_count": 327},
+    {"slice_set_id": "acoustic_bass_a_take_3_cubase_slices", "source": "C:\\IR audio\\acoustic\\bass A\\3.wav", "validator_selection": "E013 accept", "used_count": 332}
+  ],
+  "held_out_acoustic_set": {
+    "slice_set_id": "acoustic_bass_b_take_1_cubase_slices",
+    "source": "C:\\IR audio\\acoustic\\bass B\\3.wav",
+    "validator_selection": "E013 accept",
+    "used_count": 195
+  },
+  "source_split": "Train on bass A takes 2/3; hold out bass B take 3 slice set.",
+  "source_manifest_sha256": "77e1bc851b2c1a3564aaff3539c220c73b4ce3dc5c1269ae359287594e1c7a24",
+  "output_render": "C:\\IR audio\\results\\E014\\vincents_1_candidate_acoustic_EQ_E014.wav"
+}

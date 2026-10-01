@@ -113,3 +113,29 @@ All future library choices must record exact versions, license implications, and
 **Rationale:** A fixed IR cannot model note identity or note state directly; it applies one LTI transformation whose effect interacts with the input spectrum and waveform. Unpaired data can estimate conditional average spectral behavior, but cannot identify a unique physical transfer function or event-specific temporal mapping.
 
 **Boundary:** If the desired transformation depends materially on register, dynamics, articulation, or note state, a single fixed IR is not an adequate model. Consider an IR bank or a time-varying/nonlinear approach only after held-out testing demonstrates the limitation.
+
+## 2026-09-28: Bowed notes are out of scope
+
+**Status:** accepted; scope boundary, not a permanent exclusion.
+
+**Decision:** The corpus, event detector, and validator target plucked/struck/electric-bass-type excitations only. Do not add bowed-note detection or bowed-note classification to the current scope unless explicitly requested later.
+
+**Rationale:** Bowed excitation has fundamentally different onset/sustain/offset characteristics (continuous excitation, no discrete pluck transient) that would require separate detection logic and validation criteria. Scoping it out keeps the current detector and validator focused on one excitation family until that is solved.
+
+## 2026-09-28: Cubase Hitpoints as a fast candidate-event generator, not ground truth
+
+**Status:** accepted for the current candidate-generation stage.
+
+**Decision:** Use Cubase Pro's Hitpoint detection plus the "Create Slices" workflow (see `docs/cubase-slicing-workflow.md`) to generate candidate event boundaries from real recordings quickly. Cubase's output is a candidate stream, not an authoritative event detector: it has false positives, false negatives, and imperfect boundaries. Our own validator performs the acceptance/rejection decision downstream of Cubase.
+
+**Rationale:** Cubase's Hitpoint detection is substantially faster than iterating on our own open-source event slicer for generating large volumes of candidate slices from real recordings. But treating it as ground truth would import Cubase's own detection errors into the corpus uncritically.
+
+**Boundary:** Do not use Cubase-sliced boundaries as validated note boundaries in any benchmark or evaluation. They remain inputs to the validator (accept/reject/uncertain), same as candidates from the recursive detector, aubio, or Basic Pitch.
+
+## 2026-09-28: Validator optimizes for trustworthy corpus composition, not slice count
+
+**Status:** accepted as the current validator design principle.
+
+**Decision:** The candidate-slice validator (accept/reject/uncertain) must not be tuned to maximize the number of accepted slices. It should aim for a useful trade-off between precision, recall, corpus size, and representativeness across register/dynamics/articulation. Prefer explicit, inspectable quality tests/features over an opaque monolithic classifier, at least initially.
+
+**Rationale:** A large corpus contaminated with merged, polyphonic, or ambiguous events is less useful than a smaller trustworthy one, since downstream conditional feature analysis (see the transformability decisions above) depends on event-level cleanliness, not raw volume. An explicit-feature validator is also easier to audit and debug than a monolithic classifier when tuning precision/recall trade-offs.

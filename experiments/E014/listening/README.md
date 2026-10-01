@@ -1,0 +1,1 @@
+These are audition convenience copies only. The authoritative dry source remains at `C:\IR audio\slb200\vincents 1.wav`; the authoritative rendered output remains at `C:\IR audio\results\E014\vincents_1_candidate_acoustic_EQ_E014.wav`. Do not commit the WAV copies; they are generated audio derived from external source material.

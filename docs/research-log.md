@@ -531,6 +531,71 @@
 - **Finding:** E003 still matches its selected count benchmark exactly (`3, 3, 3, 5`), and the SLB rerun produces 449 events: 5 strict fragment disqualifications and 2 pitch-unconfirmed cases. The synthetic glissando test stays intact as one event.
 - **Decision:** Preserve E008 raw slices and browser judgments; keep revised slices and review state separate under E009. Continue to treat E009 boundaries, polyphony flags, and quality labels as provisional pending review.
 
+## 2026-10-01 - E011 slicing iteration validated against saved listener intervals
+
+- **Observation:** The durable E008 audit contains 57 rulings (24 Use, 33 Disq), including eight explicit silence comments. Later all-event browser judgments were not available in the workspace/browser context during this validation.
+- **Implementation:** Iterated the detector using time-overlap checks against E008. Added strict short-fragment disqualification, full-window requirements for periodic pitch certification, and a narrowly targeted extreme-f0 outlier merge. General same-pitch merging and broad gap bridging were tested and rejected because they harmed positive boundaries.
+- **Finding:** E011 has 448 events. All 24 E008 Use intervals are contained in one E011 event; 22/24 also meet a strict interval-agreement criterion. Six of eight explicit silence intervals are marked disqualified; two are absorbed by longer events and remain unresolved. The selected E003 counts remain 3/3, 3/3, 3/3, 5/5, and all 7 tests pass.
+- **Decision:** Keep E011 separate, do not transfer E008 verdicts automatically, and stop broad detector tuning against this small audit. Remaining errors are either boundary-ambiguous or lack reason labels; additional interval-level ground truth is needed before more aggressive changes.
+
+## 2026-10-01 - Cubase candidates become the validator input
+
+- **Observation:** The external Cubase manifest `C:\IR audio\slb200-cubase-slices-manifest.json` exists and records two candidate sets totaling 498 slices. The 363 `vincents 1-*` slices have an available unsplit source; the 135 `Audio 02 -*` slices do not.
+- **Finding:** Cubase is a faster candidate generator but is not ground truth. The previous E008/E011 labels concern different intervals and cannot be copied onto Cubase slices without proven file/boundary identity.
+- **Decision:** Stop prioritizing further tuning of the repository slicer. Build a manually labeled Cubase reference subset, then implement and evaluate an interpretable accept/reject/uncertain validator with explicit reasons, a frozen holdout, precision/recall, retained corpus size, and representativeness checks. Bowed notes remain out of scope.
+- **Boundary:** Keep event validity, feature reliability, and transformation relevance as separate decisions; do not infer that a valid event has reliable f0 or that it is inherently useful for the IR hypothesis.
+
+## 2026-10-01 - E012 first-pass Cubase candidate validation
+
+- **Observation:** The external Cubase manifest contains two sets totaling 498 files: 363 stereo 24-bit slices with an available source, and 135 mono 16-bit slices whose unsplit source is missing. All files were present and matched their pinned hashes.
+- **Implementation:** Added an interpretable first-pass validator for effective silence, clipping, signal level, slice duration, onset offset, internal attack candidates, tail energy, and f0 reliability. Fixed signed 24-bit PCM decoding and added a regression test. Event validity is not rejected solely because f0 is weak; transformation relevance is not scored.
+- **Finding:** Current exploratory outcomes are 42 provisional accepts, 150 hard rejects for exact/effective silence, and 306 uncertain. Most Audio 02 candidates are uncertain due possible internal attacks; this may reflect merged notes but requires human labels. All 150 hard rejects occur in the source-backed Cubase set and contain all-zero/effectively-zero audio samples.
+- **Decision:** Treat E012 as a triage baseline only. Build a stratified human-labeled reference set, freeze a held-out slice-set split, and evaluate precision/recall, reason-specific errors, accepted corpus size, and representativeness before tuning thresholds or promoting events to the corpus.
+
+## 2026-10-01 - E013 expanded Cubase candidate inventory
+
+- **Observation:** Three additional directories contain 1,204 bass A take 2 slices, 689 bass A take 3 slices, and 1,363 bass B take 3 slices. All three unsplit source recordings are available. Combined with the original 498 Cubase candidates, the current inventory is 3,754 slices across five sets.
+- **Implementation:** Added the folders as separate E013 candidate sets. The pinned external manifest for the original 498 files is unchanged; E013 records observed SHA-256 values for the added files.
+- **Finding:** The same uncalibrated validator produced 921 provisional accepts, 150 effective-silence rejects, and 2,683 uncertain. Most added acoustic slices were flagged for internal-attack or boundary review; these flags are not validated false-positive findings.
+- **Decision:** Preserve the five source/slice-set groups, obtain human labels before calibration, and do not report precision/recall until a frozen labeled holdout exists.
+
+## 2026-10-01 - E014 full-length spectral-shape audition candidate
+
+- **Observation:** The E013 provisional accept population includes 33 Cubase candidates from `vincents 1.wav`, 9 from Audio 02 (whose source is missing), and provisional acoustic candidates across bass A2/A3/B3. The 24 durable E008 `Use` intervals provide listener-confirmed SLB event examples from the full `vincents 1.wav` source.
+- **Implementation:** Estimated a smoothed, level-normalized acoustic/SLB population magnitude ratio using E008 confirmed SLB events and E013 accepted acoustic candidates from bass A2/A3, then built an 8192-tap minimum-phase FIR candidate. Bass B3 candidates were held out by slice set. Applied the filter to both channels of the complete SLB source and wrote a 284.19-second derived trial to `C:\IR audio\results\E014\`.
+- **Finding:** Held-out normalized third-octave spectral-shape MAE over 40-8000 Hz changed from 9.10 dB to 9.20 dB (slightly worse). This candidate is not quantitatively supported as an improvement. It remains available for subjective audition only.
+- **Limitations:** Acoustic slices are Cubase candidates accepted by an uncalibrated validator and lack human labels. Microphone, room, placement, and chain are unknown; the source performances are unpaired. The filter normalizes away absolute gain, caps EQ at +/-6 dB, and assumes minimum phase; it is not a physical room/microphone IR.
+- **Decision:** Preserve the full-length rendered trial for listening, but do not call it an acoustic emulator or use it as evidence that a fixed IR is sufficient. Human-labeled Cubase validation and better source metadata remain prerequisites for selecting a transform.
+
+## 2026-10-01 - E015 per-slice dry/filtered feedback comparison
+
+- **Observation:** Waveform alignment uniquely mapped 160/363 `vincents 1-*` Cubase slices to the original full recording (median normalized correlation approximately 1.0); 49 were ambiguous and silent/low-energy slices remained unmapped.
+- **Implementation:** Compared dry and E014-filtered features at the exact same source intervals for mapped slices and all 24 listener-confirmed E008 Use intervals. Compared those SLB profiles against E013 provisional acoustic accepts by register and acoustic-training level tercile; bass B3 remained the acoustic slice-set holdout.
+- **Finding:** The 33 mapped E013-accepted SLB candidates all landed high-register/low-level. Their full-group spectral-shape MAE worsened (train 11.11→12.13 dB; held-out 9.17→10.44 dB), while the small high/low cell improved slightly. The 24 listener-confirmed SLB intervals moved closer in per-event profile averages, but they are in-sample for the filter estimate. Pooled-power and mean-per-event-log metrics give different answers.
+- **Decision:** Preserve E015 as diagnostic evidence only. No further FIR tuning is justified from these unbalanced/unlabeled populations; calibrate the Cubase validator and acquire better balanced, human-labeled comparison events first.
+
+## 2026-10-01 - E016 median per-event spectral-shape alternative
+
+- **Hypothesis:** A robust median per-event log-spectrum objective may better align filter fitting with the per-slice comparison than E014's pooled linear-power objective.
+- **Implementation:** Built one predeclared alternative using 24 listener-confirmed SLB Use events, E013 provisional acoustic accepts from bass A2/A3, median per-event third-octave log profiles, smoothing, and a +/-6 dB cap. Generated raw E016, RMS-matched E016, and RMS-matched E014 full-file renders. B3 remained diagnostic only; it has already been examined in E014/E015.
+- **Observation:** Median-profile MAE: dry/train 7.52 dB, E014/train 6.94, E016/train 7.55; dry/B3 8.23, E014/B3 8.98, E016/B3 9.58. A separate per-event median distance to the A2/A3 population was E014 10.38 dB versus E016 10.02 dB, with E016 closer on 45.8% of the 24 events.
+- **Finding:** E016's alternative objective produces mixed signals: the aggregate median-profile measure favors E014, while the per-event diagnostic favors E016 slightly but on fewer than half of source events. This does not validate E016 as an improvement.
+- **Decision:** Preserve E014 as baseline and retain E016 for blinded/loudness-matched audition only. Do not iterate on B3; acquire or reserve a genuinely untouched acoustic source-level test before selecting a filter.
+
+## 2026-10-01 - E017 stratified Cubase human-audit sample prepared
+
+- **Observation:** E013 contains 3,754 Cubase candidates across five sets and no human reference labels. Validator reasons differ by set, especially frequent possible internal attacks in Audio 02 and tail-boundary flags in acoustic sets.
+- **Implementation:** Prepared 50 candidates (10 per set) with a fixed random seed, stratified over provisional accepts, internal-attack/tail/short-low flags, random uncertain examples, and one hard-reject QC example where available. Candidate files were copied byte-for-byte and sample hashes were verified.
+- **Decision:** Use E017 to calibrate event-validity and reason labels. Treat it as a calibration sample; freeze a separate source/set-level holdout before reporting precision/recall or tuning claims.
+- **Progress:** The browser audit advanced to 21/50 verdicts (16 usable, 5 unusable), across bass A takes 2/3 and bass B take 3. Reason codes, confidence, and notes are blank. Latest snapshot and joined CSV are saved under `experiments/E017/results/`; the earlier 8-label checkpoint is retained. Recapture later browser judgments before analysis because these files are point-in-time snapshots.
+
+## 2026-10-01 - E018 applies existing filters to recording two
+
+- **Observation:** The unsplit `C:\IR audio\slb200\recording two slices\yamaha bass slb200.wav` is present: 362.00 s, stereo 44.1 kHz 16-bit PCM, SHA-256 `c00f60b0e6777171a03f69441083b2b47f90d34e27057c036a660e9eaffb4e08`. The 135 associated Audio 02 slice durations sum to 360 s.
+- **Implementation:** Applied the existing E014 and E016 FIRs to both channels of the full file, producing raw and whole-file RMS-matched variants in `C:\IR audio\results\E018\`. Source audio was unchanged.
+- **Limitation:** The user identifies this as recording two, and duration consistency supports association with Audio 02, but exact slice-to-source waveform alignment and recording-context metadata remain unverified.
+- **Decision:** Keep E018 as full-length audition material only. It does not refit or validate either filter; compare dry and filtered versions perceptually and retain the existing negative/mixed quantitative findings.
+
 ## 2026-09-25 - Per-event evidence prioritized over whole-piece averages
 
 - **Hypothesis:** Per-event conditional behavior is more relevant to the eventual IR target than averages over entire pieces of music.

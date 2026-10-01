@@ -1,0 +1,18 @@
+[
+  {
+    "slice_set_id": "slb200_vincents_take_1_cubase_slices",
+    "directory": "C:\\IR audio\\slb200",
+    "source_recording": "vincents 1.wav",
+    "source_available": false,
+    "file_count": 363,
+    "integrity_basis": "external_pinned_manifest"
+  },
+  {
+    "slice_set_id": "slb200_audio02_cubase_slices",
+    "directory": "C:\\IR audio\\slb200\\recording two slices",
+    "source_recording": null,
+    "source_available": false,
+    "file_count": 135,
+    "integrity_basis": "external_pinned_manifest"
+  }
+]

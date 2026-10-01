@@ -2,13 +2,20 @@
 
 ## Current phase: Unified Corpus Characterization and event benchmarking
 
-### Current handover state: E005/E006/E007/E009
+### Current handover state: E014/E015/E016 transform diagnostics
 
 - E005 algorithm bake-off and tuning are complete for the practical Windows candidates.
 - E006 NS/Ergo EUB proof of concept is complete at pipeline level; expanded event audit is complete with 15/19 usable in a selected sample.
 - E007 acoustic-vs-EUB descriptive comparison is complete but not a transformation result.
-- E009 revises SLB event slicing with longer pitch windows, onset-corroborated pitch splits, and conservative periodicity quality flags; the previous E008 audit remains intact.
-- Next priority is conditional per-event characterization and transformability testing, not whole-piece averaging or immediate IR optimization.
+- E011 records an iterative evaluation of the repository slicer against the durable E008 audit. It remains useful as a reference, but is not the current candidate-generation priority.
+- Cubase Pro 15 has produced 3,754 candidate slices across five external slice sets. Cubase is a candidate generator, not ground truth.
+- E012 ran the initial 498-slice pass; E013 extends it to all five sets and reports 921 provisional accepts, 150 exact/effective-silence rejects, and 2,683 uncertain. Thresholds are exploratory; no candidate has a human reference label.
+- E014 generated a full-length minimum-phase spectral-ratio trial from 24 listener-confirmed SLB intervals and provisional acoustic candidates. Its held-out normalized spectral-shape MAE worsened slightly, 9.10 to 9.20 dB; it is audition material, not a supported improvement or physical IR.
+- E015 maps Cubase SLB candidate slices to source time and compares per-slice dry/filtered features with acoustic candidate distributions. The 24 confirmed SLB events are in-sample for E014; the 33 mapped validator-accepted Cubase events represent only high-register/low-level conditions. Do not infer general improvement from sparse cells.
+- E016 tests one predeclared median per-event log-spectrum alternative and prepares loudness-matched full-file auditions. Aggregate median-profile metrics favor E014; a separate per-event metric slightly favors E016. Neither is validated; keep E014 as baseline pending listening and a genuinely untouched source-level test.
+- E018 applied existing E014/E016 filters to the newly available 362 s recording two and made raw/RMS-matched full-file renders. This adds an audition source, not an independent filter validation.
+- E017 prepares a deterministic 50-slice, five-set human audit with separate event-validity, reason-code, confidence, and f0-reliability labels. Do not tune and report performance on this same calibration sample; reserve a separate source/set-level holdout.
+- Immediate priority is a manually labeled, stratified Cubase reference set and evaluation of the first-pass validator. Do not start SLB-vs-acoustic feature comparisons or IR optimization from unvalidated candidate slices.
 - Preserve the distinction between descriptive source-domain differences, candidate filter-addressable effects, and validated IR behavior.
 
 ### Completed
@@ -21,16 +28,19 @@
 - JSON and Markdown outputs
 - Synthetic test definitions
 - Research documentation and licensing boundary
-- Full test suite: 7 passing tests
+- Full test suite: 8 passing tests, including signed 24-bit PCM decoding
 - Synthetic WAV CLI smoke test with all five expected output files
 - Git initialization, commits, push, and clean synchronized worktree
 
 ### Immediate blockers
 
+- Establish a manually labeled Cubase candidate-slice reference set (`usable`, `unusable`, `uncertain`) with reason codes and confidence. Keep the two slice sets grouped separately; `Audio 02` has no surviving unsplit source.
+- Implement a reproducible validator that consumes candidate WAVs/manifests and outputs inspectable tests, accept/reject/uncertain, and one or more rejection reasons.
+- Measure false positives, false negatives, precision, recall, F1, retained corpus size, and acceptance representativeness by slice set and measurable context. Keep uncertain labels out of initial threshold fitting.
+- Keep event validity separate from feature reliability and transformation relevance. A valid excitation may have unmeasurable f0; a plausible f0 does not prove an isolated event.
+- The E008/E011 human rulings are on a different boundary set and cannot be transferred as Cubase validator labels without interval/file identity evidence.
 - Obtain or record a small licensed pilot corpus.
-- Confirm permission and complete capture metadata for the four external acoustic candidate recordings.
-- Establish reliable note/event segmentation as a first-class research problem rather than a later quality improvement.
-- Benchmark onset/offset, pitch-tracking, note-segmentation, overlap/polyphony, and legato-handling methods on representative corpus recordings.
+- Confirm permission and complete capture metadata for the external acoustic candidate recordings.
 - Add later bass A and bass B recordings to their existing source groups, and register other acoustic basses as separate source groups.
 - Implement within-group repeatability summaries for the bass A and bass B pairs before freezing the first `E001` manifest.
 - Create a manually reviewed ground-truth subset and quantify split/merge/missed-boundary errors before proceeding to event-conditioned analysis.
@@ -78,20 +88,15 @@ This loop is especially valuable for low-register bass, overlapping notes, and l
 
 ### Next implementation steps
 
-1. Make the Python environment reproducible with a locked or recorded dependency set.
-2. Add tests for silence, multichannel input, 24-bit PCM, invalid f0, and deterministic repeated runs.
-3. Treat event detection and note segmentation as immediate research tasks, not as a post-hoc enhancement; benchmark the existing threshold detector against likely open-source alternatives and quantify errors on representative material.
-4. Create a small manually reviewed ground-truth subset for onset, offset, note boundaries, pitch, overlap, and legato cases; compute onset timing error, offset timing error, missed/false events, incorrect boundaries, pitch error, and confidence metrics.
-5. Use a human audition loop on individual slices to flag split/merge issues and to prioritize ambiguous boundaries for manual review before quantitative scoring; this is an adjunct to, not a replacement for, the benchmark.
-6. Implement the benchmark-first hybrid pipeline documented in `docs/note-segmentation-benchmark.md`: candidate generation from Basic Pitch and/or a pitch tracker, onset timing refinement, and note-boundary reconciliation based on pitch continuity and amplitude decay.
-7. Continue the broad feature bank only where a concrete, testable descriptor remains justified; the current spectral-shape, band-ratio, crest-factor, f0-relative harmonic, peak/bandwidth, envelope, f0-confidence, harmonic-to-residual, and inharmonicity descriptors are implemented.
-8. Add feature definitions and validity metadata to a versioned feature configuration.
-9. Add paired-recording metadata and a distribution-level repeatability baseline for recordings expected to match without requiring matched musical content; recording/source-group summaries and missing counts are now implemented, with the current bass A/bass B candidates as the first input.
-10. Add recording/event-level aggregation before any inferential statistics.
-11. Add pitch/register and observed-local-level summaries without assuming absolute level calibration.
-12. Add explicit confound tables and missing-metadata warnings; file quality diagnostics and per-feature missing counts are now implemented.
-13. Compare selected reference algorithms with SciPy/librosa backends without changing the canonical schema silently.
-14. Analyze a pilot corpus and update hypotheses based on measured results.
+1. Validate the external Cubase slice manifest and file hashes before analysis; preserve `slice_set_id`, original filenames, source hashes where available, and Cubase provenance status.
+2. Create a manually labeled reference subset stratified by slice set, duration, measured level, likely false positives, and likely false negatives. Capture verdict, confidence, and multi-valued reason codes.
+3. Freeze a development/held-out split at the slice-set/source-group level before choosing validator thresholds.
+4. Implement transparent quality measurements (duration, energy/SNR proxies, clipping, onset isolation, internal competing attacks, boundary bleed, pitch reliability, and spectral plausibility) without equating any single feature with event validity.
+5. Evaluate accept/reject/uncertain against human labels; report confusion matrix, precision, recall, F1, candidate/accepted counts, rejection reasons, and acceptance rates by context.
+6. Inspect false positives and false negatives, revise only explicit tests, and rerun the frozen holdout. Do not tune to maximize the accepted slice count.
+7. Treat the existing threshold detector, E009/E011, aubio, and Basic Pitch as optional comparison/candidate sources, not as the primary Cubase candidate slicer.
+8. Only after validator performance and representativeness are acceptable, extract event features and compare SLB/acoustic populations conditioned on register, local level, and articulation.
+9. Continue provenance, metadata, repeatability, confound, and held-out evaluation work before any IR optimization.
 
 ### Research stages for event-level evaluation
 

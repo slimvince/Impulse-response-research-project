@@ -1,0 +1,15 @@
+{
+  "experiment_id": "E013",
+  "status": "expanded_first_pass_uncalibrated",
+  "question": "How does the first transparent Cubase candidate validator triage all five currently identified slice sets?",
+  "pinned_candidate_manifest": "C:\\IR audio\\slb200-cubase-slices-manifest.json",
+  "sets": [
+    {"slice_set_id": "slb200_vincents_take_1_cubase_slices", "directory": "C:\\IR audio\\slb200", "count": 363, "source_recording": "C:\\IR audio\\slb200\\vincents 1.wav", "source_available": true, "integrity_basis": "pinned SHA-256 manifest"},
+    {"slice_set_id": "slb200_audio02_cubase_slices", "directory": "C:\\IR audio\\slb200\\recording two slices", "count": 135, "source_recording": null, "source_available": false, "integrity_basis": "pinned SHA-256 manifest"},
+    {"slice_set_id": "acoustic_bass_a_take_2_cubase_slices", "directory": "C:\\IR audio\\acoustic\\bass A\\2 sliced", "count": 1204, "source_recording": "C:\\IR audio\\acoustic\\bass A\\2.wav", "source_available": true, "integrity_basis": "observed SHA-256 recorded during E013"},
+    {"slice_set_id": "acoustic_bass_a_take_3_cubase_slices", "directory": "C:\\IR audio\\acoustic\\bass A\\3 sliced", "count": 689, "source_recording": "C:\\IR audio\\acoustic\\bass A\\3.wav", "source_available": true, "integrity_basis": "observed SHA-256 recorded during E013"},
+    {"slice_set_id": "acoustic_bass_b_take_1_cubase_slices", "directory": "C:\\IR audio\\acoustic\\bass B\\3 split", "count": 1363, "source_recording": "C:\\IR audio\\acoustic\\bass B\\3.wav", "source_available": true, "integrity_basis": "observed SHA-256 recorded during E013"}
+  ],
+  "expected_candidate_count": 3754,
+  "label_status": "no Cubase candidates manually labeled yet; no precision/recall claim"
+}

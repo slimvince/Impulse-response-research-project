@@ -1,0 +1,25 @@
+{
+  "validator_code": "experiments/E012/validate_cubase_candidates.py",
+  "validator_version": "0.1-exploratory",
+  "invocation": "--include-additional-sets --output-dir experiments/E013/results",
+  "scope": {
+    "target_excitation": "plucked/struck/electric-bass-type events",
+    "bowed_notes": "out_of_scope",
+    "event_validity": "accept/reject/uncertain",
+    "feature_reliability_separate": true,
+    "transformation_relevance": "not_assessed"
+  },
+  "provisional_rules": {
+    "reject_effective_silence_peak_dbfs": -90,
+    "reject_effective_silence_exact_zero_fraction": 0.995,
+    "reject_effective_silence_peak_ceiling_dbfs": -70,
+    "reject_clipped_fraction": 0.01,
+    "uncertain_duration_below_s": 0.08,
+    "uncertain_peak_below_dbfs": -50,
+    "uncertain_rms_below_dbfs": -60,
+    "uncertain_onset_offset_above_s": 0.15,
+    "uncertain_internal_attack_count_above": 0,
+    "uncertain_active_tail_at_boundary": true
+  },
+  "threshold_status": "exploratory and uncalibrated; human labels and held-out evaluation required"
+}

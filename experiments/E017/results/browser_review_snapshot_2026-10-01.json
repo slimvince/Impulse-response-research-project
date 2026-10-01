@@ -1,0 +1,19 @@
+{
+  "experiment_id": "E017",
+  "storage_key": "cubase-validator-e017-v1",
+  "captured_at": "2026-10-01",
+  "current_index_zero_based": 12,
+  "total_sample_count": 50,
+  "judged_count": 8,
+  "verdict_counts": {"usable": 4, "unusable": 4},
+  "judgments": [
+    {"audit_id":"acoustic_bass_a_take_2_cubase_slices:06","verdict":"unusable","reasons":[],"f0_reliability":"not_assessed","confidence":"","note":""},
+    {"audit_id":"acoustic_bass_a_take_2_cubase_slices:07","verdict":"usable","reasons":[],"f0_reliability":"not_assessed","confidence":"","note":""},
+    {"audit_id":"acoustic_bass_a_take_2_cubase_slices:08","verdict":"unusable","reasons":[],"f0_reliability":"not_assessed","confidence":"","note":""},
+    {"audit_id":"acoustic_bass_a_take_2_cubase_slices:09","verdict":"usable","reasons":[],"f0_reliability":"not_assessed","confidence":"","note":""},
+    {"audit_id":"acoustic_bass_a_take_2_cubase_slices:10","verdict":"unusable","reasons":[],"f0_reliability":"not_assessed","confidence":"","note":""},
+    {"audit_id":"acoustic_bass_a_take_3_cubase_slices:01","verdict":"usable","reasons":[],"f0_reliability":"not_assessed","confidence":"","note":""},
+    {"audit_id":"acoustic_bass_a_take_3_cubase_slices:02","verdict":"unusable","reasons":[],"f0_reliability":"not_assessed","confidence":"","note":""},
+    {"audit_id":"acoustic_bass_a_take_3_cubase_slices:03","verdict":"usable","reasons":[],"f0_reliability":"not_assessed","confidence":"","note":""}
+  ]
+}

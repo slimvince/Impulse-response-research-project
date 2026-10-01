@@ -1,0 +1,38 @@
+{
+  "validator_version": "0.1-exploratory",
+  "scope": {
+    "target_excitation": "plucked/struck/electric-bass-type events",
+    "bowed_notes": "out_of_scope",
+    "event_validity": "accept/reject/uncertain",
+    "feature_reliability_separate": true,
+    "transformation_relevance": "not_assessed"
+  },
+  "measurements": {
+    "envelope_frame_ms": 20,
+    "envelope_hop_ms": 5,
+    "internal_attack_rise_db": 8,
+    "internal_attack_cooldown_s": 0.12,
+    "onset_edge_warning_s": 0.15,
+    "tail_window_ms": 25,
+    "f0_frame_size_samples": 2048,
+    "f0_hop_size_samples": 512,
+    "f0_confidence_threshold": 0.25
+  },
+  "candidate_sets": [
+    "slb200_vincents_take_1_cubase_slices",
+    "slb200_audio02_cubase_slices"
+  ],
+  "provisional_rules": {
+    "reject_effective_silence_peak_dbfs": -90,
+    "reject_effective_silence_exact_zero_fraction": 0.995,
+    "reject_effective_silence_peak_ceiling_dbfs": -70,
+    "reject_clipped_fraction": 0.01,
+    "uncertain_duration_below_s": 0.08,
+    "uncertain_peak_below_dbfs": -50,
+    "uncertain_rms_below_dbfs": -60,
+    "uncertain_onset_offset_above_s": 0.15,
+    "uncertain_internal_attack_count_above": 0,
+    "uncertain_active_tail_at_boundary": true
+  },
+  "threshold_status": "exploratory, not established; must be calibrated against manually labeled Cubase candidates"
+}
